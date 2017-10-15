@@ -76,6 +76,7 @@ namespace Boquanquanly
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -140,19 +141,89 @@ namespace Boquanquanly
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+=======
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thựcĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.linkLabel10 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -167,16 +238,41 @@ namespace Boquanquanly
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
+<<<<<<< HEAD
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+=======
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox12.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox15.SuspendLayout();
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.groupBox18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+<<<<<<< HEAD
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -195,6 +291,9 @@ namespace Boquanquanly
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+=======
+            this.groupBox18.SuspendLayout();
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -211,6 +310,7 @@ namespace Boquanquanly
             this.statusStrip1.Size = new System.Drawing.Size(672, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // toolStripStatusLabel1
             // 
@@ -561,6 +661,7 @@ namespace Boquanquanly
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+<<<<<<< HEAD
             // panel2
             // 
             this.panel2.Controls.Add(this.panel3);
@@ -623,6 +724,9 @@ namespace Boquanquanly
             this.groupBox17.TabStop = false;
             // 
             // linkLabel9
+=======
+            // groupBox9
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             this.linkLabel9.AutoSize = true;
             this.linkLabel9.Location = new System.Drawing.Point(32, 73);
@@ -632,6 +736,7 @@ namespace Boquanquanly
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "Thoát";
             // 
+<<<<<<< HEAD
             // linkLabel10
             // 
             this.linkLabel10.AutoSize = true;
@@ -695,6 +800,21 @@ namespace Boquanquanly
             this.chart1.Size = new System.Drawing.Size(270, 300);
             this.chart1.TabIndex = 12;
             this.chart1.Text = "chart1";
+=======
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(6, 38);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "";
+            treeNode1.Text = "Món chay";
+            treeNode2.Name = "";
+            treeNode2.Text = "Món mặn";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(142, 287);
+            this.treeView1.TabIndex = 0;
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             // button11
             // 
@@ -705,6 +825,7 @@ namespace Boquanquanly
             this.button11.Text = "Xuất chi phí";
             this.button11.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // label20
             // 
             this.label20.AutoSize = true;
@@ -713,6 +834,12 @@ namespace Boquanquanly
             this.label20.Size = new System.Drawing.Size(32, 13);
             this.label20.TabIndex = 4;
             this.label20.Text = "Ngày";
+=======
+            // Column3
+            // 
+            this.Column3.HeaderText = "Giá";
+            this.Column3.Name = "Column3";
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             // textBox3
             // 
@@ -721,6 +848,7 @@ namespace Boquanquanly
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 10;
             // 
+<<<<<<< HEAD
             // label19
             // 
             this.label19.AutoSize = true;
@@ -743,6 +871,193 @@ namespace Boquanquanly
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 9;
+=======
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã món";
+            this.Column1.Name = "Column1";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Danh mục";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(158, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Chi tiết";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(287, 331);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(363, 331);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(54, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Sửa";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(435, 331);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(54, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Xóa";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox8);
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(134, 173);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Chức năng";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.linkLabel2);
+            this.groupBox8.Controls.Add(this.linkLabel4);
+            this.groupBox8.Controls.Add(this.pictureBox5);
+            this.groupBox8.Controls.Add(this.pictureBox7);
+            this.groupBox8.Location = new System.Drawing.Point(6, 19);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(122, 136);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(5, 27);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox7.TabIndex = 1;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(4, 63);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(33, 37);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel4.TabIndex = 6;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Đăng nhập lại";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(32, 73);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(35, 13);
+            this.linkLabel2.TabIndex = 8;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Thoát";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Controls.Add(this.groupBox9);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(672, 385);
+            this.panel2.TabIndex = 10;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.groupBox11);
+            this.groupBox10.Location = new System.Drawing.Point(3, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(134, 173);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Chức năng";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.linkLabel5);
+            this.groupBox11.Controls.Add(this.linkLabel6);
+            this.groupBox11.Controls.Add(this.pictureBox8);
+            this.groupBox11.Controls.Add(this.pictureBox9);
+            this.groupBox11.Location = new System.Drawing.Point(6, 19);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(122, 136);
+            this.groupBox11.TabIndex = 6;
+            this.groupBox11.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(5, 27);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(4, 63);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox8.TabIndex = 5;
+            this.pictureBox8.TabStop = false;
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Location = new System.Drawing.Point(33, 37);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel6.TabIndex = 6;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Đăng nhập lại";
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Location = new System.Drawing.Point(32, 73);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(35, 13);
+            this.linkLabel5.TabIndex = 8;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Thoát";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.groupBox10);
+            this.panel3.Controls.Add(this.groupBox12);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(672, 385);
+            this.panel3.TabIndex = 11;
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             // comboBox1
             // 
@@ -797,6 +1112,7 @@ namespace Boquanquanly
             // 
             // groupBox13
             // 
+<<<<<<< HEAD
             this.groupBox13.Controls.Add(this.groupBox14);
             this.groupBox13.Location = new System.Drawing.Point(3, 3);
             this.groupBox13.Name = "groupBox13";
@@ -804,6 +1120,65 @@ namespace Boquanquanly
             this.groupBox13.TabIndex = 9;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Chức năng";
+=======
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(21, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(59, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Danh sách";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(230, 331);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Tạo mới";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(311, 331);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Sửa";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(392, 331);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Xóa";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.button6);
+            this.groupBox12.Controls.Add(this.button5);
+            this.groupBox12.Controls.Add(this.button4);
+            this.groupBox12.Controls.Add(this.label17);
+            this.groupBox12.Controls.Add(this.dataGridView2);
+            this.groupBox12.Location = new System.Drawing.Point(143, 3);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(526, 368);
+            this.groupBox12.TabIndex = 8;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Chi nhánh";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.groupBox13);
+            this.panel4.Controls.Add(this.groupBox15);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(672, 385);
+            this.panel4.TabIndex = 12;
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             // groupBox14
             // 
@@ -817,6 +1192,7 @@ namespace Boquanquanly
             this.groupBox14.TabIndex = 6;
             this.groupBox14.TabStop = false;
             // 
+<<<<<<< HEAD
             // linkLabel7
             // 
             this.linkLabel7.AutoSize = true;
@@ -852,20 +1228,53 @@ namespace Boquanquanly
             this.pictureBox11.Size = new System.Drawing.Size(22, 23);
             this.pictureBox11.TabIndex = 1;
             this.pictureBox11.TabStop = false;
+=======
+            // pictureBox11
             // 
-            // groupBox15
+            this.pictureBox11.Location = new System.Drawing.Point(5, 27);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
             // 
-            this.groupBox15.Controls.Add(this.button7);
-            this.groupBox15.Controls.Add(this.button8);
-            this.groupBox15.Controls.Add(this.button9);
-            this.groupBox15.Controls.Add(this.label18);
-            this.groupBox15.Controls.Add(this.dataGridView3);
-            this.groupBox15.Location = new System.Drawing.Point(143, 3);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(526, 368);
-            this.groupBox15.TabIndex = 8;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Chi nhánh";
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(4, 63);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox10.TabIndex = 5;
+            this.pictureBox10.TabStop = false;
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(33, 37);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel8.TabIndex = 6;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "Đăng nhập lại";
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(32, 73);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(35, 13);
+            this.linkLabel7.TabIndex = 8;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "Thoát";
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.groupBox14);
+            this.groupBox13.Location = new System.Drawing.Point(3, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(134, 173);
+            this.groupBox13.TabIndex = 9;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Chức năng";
             // 
             // button7
             // 
@@ -984,6 +1393,7 @@ namespace Boquanquanly
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "Đăng nhập lại";
             // 
+<<<<<<< HEAD
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(4, 63);
@@ -1063,6 +1473,88 @@ namespace Boquanquanly
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(507, 280);
             this.dataGridView2.TabIndex = 1;
+=======
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.button7);
+            this.groupBox15.Controls.Add(this.button8);
+            this.groupBox15.Controls.Add(this.button9);
+            this.groupBox15.Controls.Add(this.label18);
+            this.groupBox15.Controls.Add(this.dataGridView3);
+            this.groupBox15.Location = new System.Drawing.Point(143, 3);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(526, 368);
+            this.groupBox15.TabIndex = 8;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Chi nhánh";
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.groupBox17);
+            this.groupBox16.Location = new System.Drawing.Point(3, 3);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(134, 173);
+            this.groupBox16.TabIndex = 9;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Chức năng";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.linkLabel9);
+            this.groupBox17.Controls.Add(this.linkLabel10);
+            this.groupBox17.Controls.Add(this.pictureBox12);
+            this.groupBox17.Controls.Add(this.pictureBox13);
+            this.groupBox17.Location = new System.Drawing.Point(6, 19);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(122, 136);
+            this.groupBox17.TabIndex = 6;
+            this.groupBox17.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Location = new System.Drawing.Point(5, 27);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox13.TabIndex = 1;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(4, 63);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(22, 23);
+            this.pictureBox12.TabIndex = 5;
+            this.pictureBox12.TabStop = false;
+            // 
+            // linkLabel10
+            // 
+            this.linkLabel10.AutoSize = true;
+            this.linkLabel10.Location = new System.Drawing.Point(33, 37);
+            this.linkLabel10.Name = "linkLabel10";
+            this.linkLabel10.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel10.TabIndex = 6;
+            this.linkLabel10.TabStop = true;
+            this.linkLabel10.Text = "Đăng nhập lại";
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Location = new System.Drawing.Point(32, 73);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(35, 13);
+            this.linkLabel9.TabIndex = 8;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "Thoát";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.groupBox16);
+            this.panel5.Controls.Add(this.groupBox18);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(672, 385);
+            this.panel5.TabIndex = 13;
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1200,6 +1692,7 @@ namespace Boquanquanly
             this.label16.TabIndex = 3;
             this.label16.Text = "Chi tiết";
             // 
+<<<<<<< HEAD
             // label15
             // 
             this.label15.AutoSize = true;
@@ -1257,10 +1750,35 @@ namespace Boquanquanly
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             // 
             // thựcĐơnToolStripMenuItem
+=======
+            // chart1
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             // 
             this.thựcĐơnToolStripMenuItem.Name = "thựcĐơnToolStripMenuItem";
             this.thựcĐơnToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.thựcĐơnToolStripMenuItem.Text = "Thực đơn";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.chart1);
+            this.groupBox18.Controls.Add(this.button11);
+            this.groupBox18.Controls.Add(this.label20);
+            this.groupBox18.Controls.Add(this.textBox3);
+            this.groupBox18.Controls.Add(this.label19);
+            this.groupBox18.Controls.Add(this.dateTimePicker1);
+            this.groupBox18.Controls.Add(this.textBox2);
+            this.groupBox18.Controls.Add(this.comboBox1);
+            this.groupBox18.Controls.Add(this.button10);
+            this.groupBox18.Controls.Add(this.textBox1);
+            this.groupBox18.Controls.Add(this.label23);
+            this.groupBox18.Controls.Add(this.label21);
+            this.groupBox18.Controls.Add(this.label22);
+            this.groupBox18.Location = new System.Drawing.Point(143, 3);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(526, 368);
+            this.groupBox18.TabIndex = 8;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Báo cáo";
             // 
             // frm_Quanly
             // 
@@ -1294,6 +1812,7 @@ namespace Boquanquanly
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
+<<<<<<< HEAD
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -1322,14 +1841,50 @@ namespace Boquanquanly
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+=======
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+<<<<<<< HEAD
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1373,27 +1928,10 @@ namespace Boquanquanly
         private LinkLabel linkLabel3;
         private LinkLabel linkLabel1;
         private Panel panel1;
-        private Panel panel2;
-        private GroupBox groupBox3;
-        private GroupBox groupBox8;
-        private LinkLabel linkLabel2;
-        private LinkLabel linkLabel4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox7;
-        private GroupBox groupBox9;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Label label16;
-        private Label label15;
-        private DataGridView dataGridView1;
-        private TreeView treeView1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripStatusLabel4;
         private ToolStripStatusLabel toolStripStatusLabel5;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
+        private Panel panel2;
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
@@ -1451,7 +1989,27 @@ namespace Boquanquanly
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+<<<<<<< HEAD
         private ToolStripMenuItem nhânViênToolStripMenuItem;
         private ToolStripMenuItem thựcĐơnToolStripMenuItem;
+=======
+        private GroupBox groupBox3;
+        private GroupBox groupBox8;
+        private LinkLabel linkLabel2;
+        private LinkLabel linkLabel4;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox7;
+        private GroupBox groupBox9;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private Label label16;
+        private Label label15;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private TreeView treeView1;
+>>>>>>> 7176596ee501e310d9d1da91c1b6b1d11dae6dc7
     }
 }
