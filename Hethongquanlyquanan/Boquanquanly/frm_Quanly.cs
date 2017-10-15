@@ -45,5 +45,10 @@ namespace Boquanquanly
         {
 
         }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

@@ -44,8 +44,8 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chiPhíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchSửToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chiPhíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -204,17 +204,17 @@
             this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.bánHàngToolStripMenuItem.Text = "Bán hàng";
             // 
-            // chiPhíToolStripMenuItem
-            // 
-            this.chiPhíToolStripMenuItem.Name = "chiPhíToolStripMenuItem";
-            this.chiPhíToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.chiPhíToolStripMenuItem.Text = "Chi phí";
-            // 
             // lịchSửToolStripMenuItem
             // 
             this.lịchSửToolStripMenuItem.Name = "lịchSửToolStripMenuItem";
             this.lịchSửToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.lịchSửToolStripMenuItem.Text = "Lịch sử";
+            // 
+            // chiPhíToolStripMenuItem
+            // 
+            this.chiPhíToolStripMenuItem.Name = "chiPhíToolStripMenuItem";
+            this.chiPhíToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.chiPhíToolStripMenuItem.Text = "Chi phí";
             // 
             // button5
             // 
