@@ -56,6 +56,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.danhSáchĐơnHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -190,8 +191,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bánHàngToolStripMenuItem,
-            this.lịchSửToolStripMenuItem,
-            this.chiPhíToolStripMenuItem});
+            this.danhSáchĐơnHàngToolStripMenuItem,
+            this.chiPhíToolStripMenuItem,
+            this.lịchSửToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(722, 24);
@@ -306,6 +308,12 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Lịch sử giao dịch";
             // 
+            // danhSáchĐơnHàngToolStripMenuItem
+            // 
+            this.danhSáchĐơnHàngToolStripMenuItem.Name = "danhSáchĐơnHàngToolStripMenuItem";
+            this.danhSáchĐơnHàngToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.danhSáchĐơnHàngToolStripMenuItem.Text = "Danh sách đơn hàng";
+            // 
             // frm_Hethong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,5 +387,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchĐơnHàngToolStripMenuItem;
     }
 }
