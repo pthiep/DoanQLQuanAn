@@ -52,6 +52,12 @@
     <Compile Include="frm_DonHang.Designer.cs">
       <DependentUpon>frm_DonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DuyetDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DuyetDonHang.Designer.cs">
+      <DependentUpon>frm_DuyetDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_DonHang.resx">
       <DependentUpon>frm_DonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DuyetDonHang.resx">
+      <DependentUpon>frm_DuyetDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_KhachHang.resx">
       <DependentUpon>frm_KhachHang.cs</DependentUpon>
