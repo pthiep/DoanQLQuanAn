@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDsDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDsDonHang.Designer.cs">
+      <DependentUpon>frmDsDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDsDonHang.resx">
+      <DependentUpon>frmDsDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </EmbeddedResource>

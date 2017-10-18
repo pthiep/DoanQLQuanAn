@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2BF7A87D-4C75-4246-8D8C-5B7A5CE10B31}</ProjectGuid>
+    <ProjectGuid>{7DD87F2C-6649-4C51-BF84-2E6EAE802300}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Boquanquanly</RootNamespace>
-    <AssemblyName>Boquanquanly</AssemblyName>
+    <RootNamespace>Gioithieuvadathang</RootNamespace>
+    <AssemblyName>Gioithieuvadathang</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,62 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formNhanVien.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNhanVien.Designer.cs">
-      <DependentUpon>formNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmChiNhanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChiNhanh.Designer.cs">
-      <DependentUpon>frmChiNhanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmKhachHang.Designer.cs">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMonAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMonAn.Designer.cs">
-      <DependentUpon>frmMonAn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Dangnhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Dangnhap.Designer.cs">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Quanly.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Quanly.Designer.cs">
-      <DependentUpon>frm_Quanly.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formNhanVien.resx">
-      <DependentUpon>formNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChiNhanh.resx">
-      <DependentUpon>frmChiNhanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachHang.resx">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMonAn.resx">
-      <DependentUpon>frmMonAn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Dangnhap.resx">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Quanly.resx">
-      <DependentUpon>frm_Quanly.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
