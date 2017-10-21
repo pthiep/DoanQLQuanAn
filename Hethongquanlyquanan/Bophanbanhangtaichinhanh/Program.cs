@@ -17,6 +17,9 @@ namespace Bophanbanhangtaichinhanh
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_Hethong());
+
+            // Tui chỉ brand trươớc nha ok
+            // Ví dụ 2 dòng comment này là bà sưửa code save lạiái
         }
     }
 }
