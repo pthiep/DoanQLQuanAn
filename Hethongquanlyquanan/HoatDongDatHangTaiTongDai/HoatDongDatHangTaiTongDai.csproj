@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Donhang.cs" />
     <Compile Include="frm_DonHang.cs">
       <SubType>Form</SubType>
     </Compile>

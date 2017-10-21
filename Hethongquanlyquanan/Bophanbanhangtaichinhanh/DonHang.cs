@@ -8,11 +8,7 @@ namespace Bophanbanhangtaichinhanh
 {
     public class DonHang
     {
-        // lam dc k de xem new cai gi 
-        // tạo đổi tươợng là ở bên thêm vào dâatagridview mới tạo
-        // ơở đây mình thêm thuộc tính mấy cái biến cho nó thôi
-        // đon hàng có gì nhỉ :v ???
-        private string maDonHang; // Ctrl + r+e
+        private string maDonHang; 
         private string maMonAn;
         private string tenMonAn;
         private string gia;

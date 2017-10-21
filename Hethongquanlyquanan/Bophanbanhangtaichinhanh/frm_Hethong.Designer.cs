@@ -295,6 +295,7 @@
             this.dtg_DonHang.Name = "dtg_DonHang";
             this.dtg_DonHang.Size = new System.Drawing.Size(347, 248);
             this.dtg_DonHang.TabIndex = 19;
+            this.dtg_DonHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_DonHang_CellContentClick);
             // 
             // linkLabel1
             // 

@@ -29,15 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvDanhSachNhanVien = new System.Windows.Forms.DataGridView();
-            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuocChiNhanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btHuy = new System.Windows.Forms.Button();
             this.btLuu = new System.Windows.Forms.Button();
@@ -59,16 +51,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtg_DanhsachNV = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_DanhsachNV)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dgvDanhSachNhanVien);
+            this.groupBox2.Controls.Add(this.dtg_DanhsachNV);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 174);
             this.groupBox2.Name = "groupBox2";
@@ -76,79 +69,19 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách nhân viên";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // dgvDanhSachNhanVien
+            // cboGioiTinh
             // 
-            this.dgvDanhSachNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDanhSachNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maNhanVien,
-            this.tenNV,
-            this.DiaChi,
-            this.ngaySinh,
-            this.gioiTinh,
-            this.dienThoai,
-            this.thuocChiNhanh});
-            this.dgvDanhSachNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(3, 18);
-            this.dgvDanhSachNhanVien.Name = "dgvDanhSachNhanVien";
-            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(766, 271);
-            this.dgvDanhSachNhanVien.TabIndex = 0;
-            // 
-            // maNhanVien
-            // 
-            this.maNhanVien.DataPropertyName = "maNhanVien";
-            this.maNhanVien.HeaderText = "MaNV";
-            this.maNhanVien.Name = "maNhanVien";
-            // 
-            // tenNV
-            // 
-            this.tenNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenNV.DataPropertyName = "tenNV";
-            this.tenNV.HeaderText = "Tên nhân viên";
-            this.tenNV.Name = "tenNV";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // ngaySinh
-            // 
-            this.ngaySinh.DataPropertyName = "ngaySinh";
-            this.ngaySinh.HeaderText = "Ngày Sinh";
-            this.ngaySinh.Name = "ngaySinh";
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.DataPropertyName = "gioiTinh";
-            this.gioiTinh.HeaderText = "Giới Tính";
-            this.gioiTinh.Name = "gioiTinh";
-            // 
-            // dienThoai
-            // 
-            this.dienThoai.DataPropertyName = "dienThoai";
-            this.dienThoai.HeaderText = "SDT";
-            this.dienThoai.Name = "dienThoai";
-            // 
-            // thuocChiNhanh
-            // 
-            this.thuocChiNhanh.DataPropertyName = "thuocChiNhanh";
-            this.thuocChiNhanh.HeaderText = "Chi Nhánh";
-            this.thuocChiNhanh.Name = "thuocChiNhanh";
-            // 
-            // cbbGioiTinh
-            // 
-            this.cbbGioiTinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.Items.AddRange(new object[] {
+            this.cboGioiTinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.cboGioiTinh.FormattingEnabled = true;
+            this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(88, 67);
-            this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(100, 24);
-            this.cbbGioiTinh.TabIndex = 22;
+            this.cboGioiTinh.Location = new System.Drawing.Point(88, 67);
+            this.cboGioiTinh.Name = "cboGioiTinh";
+            this.cboGioiTinh.Size = new System.Drawing.Size(100, 24);
+            this.cboGioiTinh.TabIndex = 22;
             // 
             // dtpNgaySinh
             // 
@@ -353,7 +286,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cbbGioiTinh);
+            this.groupBox1.Controls.Add(this.cboGioiTinh);
             this.groupBox1.Controls.Add(this.dtpNgaySinh);
             this.groupBox1.Controls.Add(this.btHuy);
             this.groupBox1.Controls.Add(this.btLuu);
@@ -382,6 +315,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
+            // dtg_DanhsachNV
+            // 
+            this.dtg_DanhsachNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_DanhsachNV.Location = new System.Drawing.Point(7, 22);
+            this.dtg_DanhsachNV.Name = "dtg_DanhsachNV";
+            this.dtg_DanhsachNV.Size = new System.Drawing.Size(708, 150);
+            this.dtg_DanhsachNV.TabIndex = 0;
+            this.dtg_DanhsachNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_DanhsachNV_CellContentClick);
+            // 
             // formNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,10 +333,11 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "formNhanVien";
             this.Text = "formNhanVien";
+            this.Load += new System.EventHandler(this.formNhanVien_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_DanhsachNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,15 +345,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvDanhSachNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuocChiNhanh;
-        private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Button btHuy;
         private System.Windows.Forms.Button btLuu;
@@ -432,5 +367,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dtg_DanhsachNV;
     }
 }

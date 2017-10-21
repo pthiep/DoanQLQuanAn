@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DonHang.cs" />
+    <Compile Include="DSDonHang.cs" />
     <Compile Include="frmDsDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
