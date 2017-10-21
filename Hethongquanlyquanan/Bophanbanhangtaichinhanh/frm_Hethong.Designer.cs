@@ -54,7 +54,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtg_DonHang = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_DonHang)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -288,13 +288,13 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Tên:";
             // 
-            // dataGridView1
+            // dtg_DonHang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(363, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(347, 210);
-            this.dataGridView1.TabIndex = 19;
+            this.dtg_DonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_DonHang.Location = new System.Drawing.Point(363, 106);
+            this.dtg_DonHang.Name = "dtg_DonHang";
+            this.dtg_DonHang.Size = new System.Drawing.Size(347, 248);
+            this.dtg_DonHang.TabIndex = 19;
             // 
             // linkLabel1
             // 
@@ -312,7 +312,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 467);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtg_DonHang);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -343,7 +343,7 @@
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_DonHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,7 +377,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtg_DonHang;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
