@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dsNhanVien.cs" />
+    <Compile Include="NewControl\ChiNhanhCtrl.cs" />
+    <Compile Include="NewControl\NhanVienCtrl.cs" />
+    <Compile Include="NewModel\ChiNhanhMOD.cs" />
+    <Compile Include="NewModel\ConnectToSQL.cs" />
+    <Compile Include="NewModel\NhanVienMOD.cs" />
+    <Compile Include="NewObject\ChiNhanhOBJ.cs" />
     <Compile Include="NewObject\NhanVienOBJ.cs" />
     <Compile Include="ViewFrm\formNhanVien.cs">
       <SubType>Form</SubType>
@@ -127,9 +133,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewControl\" />
-    <Folder Include="NewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

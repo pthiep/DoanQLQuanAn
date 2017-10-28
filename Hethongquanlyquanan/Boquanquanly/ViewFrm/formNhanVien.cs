@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boquanquanly.NewControl;
 
 namespace Boquanquanly
 {
@@ -14,7 +15,7 @@ namespace Boquanquanly
     public partial class formNhanVien : Form
 
     {
-        BindingList<dsNhanVien> lstDsNV = new BindingList<dsNhanVien>();
+       
         public formNhanVien()
         {
             InitializeComponent();
@@ -30,20 +31,40 @@ namespace Boquanquanly
 
         }
 
+
+        NhanVienCtrl nvctrl = new NhanVienCtrl();
         private void formNhanVien_Load(object sender, EventArgs e)
         {
-            dsNhanVien DsNV = new dsNhanVien();
-            DsNV.MaNV = "NV1";
-            DsNV.TenNV = "Lê Thị Hồng";
-            DsNV.GioiTinh = "Nữ";
-            DsNV.DiaChiNV = "Nguyễn Văn Cừ Q1, HCM";
-            DsNV.SDT1 = "01226738123";
-            DsNV.ThuocChiNhanh = "CN1";
-            DsNV.NgaySinh = "07/08/1997";
-            DsNV.HsLuong = "x2";
+            DataTable dtNhanVien = new DataTable();
+            dtNhanVien = nvctrl.getData();
+            dtg_DanhsachNV.DataSource = dtNhanVien;
+            binding();
+        }
 
-            lstDsNV.Add(DsNV);
-            dtg_DanhsachNV.DataSource = lstDsNV;
+        void binding() {
+            txtMaNV.DataBindings.Clear();
+            txtMaNV.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "MaNhanVien");
+
+            txtTenNV.DataBindings.Clear();
+            txtTenNV.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "TenNV");
+
+            txtDiaChi.DataBindings.Clear();
+            txtDiaChi.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "diaChi");
+
+            dtpNgaySinh.DataBindings.Clear();
+            dtpNgaySinh.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "ngaySinh");
+
+            txtSDT.DataBindings.Clear();
+            txtSDT.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "dienThoai");
+
+            cboGioiTinh.DataBindings.Clear();
+            cboGioiTinh.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "gioiTinh");
+
+            txtHeSoLuong.DataBindings.Clear();
+            txtHeSoLuong.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "hesoLuong");
+
+            txtThuocChiNhanh.DataBindings.Clear();
+            txtThuocChiNhanh.DataBindings.Add("Text", dtg_DanhsachNV.DataSource, "thuocChiNhanh");
         }
     }
 }
