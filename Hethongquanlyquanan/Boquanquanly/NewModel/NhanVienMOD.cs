@@ -5,32 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using QuanLyChung.Object;
+using Boquanquanly.NewObject;
 
-namespace QuanLyChung.Model
+namespace Boquanquanly.NewModel
 {
     class NhanVienMOD
     {
-        SqlCommand cmd = new SqlCommand();
         ConnectToSQL con = new ConnectToSQL();
+        SqlCommand cmd = new SqlCommand();
 
-        public DataTable GetData() 
-        {
+        public DataTable GetData() {
             DataTable dt = new DataTable();
 
-            cmd.CommandText = "select * from HT_NhanVien";
+            cmd.CommandText = "Select * From HT_NhanVien";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
 
-            try
-            {
+            try {
                 con.OpenConn();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 con.CloseConn();
             }
-            catch (Exception ex)
-            {
+            catch(Exception ex){
                 string mex = ex.Message;
                 cmd.Dispose();
                 con.CloseConn();
@@ -39,56 +36,50 @@ namespace QuanLyChung.Model
             return dt;
         }
 
-        public bool addData(NhanVienOBJ nv)
-        {
-            cmd.CommandText = "Insert into HT_NhanVien values ('" + nv.Ma + "','" + nv.Ten + "'," + nv.Diachi + "','" + nv.Sodienthoai + "','"+nv.Ngaysinh+"','" + nv.Matkhau +"," +nv.Hesoluong+"')";
+        public bool AddData(NhanVienOBJ nvOBJ) {
+            cmd.CommandText = "Insert into HT_NhanVien value('" + nvOBJ.MaNV + "','" + nvOBJ.TenNV + "','"+nvOBJ.NgaySinh+"','"+nvOBJ.GioiTinh+"','"+nvOBJ.DiaChi+"','"+nvOBJ.SoDienThoai+"','"+ nvOBJ.MatKhau+"','"+nvOBJ.ThuocChiNhanh+"','"+nvOBJ.HsLuong+")";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
-
-            try 
-            {
+            try {
                 con.OpenConn();
                 cmd.ExecuteNonQuery();
                 con.CloseConn();
             }
-            catch(Exception ex)
-            {
+            catch(Exception ex){
                 string mex = ex.Message;
                 cmd.Dispose();
                 con.CloseConn();
             }
+            
             return false;
         }
 
-        public bool UpDData(NhanVienOBJ nv)
-        {
-            cmd.CommandText = "Update HT_NhanVien set tenNV = '" +nv.Ten+"', set ngaySinh = '"+nv.Ngaysinh+"', set diaChi = '"+nv.Diachi+"', set gioiTinh = '"+nv.Gioitinh+"', set dienThoai = '"+nv.Sodienthoai+"', set hesoLuong = "+nv.Hesoluong+"'Where maNhanVien = '"+nv.Ma+"'";
+
+        public bool UpdateData(NhanVienOBJ nvOBJ) {
+            cmd.CommandText = "Update HT_NhanVien set tenNV = '"+nvOBJ.TenNV+"', set gioiTinh = '"+nvOBJ.GioiTinh+"', set ngaySinh = '"+nvOBJ.NgaySinh+"', set diaChi = '"+nvOBJ.DiaChi+"', set dienThoai = '"+nvOBJ.SoDienThoai+"', set hesoLuong = '"+nvOBJ.HsLuong+"', set matkhau = '"+nvOBJ.MatKhau+"', set thuocChiNhanh '"+nvOBJ.ThuocChiNhanh+"' Where maNhanVien = '"+nvOBJ.MaNV+"'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
 
-            try
-            {
+            try {
                 con.OpenConn();
                 cmd.ExecuteNonQuery();
                 con.CloseConn();
             }
-            catch(Exception ex)
-            {
+            catch(Exception ex){
                 string mex = ex.Message;
                 cmd.Dispose();
                 con.CloseConn();
             }
+
             return false;
         }
 
-        public bool delData(string ma)
-        {
-            cmd.CommandText = "delete HT_NhanVien where maNhanVien = '"+ma+"'";
+        public bool DeleteData(string ma) {
+            cmd.CommandText = "Deleta HT_NhanVien Where maNhanVien = '"+ma+"'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
 
-            try 
-            {
+            try {
                 con.OpenConn();
                 cmd.ExecuteNonQuery();
                 con.CloseConn();
@@ -99,7 +90,7 @@ namespace QuanLyChung.Model
                 cmd.Dispose();
                 con.CloseConn();
             }
-
+           
             return false;
         }
     }

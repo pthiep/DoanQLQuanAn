@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Boquanquanly</RootNamespace>
     <AssemblyName>Boquanquanly</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,60 +48,67 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dsNhanVien.cs" />
-    <Compile Include="formNhanVien.cs">
+    <Compile Include="NewControl\ChiNhanhCtrl.cs" />
+    <Compile Include="NewControl\NhanVienCtrl.cs" />
+    <Compile Include="NewModel\ChiNhanhMOD.cs" />
+    <Compile Include="NewModel\ConnectToSQL.cs" />
+    <Compile Include="NewModel\NhanVienMOD.cs" />
+    <Compile Include="NewObject\ChiNhanhOBJ.cs" />
+    <Compile Include="NewObject\NhanVienOBJ.cs" />
+    <Compile Include="ViewFrm\formNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNhanVien.Designer.cs">
+    <Compile Include="ViewFrm\formNhanVien.Designer.cs">
       <DependentUpon>formNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChiNhanh.cs">
+    <Compile Include="ViewFrm\frmChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChiNhanh.Designer.cs">
+    <Compile Include="ViewFrm\frmChiNhanh.Designer.cs">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKhachHang.cs">
+    <Compile Include="ViewFrm\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKhachHang.Designer.cs">
+    <Compile Include="ViewFrm\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMonAn.cs">
+    <Compile Include="ViewFrm\frmMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMonAn.Designer.cs">
+    <Compile Include="ViewFrm\frmMonAn.Designer.cs">
       <DependentUpon>frmMonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Dangnhap.cs">
+    <Compile Include="ViewFrm\frm_Dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Dangnhap.Designer.cs">
+    <Compile Include="ViewFrm\frm_Dangnhap.Designer.cs">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Quanly.cs">
+    <Compile Include="ViewFrm\frm_Quanly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Quanly.Designer.cs">
+    <Compile Include="ViewFrm\frm_Quanly.Designer.cs">
       <DependentUpon>frm_Quanly.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formNhanVien.resx">
+    <EmbeddedResource Include="ViewFrm\formNhanVien.resx">
       <DependentUpon>formNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChiNhanh.resx">
+    <EmbeddedResource Include="ViewFrm\frmChiNhanh.resx">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachHang.resx">
+    <EmbeddedResource Include="ViewFrm\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMonAn.resx">
+    <EmbeddedResource Include="ViewFrm\frmMonAn.resx">
       <DependentUpon>frmMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Dangnhap.resx">
+    <EmbeddedResource Include="ViewFrm\frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Quanly.resx">
+    <EmbeddedResource Include="ViewFrm\frm_Quanly.resx">
       <DependentUpon>frm_Quanly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -125,5 +133,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
