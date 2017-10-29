@@ -207,6 +207,7 @@
             this.Controls.Add(this.label4);
             this.Name = "frm_KhachHang";
             this.Text = "Khách hàng";
+            this.Load += new System.EventHandler(this.frm_KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

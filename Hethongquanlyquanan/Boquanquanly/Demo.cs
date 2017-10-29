@@ -7,25 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UICustom;
+using MetroFramework;
 
 namespace Boquanquanly
 {
-    public partial class Frm_Dangnhap : Form
+    public partial class frmDN : MetroFramework.Forms.MetroForm
     {
-        
-        public Frm_Dangnhap()
+        public frmDN()
         {
             InitializeComponent();
         }
 
-        private void Btn_Dangnhap_Click(object sender, EventArgs e)
+        private void Demo_Load(object sender, EventArgs e)
         {
-            frm_Quanly frm_QL = new frm_Quanly();
-            frm_QL.Show();
+
         }
 
-        private void Btn_Quenmatkhau_Click(object sender, EventArgs e)
+        private void metroTile1_Click(object sender, EventArgs e)
         {
 
         }

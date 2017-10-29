@@ -1,6 +1,6 @@
 ﻿namespace Boquanquanly
 {
-    partial class frm_Dangnhap
+    partial class Frm_Dangnhap
     {
         /// <summary>
         /// Required designer variable.
@@ -74,7 +74,7 @@
             this.btn_Dangnhap.TabIndex = 4;
             this.btn_Dangnhap.Text = "Đăng nhập";
             this.btn_Dangnhap.UseVisualStyleBackColor = true;
-            this.btn_Dangnhap.Click += new System.EventHandler(this.btn_Dangnhap_Click);
+            this.btn_Dangnhap.Click += new System.EventHandler(this.Btn_Dangnhap_Click);
             // 
             // txtB_Tendangnhap
             // 
@@ -98,6 +98,7 @@
             this.btn_Quenmatkhau.TabIndex = 7;
             this.btn_Quenmatkhau.Text = "Quên mật khẩu";
             this.btn_Quenmatkhau.UseVisualStyleBackColor = true;
+            this.btn_Quenmatkhau.Click += new System.EventHandler(this.Btn_Quenmatkhau_Click);
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Thuộc Hệ thống quản lý quán ăn ABC";
             // 
-            // frm_Dangnhap
+            // Frm_Dangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +122,7 @@
             this.Controls.Add(this.lb_Matkhau);
             this.Controls.Add(this.lb_Dangnhap);
             this.Controls.Add(this.lb_BPQL);
-            this.Name = "frm_Dangnhap";
+            this.Name = "Frm_Dangnhap";
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();

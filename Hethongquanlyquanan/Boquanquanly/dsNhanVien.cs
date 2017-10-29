@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Boquanquanly
 {
-    public class dsNhanVien
+    public class DsNhanVien
     {
         private string maNV;
         private string tenNV;

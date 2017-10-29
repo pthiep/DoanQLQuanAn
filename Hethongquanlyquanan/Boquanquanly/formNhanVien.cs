@@ -14,7 +14,7 @@ namespace Boquanquanly
     public partial class formNhanVien : Form
 
     {
-        BindingList<dsNhanVien> lstDsNV = new BindingList<dsNhanVien>();
+        BindingList<DsNhanVien> lstDsNV = new BindingList<DsNhanVien>();
         public formNhanVien()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Boquanquanly
 
         private void formNhanVien_Load(object sender, EventArgs e)
         {
-            dsNhanVien DsNV = new dsNhanVien();
+            DsNhanVien DsNV = new DsNhanVien();
             DsNV.MaNV = "NV1";
             DsNV.TenNV = "Lê Thị Hồng";
             DsNV.GioiTinh = "Nữ";
