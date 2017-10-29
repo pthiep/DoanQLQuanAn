@@ -52,9 +52,9 @@ namespace Boquanquanly.NewObject
             set { SoLuongBan = value; }
         }
 
-        ChiNhanhOBJ(){}
+        public ChiNhanhOBJ(){}
 
-        ChiNhanhOBJ(ChiNhanhOBJ  cn) {
+        public ChiNhanhOBJ(ChiNhanhOBJ  cn) {
             this.MaChiNhanh = cn.MaChiNhanh;
             this.TenChiNhanh = cn.TenChiNhanh;
             this.DiaChi = cn.DiaChi;

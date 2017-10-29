@@ -66,9 +66,9 @@ namespace Boquanquanly.NewObject
             set { hsLuong = value; }
         }
 
-        NhanVienOBJ() { }
+        public NhanVienOBJ() { }
 
-        NhanVienOBJ(NhanVienOBJ nv) {
+        public NhanVienOBJ(NhanVienOBJ nv) {
             this.maNV = nv.maNV;
             this.tenNV = nv.tenNV;
             this.ngaySinh = nv.ngaySinh;
@@ -80,7 +80,7 @@ namespace Boquanquanly.NewObject
             this.thuocChiNhanh = nv.thuocChiNhanh;
         }
 
-        NhanVienOBJ(string ma, string ten, string gioitinh, string diachi, string sdt, string matkhau, float heso, string ngaysinh, string thuocChiNhanh) {
+        public NhanVienOBJ(string ma, string ten, string gioitinh, string diachi, string sdt, string matkhau, float heso, string ngaysinh, string thuocChiNhanh) {
             this.maNV = ma;
             this.tenNV = ten;
             this.gioiTinh = gioitinh;

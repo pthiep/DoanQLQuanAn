@@ -23,7 +23,7 @@ namespace Boquanquanly.NewModel
 
             try {
                 conn.OpenConn();
-                SqlDataAdapter sda = new SqlDataAdapter();
+                SqlDataAdapter sda = new SqlDataAdapter(cm);
                 sda.Fill(dt);
                 conn.CloseConn();
             }

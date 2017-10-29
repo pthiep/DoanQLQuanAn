@@ -45,6 +45,12 @@
             this.txtMaCN = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_ChiNhanh = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.maChiNhanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenChiNhanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,12 +58,6 @@
             this.soLuongBanAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhanVienQuanLi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayThanhLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiNhanh)).BeginInit();
@@ -232,41 +232,6 @@
             this.dgv_ChiNhanh.Size = new System.Drawing.Size(711, 165);
             this.dgv_ChiNhanh.TabIndex = 0;
             // 
-            // maChiNhanh
-            // 
-            this.maChiNhanh.HeaderText = "Mã CN";
-            this.maChiNhanh.Name = "maChiNhanh";
-            // 
-            // tenChiNhanh
-            // 
-            this.tenChiNhanh.HeaderText = "Tên CN";
-            this.tenChiNhanh.Name = "tenChiNhanh";
-            // 
-            // diaChi
-            // 
-            this.diaChi.HeaderText = "Địa chỉ";
-            this.diaChi.Name = "diaChi";
-            // 
-            // soDienThoai
-            // 
-            this.soDienThoai.HeaderText = "Số điện thoại";
-            this.soDienThoai.Name = "soDienThoai";
-            // 
-            // soLuongBanAn
-            // 
-            this.soLuongBanAn.HeaderText = "Số lượng bàn";
-            this.soLuongBanAn.Name = "soLuongBanAn";
-            // 
-            // nhanVienQuanLi
-            // 
-            this.nhanVienQuanLi.HeaderText = "Nhân viên QL";
-            this.nhanVienQuanLi.Name = "nhanVienQuanLi";
-            // 
-            // ngayThanhLap
-            // 
-            this.ngayThanhLap.HeaderText = "Ngày thành lập";
-            this.ngayThanhLap.Name = "ngayThanhLap";
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -334,6 +299,48 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // maChiNhanh
+            // 
+            this.maChiNhanh.DataPropertyName = "maChiNhanh";
+            this.maChiNhanh.HeaderText = "Mã CN";
+            this.maChiNhanh.Name = "maChiNhanh";
+            // 
+            // tenChiNhanh
+            // 
+            this.tenChiNhanh.DataPropertyName = "tenChiNhanh";
+            this.tenChiNhanh.HeaderText = "Tên CN";
+            this.tenChiNhanh.Name = "tenChiNhanh";
+            // 
+            // diaChi
+            // 
+            this.diaChi.DataPropertyName = "diaChi";
+            this.diaChi.HeaderText = "Địa chỉ";
+            this.diaChi.Name = "diaChi";
+            // 
+            // soDienThoai
+            // 
+            this.soDienThoai.DataPropertyName = "soDienThoai";
+            this.soDienThoai.HeaderText = "Số điện thoại";
+            this.soDienThoai.Name = "soDienThoai";
+            // 
+            // soLuongBanAn
+            // 
+            this.soLuongBanAn.DataPropertyName = "soLuongBanAn";
+            this.soLuongBanAn.HeaderText = "Số lượng bàn";
+            this.soLuongBanAn.Name = "soLuongBanAn";
+            // 
+            // nhanVienQuanLi
+            // 
+            this.nhanVienQuanLi.DataPropertyName = "nhanVienQuanLi";
+            this.nhanVienQuanLi.HeaderText = "Nhân viên QL";
+            this.nhanVienQuanLi.Name = "nhanVienQuanLi";
+            // 
+            // ngayThanhLap
+            // 
+            this.ngayThanhLap.DataPropertyName = "ngayThanhLap";
+            this.ngayThanhLap.HeaderText = "Ngày thành lập";
+            this.ngayThanhLap.Name = "ngayThanhLap";
             // 
             // frmChiNhanh
             // 

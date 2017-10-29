@@ -37,7 +37,7 @@ namespace Boquanquanly.NewModel
         }
 
         public bool AddData(NhanVienOBJ nvOBJ) {
-            cmd.CommandText = "Insert into HT_NhanVien value('" + nvOBJ.MaNV + "','" + nvOBJ.TenNV + "','" + nvOBJ.NgaySinh + "''" + nvOBJ.GioiTinh + "''" + nvOBJ.SoDienThoai + "''" + nvOBJ.DiaChi + "''" + nvOBJ.MatKhau + "''" + nvOBJ.HsLuong + "','"+nvOBJ.ThuocChiNhanh+")";
+            cmd.CommandText = "Insert into HT_NhanVien value('" + nvOBJ.MaNV + "','" + nvOBJ.TenNV + "','"+nvOBJ.NgaySinh+"','"+nvOBJ.GioiTinh+"','"+nvOBJ.DiaChi+"','"+nvOBJ.SoDienThoai+"','"+ nvOBJ.MatKhau+"','"+nvOBJ.ThuocChiNhanh+"','"+nvOBJ.HsLuong+")";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try {

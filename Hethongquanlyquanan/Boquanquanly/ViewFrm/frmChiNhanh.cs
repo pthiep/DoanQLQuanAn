@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 using Boquanquanly.NewControl;
 
@@ -16,6 +15,7 @@ namespace Boquanquanly
     public partial class frmChiNhanh : Form
     {
         ChiNhanhCtrl cnctrl = new ChiNhanhCtrl();
+
         public frmChiNhanh()
         {
             InitializeComponent();
@@ -31,19 +31,19 @@ namespace Boquanquanly
 
         void binding() {
             txtMaCN.DataBindings.Clear();
-            txtMaCN.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "maChiNhanh");
+            txtMaCN.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "MaChiNhanh");
             txtTenCN.DataBindings.Clear();
-            txtTenCN.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "tenChiNhanh");
+            txtTenCN.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "TenChiNhanh");
             txtMaCN.DataBindings.Clear();
-            txtDiaChi.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "diaChi");
+            txtDiaChi.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "DiaChi");
             txtDiaChi.DataBindings.Clear();
-            txtSDT.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "soDienThoai");
+            txtSDT.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "SoDienThoai");
             dtpNTL.DataBindings.Clear();
-            dtpNTL.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "ngayThanhLap");
+            dtpNTL.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "NgayThanhLap");
             txtNVQL.DataBindings.Clear();
-            txtNVQL.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "nhanVienQuanLi");
+            txtNVQL.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "NhanVienQuanLi");
             txtSLBA.DataBindings.Clear();
-            txtSLBA.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "soLuongBanAn");
+            txtSLBA.DataBindings.Add("Text", dgv_ChiNhanh.DataSource, "SoLuongBanAn");
         }
     }
 }
