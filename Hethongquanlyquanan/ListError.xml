@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListError>
+  
+  <Error id ="1">
+    <Notice>Thông báo</Notice>
+    <Content>Không thể kết nối đến dữ liệu</Content>
+  </Error>
+  
+</ListError>
