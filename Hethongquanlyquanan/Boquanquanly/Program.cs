@@ -16,7 +16,7 @@ namespace Boquanquanly
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formNhanVien());
+            Application.Run(new frm_Dangnhap());
         }
     }
 }
