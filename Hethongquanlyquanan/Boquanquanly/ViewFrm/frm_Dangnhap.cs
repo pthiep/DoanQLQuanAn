@@ -11,7 +11,7 @@ using MetroFramework.Forms;
 
 namespace Boquanquanly
 {
-    public partial class frm_Dangnhap : MetroForm;
+    public partial class frm_Dangnhap : MetroForm
     {
         public frm_Dangnhap()
         {

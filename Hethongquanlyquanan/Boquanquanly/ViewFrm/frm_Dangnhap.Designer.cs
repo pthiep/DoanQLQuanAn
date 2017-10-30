@@ -69,7 +69,6 @@
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.Size = new System.Drawing.Size(135, 23);
             this.metroTextBox1.TabIndex = 11;
-            this.metroTextBox1.Text = "metroTextBox1";
             // 
             // metroTextBox2
             // 
@@ -77,7 +76,6 @@
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.Size = new System.Drawing.Size(135, 23);
             this.metroTextBox2.TabIndex = 12;
-            this.metroTextBox2.Text = "metroTextBox2";
             // 
             // metroButton1
             // 
