@@ -78,7 +78,6 @@
             this.txtBox_Password.PasswordChar = '*';
             this.txtBox_Password.Size = new System.Drawing.Size(135, 23);
             this.txtBox_Password.TabIndex = 12;
-            this.txtBox_Password.Click += new System.EventHandler(this.txtBox_Password_Click);
             this.txtBox_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Password_KeyPress);
             // 
             // metroButton1

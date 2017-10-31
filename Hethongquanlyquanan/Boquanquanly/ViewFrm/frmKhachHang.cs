@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boquanquanly.DAO;
 
 namespace Boquanquanly
 {
@@ -15,6 +16,11 @@ namespace Boquanquanly
         public frmKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

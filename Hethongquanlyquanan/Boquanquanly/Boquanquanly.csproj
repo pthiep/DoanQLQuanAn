@@ -60,7 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="dsNhanVien.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="NewControl\ChiNhanhCtrl.cs" />
     <Compile Include="NewControl\NhanVienCtrl.cs" />
     <Compile Include="NewModel\ChiNhanhMOD.cs" />
