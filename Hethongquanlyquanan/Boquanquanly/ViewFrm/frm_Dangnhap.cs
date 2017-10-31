@@ -17,7 +17,7 @@ namespace Boquanquanly
 
         public NewObject.DTUser currentUser;
         public SqlManager sql;
-        string strconn = "Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=Accout;Integrated Security=True";
+        string strconn = @"Data Source=DESKTOP-HF3Q9MR\SQLEXPRESS;Initial Catalog=QLNH;Integrated Security=True";
 
         public frm_Dangnhap()
         {
@@ -46,6 +46,7 @@ namespace Boquanquanly
             if (sql.Connect(strconn))
             {
                 string id = "";
+               
                 DataTable dt = new DataTable();
                 //MessageBox.Show("SELECT * FROM tbl_User WHERE user_name ='" + username + "' and pass='" + password + "'");
                 dt = sql.Command("SELECT * FROM tbl_User WHERE user_name ='" + username + "' and pass='" + password + "'");
@@ -63,15 +64,43 @@ namespace Boquanquanly
                 return "";
             }
         }
+        public string getName(string username, string password)
+        {
+
+            if (sql.Connect(strconn))
+            {
+                string name = "";
+
+                DataTable dt = new DataTable();
+                //MessageBox.Show("SELECT * FROM tbl_User WHERE user_name ='" + username + "' and pass='" + password + "'");
+                dt = sql.Command("SELECT * FROM tbl_User WHERE user_name ='" + username + "' and pass='" + password + "'");
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        name = dr["name_user"].ToString();
+                    }
+                }
+                return name;
+            }
+            else
+            {
+                return "";
+            }
+        }
 
         void dangNhap()
         {
             NewObject.DTUser.ID_USER = getID(txtBox_Username.Text, txtBox_Password.Text);
+            NewObject.DTUser.NAME_USER = getName(txtBox_Username.Text, txtBox_Password.Text);
+            MessageBox.Show("Chào mừng " + NewObject.DTUser.NAME_USER);
             if (NewObject.DTUser.ID_USER != "")
             {
                 frm_Quanly frmQL = new frm_Quanly();
                 frmQL.Show();
                 this.Hide();
+
+   
             }
             else
             {
@@ -94,6 +123,11 @@ namespace Boquanquanly
             {
                 dangNhap();
             }
+        }
+
+        private void txtBox_Password_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
