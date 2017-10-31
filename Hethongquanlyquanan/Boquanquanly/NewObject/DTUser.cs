@@ -9,5 +9,6 @@ namespace Boquanquanly.NewObject
     public class DTUser
     {
         public static string ID_USER = "";
+        public static string NAME_USER = "";
     }
 }
