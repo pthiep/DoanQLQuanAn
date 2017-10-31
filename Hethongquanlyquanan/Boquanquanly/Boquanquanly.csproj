@@ -42,6 +42,10 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="SQLManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SQLManager\bin\Debug\SQLManager.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -63,6 +67,7 @@
     <Compile Include="NewModel\ConnectToSQL.cs" />
     <Compile Include="NewModel\NhanVienMOD.cs" />
     <Compile Include="NewObject\ChiNhanhOBJ.cs" />
+    <Compile Include="NewObject\DTUser.cs" />
     <Compile Include="NewObject\NhanVienOBJ.cs" />
     <Compile Include="ViewFrm\formNhanVien.cs">
       <SubType>Form</SubType>
