@@ -25,7 +25,7 @@ namespace Boquanquanly
 
         private void frm_Dangnhap_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(AccountDAO.Instance.getParamater().ToString());
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

@@ -78,9 +78,17 @@ namespace Boquanquanly.DAO
                             i++;
                         }
                     }
-                }
 
-                data = command.ExecuteNonQuery();
+                    data = command.ExecuteNonQuery();
+                }
+                else
+                {
+                    SqlParameter retval = new SqlParameter("@ReturnValue", System.Data.SqlDbType.Int);
+                    retval.Direction = ParameterDirection.ReturnValue;
+                    command.Parameters.Add(retval);
+                    command.ExecuteNonQuery();
+                    data = (int)command.Parameters["@ReturnValue"].Value;
+                }
 
                 connection.Close();
             }

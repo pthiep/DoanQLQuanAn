@@ -101,5 +101,9 @@
   <ItemGroup>
     <None Include="Resources\873799f7b38dbeefc32b8bf59cff541c_400x400.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\" />
+    <Folder Include="DTO\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

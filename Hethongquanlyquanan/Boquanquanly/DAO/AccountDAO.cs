@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Boquanquanly.DTO;
+using System.Data.SqlClient;
 
 namespace Boquanquanly.DAO
 {
@@ -24,8 +25,8 @@ namespace Boquanquanly.DAO
 
         public bool Login(string userName, string passWord)
         {
-            string query = "SELECT * FROM tbl_User WHERE user_name = N'" + userName + "' AND pass = N'" + passWord + "' ";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            string query = "exec usp_Login @userName , @passWord";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
             
             if (result.Rows.Count > 0)
             {
@@ -36,6 +37,14 @@ namespace Boquanquanly.DAO
             {
                 return false;
             }
+        }
+
+        public int getParamater()
+        {
+            string query = "DECLARE	@return_value int EXEC @return_value = [dbo].[usp_demo] SELECT @return_value";
+            //string query = "DECLARE	@return_value int EXEC @return_value = [dbo].[usp_demo] SELECT EXEC @return_value = [dbo].[usp_demo]";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return (int)result.Rows[0].ItemArray[0];
         }
     }
 }
