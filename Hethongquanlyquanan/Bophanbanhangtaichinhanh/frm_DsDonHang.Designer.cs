@@ -1,6 +1,6 @@
 ﻿namespace Bophanbanhangtaichinhanh
 {
-    partial class frmDonHang
+    partial class frm_DsDonHang
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.label8);
@@ -220,7 +220,7 @@
             // 
             // gbo_DSDonHang
             // 
-            this.gbo_DSDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbo_DSDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbo_DSDonHang.Controls.Add(this.dtg_DSDonHang);
             this.gbo_DSDonHang.Location = new System.Drawing.Point(13, 283);
@@ -229,7 +229,7 @@
             this.gbo_DSDonHang.TabIndex = 1;
             this.gbo_DSDonHang.TabStop = false;
             this.gbo_DSDonHang.Text = "Danh sách đơn hàng";
-            this.gbo_DSDonHang.Enter += new System.EventHandler(this.groupBox2_Enter);
+            //this.gbo_DSDonHang.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dtg_DSDonHang
             // 
@@ -239,12 +239,12 @@
             this.dtg_DSDonHang.Name = "dtg_DSDonHang";
             this.dtg_DSDonHang.Size = new System.Drawing.Size(705, 182);
             this.dtg_DSDonHang.TabIndex = 0;
-            this.dtg_DSDonHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // this.dtg_DSDonHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -310,9 +310,9 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+
             // 
-            // frmDonHang
+            // frm_DsDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -320,9 +320,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbo_DSDonHang);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmDonHang";
-            this.Text = "frmDonHang";
-            this.Load += new System.EventHandler(this.frmDonHang_Load);
+            this.Name = "frm_DsDonHang";
+            this.Text = "frm_DsDonHang";
+            this.Load += new System.EventHandler(this.frm_DsDonHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbo_DSDonHang.ResumeLayout(false);
@@ -359,6 +359,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label8;
-
     }
 }
