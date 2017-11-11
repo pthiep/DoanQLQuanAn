@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Forms;
 
 namespace Bophanbanhangtaichinhanh
 {
-    public partial class frm_Dangnhap : MetroForm
+    public partial class frm_DonHang : Form
     {
-        public frm_Dangnhap()
+        public frm_DonHang()
         {
             InitializeComponent();
         }
 
-        private void frm_Dangnhap_Load(object sender, EventArgs e)
+        private void xacNhan()
+        {
+
+        }
+        private void frm_DonHang_Load(object sender, EventArgs e)
         {
 
         }

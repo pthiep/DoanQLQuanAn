@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Donhang.cs" />
+    <Compile Include="DTO\DonHang.cs" />
+    <Compile Include="DTO\DuyetDonHang.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\QuanLy.cs" />
     <Compile Include="frm_DonHang.cs">
       <SubType>Form</SubType>
     </Compile>

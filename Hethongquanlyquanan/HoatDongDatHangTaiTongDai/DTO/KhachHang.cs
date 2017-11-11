@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bophanbanhangtaichinhanh
+namespace HoatDongDatHangTaiTongDai.DTO
 {
-    public class DSDonHang
+    class KhachHang
     {
         private string maKhachHang;
-        private string KhachHang;
+        private string tenKhachHang;
         private string Sdt;
         private string diaChi;
-        private string nvLapDon;
-        private string dsMonAn;
-        private string tongGia;
-
         public string MaKhachHang
         {
             get
@@ -29,16 +25,16 @@ namespace Bophanbanhangtaichinhanh
             }
         }
 
-        public string KhachHang1
+        public string TenKhachHang1
         {
             get
             {
-                return KhachHang;
+                return tenKhachHang;
             }
 
             set
             {
-                KhachHang = value;
+                tenKhachHang = value;
             }
         }
 
@@ -67,44 +63,6 @@ namespace Bophanbanhangtaichinhanh
                 diaChi = value;
             }
         }
-
-        public string NvLapDon
-        {
-            get
-            {
-                return nvLapDon;
-            }
-
-            set
-            {
-                nvLapDon = value;
-            }
-        }
-
-        public string DsMonAn
-        {
-            get
-            {
-                return dsMonAn;
-            }
-
-            set
-            {
-                dsMonAn = value;
-            }
-        }
-
-        public string TongGia
-        {
-            get
-            {
-                return tongGia;
-            }
-
-            set
-            {
-                tongGia = value;
-            }
-        }
     }
+}
 }
