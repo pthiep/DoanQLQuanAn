@@ -41,10 +41,5 @@ namespace HoatDongDatHangTaiTongDai
         {
 
         }
-
-        private void frm_KhachHang_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

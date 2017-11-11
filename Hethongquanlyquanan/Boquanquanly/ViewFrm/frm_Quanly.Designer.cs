@@ -191,8 +191,8 @@ namespace Boquanquanly
             this.metroButton1.Location = new System.Drawing.Point(0, 0);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(207, 50);
-            this.metroButton1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.metroButton1.UseVisualStyleBackColor = true;
+            //this.metroButton1.ForeColor = System.Drawing.Color.CornflowerBlue;
+//            this.metroButton1.UseVisualStyleBackColor = true;
             
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "metroButton1 >";

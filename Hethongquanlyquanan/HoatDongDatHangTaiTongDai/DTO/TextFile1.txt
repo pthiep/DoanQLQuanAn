@@ -1,5 +1,1 @@
-﻿Danh sach cac lop:
-- DonHang
-DuyetDonHang
-KhachHang
-QuanLy
+﻿

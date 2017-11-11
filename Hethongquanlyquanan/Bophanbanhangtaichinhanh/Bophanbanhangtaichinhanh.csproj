@@ -33,6 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,25 +56,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DonHang.cs" />
-    <Compile Include="DSDonHang.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDonHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDonHang.Designer.cs">
-      <DependentUpon>frmDonHang.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DTO\DSDonHang.cs" />
+    <Compile Include="DTO\DonHang.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="frm_Dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Dangnhap.Designer.cs">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DonHang.Designer.cs">
+      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DsDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DsDonHang.Designer.cs">
+      <DependentUpon>frm_DsDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Hethong.cs">
       <SubType>Form</SubType>
@@ -72,13 +84,28 @@
     <Compile Include="frm_Hethong.Designer.cs">
       <DependentUpon>frm_Hethong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HoaDon.Designer.cs">
+      <DependentUpon>frm_HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_DonHang.resx">
+      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DsDonHang.resx">
+      <DependentUpon>frm_DsDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Hethong.resx">
       <DependentUpon>frm_Hethong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HoaDon.resx">
+      <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +117,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,6 +138,7 @@
   <ItemGroup>
     <Content Include="DAO\TextFile1.txt" />
     <Content Include="DTO\TextFile1.txt" />
+    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
