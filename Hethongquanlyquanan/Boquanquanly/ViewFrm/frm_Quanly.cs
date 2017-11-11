@@ -7,23 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Boquanquanly.ViewFrm;
+using MetroFramework.Forms;
 
 namespace Boquanquanly
 {
-    public partial class frm_Quanly : Form
+    public partial class frm_Quanly : MetroForm
     {
+
         public frm_Quanly()
         {
             InitializeComponent();
+            
         }
 
         private void frm_Quanly_Load(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel2.Visible = false;
-            panel3.Visible = false;
-            panel4.Visible = false;
-            panel5.Visible = true;
+            
+            if (!metroPanel1.Controls.Contains(UserControl1.Instance))
+            {
+                metroPanel1.Controls.Add(UserControl1.Instance);
+                UserControl1.Instance.Dock = DockStyle.Fill;
+                UserControl1.Instance.BringToFront();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -47,6 +53,11 @@ namespace Boquanquanly
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
         {
 
         }

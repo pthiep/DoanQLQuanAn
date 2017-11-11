@@ -48,11 +48,17 @@
   <ItemGroup>
     <Compile Include="DonHang.cs" />
     <Compile Include="DSDonHang.cs" />
-    <Compile Include="frmDsDonHang.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDsDonHang.Designer.cs">
-      <DependentUpon>frmDsDonHang.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonHang.Designer.cs">
+      <DependentUpon>frmDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Dangnhap.cs">
       <SubType>Form</SubType>
@@ -68,9 +74,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDsDonHang.resx">
-      <DependentUpon>frmDsDonHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
