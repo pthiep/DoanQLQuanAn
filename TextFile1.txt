@@ -1,3 +1,0 @@
-﻿Danh sách Class:
-1. danh Mục Món ăn ( MaMA, tenmonan, dongia)
-2. Đặt hàng 

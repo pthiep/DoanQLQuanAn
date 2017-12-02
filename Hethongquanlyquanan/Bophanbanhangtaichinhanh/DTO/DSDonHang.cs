@@ -9,7 +9,6 @@ namespace Bophanbanhangtaichinhanh
 {
     public class DSDonHang
     {
-        private KhachHang khachHang;
         private string nvLapDon;
         private string dsMonAn;
         private string tongGia;
