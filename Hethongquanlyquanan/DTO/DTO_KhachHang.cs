@@ -4,61 +4,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bophanbanhangtaichinhanh.DTO
+namespace DTO
 {
-    class HoaDon
+    class DTO_KhachHang
     {
-        private int maHoaDon;
-        private DateTime ngay;
-        private string maKH;
-        private DonHang donHang;
-
-        public int MaHoaDon
+        private string maKhachHang;
+        private string tenKhachHang;
+        private string sdt;
+        private string diaChi;
+        public string MaKhachHang
         {
             get
             {
-                return maHoaDon;
+                return maKhachHang;
             }
 
             set
             {
-                maHoaDon = value;
+                maKhachHang = value;
             }
         }
 
-        public DateTime Ngay
+        public string TenKhachHang1
         {
             get
             {
-                return ngay;
+                return tenKhachHang;
             }
+
             set
             {
-                ngay = value;
+                tenKhachHang = value;
             }
         }
 
-        public string MaKH
+        public string Sdt
         {
             get
             {
-                return maKH;
+                return sdt;
             }
+
             set
             {
-                maKH = value;
+                sdt = value;
             }
         }
 
-        public DonHang DonHang
+        public string DiaChi
         {
             get
             {
-                return donHang;
+                return diaChi;
             }
+
             set
             {
-                donHang = value;
+                diaChi = value;
             }
         }
     }

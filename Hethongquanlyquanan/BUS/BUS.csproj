@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL">
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DTO">
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_Account.cs" />
+    <Compile Include="BUS_ChiPhi.cs" />
     <Compile Include="BUS_Clock.cs" />
+    <Compile Include="BUS_DonHang.cs" />
     <Compile Include="BUS_MonAn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

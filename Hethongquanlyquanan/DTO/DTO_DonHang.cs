@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bophanbanhangtaichinhanh
+namespace DTO
 {
-    public class DonHang
+    public class DTO_DonHang
     {
-        private string maDonHang; 
+        private string maDonHang;
         private string maMonAn;
         private string tenMonAn;
         private string gia;

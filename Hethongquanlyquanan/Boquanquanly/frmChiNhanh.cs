@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Boquanquanly.NewControl;
+
 
 namespace Boquanquanly
 {
     public partial class frmChiNhanh : Form
     {
-        ChiNhanhCtrl cnctrl = new ChiNhanhCtrl();
+      //  ChiNhanhCtrl cnctrl = new ChiNhanhCtrl();
 
         public frmChiNhanh()
         {
@@ -24,7 +24,7 @@ namespace Boquanquanly
         private void frmChiNhanh_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = cnctrl.GetData();
+           // dt = cnctrl.GetData();
             dgv_ChiNhanh.DataSource = dt;
             binding();
         }

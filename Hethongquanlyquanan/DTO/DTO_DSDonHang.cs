@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bophanbanhangtaichinhanh.DTO;
 
-namespace Bophanbanhangtaichinhanh
+namespace DTO
 {
-    public class DSDonHang
+    class DTO_DSDonHang
     {
         private string nvLapDon;
         private string dsMonAn;
         private string tongGia;
 
-        
+
 
         public string NvLapDon
         {

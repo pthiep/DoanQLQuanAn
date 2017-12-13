@@ -16,7 +16,8 @@ namespace Bophanbanhangtaichinhanh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Dangnhap());
+            //Application.Run(new frm_Dangnhap());
+            Application.Run(new Frm_ChiNhanh());
         }
     }
 }

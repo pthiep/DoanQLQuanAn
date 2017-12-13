@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BUS">
+      <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL">
+      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\BUS\bin\Debug\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DTO">
+      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -45,6 +63,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\Visual Studio 2017\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,33 +78,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\DSDonHang.cs" />
-    <Compile Include="DTO\DonHang.cs" />
-    <Compile Include="DTO\HoaDon.cs" />
-    <Compile Include="DTO\KhachHang.cs" />
-    <Compile Include="frm_Dangnhap.cs">
+    <Compile Include="Frm_ChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Dangnhap.Designer.cs">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    <Compile Include="Frm_ChiNhanh.Designer.cs">
+      <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_DonHang.cs">
+    <Compile Include="Frm_ChiPhiPhatSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_DonHang.Designer.cs">
-      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    <Compile Include="Frm_ChiPhiPhatSinh.Designer.cs">
+      <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_DsDonHang.cs">
+    <Compile Include="Frm_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_DsDonHang.Designer.cs">
-      <DependentUpon>frm_DsDonHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Hethong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Hethong.Designer.cs">
-      <DependentUpon>frm_Hethong.cs</DependentUpon>
+    <Compile Include="Frm_DangNhap.Designer.cs">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_HoaDon.cs">
       <SubType>Form</SubType>
@@ -90,23 +102,30 @@
     <Compile Include="frm_HoaDon.Designer.cs">
       <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_QuanLyDHTuTongDai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QuanLyDHTuTongDai.Designer.cs">
+      <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_Dangnhap.resx">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_ChiNhanh.resx">
+      <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_DonHang.resx">
-      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_ChiPhiPhatSinh.resx">
+      <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_DsDonHang.resx">
-      <DependentUpon>frm_DsDonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Hethong.resx">
-      <DependentUpon>frm_Hethong.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_DangNhap.resx">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_HoaDon.resx">
       <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QuanLyDHTuTongDai.resx">
+      <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -136,9 +155,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="DAO\TextFile1.txt" />
-    <Content Include="DTO\TextFile1.txt" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\icons8-tick-box-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

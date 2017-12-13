@@ -14,7 +14,8 @@ namespace Boquanquanly
 {
     public partial class frm_Dangnhap : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        BUS_Account busAcc = new BUS_Account();
+       
+       BUS_Account busAcc = new BUS_Account();
 
         public frm_Dangnhap()
         {

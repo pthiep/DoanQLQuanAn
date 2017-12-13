@@ -15,6 +15,7 @@ namespace Boquanquanly
 {
     public partial class Frm_Quanly : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        
         BUS_MonAn busMA;
         BUS_Clock busClock;
         public Frm_Quanly()

@@ -85,9 +85,9 @@
             this.clSoLuong,
             this.clDonGia,
             this.clThanhTien});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 179);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(520, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 150);
             this.dataGridView1.TabIndex = 20;
             // 
             // clMaMonAn
