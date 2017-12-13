@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_Account.cs" />
+    <Compile Include="DTO_DonHang.cs" />
     <Compile Include="DTO_MonAn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

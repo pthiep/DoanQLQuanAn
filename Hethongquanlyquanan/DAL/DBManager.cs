@@ -64,8 +64,13 @@ namespace DAL
             }
             else
             {
+<<<<<<< HEAD
                 data = command.ExecuteNonQuery();   
+=======
+                data = command.ExecuteNonQuery();
+>>>>>>> 05f6d9e2fd9063a9db2c0be202051a26e8570b99
             }
+            
             Close();
 
             return data;
