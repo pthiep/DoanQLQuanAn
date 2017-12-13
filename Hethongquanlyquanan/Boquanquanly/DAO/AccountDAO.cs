@@ -30,7 +30,7 @@ namespace Boquanquanly.DAO
             
             if (result.Rows.Count > 0)
             {
-                currentUser = new Account(result.Rows[0]);
+                //currentUser = new Account(result.Rows[0]);
                 return true;
             }
             else
