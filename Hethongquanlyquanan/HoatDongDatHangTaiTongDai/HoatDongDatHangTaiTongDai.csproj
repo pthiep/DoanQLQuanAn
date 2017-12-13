@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DTO">
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -136,10 +139,11 @@
   <ItemGroup>
     <None Include="Resources\images.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="DAO\TextFile1.txt" />
-    <Content Include="DTO\TextFile1.txt" />
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{cf6d2e3a-e704-46cf-84bf-4edcdb29b747}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

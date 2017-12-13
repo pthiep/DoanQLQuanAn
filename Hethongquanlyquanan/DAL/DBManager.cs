@@ -64,14 +64,9 @@ namespace DAL
             }
             else
             {
-                SqlParameter retval = new SqlParameter("@ReturnValue", System.Data.SqlDbType.Int)
-                {
-                    Direction = ParameterDirection.ReturnValue
-                };
-                command.Parameters.Add(retval);
-                command.ExecuteNonQuery();
-                data = (int)command.Parameters["@ReturnValue"].Value;
+                data = command.ExecuteNonQuery();
             }
+            
             Close();
 
             return data;

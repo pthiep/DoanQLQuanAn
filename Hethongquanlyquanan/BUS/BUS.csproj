@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DAL">
-      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+      <HintPath>..\DAL\obj\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,8 +46,15 @@
   <ItemGroup>
     <Compile Include="BUS_Account.cs" />
     <Compile Include="BUS_Clock.cs" />
+    <Compile Include="BUS_DonHang.cs" />
     <Compile Include="BUS_MonAn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{01fff7c7-927d-43c3-9083-0249d777eb10}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
