@@ -37,7 +37,7 @@
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
     <Reference Include="DAL">
-      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\BUS\bin\Debug\DAL.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\GitHub\DoanQLQuanAn\Hethongquanlyquanan\DTO\bin\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -49,7 +49,7 @@
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DTO">
-      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\DTO\bin\Debug\DTO.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\GitHub\DoanQLQuanAn\Hethongquanlyquanan\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>

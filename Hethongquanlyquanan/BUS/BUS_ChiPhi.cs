@@ -23,7 +23,7 @@ namespace BUS
 
         public void ThemCP(DTO_ChiPhi cp)
         {
-            cp.ChiPhi = 
+           
 
         }
     }

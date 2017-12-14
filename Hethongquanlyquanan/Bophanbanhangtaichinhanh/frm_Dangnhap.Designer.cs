@@ -30,7 +30,7 @@
         {
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
+           // this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_TenDN = new MetroFramework.Controls.MetroTextBox();
             this.txt_MK = new MetroFramework.Controls.MetroTextBox();
@@ -153,7 +153,7 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private System.Windows.Forms.RibbonLabel ribbonLabel1;
+       // private System.Windows.Forms.RibbonLabel ribbonLabel1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private MetroFramework.Controls.MetroTextBox txt_TenDN;
         private MetroFramework.Controls.MetroTextBox txt_MK;

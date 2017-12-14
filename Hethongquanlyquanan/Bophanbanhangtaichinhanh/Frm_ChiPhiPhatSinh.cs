@@ -25,7 +25,7 @@ namespace Bophanbanhangtaichinhanh
 
         private void ThemCP()
         {
-            gridView1.DataSource = DataTable 
+             
         }
 
         private void btnThem_Click(object sender, EventArgs e)

@@ -49,13 +49,13 @@
             this.btn_ThemHD = new MetroFramework.Controls.MetroButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SoDonHang = new MetroFramework.Controls.MetroLabel();
-            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
+        //    this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+        //    this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.btn_HoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.label6 = new System.Windows.Forms.Label();
@@ -272,8 +272,8 @@
             // 
             // ribbonButton1
             // 
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+  //          this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
+ //           this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
             // 
             // btn_HoaDon
             // 
@@ -413,13 +413,13 @@
         private MetroFramework.Controls.MetroButton btn_ThemHD;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private MetroFramework.Controls.MetroLabel SoDonHang;
-        private System.Windows.Forms.RibbonLabel ribbonLabel1;
+ //       private System.Windows.Forms.RibbonLabel ribbonLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
+//        private System.Windows.Forms.RibbonButton ribbonButton1;
         private DevExpress.XtraEditors.SimpleButton btn_HoaDon;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private System.Windows.Forms.Label label6;
