@@ -88,30 +88,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="dsNhanVien.cs" />
-    <Compile Include="DTO\Account.cs" />
     <Compile Include="frm_Dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Dangnhap.Designer.cs">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Quanly.cs">
+    <Compile Include="Frm_MonAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Quanly.Designer.cs">
-      <DependentUpon>frm_Quanly.cs</DependentUpon>
+    <Compile Include="Frm_MonAn.Designer.cs">
+      <DependentUpon>Frm_MonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewControl\ChiNhanhCtrl.cs" />
-    <Compile Include="NewControl\NhanVienCtrl.cs" />
-    <Compile Include="NewModel\ChiNhanhMOD.cs" />
-    <Compile Include="NewModel\ConnectToSQL.cs" />
-    <Compile Include="NewModel\NhanVienMOD.cs" />
-    <Compile Include="NewObject\ChiNhanhOBJ.cs" />
-    <Compile Include="NewObject\DTUser.cs" />
-    <Compile Include="NewObject\NhanVienOBJ.cs" />
+    <Compile Include="Frm_Quanly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Quanly.Designer.cs">
+      <DependentUpon>Frm_Quanly.cs</DependentUpon>
+    </Compile>
     <Compile Include="formNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,20 +125,8 @@
     <Compile Include="frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMonAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMonAn.Designer.cs">
-      <DependentUpon>frmMonAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="formNhanVien.resx">
       <DependentUpon>formNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,14 +136,14 @@
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMonAn.resx">
-      <DependentUpon>frmMonAn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Quanly.resx">
-      <DependentUpon>frm_Quanly.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_MonAn.resx">
+      <DependentUpon>Frm_MonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Quanly.resx">
+      <DependentUpon>Frm_Quanly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -173,9 +156,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

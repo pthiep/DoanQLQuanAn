@@ -65,16 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_DonHang)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Bophanbanhangtaichinhanh.Properties.Resources.create_new1600;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(13, 177);
@@ -93,16 +83,6 @@
             this.button2.Text = "Nhận đơn hàng từ tổng đại";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Bophanbanhangtaichinhanh.Properties.Resources.create_new1600;
-            this.pictureBox2.Location = new System.Drawing.Point(178, 39);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 132);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(13, 360);
@@ -112,16 +92,6 @@
             this.button3.Text = "Chuyển đơn hàng xuống bếp";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Bophanbanhangtaichinhanh.Properties.Resources.create_new1600;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 222);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(137, 132);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(178, 360);
@@ -130,16 +100,6 @@
             this.button4.TabIndex = 7;
             this.button4.Text = "Thanh toán";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Bophanbanhangtaichinhanh.Properties.Resources.create_new1600;
-            this.pictureBox4.Location = new System.Drawing.Point(178, 222);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(137, 132);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
             // 
             // statusStrip1
             // 

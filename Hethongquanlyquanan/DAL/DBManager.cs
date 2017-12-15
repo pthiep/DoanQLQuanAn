@@ -32,7 +32,6 @@ namespace DAL
             }
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-
             adapter.Fill(data);
             Close();
 
@@ -59,23 +58,15 @@ namespace DAL
                         i++;
                     }
                 }
+            }
 
-                data = command.ExecuteNonQuery();
-            }
-            else
-            {
-                SqlParameter retval = new SqlParameter("@ReturnValue", System.Data.SqlDbType.Int)
-                {
-                    Direction = ParameterDirection.ReturnValue
-                };
-                command.Parameters.Add(retval);
-                command.ExecuteNonQuery();
-                data = (int)command.Parameters["@ReturnValue"].Value;
-            }
+            data = command.ExecuteNonQuery();
+
             Close();
 
             return data;
         }
+
 
         public object ExecuteScalar(string query, object[] parameter = null)
         {

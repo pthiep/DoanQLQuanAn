@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Boquanquanly.NewControl;
-using Boquanquanly.NewObject;
 
 namespace Boquanquanly
 {
@@ -32,15 +30,9 @@ namespace Boquanquanly
 
         }
 
-
-        NhanVienCtrl nvctrl = new NhanVienCtrl();
-        NhanVienOBJ nvobj = new NhanVienOBJ();
-        int flag;
-
         private void formNhanVien_Load(object sender, EventArgs e)
         {
             DataTable dtNhanVien = new DataTable();
-            dtNhanVien = nvctrl.getData();
             dtg_DanhsachNV.DataSource = dtNhanVien;
             binding();
         }
@@ -90,17 +82,7 @@ namespace Boquanquanly
             btSua.Enabled = !e;
             btXoa.Enabled = !e;
         }
-
-        void GanDulieu(NhanVienOBJ nvobj) {
-            nvobj.MaNV = txtMaNV.Text.Trim();
-            nvobj.TenNV = txtTenNV.Text.Trim();
-            nvobj.HsLuong = float.Parse(txtHeSoLuong.Text.Trim());
-            nvobj.SoDienThoai = txtSDT.Text.Trim();
-            nvobj.GioiTinh = cboGioiTinh.Text.Trim();
-            nvobj.NgaySinh = dtpNgaySinh.Text.Trim();
-            nvobj.ThuocChiNhanh = txtThuocChiNhanh.Text.Trim();
-            nvobj.MatKhau = txtMatKhau.Text.Trim();
-        }
+        
 
         void load_ctrl() {
             cboGioiTinh.Items.Add("Nam");
@@ -110,41 +92,17 @@ namespace Boquanquanly
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            flag = 0;
             dis_en(true);
             load_ctrl();
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            flag = 1;
             dis_en(true);
         }
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            GanDulieu(nvobj);
-            if (flag == 0)
-            {
-                //them moi
-                if(nvctrl.AddData(nvobj)){
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else {
-                    MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else { 
-                //sua
-                if (nvctrl.UpdateData(nvobj))
-                {
-                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         private void btHuy_Click(object sender, EventArgs e)
@@ -158,15 +116,6 @@ namespace Boquanquanly
             DialogResult dr = MessageBox.Show("Bạn chắc chắn xóa "+txtMaNV.Text.Trim()+"?","Xác nhận",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                //xoa
-                if (nvctrl.DeleteData(txtMaNV.Text.Trim()))
-                {
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             else {
                 return;

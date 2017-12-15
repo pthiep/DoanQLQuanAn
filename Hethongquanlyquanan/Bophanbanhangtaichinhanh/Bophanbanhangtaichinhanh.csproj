@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -56,15 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\DSDonHang.cs" />
-    <Compile Include="DTO\DonHang.cs" />
-    <Compile Include="DTO\HoaDon.cs" />
-    <Compile Include="DTO\KhachHang.cs" />
-    <Compile Include="frm_Dangnhap.cs">
+    <Compile Include="Frm_BanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Dangnhap.Designer.cs">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    <Compile Include="Frm_BanHang.Designer.cs">
+      <DependentUpon>Frm_BanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_DonHang.cs">
       <SubType>Form</SubType>
@@ -92,8 +93,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_Dangnhap.resx">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_BanHang.resx">
+      <DependentUpon>Frm_BanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DonHang.resx">
       <DependentUpon>frm_DonHang.cs</DependentUpon>
@@ -107,6 +108,7 @@
     <EmbeddedResource Include="frm_HoaDon.resx">
       <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -132,13 +134,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\create_new1600.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="DAO\TextFile1.txt" />
-    <Content Include="DTO\TextFile1.txt" />
-    <Content Include="MetroFramework.txt" />
+    <Folder Include="Resources\" />
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
