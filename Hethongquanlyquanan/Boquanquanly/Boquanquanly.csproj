@@ -36,6 +36,9 @@
     <Reference Include="BUS">
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
+    <Reference Include="DAL">
+      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\BUS\bin\Debug\DAL.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -57,7 +60,7 @@
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DTO">
-      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
@@ -177,6 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

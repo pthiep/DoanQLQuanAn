@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
+
 using BUS;
 
 namespace Boquanquanly
 {
     public partial class frm_Dangnhap : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        BUS_Account busAcc = new BUS_Account();
+       
+       BUS_Account busAcc = new BUS_Account();
 
         public frm_Dangnhap()
         {

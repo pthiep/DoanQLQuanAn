@@ -59,5 +59,28 @@ namespace Bophanbanhangtaichinhanh.Properties {
                 resourceCulture = value;
             }
         }
+<<<<<<< HEAD
+=======
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap create_new1600 {
+            get {
+                object obj = ResourceManager.GetObject("create_new1600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tick_box_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tick-box-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+>>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
     }
 }

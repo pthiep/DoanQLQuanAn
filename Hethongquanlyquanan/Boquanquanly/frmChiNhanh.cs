@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
 
 namespace Boquanquanly
 {
     public partial class frmChiNhanh : Form
     {
+<<<<<<< HEAD
+=======
+      //  ChiNhanhCtrl cnctrl = new ChiNhanhCtrl();
+>>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
 
         public frmChiNhanh()
         {
@@ -22,6 +30,10 @@ namespace Boquanquanly
         private void frmChiNhanh_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
+<<<<<<< HEAD
+=======
+           // dt = cnctrl.GetData();
+>>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
             dgv_ChiNhanh.DataSource = dt;
             binding();
         }
