@@ -12,6 +12,7 @@ using DevExpress.XtraBars;
 using BUS;
 using DTO;
 using System.Drawing.Drawing2D;
+using DevExpress.XtraEditors;
 
 namespace Boquanquanly
 {
@@ -19,7 +20,8 @@ namespace Boquanquanly
     {
         
         BUS_MonAn busMA;
-        BUS_Clock busClock;
+        BUS_Clock busClock;     
+
 
         public Frm_Quanly()
         {
@@ -218,7 +220,7 @@ namespace Boquanquanly
             Panel pn_BChucnang = null;
 
             CheckBox cb_Row = null;
-            Label lb_BTenmonan = null;
+            LinkLabel lb_BTenmonan = null;
             Label lb_BMamonan = null;
             Label lb_BSoluong = null;
             Label lb_BGiaban = null;
@@ -268,7 +270,7 @@ namespace Boquanquanly
                 pn_BChucnang = new Panel();
 
                 cb_Row = new CheckBox();
-                lb_BTenmonan = new Label();
+                lb_BTenmonan = new LinkLabel();
                 lb_BMamonan = new Label();
                 lb_BSoluong = new Label();
                 lb_BGiaban = new Label();
@@ -299,6 +301,7 @@ namespace Boquanquanly
                 lb_BTenmonan.TextAlign = ContentAlignment.MiddleLeft;
                 lb_BTenmonan.Location = new Point(0, 0);
                 pn_BTenmonan.Controls.Add(lb_BTenmonan);
+                lb_BTenmonan.Click += Lb_BTenmonan_Click;                
 
                 pn_BMamonan.Size = new Size(crpnBMamonan, cc);
                 pn_BMamonan.Location = new Point(pn_BTenmonan.Location.X + pn_BTenmonan.Width - 1, -1);
@@ -335,7 +338,7 @@ namespace Boquanquanly
 
                 lb_BDanhmuc.Width = pn_BDachmuc.Width;
                 lb_BDanhmuc.Height = pn_BDachmuc.Height;
-                lb_BDanhmuc.Text = "Danh mục";
+                lb_BDanhmuc.Text = busMA.LayTenDanhMuc(dt.Rows[i].ItemArray[4].ToString());
                 lb_BDanhmuc.TextAlign = ContentAlignment.MiddleCenter;
                 lb_BDanhmuc.Location = new Point(0, 0);
                 pn_BDachmuc.Controls.Add(lb_BDanhmuc);
@@ -379,18 +382,43 @@ namespace Boquanquanly
                 pn_BChucnang.Controls.Add(btn_BSua);
                 pn_BChucnang.Controls.Add(btn_BXoa);
 
+                DTO_MonAn ma = new DTO_MonAn();
+                ma.Tenma = lb_BTenmonan.Text;
+                ma.Mama = lb_BMamonan.Text;
+                ma.Giaban = decimal.Parse(lb_BGiaban.Text);
+                ma.Hinhanh = dt.Rows[i].ItemArray[2].ToString();
+                ma.Madanhmuc = dt.Rows[i].ItemArray[4].ToString();
+                lb_BTenmonan.Tag = ma;
+
+
                 pn_Row.Controls.Add(pn_BChon);
                 pn_Row.Controls.Add(pn_BTenmonan);
                 pn_Row.Controls.Add(pn_BMamonan);
                 //pn_Row.Controls.Add(pn_BSoluong);
                 pn_Row.Controls.Add(pn_BGiaban);
-                //pn_Row.Controls.Add(pn_BDachmuc);
+                pn_Row.Controls.Add(pn_BDachmuc);
                 //pn_Row.Controls.Add(pn_BKho);
                 pn_Row.Controls.Add(pn_BHinh);
                 pn_Row.Controls.Add(pn_BChucnang);
 
                 panel_DSMA.Controls.Add(pn_Row);
             }
+        }
+
+        private void Lb_BTenmonan_Click(object sender, EventArgs e)
+        {
+            DTO_MonAn ma = new DTO_MonAn();
+            ma = (sender as Control).Tag as DTO_MonAn;
+
+            Frm_MonAn frmMA = new Frm_MonAn();
+            frmMA.LoadMA(ma);
+            frmMA.LoadMAEvent += frmMA_LoadEvent;
+            frmMA.ShowDialog();
+        }
+
+        private void frmMA_sendMAEvent(object sender, EventArgs e)
+        {
+            MessageBox.Show("OK");
         }
 
         private void Btn_BXoa_Click(object sender, EventArgs e)
@@ -552,7 +580,7 @@ namespace Boquanquanly
 
                     lb_BDanhmuc.Width = pn_BDachmuc.Width;
                     lb_BDanhmuc.Height = pn_BDachmuc.Height;
-                    lb_BDanhmuc.Text = "Danh mục";
+                    lb_BDanhmuc.Text = busMA.LayTenDanhMuc(dt.Rows[i].ItemArray[4].ToString());
                     lb_BDanhmuc.TextAlign = ContentAlignment.MiddleCenter;
                     lb_BDanhmuc.Location = new Point(0, 0);
                     pn_BDachmuc.Controls.Add(lb_BDanhmuc);
@@ -600,7 +628,7 @@ namespace Boquanquanly
                     pn_Row.Controls.Add(pn_BMamonan);
                     //pn_Row.Controls.Add(pn_BSoluong);
                     pn_Row.Controls.Add(pn_BGiaban);
-                    //pn_Row.Controls.Add(pn_BDachmuc);
+                    pn_Row.Controls.Add(pn_BDachmuc);
                     //pn_Row.Controls.Add(pn_BKho);
                     pn_Row.Controls.Add(pn_BHinh);
                     pn_Row.Controls.Add(pn_BChucnang);
@@ -660,7 +688,7 @@ namespace Boquanquanly
 
                     lb_BDanhmuc.Width = pn_BDachmuc.Width;
                     lb_BDanhmuc.Height = pn_BDachmuc.Height;
-                    lb_BDanhmuc.Text = "Danh mục";
+                    lb_BDanhmuc.Text = busMA.LayTenDanhMuc(dt.Rows[i].ItemArray[4].ToString());
                     lb_BDanhmuc.TextAlign = ContentAlignment.MiddleCenter;
                     lb_BDanhmuc.Location = new Point(0, 0);
                     pn_BDachmuc.Controls.Add(lb_BDanhmuc);
@@ -708,7 +736,7 @@ namespace Boquanquanly
                     pn_Row.Controls.Add(pn_BMamonan);
                     //pn_Row.Controls.Add(pn_BSoluong);
                     pn_Row.Controls.Add(pn_BGiaban);
-                    //pn_Row.Controls.Add(pn_BDachmuc);
+                    pn_Row.Controls.Add(pn_BDachmuc);
                     //pn_Row.Controls.Add(pn_BKho);
                     pn_Row.Controls.Add(pn_BHinh);
                     pn_Row.Controls.Add(pn_BChucnang);
@@ -759,6 +787,19 @@ namespace Boquanquanly
             graphic.DrawImage(img, 0, 0, resizedW, resizedH);
             graphic.Dispose();
             return (Image)bmp;
+        }
+
+        private void btn_Themmonan_Click(object sender, EventArgs e)
+        {
+            Frm_MonAn frmMA = new Frm_MonAn();
+            frmMA.LoadMAEvent += frmMA_LoadEvent;
+            frmMA.ThemMoi = true;
+            frmMA.ShowDialog();
+        }
+        void frmMA_LoadEvent()
+        {
+            VeHeadBangDanhSachMonAn();
+            VeBodyBangDanhSachMonAn(busMA.LoadDanhSachMonAn());
         }
 
     }

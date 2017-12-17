@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="DTO_Account.cs" />
     <Compile Include="DTO_ChiPhi.cs" />
+    <Compile Include="DTO_DanhMuc.cs" />
     <Compile Include="DTO_DonHang.cs" />
     <Compile Include="DTO_DSDonHang.cs" />
     <Compile Include="DTO_HoaDon.cs" />

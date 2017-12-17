@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ChiNhanh));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,10 +61,9 @@
             this.rdochuyenphatNhanh = new System.Windows.Forms.RadioButton();
             this.rdo_nhanochiNhanh = new System.Windows.Forms.RadioButton();
             this.btnCPPS = new DevExpress.XtraEditors.SimpleButton();
-            this.pnThucDon = new System.Windows.Forms.Panel();
+            this.pnUC = new System.Windows.Forms.Panel();
             this.btnVisible = new DevExpress.XtraEditors.SimpleButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
@@ -87,7 +86,7 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1117, 27);
+            this.ribbon.Size = new System.Drawing.Size(1232, 27);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -96,7 +95,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 666);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1117, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1232, 31);
             // 
             // gridView1
             // 
@@ -154,17 +153,12 @@
             this.btnXoa.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Appearance.Image")));
             this.btnXoa.Appearance.Options.UseImage = true;
             this.btnXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            serializableAppearanceObject5.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject5.Image")));
-            serializableAppearanceObject5.Options.UseImage = true;
-            serializableAppearanceObject6.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject6.Image")));
-            serializableAppearanceObject6.Options.UseImage = true;
-            serializableAppearanceObject7.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject7.Image")));
-            serializableAppearanceObject7.Options.UseImage = true;
-            serializableAppearanceObject8.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject8.Image")));
-            serializableAppearanceObject8.Options.UseImage = true;
+            serializableAppearanceObject33.Options.UseImage = true;
+            serializableAppearanceObject34.Options.UseImage = true;
+            serializableAppearanceObject35.Options.UseImage = true;
+            serializableAppearanceObject36.Options.UseImage = true;
             this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null)});
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -239,7 +233,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(520, 545);
+            this.label4.Location = new System.Drawing.Point(305, 545);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 19;
@@ -248,7 +242,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(520, 570);
+            this.label5.Location = new System.Drawing.Point(305, 571);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 20;
@@ -256,7 +250,7 @@
             // 
             // btn_HoaDon
             // 
-            this.btn_HoaDon.Location = new System.Drawing.Point(667, 595);
+            this.btn_HoaDon.Location = new System.Drawing.Point(286, 624);
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.Size = new System.Drawing.Size(75, 23);
             this.btn_HoaDon.TabIndex = 21;
@@ -302,7 +296,7 @@
             this.gbo_chuyenPhat.Controls.Add(this.rdo_nhanochiNhanh);
             this.gbo_chuyenPhat.Location = new System.Drawing.Point(12, 470);
             this.gbo_chuyenPhat.Name = "gbo_chuyenPhat";
-            this.gbo_chuyenPhat.Size = new System.Drawing.Size(762, 58);
+            this.gbo_chuyenPhat.Size = new System.Drawing.Size(442, 58);
             this.gbo_chuyenPhat.TabIndex = 30;
             this.gbo_chuyenPhat.TabStop = false;
             this.gbo_chuyenPhat.Text = "Chuyển phát";
@@ -310,7 +304,7 @@
             // rdochuyenphatNhanh
             // 
             this.rdochuyenphatNhanh.AutoSize = true;
-            this.rdochuyenphatNhanh.Location = new System.Drawing.Point(320, 19);
+            this.rdochuyenphatNhanh.Location = new System.Drawing.Point(250, 19);
             this.rdochuyenphatNhanh.Name = "rdochuyenphatNhanh";
             this.rdochuyenphatNhanh.Size = new System.Drawing.Size(182, 17);
             this.rdochuyenphatNhanh.TabIndex = 1;
@@ -331,20 +325,21 @@
             // 
             // btnCPPS
             // 
-            this.btnCPPS.Location = new System.Drawing.Point(395, 595);
+            this.btnCPPS.Location = new System.Drawing.Point(312, 595);
             this.btnCPPS.Name = "btnCPPS";
             this.btnCPPS.Size = new System.Drawing.Size(90, 23);
             this.btnCPPS.TabIndex = 33;
             this.btnCPPS.Text = "Chi phí phát sinh";
             // 
-            // pnThucDon
+            // pnUC
             // 
-            this.pnThucDon.AutoScroll = true;
-            this.pnThucDon.Location = new System.Drawing.Point(482, 104);
-            this.pnThucDon.Name = "pnThucDon";
-            this.pnThucDon.Size = new System.Drawing.Size(505, 369);
-            this.pnThucDon.TabIndex = 36;
-            this.pnThucDon.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnUC.AutoScroll = true;
+            this.pnUC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnUC.Location = new System.Drawing.Point(482, 104);
+            this.pnUC.Name = "pnUC";
+            this.pnUC.Size = new System.Drawing.Size(671, 454);
+            this.pnUC.TabIndex = 36;
+            this.pnUC.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnVisible
             // 
@@ -354,7 +349,6 @@
             this.btnVisible.TabIndex = 37;
             this.btnVisible.Text = "Bàn";
             this.btnVisible.Click += new System.EventHandler(this.btnVisible_Click);
-            
             // 
             // button1
             // 
@@ -365,21 +359,13 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(265, 273);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 40;
-            // 
             // Frm_ChiNhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 697);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1232, 697);
             this.Controls.Add(this.btnVisible);
-            this.Controls.Add(this.pnThucDon);
+            this.Controls.Add(this.pnUC);
             this.Controls.Add(this.btnCPPS);
             this.Controls.Add(this.gbo_chuyenPhat);
             this.Controls.Add(this.label8);
@@ -444,9 +430,8 @@
         private System.Windows.Forms.RadioButton rdochuyenphatNhanh;
         private System.Windows.Forms.RadioButton rdo_nhanochiNhanh;
         private DevExpress.XtraEditors.SimpleButton btnCPPS;
-        private System.Windows.Forms.Panel pnThucDon;
+        private System.Windows.Forms.Panel pnUC;
         private DevExpress.XtraEditors.SimpleButton btnVisible;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
     }
 }

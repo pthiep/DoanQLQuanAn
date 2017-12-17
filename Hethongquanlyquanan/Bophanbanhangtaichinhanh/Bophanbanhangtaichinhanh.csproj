@@ -33,31 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
-    <Reference Include="BUS">
+    <Reference Include="BUS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
     <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DTO\bin\Debug\DAL.dll</HintPath>
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-<<<<<<< HEAD
-=======
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DTO">
-      <HintPath>..\..\..\..\Documents\GitHub\DoanQLQuanAn\Hethongquanlyquanan\DTO\bin\Debug\DTO.dll</HintPath>
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -85,17 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Frm_BanHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_BanHang.Designer.cs">
-      <DependentUpon>Frm_BanHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_DonHang.cs">
-=======
     <Compile Include="Frm_ChiNhanh.cs">
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_ChiNhanh.Designer.cs">
@@ -127,16 +112,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <EmbeddedResource Include="Frm_BanHang.resx">
-      <DependentUpon>Frm_BanHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_DonHang.resx">
-      <DependentUpon>frm_DonHang.cs</DependentUpon>
-=======
+    <Compile Include="UC_Ban.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Ban.Designer.cs">
+      <DependentUpon>UC_Ban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_MonAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_MonAn.Designer.cs">
+      <DependentUpon>UC_MonAn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Frm_ChiNhanh.resx">
       <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ChiPhiPhatSinh.resx">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
@@ -147,12 +136,9 @@
     <EmbeddedResource Include="frm_HoaDon.resx">
       <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="Frm_QuanLyDHTuTongDai.resx">
       <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,6 +150,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_Ban.resx">
+      <DependentUpon>UC_Ban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_MonAn.resx">
+      <DependentUpon>UC_MonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,17 +171,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Folder Include="Resources\" />
-    <Folder Include="UI\" />
-=======
     <None Include="Resources\create_new1600.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\icons8-tick-box-50.png" />
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

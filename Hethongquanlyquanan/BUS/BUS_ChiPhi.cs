@@ -12,7 +12,6 @@ namespace BUS
     public class BUS_ChiPhi
     {
         DBManager cp = new DBManager();
-       // DTO_ChiPhi cp = new DTO_ChiPhi();
 
         public DataTable LoadDanhSachMonAn()
         {

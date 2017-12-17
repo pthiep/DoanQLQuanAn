@@ -51,6 +51,7 @@
     <Compile Include="BUS_Account.cs" />
     <Compile Include="BUS_ChiPhi.cs" />
     <Compile Include="BUS_Clock.cs" />
+    <Compile Include="BUS_DanhMuc.cs" />
     <Compile Include="BUS_DonHang.cs" />
     <Compile Include="BUS_MonAn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

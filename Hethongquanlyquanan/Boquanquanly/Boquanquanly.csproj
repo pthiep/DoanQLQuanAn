@@ -59,8 +59,9 @@
     <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DTO">
-      <HintPath>..\..\..\..\..\source\repos\PTUDCSDL\DOAN\QuanLySieuThi\DTO\bin\Debug\DTO.dll</HintPath>
+    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
@@ -98,6 +99,12 @@
     <Compile Include="frm_Dangnhap.Designer.cs">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_DanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DanhMuc.Designer.cs">
+      <DependentUpon>Frm_DanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MonAn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,37 +117,13 @@
     <Compile Include="Frm_Quanly.Designer.cs">
       <DependentUpon>Frm_Quanly.cs</DependentUpon>
     </Compile>
-    <Compile Include="formNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formNhanVien.Designer.cs">
-      <DependentUpon>formNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmChiNhanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChiNhanh.Designer.cs">
-      <DependentUpon>frmChiNhanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmKhachHang.Designer.cs">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formNhanVien.resx">
-      <DependentUpon>formNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChiNhanh.resx">
-      <DependentUpon>frmChiNhanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachHang.resx">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DanhMuc.resx">
+      <DependentUpon>Frm_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MonAn.resx">
       <DependentUpon>Frm_MonAn.cs</DependentUpon>

@@ -11,13 +11,23 @@ namespace BUS
 {
     public class BUS_MonAn
     {
-<<<<<<< HEAD
         DBManager dalMA = new DBManager();
 
         public DataTable LoadDanhSachMonAn()
         {
-            string query = "select * from MonAn where trangthai = 1";
+            string query = "exec LoadMonAn";
             return dalMA.ExecuteQuery(query);  
+        }
+
+        public DataTable LoadDanhSachBan()
+        {
+            string query = "select * from Ban";
+            return dalMA.ExecuteQuery(query);
+        }
+
+        public int SoBan()
+        {
+            return LoadDanhSachBan().Rows.Count;
         }
 
         public int Soluongmonan()
@@ -27,56 +37,33 @@ namespace BUS
 
         public bool Capnhatmonan(DTO_MonAn ma)
         {
-            string query = "update MonAn set tenmonan = @tenma , dongia = @dongia where mamonan = @mama";
+            string query = "update MonAn set tenmonan = @tenma , giaban = @giaban where mamonan = @mama";
+            Capnhatdanhmucmonan(ma.Mama, ma.Madanhmuc);
             return dalMA.ExecuteNonQuery(query, new object[] { ma.Tenma, ma.Giaban, ma.Mama }) > 0 ? true : false;
+        }
+
+        public bool Capnhatdanhmucmonan(string mama, string madm)
+        {
+            string query = "update Quanhe_Danhmuc_Monan set madanhmuc = @madm where mamonan = @mama";
+            return dalMA.ExecuteNonQuery(query, new object[] { madm, mama }) > 0 ? true : false;
         }
 
         public bool Xoamonan(string ma)
         {
             string query = "update MonAn set trangthai = 0 where mamonan = @mama";
             return dalMA.ExecuteNonQuery(query, new object[] { ma }) > 0 ? true : false;
-=======
-        DBManager dalMA= new DBManager();
-        /*
-        public DataTable LoadDanhSachMonAn()
-        {
-            string query = "Select * from tbl_User";
-            DataTable result = dalAcc.ExecuteQuery(query);
-            return result;            
-        }*/
-
-        public DataTable LoadDanhSachMonAn()
-        {
-            string query = "Select * from MonAn";
-            DataTable result = dalMA.ExecuteQuery(query);
-            return result;
         }
 
-        public int SoMonAn()
+        public string LayTenDanhMuc(string ma)
         {
-            string query = "select count(*) from MonAn";
-            DataTable result = dalMA.ExecuteQuery(query);
-            return int.Parse(result.Rows[0].ItemArray[0].ToString());
-
+            string query = "select * from DanhMucMonAn where madanhmuc = @madm";
+            return dalMA.ExecuteQuery(query, new object[] { ma }).Rows[0].ItemArray[1].ToString();
         }
 
-        public DataTable LoadDanhSachBan()
+        public string LayMaDanhMuc(string ma)
         {
-            string query = "Select * from Ban";
-            DataTable result = dalMA.ExecuteQuery(query);
-            return result;
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
+            string query = "select * from DanhMucMonAn where tendanhmuc = N'" + ma + "'";
+            return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
         }
-
-
-        public int SoBan()
-        {
-            string query = "select count(*) from Ban";
-            DataTable result = dalMA.ExecuteQuery(query);
-            return int.Parse(result.Rows[0].ItemArray[0].ToString());
-
-        }
-
-
     }
 }

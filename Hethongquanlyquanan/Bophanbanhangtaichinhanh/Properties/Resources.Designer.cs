@@ -59,8 +59,6 @@ namespace Bophanbanhangtaichinhanh.Properties {
                 resourceCulture = value;
             }
         }
-<<<<<<< HEAD
-=======
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -81,6 +79,5 @@ namespace Bophanbanhangtaichinhanh.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
->>>>>>> bc5c5506f4eb27b8dfb3d18464b4f5b1e619ff85
     }
 }
