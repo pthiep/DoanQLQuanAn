@@ -65,5 +65,12 @@ namespace BUS
             string query = "select * from DanhMucMonAn where tendanhmuc = N'" + ma + "'";
             return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
         }
+
+        public string LayTenTuMaMonAn(string ma)
+        {
+            string query = "select tenmonan from MonAn where mamonan = N'" + ma + "'";
+            return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
+
+        }
     }
 }

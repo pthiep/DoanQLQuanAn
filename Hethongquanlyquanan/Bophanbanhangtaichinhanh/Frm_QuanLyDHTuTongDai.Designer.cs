@@ -52,16 +52,16 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(442, 32);
+            this.ribbon.Size = new System.Drawing.Size(450, 32);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 428);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 21);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(450, 31);
             // 
             // gridControl1
             // 
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 449);
+            this.ClientSize = new System.Drawing.Size(450, 449);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);

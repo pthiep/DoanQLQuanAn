@@ -38,7 +38,7 @@
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.txtTenCP = new System.Windows.Forms.TextBox();
             this.txtCP = new System.Windows.Forms.TextBox();
-            this.btnThem = new MetroFramework.Controls.MetroButton();
+            //this.btnThem = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -141,22 +141,14 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(140, 21);
             this.txtCP.TabIndex = 10;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(276, 125);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 11;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+           
             // 
             // Frm_ChiPhiPhatSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 449);
-            this.Controls.Add(this.btnThem);
+            
             this.Controls.Add(this.txtCP);
             this.Controls.Add(this.txtTenCP);
             this.Controls.Add(this.dateEdit1);
@@ -193,6 +185,6 @@
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private System.Windows.Forms.TextBox txtTenCP;
         private System.Windows.Forms.TextBox txtCP;
-        private MetroFramework.Controls.MetroButton btnThem;
+        
     }
 }

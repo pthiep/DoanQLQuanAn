@@ -14,6 +14,9 @@ namespace Bophanbanhangtaichinhanh
 {
     public partial class UC_MonAn : UserControl
     {
+        public delegate void AddItem(string abc);
+        public event AddItem AddItems;
+
         BUS_MonAn BUSmonan = new BUS_MonAn();
 
         private static UC_MonAn _instance;
@@ -112,7 +115,12 @@ namespace Bophanbanhangtaichinhanh
 
         private void Pt_Click(object sender, EventArgs e)
         {
-            MessageBox.Show((sender as Control).Tag.ToString());
+            
+            if (AddItems != null)
+            {
+                AddItems((sender as Control).Tag.ToString());
+            }
+
         }
 
         private void pnThucDon_Paint(object sender, PaintEventArgs e)

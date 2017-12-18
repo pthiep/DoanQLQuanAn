@@ -28,25 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ChiNhanh));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.btn_ThemHD = new MetroFramework.Controls.MetroButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.SoDonHang = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,11 +48,18 @@
             this.pnUC = new System.Windows.Forms.Panel();
             this.btnVisible = new DevExpress.XtraEditors.SimpleButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.pnHD = new System.Windows.Forms.Panel();
+            this.pnBody = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.gbo_chuyenPhat.SuspendLayout();
+            this.pnHD.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -86,103 +77,16 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1232, 27);
+            this.ribbon.Size = new System.Drawing.Size(1232, 32);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 666);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 676);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1232, 31);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã hóa đơn";
-            this.gridColumn1.FieldName = "mahoadon";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên món ăn";
-            this.gridColumn2.FieldName = "tenmonan";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Đơn giá";
-            this.gridColumn3.FieldName = "dongia";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Danh mục";
-            this.gridColumn4.FieldName = "danhmuc";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Xóa";
-            this.gridColumn5.ColumnEdit = this.btnXoa;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Appearance.Image")));
-            this.btnXoa.Appearance.Options.UseImage = true;
-            this.btnXoa.AutoHeight = false;
-            serializableAppearanceObject33.Options.UseImage = true;
-            serializableAppearanceObject34.Options.UseImage = true;
-            serializableAppearanceObject35.Options.UseImage = true;
-            serializableAppearanceObject36.Options.UseImage = true;
-            this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null)});
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 95);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbon;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnXoa});
-            this.gridControl1.Size = new System.Drawing.Size(411, 359);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // btn_ThemHD
-            // 
-            this.btn_ThemHD.Location = new System.Drawing.Point(28, 52);
-            this.btn_ThemHD.Name = "btn_ThemHD";
-            this.btn_ThemHD.Size = new System.Drawing.Size(103, 23);
-            this.btn_ThemHD.TabIndex = 5;
-            this.btn_ThemHD.Text = "Thêm hóa đơn";
-            this.btn_ThemHD.Click += new System.EventHandler(this.btn_ThemHD_Click);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1232, 21);
             // 
             // linkLabel1
             // 
@@ -193,15 +97,6 @@
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Đơn hàng chờ duyệt?";
-            // 
-            // SoDonHang
-            // 
-            this.SoDonHang.AutoSize = true;
-            this.SoDonHang.Location = new System.Drawing.Point(578, 52);
-            this.SoDonHang.Name = "SoDonHang";
-            this.SoDonHang.Size = new System.Drawing.Size(81, 19);
-            this.SoDonHang.TabIndex = 8;
-            this.SoDonHang.Text = "metroLabel1";
             // 
             // label1
             // 
@@ -359,11 +254,90 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // pnHD
+            // 
+            this.pnHD.Controls.Add(this.pnBody);
+            this.pnHD.Location = new System.Drawing.Point(12, 104);
+            this.pnHD.Name = "pnHD";
+            this.pnHD.Size = new System.Drawing.Size(425, 360);
+            this.pnHD.TabIndex = 40;
+            // 
+            // pnBody
+            // 
+            this.pnBody.Location = new System.Drawing.Point(3, 43);
+            this.pnBody.Name = "pnBody";
+            this.pnBody.Size = new System.Drawing.Size(419, 300);
+            this.pnBody.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(370, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(26, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(310, 33);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "120000";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(32, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "x  120000";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(32, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "A";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Nhân viên 1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(329, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = " Giờ vào:   10:00";
+            // 
             // Frm_ChiNhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 697);
+            this.Controls.Add(this.pnHD);
             this.Controls.Add(this.btnVisible);
             this.Controls.Add(this.pnUC);
             this.Controls.Add(this.btnCPPS);
@@ -378,10 +352,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SoDonHang);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btn_ThemHD);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_ChiNhanh";
@@ -389,11 +360,9 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Load += new System.EventHandler(this.Frm_ChiNhanh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.gbo_chuyenPhat.ResumeLayout(false);
             this.gbo_chuyenPhat.PerformLayout();
+            this.pnHD.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,15 +372,9 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private MetroFramework.Controls.MetroButton btn_ThemHD;
+       
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private MetroFramework.Controls.MetroLabel SoDonHang;
+       
  //       private System.Windows.Forms.RibbonLabel ribbonLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -424,8 +387,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private System.Windows.Forms.GroupBox gbo_chuyenPhat;
         private System.Windows.Forms.RadioButton rdochuyenphatNhanh;
         private System.Windows.Forms.RadioButton rdo_nhanochiNhanh;
@@ -433,5 +394,16 @@
         private System.Windows.Forms.Panel pnUC;
         private DevExpress.XtraEditors.SimpleButton btnVisible;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnHD;
+        
+        private System.Windows.Forms.Panel pnBody;
+        
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }
