@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_HoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.btnVisible = new DevExpress.XtraEditors.SimpleButton();
             this.button1 = new System.Windows.Forms.Button();
             this.pnHD = new System.Windows.Forms.Panel();
-            this.pnBody = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,7 +57,6 @@
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.gbo_chuyenPhat.SuspendLayout();
-            this.pnHD.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -151,13 +148,6 @@
             this.btn_HoaDon.TabIndex = 21;
             this.btn_HoaDon.Text = "Xuất hóa đơn";
             // 
-            // xtraScrollableControl1
-            // 
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
-            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(75, 23);
-            this.xtraScrollableControl1.TabIndex = 24;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -189,7 +179,7 @@
             // 
             this.gbo_chuyenPhat.Controls.Add(this.rdochuyenphatNhanh);
             this.gbo_chuyenPhat.Controls.Add(this.rdo_nhanochiNhanh);
-            this.gbo_chuyenPhat.Location = new System.Drawing.Point(12, 470);
+            this.gbo_chuyenPhat.Location = new System.Drawing.Point(12, 484);
             this.gbo_chuyenPhat.Name = "gbo_chuyenPhat";
             this.gbo_chuyenPhat.Size = new System.Drawing.Size(442, 58);
             this.gbo_chuyenPhat.TabIndex = 30;
@@ -256,18 +246,10 @@
             // 
             // pnHD
             // 
-            this.pnHD.Controls.Add(this.pnBody);
             this.pnHD.Location = new System.Drawing.Point(12, 104);
             this.pnHD.Name = "pnHD";
-            this.pnHD.Size = new System.Drawing.Size(425, 360);
+            this.pnHD.Size = new System.Drawing.Size(425, 374);
             this.pnHD.TabIndex = 40;
-            // 
-            // pnBody
-            // 
-            this.pnBody.Location = new System.Drawing.Point(3, 43);
-            this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(419, 300);
-            this.pnBody.TabIndex = 1;
             // 
             // button2
             // 
@@ -345,7 +327,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.btn_HoaDon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -362,7 +343,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.gbo_chuyenPhat.ResumeLayout(false);
             this.gbo_chuyenPhat.PerformLayout();
-            this.pnHD.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +363,6 @@
         private System.Windows.Forms.Label label5;
 //        private System.Windows.Forms.RibbonButton ribbonButton1;
         private DevExpress.XtraEditors.SimpleButton btn_HoaDon;
-        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -395,8 +374,6 @@
         private DevExpress.XtraEditors.SimpleButton btnVisible;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnHD;
-        
-        private System.Windows.Forms.Panel pnBody;
         
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label14;

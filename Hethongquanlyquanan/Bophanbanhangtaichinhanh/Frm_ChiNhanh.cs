@@ -35,13 +35,6 @@ namespace Bophanbanhangtaichinhanh
 
         }
 
-        private void btn_ThemHD_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frm_HoaDon frm = new frm_HoaDon();
-            frm.Show();
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -112,10 +105,9 @@ namespace Bophanbanhangtaichinhanh
         {
             Panel pnHeadHD = null;
             pnHeadHD = new Panel();
-            
-            pnHeadHD.Controls.Add(this.label10);
-            pnHeadHD.Controls.Add(this.label9);
-            pnHeadHD.Location = new Point(3, 3);
+
+            pnHeadHD.BorderStyle = BorderStyle.FixedSingle;
+            pnHeadHD.Location = new Point(0, 0);
             pnHeadHD.Name = "pnHeadHD";
             pnHeadHD.Size = new Size(419, 35);
             pnHD.Controls.Add(pnHeadHD);
@@ -129,10 +121,10 @@ namespace Bophanbanhangtaichinhanh
 
             pnBodyHD = new Panel();
             pnBodyHD.BorderStyle = BorderStyle.FixedSingle;            
-            //pnBodyHD.Location = new Point(pH.Location.X, pH.Location.Y + pH.Size.Height + 5);
-            pnBodyHD.Location = new Point(0, 0);
+            pnBodyHD.Location = new Point(pH.Location.X, pH.Location.Y + pH.Height + 5);
+            //pnBodyHD.Location = new Point(0, 0);
             pnBodyHD.Name = "pnBodyHD";
-            pnBodyHD.Size = new Size(413, 55);
+            pnBodyHD.Size = new Size(pH.Width, pnHD.Height - pH.Height - 5);
             
             pnHD.Controls.Add(pnBodyHD);
         }
@@ -141,28 +133,28 @@ namespace Bophanbanhangtaichinhanh
         {
             Panel pH = (Panel)pnHD.Controls.Find("pnBodyHD", true).FirstOrDefault();
             pH.BorderStyle = BorderStyle.FixedSingle;
-            //if (pH != null)
-            //{
-            //    Panel pnRowHD = null;
-            //    Label lb_Soluong = null;
-            //    pnRowHD = new Panel();
-            //    lb_Soluong = new Label();
+            if (pH != null)
+            {
+                Panel pnRowHD = null;
+                Label lb_Soluong = null;
+                pnRowHD = new Panel();
+                lb_Soluong = new Label();
 
-            //    pnRowHD.Location = new Point(0,0);
-                
-            //    pnRowHD.Name = "pnRowHD_" + ma;
+                pnRowHD.Location = new Point(0, 0);
 
-            //    pnRowHD.Size = new Size(100, 20);
+                pnRowHD.Name = "pnRowHD_" + ma;
 
-            //    lb_Soluong = new Label();
-            //    lb_Soluong.Location = new Point(0, 0);
-            //    lb_Soluong.Text = "10";
-            //    pnRowHD.Controls.Add(lb_Soluong);
-            //    pH.Controls.Add(pnRowHD);
+                pnRowHD.Size = new Size(100, 20);
+
+                lb_Soluong = new Label();
+                lb_Soluong.Location = new Point(0, 0);
+                lb_Soluong.Text = "10";
+                pnRowHD.Controls.Add(lb_Soluong);
+                pH.Controls.Add(pnRowHD);
 
 
-            //}
- 
+            }
+
         }
     }
 }

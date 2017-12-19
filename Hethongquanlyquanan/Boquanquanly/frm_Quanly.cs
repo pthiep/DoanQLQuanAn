@@ -823,7 +823,7 @@ namespace Boquanquanly
 
             lb_HBan.Width = pn_HBan.Width;
             lb_HBan.Height = pn_HBan.Height;
-            lb_HBan.Text = "Quản lý bàn";
+            lb_HBan.Text = "Số lượng bàn";
             lb_HBan.TextAlign = ContentAlignment.MiddleCenter;
             lb_HBan.Location = new Point(0, 0);
             pn_HBan.Controls.Add(lb_HBan);
@@ -879,8 +879,8 @@ namespace Boquanquanly
             Label lb_BMachinhanh = null;
             Label lb_BDiachi = null;
             Label lb_BDienthoai = null;
-            Label lb_BDanhmuc = null;
-            SimpleButton btn_BBan = null;
+            Label lb_BTinhthanh = null;
+            Label lb_BBan = null;
             SimpleButton btn_BMenu = null;
             SimpleButton btn_BSua = null;
             SimpleButton btn_BXoa = null;
@@ -929,8 +929,8 @@ namespace Boquanquanly
                 lb_BMachinhanh = new Label();
                 lb_BDiachi = new Label();
                 lb_BDienthoai = new Label();
-                lb_BDanhmuc = new Label();
-                btn_BBan = new SimpleButton();
+                lb_BTinhthanh = new Label();
+                lb_BBan = new Label();
                 btn_BMenu = new SimpleButton();
                 btn_BSua = new SimpleButton();
                 btn_BXoa = new SimpleButton();
@@ -991,23 +991,22 @@ namespace Boquanquanly
                 pn_BTinhthanh.Size = new Size(crpnBDanhmuc, cc);
                 pn_BTinhthanh.Location = new Point(pn_BDienthoai.Location.X + pn_BDienthoai.Width - 1, 0);
 
-                lb_BDanhmuc.Width = pn_BTinhthanh.Width;
-                lb_BDanhmuc.Height = pn_BTinhthanh.Height;
-                lb_BDanhmuc.Text = dt.Rows[i].ItemArray[4].ToString();
-                lb_BDanhmuc.TextAlign = ContentAlignment.MiddleCenter;
-                lb_BDanhmuc.Location = new Point(0, 0);
-                pn_BTinhthanh.Controls.Add(lb_BDanhmuc);
+                lb_BTinhthanh.Width = pn_BTinhthanh.Width;
+                lb_BTinhthanh.Height = pn_BTinhthanh.Height;
+                lb_BTinhthanh.Text = dt.Rows[i].ItemArray[4].ToString();
+                lb_BTinhthanh.TextAlign = ContentAlignment.MiddleCenter;
+                lb_BTinhthanh.Location = new Point(0, 0);
+                pn_BTinhthanh.Controls.Add(lb_BTinhthanh);
 
                 pn_BBan.Size = new Size(crpnBBan, cc);
                 pn_BBan.Location = new Point(pn_BTinhthanh.Location.X + pn_BTinhthanh.Width - 1, 0);
 
-                string imgBan = "C:\\DBMA\\qlban.png";
-                btn_BBan.ImageOptions.Image = Image.FromFile(imgBan);
-                btn_BBan.ImageOptions.Location = ImageLocation.MiddleCenter;                
-                btn_BBan.Size = new Size(btn_BBan.ImageOptions.Image.Width, btn_BBan.ImageOptions.Image.Height);
-                btn_BBan.Location = new Point(pn_BBan.Width / 2 - btn_BBan.Size.Width / 2, pn_BBan.Height / 2 - btn_BBan.Size.Height / 2);
-                pn_BBan.Controls.Add(btn_BBan);
-
+                lb_BBan.Width = pn_BBan.Width;
+                lb_BBan.Height = pn_BBan.Height;
+                lb_BBan.Text = dt.Rows[i].ItemArray[5].ToString();
+                lb_BBan.TextAlign = ContentAlignment.MiddleCenter;
+                lb_BBan.Location = new Point(0, 0);
+                pn_BBan.Controls.Add(lb_BBan);
 
 
                 pn_BMenu.Size = new Size(crpnBMenu, cc);
@@ -1078,8 +1077,9 @@ namespace Boquanquanly
             TextBox tb_BDiachi = null;
             Label lb_BDienthoai = null;
             TextBox tb_BSodienthoai = null;
-            Label lb_BDanhmuc = null;
-            SimpleButton btn_BBan = null;
+            Label lb_BTinhthanh = null;
+            Label lb_BBan = null;
+            TextBox tb_BBan = null;
             SimpleButton btn_BMenu = null;
             SimpleButton btn_BSua = null;
             SimpleButton btn_BXoa = null;
@@ -1133,8 +1133,9 @@ namespace Boquanquanly
                 tb_BDiachi = new TextBox();
                 lb_BDienthoai = new Label();
                 tb_BSodienthoai = new TextBox();
-                lb_BDanhmuc = new Label();
-                btn_BBan = new SimpleButton();
+                lb_BTinhthanh = new Label();
+                lb_BBan = new Label();
+                tb_BBan = new TextBox();
                 btn_BMenu = new SimpleButton();
                 btn_BSua = new SimpleButton();
                 btn_BXoa = new SimpleButton();
@@ -1199,24 +1200,22 @@ namespace Boquanquanly
                     pn_BTinhthanh.Size = new Size(crpnBDanhmuc, cc);
                     pn_BTinhthanh.Location = new Point(pn_BDienthoai.Location.X + pn_BDienthoai.Width - 1, 0);
 
-                    lb_BDanhmuc.Width = pn_BTinhthanh.Width;
-                    lb_BDanhmuc.Height = pn_BTinhthanh.Height;
-                    lb_BDanhmuc.Text = dt.Rows[i].ItemArray[4].ToString();
-                    lb_BDanhmuc.TextAlign = ContentAlignment.MiddleCenter;
-                    lb_BDanhmuc.Location = new Point(0, 0);
-                    pn_BTinhthanh.Controls.Add(lb_BDanhmuc);
+                    lb_BTinhthanh.Width = pn_BTinhthanh.Width;
+                    lb_BTinhthanh.Height = pn_BTinhthanh.Height;
+                    lb_BTinhthanh.Text = dt.Rows[i].ItemArray[4].ToString();
+                    lb_BTinhthanh.TextAlign = ContentAlignment.MiddleCenter;
+                    lb_BTinhthanh.Location = new Point(0, 0);
+                    pn_BTinhthanh.Controls.Add(lb_BTinhthanh);
 
                     pn_BBan.Size = new Size(crpnBBan, cc);
                     pn_BBan.Location = new Point(pn_BTinhthanh.Location.X + pn_BTinhthanh.Width - 1, 0);
 
-                    string imgBan = "C:\\DBMA\\qlban.png";
-                    btn_BBan.ImageOptions.Image = Image.FromFile(imgBan);
-                    btn_BBan.ImageOptions.Location = ImageLocation.MiddleCenter;
-                    btn_BBan.Size = new Size(btn_BBan.ImageOptions.Image.Width, btn_BBan.ImageOptions.Image.Height);
-                    btn_BBan.Location = new Point(pn_BBan.Width / 2 - btn_BBan.Size.Width / 2, pn_BBan.Height / 2 - btn_BBan.Size.Height / 2);
-                    pn_BBan.Controls.Add(btn_BBan);
-
-
+                    tb_BBan.Width = pn_BBan.Width - 5;
+                    tb_BBan.Height = pn_BBan.Height - 5;
+                    tb_BBan.Text = dt.Rows[i].ItemArray[5].ToString();
+                    tb_BBan.Name = "tb_BBan_" + dt.Rows[i].ItemArray[0].ToString();
+                    tb_BBan.Location = new Point(pn_BBan.Width / 2 - tb_BBan.Width / 2, pn_BBan.Height / 2 - tb_BBan.Height / 2);
+                    pn_BBan.Controls.Add(tb_BBan);
 
                     pn_BMenu.Size = new Size(crpnBMenu, cc);
                     pn_BBan.Location = new Point(pn_BTinhthanh.Location.X + pn_BTinhthanh.Width - 1, 0);
@@ -1308,25 +1307,22 @@ namespace Boquanquanly
                     pn_BTinhthanh.Size = new Size(crpnBDanhmuc, cc);
                     pn_BTinhthanh.Location = new Point(pn_BDienthoai.Location.X + pn_BDienthoai.Width - 1, 0);
 
-                    lb_BDanhmuc.Width = pn_BTinhthanh.Width;
-                    lb_BDanhmuc.Height = pn_BTinhthanh.Height;
-                    lb_BDanhmuc.Text = dt.Rows[i].ItemArray[4].ToString();
-                    lb_BDanhmuc.TextAlign = ContentAlignment.MiddleCenter;
-                    lb_BDanhmuc.Location = new Point(0, 0);
-                    pn_BTinhthanh.Controls.Add(lb_BDanhmuc);
+                    lb_BTinhthanh.Width = pn_BTinhthanh.Width;
+                    lb_BTinhthanh.Height = pn_BTinhthanh.Height;
+                    lb_BTinhthanh.Text = dt.Rows[i].ItemArray[4].ToString();
+                    lb_BTinhthanh.TextAlign = ContentAlignment.MiddleCenter;
+                    lb_BTinhthanh.Location = new Point(0, 0);
+                    pn_BTinhthanh.Controls.Add(lb_BTinhthanh);
 
                     pn_BBan.Size = new Size(crpnBBan, cc);
                     pn_BBan.Location = new Point(pn_BTinhthanh.Location.X + pn_BTinhthanh.Width - 1, 0);
 
-                    string imgBan = "C:\\DBMA\\qlban.png";
-                    btn_BBan.ImageOptions.Image = Image.FromFile(imgBan);
-                    btn_BBan.ImageOptions.Location = ImageLocation.MiddleCenter;
-                    btn_BBan.Size = new Size(btn_BBan.ImageOptions.Image.Width, btn_BBan.ImageOptions.Image.Height);
-                    btn_BBan.Location = new Point(pn_BBan.Width / 2 - btn_BBan.Size.Width / 2, pn_BBan.Height / 2 - btn_BBan.Size.Height / 2);
-                    pn_BBan.Controls.Add(btn_BBan);
-                    pn_BBan.Enabled = false;
-
-
+                    lb_BBan.Width = pn_BBan.Width;
+                    lb_BBan.Height = pn_BBan.Height;
+                    lb_BBan.Text = dt.Rows[i].ItemArray[5].ToString();
+                    lb_BBan.TextAlign = ContentAlignment.MiddleCenter;
+                    lb_BBan.Location = new Point(0, 0);
+                    pn_BBan.Controls.Add(lb_BBan);
 
                     pn_BMenu.Size = new Size(crpnBMenu, cc);
                     pn_BBan.Location = new Point(pn_BTinhthanh.Location.X + pn_BTinhthanh.Width - 1, 0);
@@ -1507,5 +1503,9 @@ namespace Boquanquanly
             VeBodyBangDanhSachMonAn(busMA.LoadDanhSachMonAn());
         }
 
+        private void backstageViewClientControl3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

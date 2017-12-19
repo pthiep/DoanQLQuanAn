@@ -80,12 +80,6 @@
     <Compile Include="Frm_ChiPhiPhatSinh.Designer.cs">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_HoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_HoaDon.Designer.cs">
-      <DependentUpon>frm_HoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_QuanLyDHTuTongDai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ChiPhiPhatSinh.resx">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_HoaDon.resx">
-      <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_QuanLyDHTuTongDai.resx">
       <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
@@ -154,7 +145,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="MetroFramework.txt" />
     <None Include="Resources\icons8-tick-box-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

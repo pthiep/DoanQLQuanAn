@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 
-namespace Bophanbanhangtaichinhanh
+namespace Boquanquanly
 {
-    public partial class frm_HoaDon : Form
+    public partial class Frm_ChiNhanh : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frm_HoaDon()
+        public Frm_ChiNhanh()
         {
             InitializeComponent();
-        }
-
-        private void frm_HoaDon_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

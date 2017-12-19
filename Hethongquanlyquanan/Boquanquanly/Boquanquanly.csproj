@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dsNhanVien.cs" />
+    <Compile Include="Frm_ChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ChiNhanh.Designer.cs">
+      <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     <Compile Include="Frm_MonAn.Designer.cs">
       <DependentUpon>Frm_MonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_QLMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLMenu.designer.cs">
+      <DependentUpon>Frm_QLMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Quanly.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_ChiNhanh.resx">
+      <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Dangnhap.resx">
       <DependentUpon>frm_Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MonAn.resx">
       <DependentUpon>Frm_MonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLMenu.resx">
+      <DependentUpon>Frm_QLMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Quanly.resx">
       <DependentUpon>Frm_Quanly.cs</DependentUpon>
