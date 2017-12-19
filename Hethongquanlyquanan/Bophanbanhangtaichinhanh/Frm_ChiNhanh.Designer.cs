@@ -55,6 +55,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.gbo_chuyenPhat.SuspendLayout();
             this.SuspendLayout();
@@ -74,16 +76,16 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1232, 32);
+            this.ribbon.Size = new System.Drawing.Size(1232, 27);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 676);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 666);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1232, 21);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1232, 31);
             // 
             // linkLabel1
             // 
@@ -142,7 +144,7 @@
             // 
             // btn_HoaDon
             // 
-            this.btn_HoaDon.Location = new System.Drawing.Point(286, 624);
+            this.btn_HoaDon.Location = new System.Drawing.Point(308, 600);
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.Size = new System.Drawing.Size(75, 23);
             this.btn_HoaDon.TabIndex = 21;
@@ -210,7 +212,7 @@
             // 
             // btnCPPS
             // 
-            this.btnCPPS.Location = new System.Drawing.Point(312, 595);
+            this.btnCPPS.Location = new System.Drawing.Point(1034, 590);
             this.btnCPPS.Name = "btnCPPS";
             this.btnCPPS.Size = new System.Drawing.Size(90, 23);
             this.btnCPPS.TabIndex = 33;
@@ -222,13 +224,13 @@
             this.pnUC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnUC.Location = new System.Drawing.Point(482, 104);
             this.pnUC.Name = "pnUC";
-            this.pnUC.Size = new System.Drawing.Size(671, 454);
+            this.pnUC.Size = new System.Drawing.Size(671, 438);
             this.pnUC.TabIndex = 36;
             this.pnUC.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnVisible
             // 
-            this.btnVisible.Location = new System.Drawing.Point(839, 51);
+            this.btnVisible.Location = new System.Drawing.Point(814, 47);
             this.btnVisible.Name = "btnVisible";
             this.btnVisible.Size = new System.Drawing.Size(75, 23);
             this.btnVisible.TabIndex = 37;
@@ -250,6 +252,7 @@
             this.pnHD.Name = "pnHD";
             this.pnHD.Size = new System.Drawing.Size(425, 374);
             this.pnHD.TabIndex = 40;
+            this.pnHD.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHD_Paint);
             // 
             // button2
             // 
@@ -314,11 +317,32 @@
             this.label10.TabIndex = 1;
             this.label10.Text = " Giờ vào:   10:00";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(459, 81);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 44;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Frm_ChiNhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 697);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pnHD);
             this.Controls.Add(this.btnVisible);
             this.Controls.Add(this.pnUC);
@@ -382,5 +406,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

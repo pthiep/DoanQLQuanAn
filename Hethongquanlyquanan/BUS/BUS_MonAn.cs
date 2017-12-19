@@ -72,5 +72,11 @@ namespace BUS
             return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
 
         }
+
+        public string LayGiaMonAnTheoMa(string ma)
+        {
+            string query = "select giaban from MonAn where mamonan = N'" + ma + "'";
+            return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
+        }
     }
 }

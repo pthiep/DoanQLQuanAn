@@ -16,7 +16,8 @@ namespace Bophanbanhangtaichinhanh
 {
     public partial class Frm_ChiNhanh : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        List<DTO_ItemBill> lstDSMA;
+        List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
+        BUS_MonAn bus_monan = new BUS_MonAn();
 
         public Frm_ChiNhanh()
         {
@@ -111,6 +112,19 @@ namespace Bophanbanhangtaichinhanh
             pnHeadHD.Name = "pnHeadHD";
             pnHeadHD.Size = new Size(419, 35);
             pnHD.Controls.Add(pnHeadHD);
+
+            Label lbTenNV = new Label();
+            lbTenNV.Text = "Nguyễn Văn A";
+            lbTenNV.Location = new Point(0, 0);
+            
+
+            Label lbDate = new Label();
+            lbDate.Text = "Giờ đến:  10:00:00";
+            lbDate.Location = new Point(pnHeadHD.Width - lbDate.Width, 0);
+
+            pnHeadHD.Controls.Add(lbTenNV);
+            pnHeadHD.Controls.Add(lbDate);
+
         }
 
         private void PaintBodyHD(string ma)
@@ -132,29 +146,99 @@ namespace Bophanbanhangtaichinhanh
         private void AddRowPanel(string ma)
         {
             Panel pH = (Panel)pnHD.Controls.Find("pnBodyHD", true).FirstOrDefault();
-            pH.BorderStyle = BorderStyle.FixedSingle;
+            Panel pnRow = (Panel)pnHD.Controls.Find("pnRowHD_"+ma, true).FirstOrDefault();
+            
             if (pH != null)
             {
-                Panel pnRowHD = null;
-                Label lb_Soluong = null;
-                pnRowHD = new Panel();
-                lb_Soluong = new Label();
+                if (pnRow == null)
+                {
+                    Panel pnRowHD = null;
+                    Label lb_SoLuong = null;
+                    Label lb_Ten = null;
+                    Label lb_Gia = null;
+                    Label lb_ThanhTien = null;
 
-                pnRowHD.Location = new Point(0, 0);
+                    pnRowHD = new Panel();
+                    lb_SoLuong = new Label();
+                    lb_Ten = new Label();
+                    lb_Gia = new Label();
+                    lb_ThanhTien = new Label();
+                    
+                    pnRowHD.Location = new Point(0, 0);
+                    pnRowHD.Name = "pnRowHD_" + ma;
+                    pnRowHD.Size = new Size(pH.Width, 35);
+                    pnRowHD.BorderStyle = BorderStyle.FixedSingle;
 
-                pnRowHD.Name = "pnRowHD_" + ma;
+                    lb_SoLuong = new Label();
+                    lb_SoLuong.Location = new Point(0, 0);
+                    lb_SoLuong.Name = "lbSoLuong_" + ma;
+                    lb_SoLuong.Text = "1";
+                    pnRowHD.Controls.Add(lb_SoLuong);
+                  
+                    lb_Ten.Location = new Point(100, 0);
+                    lb_Ten.Text = bus_monan.LayTenTuMaMonAn(ma);
+                    pnRowHD.Controls.Add(lb_Ten);
 
-                pnRowHD.Size = new Size(100, 20);
+                    lb_Gia.Location = new Point(100, lb_Ten.Height + lb_Ten.Location.Y);
+                    lb_Gia.Text = bus_monan.LayGiaMonAnTheoMa(ma);
+                    pnRowHD.Controls.Add(lb_Gia);
 
-                lb_Soluong = new Label();
-                lb_Soluong.Location = new Point(0, 0);
-                lb_Soluong.Text = "10";
-                pnRowHD.Controls.Add(lb_Soluong);
-                pH.Controls.Add(pnRowHD);
+                    lb_ThanhTien.Location = new Point(pnRowHD.Width - lb_ThanhTien.Width, 0);
+                    lb_ThanhTien.Name = "lbThanhTien_" + ma;
+                    lb_ThanhTien.Text = (int.Parse(bus_monan.LayGiaMonAnTheoMa(ma)) * (int.Parse(lb_SoLuong.Text))).ToString();
+                    pnRowHD.Controls.Add(lb_ThanhTien);
+
+                    pH.Controls.Add(pnRowHD);
+
+                    DTO_ItemBill newbill = new DTO_ItemBill();
+                    newbill.Ma = ma;
+                    newbill.Ten = lb_Ten.Text;
+                    newbill.Soluong = int.Parse(lb_SoLuong.Text);
+                    newbill.Thanhtien = decimal.Parse(lb_ThanhTien.Text);
+                    if(lstDSMA.Contains(newbill))
+                    {
+                        int i = lstDSMA.IndexOf(newbill);
+                        lstDSMA[i].Soluong = int.Parse(lb_SoLuong.Text); 
+                        lstDSMA[i].Thanhtien = decimal.Parse(lb_ThanhTien.Text);
+
+                    }
+                    else
+                    {
+                        lstDSMA.Add(newbill);
+                    }
+                    
+                
+                }
+                else
+                {
+                    MessageBox.Show("abc");
+                    Label lb_SoLuong = (Label)pnHD.Controls.Find("lbSoLuong_" + ma, true).FirstOrDefault();
+                    lb_SoLuong.Text = (int.Parse(lb_SoLuong.Text) + 1).ToString();
+                   
+
+
+                    Label lb_ThanhTien = (Label)pnHD.Controls.Find("lbThanhTien_" + ma, true).FirstOrDefault();
+                    lb_ThanhTien.Text = (int.Parse(lb_SoLuong.Text)* int.Parse(bus_monan.LayGiaMonAnTheoMa(ma))).ToString();
+   
+
+                }
 
 
             }
 
+        }
+
+        private void pnHD_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            foreach(DTO_ItemBill BILL in lstDSMA)
+            {
+                MessageBox.Show(BILL.Ma + BILL.Soluong + BILL.Thanhtien);
+            }
         }
     }
 }

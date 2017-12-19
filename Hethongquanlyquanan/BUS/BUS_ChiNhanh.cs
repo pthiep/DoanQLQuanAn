@@ -35,5 +35,7 @@ namespace BUS
             string query = "update ChiNhanh set trangthai = 0 where machinhanh = @macn";
             return dalCN.ExecuteNonQuery(query, new object[] { ma }) > 0 ? true : false;
         }
+
+
     }
 }
