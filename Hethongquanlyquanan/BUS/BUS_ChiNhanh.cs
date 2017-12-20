@@ -26,7 +26,13 @@ namespace BUS
 
         public bool Capnhatchinhanhnhanh(DTO_ChiNhanh cn)
         {
-            string query = "update ChiNhanh set tenchinhanh = N'" + cn.Tencn + "' , sodienthoai = " + cn.Dienthoai + " , diachi = N'" + cn.Diachi + "' where machinhanh = " + cn.Macn;
+            string query = "update ChiNhanh set tenchinhanh = N'" + cn.Tencn + "' , sodienthoai = " + cn.Dienthoai + " , diachi = N'" + cn.Diachi + "' , soluongban = " + cn.Soluongban +" where machinhanh = '" + cn.Macn + "'";
+            return dalCN.ExecuteNonQuery(query) > 0 ? true : false;
+        }
+
+        public bool Capnhatchinhanh(DTO_ChiNhanh cn)
+        {
+            string query = "update ChiNhanh set tenchinhanh = N'" + cn.Tencn + "' , sodienthoai = " + cn.Dienthoai + " , diachi = N'" + cn.Diachi + "' , tinhthanh = N'" + cn.Tinhthanh + "', soluongban = " + cn.Soluongban + " , manhanvienquanly = '" + cn.Manvql + "' where machinhanh = '" + cn.Macn + "'";
             return dalCN.ExecuteNonQuery(query) > 0 ? true : false;
         }
 
@@ -36,6 +42,16 @@ namespace BUS
             return dalCN.ExecuteNonQuery(query, new object[] { ma }) > 0 ? true : false;
         }
 
+        public string TaoMaCN()
+        {
+            int ma = LoadDanhSachChiNhanh().Rows.Count + 1;
+            return "CN" + ma.ToString();
+        }
 
+        public bool ThemCN(DTO_ChiNhanh cn)
+        {
+            string query = "insert into ChiNhanh (machinhanh, tenchinhanh, sodienthoai, diachi, tinhthanh, soluongban, manhanvienquanly , trangthai) values ( @macn , @tencn , @sdt , @dc , @tt , @slban , @manv , @tthai )";
+            return dalCN.ExecuteNonQuery(query, new object[] { cn.Macn, cn.Tencn, cn.Dienthoai, cn.Diachi, cn.Tinhthanh, cn.Soluongban, cn.Manvql, 1 }) > 0 ? true : false;
+        }
     }
 }

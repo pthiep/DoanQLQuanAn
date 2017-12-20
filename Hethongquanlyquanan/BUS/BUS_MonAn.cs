@@ -35,6 +35,12 @@ namespace BUS
             return LoadDanhSachMonAn().Rows.Count;
         }
 
+        public bool Capnhatmonannhanh(DTO_MonAn ma)
+        {
+            string query = "update MonAn set tenmonan = @tenma , giaban = @giaban where mamonan = @mama";
+            return dalMA.ExecuteNonQuery(query, new object[] { ma.Tenma, ma.Giaban, ma.Mama }) > 0 ? true : false;
+        }
+
         public bool Capnhatmonan(DTO_MonAn ma)
         {
             string query = "update MonAn set tenmonan = @tenma , giaban = @giaban where mamonan = @mama";
@@ -70,7 +76,6 @@ namespace BUS
         {
             string query = "select tenmonan from MonAn where mamonan = N'" + ma + "'";
             return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
-
         }
 
         public string LayGiaMonAnTheoMa(string ma)

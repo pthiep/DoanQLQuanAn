@@ -38,126 +38,197 @@ namespace Boquanquanly
             lb_Macn.Text = macn;
             DataTable dt = busMenu.LoadMenuChiNhanh(macn);
             VeMon();
-            //VeDanhMuc("Cơm", new Point(0, 0));
+            LoadCbDanhmuc();
         }
+
+        void LoadCbDanhmuc()
+        {
+            DataTable dt = busMenu.LoadDanhMuc();
+            cb_DM.Properties.Items.Add("---Chọn danh mục---");
+            foreach (DataRow dr in dt.Rows)
+            {
+                cb_DM.Properties.Items.Add(dr.ItemArray[1].ToString());
+            }
+            cb_DM.SelectedIndex = 0;
+        }       
 
         void VeMon()
         {
-            pnBan.Controls.Clear();
+            pnMenu.Controls.Clear();
             int slDM = busMenu.Sodanhmucchinhanh(macn);
-            DataTable dt = busMenu.BanDanhMucChiNhanh(macn);
-            int cc = 30;
-            for (int i = 0; i < slDM; i++)
-            {
-                VeDanhMuc(dt.Rows[i].ItemArray[1].ToString(), new Point(0, i * cc));
-                VeChiTietBan(macn, i);
-            }
+            DataTable dtDMCN = busMenu.BanDanhMucChiNhanh(macn);
+            DataTable dtMADM = null;
 
+            if (slDM > 0)
+            {
+                Point pCu = new Point(0, 0);
+                Point pMoi = new Point(0, 0);
+
+                for (int i = 0; i < slDM; i++)
+                {
+                    dtMADM = busMenu.DanhSachMonAnTheoDanhMuc(macn, dtDMCN.Rows[i].ItemArray[1].ToString());
+                    VeDanhMuc(dtDMCN.Rows[i].ItemArray[1].ToString(), pCu, ref pMoi);
+                    pCu = pMoi;
+                    VeChiTietBan(dtMADM, dtDMCN.Rows[i].ItemArray[1].ToString(), pCu, ref pMoi);
+                    pCu = pMoi;
+                }
+            }
+            else
+            {
+                VeKhongCoDanhMuc();
+            }          
         }
 
-        void VeDanhMuc(string tenDM, Point pTenDM)
+        void VeKhongCoDanhMuc()
+        {
+            Label lb_Thongbao = new Label();
+            lb_Thongbao.Text = "Không có danh mục nào";
+            pnMenu.Controls.Add(lb_Thongbao);
+        }
+
+        void VeDanhMuc(string tenDM, Point pTenDM , ref Point pMoi)
         {
             Panel pnDanhmuc = null;
-            SimpleButton btn_XoaDanhmuc = null;
             Label lb_Tendanhmuc = null;
-            SimpleButton btnThem = null;
-            SimpleButton btnXoa = null;
 
             pnDanhmuc = new Panel();
             lb_Tendanhmuc = new Label();
 
             pnDanhmuc.Name = "pnDanhmuc_" + macn + "_" + tenDM;
-            pnDanhmuc.BorderStyle = BorderStyle.FixedSingle;
-            pnDanhmuc.Size = new Size(pnBan.Width, 25);
+            pnDanhmuc.Size = new Size(pnMenu.Width, 25);
             pnDanhmuc.Location = new Point(pTenDM.X, pTenDM.Y);
 
             lb_Tendanhmuc.Text = "* " + tenDM;
             lb_Tendanhmuc.Font = new Font(lb_Tendanhmuc.Font.Name, 12, FontStyle.Bold);
             lb_Tendanhmuc.TextAlign = ContentAlignment.MiddleLeft;
             lb_Tendanhmuc.Size = new Size(200, 25);
-            lb_Tendanhmuc.BorderStyle = BorderStyle.FixedSingle;
             lb_Tendanhmuc.Location = new Point(0, pnDanhmuc.Height / 2 - lb_Tendanhmuc.Height / 2);
 
             pnDanhmuc.Controls.Add(lb_Tendanhmuc);
-            pnBan.Controls.Add(pnDanhmuc);
+            pnMenu.Controls.Add(pnDanhmuc);
+            pMoi = new Point(0, pTenDM.Y + pnDanhmuc.Height);
         }
 
-        private void BtnXoa_Click(object sender, EventArgs e)
+        void VeChiTietBan(DataTable dt, string tendanhmuc, Point pCTMN, ref Point pMoi)
         {
-            int tang = int.Parse((sender as Control).Tag.ToString());
-            //busBan.XoaBan(lb_Macn.Text, tang);
-            //VeBan(lb_Macn.Text);
+            Panel pnCTMenu = null;
+            Panel pnMonan = null;
+            PictureBox pbMonan = null;
+            Label lb_Tenmonan = null;
+            Label lb_Giaban = null;
+            SimpleButton btn_XoaMA = null;
+
+            int soluongmonan = busMenu.SoLuongMonAn(macn, tendanhmuc);
+            int sodong = soluongmonan % 4 == 0 ? soluongmonan / 4 : (soluongmonan / 4) + 1;
+
+            pnCTMenu = new Panel();
+            pnCTMenu.Location = new Point(pCTMN.X, pCTMN.Y);
+
+            int dem = 1;
+            for (int i = 0; i < sodong; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    pnMonan = new Panel();
+                    pbMonan = new PictureBox();
+                    lb_Tenmonan = new Label();
+                    lb_Giaban = new Label();
+                    btn_XoaMA = new SimpleButton();
+
+                    pnMonan.BorderStyle = BorderStyle.FixedSingle;
+                    pnMonan.Size = new Size(150, 165);
+                    pnMonan.Location = (j == 0) ? new Point(pnMonan.Width * j, (pnMonan.Height * i) + 2) : new Point((pnMonan.Width * j) + 2, (pnMonan.Height * i) + 2);
+
+                    string imgMonan = dt.Rows[dem - 1].ItemArray[6].ToString();
+                    pbMonan.Image = Image.FromFile(imgMonan);
+                    pbMonan.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pbMonan.Location = new Point(0, 0);
+                    pbMonan.Size = new Size(150, 120);
+
+                    lb_Tenmonan.Text = dt.Rows[dem - 1].ItemArray[4].ToString();
+                    lb_Tenmonan.Location = new Point(40, pbMonan.Height);
+
+                    lb_Giaban.Text = dt.Rows[dem - 1].ItemArray[5].ToString();
+                    lb_Giaban.Location = new Point(40, lb_Tenmonan.Location.Y + lb_Tenmonan.Height);
+
+                    btn_XoaMA.Text = "X";
+                    btn_XoaMA.Size = new Size(30, 30);
+                    btn_XoaMA.Location = new Point(2, pbMonan.Height + 4);
+                    btn_XoaMA.Click += Btn_XoaMA_Click;
+                    btn_XoaMA.Tag = dt.Rows[dem - 1].ItemArray[3].ToString();
+
+                    pnMonan.Controls.Add(pbMonan);
+                    pnMonan.Controls.Add(lb_Tenmonan);
+                    pnMonan.Controls.Add(lb_Giaban);
+                    pnMonan.Controls.Add(btn_XoaMA);
+
+                    pnCTMenu.Controls.Add(pnMonan);
+                    
+                    if (dem == soluongmonan)
+                        break;
+                    else
+                        dem++;
+                }
+            }
+
+            pnCTMenu.Size = new Size(pnMenu.Width, sodong * 170);
+
+            pnMenu.Controls.Add(pnCTMenu);
+            pMoi = new Point(0, pnCTMenu.Location.Y + pnCTMenu.Height + 2);
         }
 
-        private void BtnThem_Click(object sender, EventArgs e)
+        private void Btn_XoaMA_Click(object sender, EventArgs e)
         {
-            int tang = int.Parse((sender as Control).Tag.ToString());
-           // busBan.ThemBan(lb_Macn.Text, tang);
-           // VeBan(lb_Macn.Text);
+            string mama = (sender as Control).Tag.ToString();
+            if (busMenu.XoaMonAn(macn, mama))
+            {
+                MessageBox.Show("Xóa món ăn có mã " + mama + " thành công !!!", "Thông báo");
+                VeMon();
+            }
         }
 
-        void VeChiTietBan(string macn, int tang)
+        private void cb_DM_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Panel pnCTBan = null;
-            Panel pnBanNho = null;
-            PictureBox pbBan = null;
-            Label lb_Maban = null;
-
-            Panel pn = (Panel)pnBan.Controls.Find("pnTang_" + macn + "_" + tang, true).FirstOrDefault();
-
-            //int soluongban = busBan.Sobantang(macn, tang);
-           // int sodong = soluongban % 4 == 0 ? soluongban / 4 : (soluongban / 4) + 1;
-
-            //pnCTBan = new Panel();
-            //pnCTBan.Name = "pnCTBan_" + macn + "_" + tang;
-            //pnCTBan.Size = new Size(pn.Width - 50, sodong * 120);
-            //pnCTBan.Location = new Point(0, pn.Location.Y + pn.Height);
-
-            //int dem = 1;
-            //for (int i = 0; i < sodong; i++)
-            //{
-            //    for (int j = 0; j < 4; j++)
-            //    {
-            //        pnBanNho = new Panel();
-            //        pbBan = new PictureBox();
-            //        lb_Maban = new Label();
-
-            //        pnBanNho.Size = new Size(96, 120);
-            //        pnBanNho.Location = new Point(96 * j, 120 * i);
-
-            //        string imgBan = "C:\\DBMA\\ctban.png";
-            //        pbBan.Image = Image.FromFile(imgBan);
-            //        pbBan.SizeMode = PictureBoxSizeMode.CenterImage;
-            //        pbBan.Location = new Point(0, 0);
-            //        pbBan.Size = new Size(96, 96);
-
-            //        lb_Maban.Text = "MB" + dem.ToString();
-            //        lb_Maban.Location = new Point(0, pbBan.Height);
-
-            //        pnBanNho.Controls.Add(pbBan);
-            //        pnBanNho.Controls.Add(lb_Maban);
-            //        pnCTBan.Controls.Add(pnBanNho);
-            //        //if (dem == soluongban)
-            //        //    break; 
-            //        //else
-            //        //    dem++;
-            //    }
-            //}
-
-            pnBan.Controls.Add(pnCTBan);
+            string dm = cb_DM.Text;
+            DataTable dt = busMenu.LoadMonAn(dm);
+            LoadCbMonAn(dt);
         }
 
-        private void btn_Themtang_Click(object sender, EventArgs e)
+        void LoadCbMonAn(DataTable dt)
         {
-            //busBan.ThemTang(lb_Macn.Text);
-            //VeBan(lb_Macn.Text);
+            cbMA.Properties.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                cbMA.Properties.Items.Add(busMenu.LayTenMonAnTuMa(dr.ItemArray[0].ToString()));
+            }
+            cbMA.SelectedIndex = 0;
         }
 
-        private void btn_XoaTang_Click(object sender, EventArgs e)
+        private void btn_Themmonan_Click(object sender, EventArgs e)
         {
-            int tang = int.Parse((sender as Control).Tag.ToString());
-            //busBan.XoaTang(lb_Macn.Text, tang);
-           // VeBan(lb_Macn.Text);
+            string mama = busMenu.LayMaTuTenMonAn(cbMA.Text);
+            bool flag = false;
+            if (!busMenu.MonAnTonTaiTronMenu(macn, mama))
+            {
+                if (busMenu.CheckMonAnTonTai(macn, mama))
+                {
+                    flag = busMenu.Capnhattrangthaiqhcndm(macn, mama);
+                }
+                else
+                {
+                    flag = busMenu.Themmoiqhcndm(macn, mama);
+                }
+
+                if (flag)
+                {
+                    MessageBox.Show("Thêm món ăn " + cbMA.Text + " thành công !!!", "Thông báo");
+                }
+                VeMon();
+            }
+            else
+            {
+                MessageBox.Show("Món ăn đã tồn tại trong Menu !!!", "Thông báo");
+            }
         }
     }
 }
