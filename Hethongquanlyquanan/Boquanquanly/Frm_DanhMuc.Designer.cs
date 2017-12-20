@@ -34,11 +34,11 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
             this.tb_Tendanhmuc = new DevExpress.XtraEditors.TextEdit();
             this.tb_Madanhmuc = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
             this.tb_TimKiem = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -101,6 +101,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thêm danh mục";
             // 
+            // btn_Them
+            // 
+            this.btn_Them.Location = new System.Drawing.Point(351, 81);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(175, 23);
+            this.btn_Them.TabIndex = 20;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            // 
             // tb_Tendanhmuc
             // 
             this.tb_Tendanhmuc.Location = new System.Drawing.Point(277, 44);
@@ -138,15 +147,6 @@
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Tên danh mục";
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Location = new System.Drawing.Point(351, 81);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(175, 23);
-            this.btn_Them.TabIndex = 20;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // tb_TimKiem
             // 

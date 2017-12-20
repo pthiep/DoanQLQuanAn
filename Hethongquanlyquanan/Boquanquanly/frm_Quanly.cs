@@ -953,6 +953,7 @@ namespace Boquanquanly
                 lb_BTenchinhanh.Width = pn_BTenchinhanh.Width;
                 lb_BTenchinhanh.Height = pn_BTenchinhanh.Height;
                 lb_BTenchinhanh.Text = dt.Rows[i].ItemArray[1].ToString();
+                lb_BTenchinhanh.Name = "lb_BTenchinhanh_" + dt.Rows[i].ItemArray[0].ToString();
                 lb_BTenchinhanh.TextAlign = ContentAlignment.MiddleLeft;
                 lb_BTenchinhanh.Location = new Point(0, 0);
                 pn_BTenchinhanh.Controls.Add(lb_BTenchinhanh);
@@ -964,6 +965,7 @@ namespace Boquanquanly
                 lb_BMachinhanh.Width = pn_BMachinhanh.Width;
                 lb_BMachinhanh.Height = pn_BMachinhanh.Height;
                 lb_BMachinhanh.Text = dt.Rows[i].ItemArray[0].ToString();
+                lb_BMachinhanh.Name = "lb_BMachinhanh_" + dt.Rows[i].ItemArray[0].ToString();
                 lb_BMachinhanh.TextAlign = ContentAlignment.MiddleCenter;
                 lb_BMachinhanh.Location = new Point(0, 0);
                 pn_BMachinhanh.Controls.Add(lb_BMachinhanh);
@@ -1019,6 +1021,8 @@ namespace Boquanquanly
                 btn_BMenu.Location = new Point(pn_BBan.Width / 2 - btn_BMenu.Size.Width / 2, pn_BBan.Height / 2 - btn_BMenu.Size.Height / 2);
                 pn_BMenu.Location = new Point(pn_BBan.Location.X + pn_BBan.Width - 1, -1);
                 pn_BMenu.Controls.Add(btn_BMenu);
+                btn_BMenu.Click += Btn_BMenu_Click;
+                btn_BMenu.Tag = dt.Rows[i].ItemArray[0].ToString();
 
 
                 pn_BChucnang.Size = new Size(crpnBChucnang, cc);
@@ -1054,6 +1058,14 @@ namespace Boquanquanly
 
                 pnCN.Controls.Add(pn_Row);
             }
+        }
+
+        private void Btn_BMenu_Click(object sender, EventArgs e)
+        {
+            Label lbTencn = (Label)pnCN.Controls.Find("lb_BTenchinhanh_" + (sender as Control).Tag.ToString(), true).FirstOrDefault();
+            Label lbMacn = (Label)pnCN.Controls.Find("lb_BMachinhanh_" + (sender as Control).Tag.ToString(), true).FirstOrDefault();
+            Frm_QLMenu frmMenu = new Frm_QLMenu(lbTencn.Text, lbMacn.Text);
+            frmMenu.ShowDialog();
         }
 
         private void VeBodyBangDanhSachChiNhanhEdit(DataTable dt, string ma)
@@ -1504,6 +1516,16 @@ namespace Boquanquanly
         }
 
         private void backstageViewClientControl3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backstageViewTabItem2_SelectedChanged(object sender, BackstageViewItemEventArgs e)
+        {
+
+        }
+
+        private void backstageViewTabItem4_SelectedChanged(object sender, BackstageViewItemEventArgs e)
         {
 
         }
