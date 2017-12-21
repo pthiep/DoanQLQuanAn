@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barTenCN = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barNgay = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,12 +41,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_HoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.gbo_chuyenPhat = new System.Windows.Forms.GroupBox();
-            this.rdochuyenphatNhanh = new System.Windows.Forms.RadioButton();
-            this.rdo_nhanochiNhanh = new System.Windows.Forms.RadioButton();
+            this.lbMHD = new System.Windows.Forms.Label();
+            this.lbMNV = new System.Windows.Forms.Label();
+            this.lbMKH = new System.Windows.Forms.Label();
             this.btnCPPS = new DevExpress.XtraEditors.SimpleButton();
             this.pnUC = new System.Windows.Forms.Panel();
             this.btnVisible = new DevExpress.XtraEditors.SimpleButton();
@@ -55,19 +56,29 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_TaoHD = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.rdMangVe = new System.Windows.Forms.RadioButton();
+            this.lbTongTien = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbTraLai = new System.Windows.Forms.Label();
+            this.txtKhachDua = new DevExpress.XtraEditors.TextEdit();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            this.gbo_chuyenPhat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhachDua.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbon.ExpandCollapseItem});
+            this.ribbon.ExpandCollapseItem,
+            this.barTenCN,
+            this.barStaticItem1,
+            this.barNgay});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 1;
+            this.ribbon.MaxItemId = 4;
             this.ribbon.Name = "ribbon";
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowCategoryInCaption = false;
@@ -76,16 +87,37 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1232, 27);
+            this.ribbon.Size = new System.Drawing.Size(1240, 32);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
+            // barTenCN
+            // 
+            this.barTenCN.Caption = "CN1";
+            this.barTenCN.Id = 1;
+            this.barTenCN.Name = "barTenCN";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "Mã chi nhánh: ";
+            this.barStaticItem1.Id = 2;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barNgay
+            // 
+            this.barNgay.Caption = "22/11/2017";
+            this.barNgay.Id = 3;
+            this.barNgay.Name = "barNgay";
+            // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 666);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar.ItemLinks.Add(this.barTenCN);
+            this.ribbonStatusBar.ItemLinks.Add(this.barNgay);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 676);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1232, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1240, 21);
             // 
             // linkLabel1
             // 
@@ -138,77 +170,44 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(305, 571);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Thanh toán:";
+            this.label5.Text = "Khách đưa:";
             // 
             // btn_HoaDon
             // 
-            this.btn_HoaDon.Location = new System.Drawing.Point(308, 600);
+            this.btn_HoaDon.Location = new System.Drawing.Point(631, 590);
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.Size = new System.Drawing.Size(75, 23);
             this.btn_HoaDon.TabIndex = 21;
             this.btn_HoaDon.Text = "Xuất hóa đơn";
             // 
-            // label6
+            // lbMHD
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 545);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "label6";
+            this.lbMHD.AutoSize = true;
+            this.lbMHD.Location = new System.Drawing.Point(112, 545);
+            this.lbMHD.Name = "lbMHD";
+            this.lbMHD.Size = new System.Drawing.Size(25, 13);
+            this.lbMHD.TabIndex = 25;
+            this.lbMHD.Text = "___";
             // 
-            // label7
+            // lbMNV
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(115, 571);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "label7";
+            this.lbMNV.AutoSize = true;
+            this.lbMNV.Location = new System.Drawing.Point(115, 571);
+            this.lbMNV.Name = "lbMNV";
+            this.lbMNV.Size = new System.Drawing.Size(26, 13);
+            this.lbMNV.TabIndex = 26;
+            this.lbMNV.Text = "NV1";
             // 
-            // label8
+            // lbMKH
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(111, 600);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "label8";
-            // 
-            // gbo_chuyenPhat
-            // 
-            this.gbo_chuyenPhat.Controls.Add(this.rdochuyenphatNhanh);
-            this.gbo_chuyenPhat.Controls.Add(this.rdo_nhanochiNhanh);
-            this.gbo_chuyenPhat.Location = new System.Drawing.Point(12, 484);
-            this.gbo_chuyenPhat.Name = "gbo_chuyenPhat";
-            this.gbo_chuyenPhat.Size = new System.Drawing.Size(442, 58);
-            this.gbo_chuyenPhat.TabIndex = 30;
-            this.gbo_chuyenPhat.TabStop = false;
-            this.gbo_chuyenPhat.Text = "Chuyển phát";
-            // 
-            // rdochuyenphatNhanh
-            // 
-            this.rdochuyenphatNhanh.AutoSize = true;
-            this.rdochuyenphatNhanh.Location = new System.Drawing.Point(250, 19);
-            this.rdochuyenphatNhanh.Name = "rdochuyenphatNhanh";
-            this.rdochuyenphatNhanh.Size = new System.Drawing.Size(182, 17);
-            this.rdochuyenphatNhanh.TabIndex = 1;
-            this.rdochuyenphatNhanh.TabStop = true;
-            this.rdochuyenphatNhanh.Text = "Chuyển phát nhanh (24 - 48 giờ)";
-            this.rdochuyenphatNhanh.UseVisualStyleBackColor = true;
-            // 
-            // rdo_nhanochiNhanh
-            // 
-            this.rdo_nhanochiNhanh.AutoSize = true;
-            this.rdo_nhanochiNhanh.Location = new System.Drawing.Point(16, 19);
-            this.rdo_nhanochiNhanh.Name = "rdo_nhanochiNhanh";
-            this.rdo_nhanochiNhanh.Size = new System.Drawing.Size(137, 17);
-            this.rdo_nhanochiNhanh.TabIndex = 0;
-            this.rdo_nhanochiNhanh.TabStop = true;
-            this.rdo_nhanochiNhanh.Text = "Nhận tại chi nhánh số 1";
-            this.rdo_nhanochiNhanh.UseVisualStyleBackColor = true;
+            this.lbMKH.AutoSize = true;
+            this.lbMKH.Location = new System.Drawing.Point(111, 600);
+            this.lbMKH.Name = "lbMKH";
+            this.lbMKH.Size = new System.Drawing.Size(26, 13);
+            this.lbMKH.TabIndex = 27;
+            this.lbMKH.Text = "KH1";
             // 
             // btnCPPS
             // 
@@ -248,6 +247,7 @@
             // 
             // pnHD
             // 
+            this.pnHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnHD.Location = new System.Drawing.Point(12, 104);
             this.pnHD.Name = "pnHD";
             this.pnHD.Size = new System.Drawing.Size(425, 374);
@@ -317,14 +317,15 @@
             this.label10.TabIndex = 1;
             this.label10.Text = " Giờ vào:   10:00";
             // 
-            // button3
+            // btn_TaoHD
             // 
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 43;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_TaoHD.Location = new System.Drawing.Point(12, 75);
+            this.btn_TaoHD.Name = "btn_TaoHD";
+            this.btn_TaoHD.Size = new System.Drawing.Size(96, 23);
+            this.btn_TaoHD.TabIndex = 43;
+            this.btn_TaoHD.Text = "Tạo hóa đơn mới";
+            this.btn_TaoHD.UseVisualStyleBackColor = true;
+            this.btn_TaoHD.Click += new System.EventHandler(this.btn_TaoHD_Click);
             // 
             // button4
             // 
@@ -336,21 +337,87 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // rdMangVe
+            // 
+            this.rdMangVe.AutoSize = true;
+            this.rdMangVe.Location = new System.Drawing.Point(28, 499);
+            this.rdMangVe.Name = "rdMangVe";
+            this.rdMangVe.Size = new System.Drawing.Size(66, 17);
+            this.rdMangVe.TabIndex = 0;
+            this.rdMangVe.TabStop = true;
+            this.rdMangVe.Text = "Mang về";
+            this.rdMangVe.UseVisualStyleBackColor = true;
+            // 
+            // lbTongTien
+            // 
+            this.lbTongTien.AutoSize = true;
+            this.lbTongTien.Location = new System.Drawing.Point(377, 545);
+            this.lbTongTien.Name = "lbTongTien";
+            this.lbTongTien.Size = new System.Drawing.Size(25, 13);
+            this.lbTongTien.TabIndex = 47;
+            this.lbTongTien.Text = "___";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(305, 600);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 13);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "Trả lại:";
+            // 
+            // lbTraLai
+            // 
+            this.lbTraLai.AutoSize = true;
+            this.lbTraLai.Location = new System.Drawing.Point(377, 600);
+            this.lbTraLai.Name = "lbTraLai";
+            this.lbTraLai.Size = new System.Drawing.Size(25, 13);
+            this.lbTraLai.TabIndex = 50;
+            this.lbTraLai.Text = "___";
+            // 
+            // txtKhachDua
+            // 
+            this.txtKhachDua.Location = new System.Drawing.Point(380, 568);
+            this.txtKhachDua.MenuManager = this.ribbon;
+            this.txtKhachDua.Name = "txtKhachDua";
+            this.txtKhachDua.Size = new System.Drawing.Size(100, 20);
+            this.txtKhachDua.TabIndex = 51;
+            this.txtKhachDua.EditValueChanged += new System.EventHandler(this.txtKhachDua_EditValueChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(520, 590);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 52;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
+            // 
             // Frm_ChiNhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 697);
+            this.ClientSize = new System.Drawing.Size(1240, 697);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtKhachDua);
+            this.Controls.Add(this.lbTraLai);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.lbTongTien);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.rdMangVe);
+            this.Controls.Add(this.btn_TaoHD);
             this.Controls.Add(this.pnHD);
             this.Controls.Add(this.btnVisible);
             this.Controls.Add(this.pnUC);
             this.Controls.Add(this.btnCPPS);
-            this.Controls.Add(this.gbo_chuyenPhat);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbMKH);
+            this.Controls.Add(this.lbMNV);
+            this.Controls.Add(this.lbMHD);
             this.Controls.Add(this.btn_HoaDon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -365,8 +432,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Load += new System.EventHandler(this.Frm_ChiNhanh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            this.gbo_chuyenPhat.ResumeLayout(false);
-            this.gbo_chuyenPhat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhachDua.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,12 +453,9 @@
         private System.Windows.Forms.Label label5;
 //        private System.Windows.Forms.RibbonButton ribbonButton1;
         private DevExpress.XtraEditors.SimpleButton btn_HoaDon;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox gbo_chuyenPhat;
-        private System.Windows.Forms.RadioButton rdochuyenphatNhanh;
-        private System.Windows.Forms.RadioButton rdo_nhanochiNhanh;
+        private System.Windows.Forms.Label lbMHD;
+        private System.Windows.Forms.Label lbMNV;
+        private System.Windows.Forms.Label lbMKH;
         private DevExpress.XtraEditors.SimpleButton btnCPPS;
         private System.Windows.Forms.Panel pnUC;
         private DevExpress.XtraEditors.SimpleButton btnVisible;
@@ -406,7 +469,17 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_TaoHD;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.RadioButton rdMangVe;
+        private System.Windows.Forms.Label lbTongTien;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbTraLai;
+        private DevExpress.XtraEditors.TextEdit txtKhachDua;
+        private System.Windows.Forms.Button btnSave;
+        private DevExpress.XtraBars.BarStaticItem barTenCN;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem barNgay;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

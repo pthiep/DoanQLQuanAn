@@ -18,6 +18,7 @@ namespace Bophanbanhangtaichinhanh
     {
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
         BUS_MonAn bus_monan = new BUS_MonAn();
+        BUS_HoaDon busHD = new BUS_HoaDon();
 
         public Frm_ChiNhanh()
         {
@@ -28,7 +29,10 @@ namespace Bophanbanhangtaichinhanh
         {
             CenterToScreen();
             PanelUser();
+
+            
         }
+        
 
         private void ThemMonAn(string mamonan)
         {
@@ -81,23 +85,74 @@ namespace Bophanbanhangtaichinhanh
             }
         }
 
-        private void Instance_AddItems(string ma)
+        private void AddListDSMA(string ma)
         {
-            Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
+            DTO_ItemBill newbill = new DTO_ItemBill();
+            string giaban = bus_monan.LayGiaMonAnTheoMa(ma);
+            newbill.Ma = ma;
+            newbill.Ten = bus_monan.LayTenTuMaMonAn(ma);
 
-            if(pH != null)
+            bool flag = false;
+            int vitri = 0;
+            
+         
+            for(int i = 0; i < lstDSMA.Count; i++)
             {
-                // Thêm số lượng món ăn trong bill
-                MessageBox.Show("Đã tạo bill");
-                AddRowPanel(ma);
+                if(lstDSMA[i].Ma == ma)
+                {
+                    flag = true;
+                    vitri = i;
+                    break;
+                }   
+            }
+
+            if (flag)
+            {
+                lstDSMA[vitri].Soluong++;
+                lstDSMA[vitri].Thanhtien = decimal.Parse(giaban) * lstDSMA[vitri].Soluong;
 
             }
             else
             {
-                PaintHeadHD();
-                PaintBodyHD(ma);
+                newbill.Soluong = 1;
+                newbill.Thanhtien = decimal.Parse(giaban) * newbill.Soluong;
+                lstDSMA.Add(newbill);
+
+            }
+
+            
+        }
+
+        private void Instance_AddItems(string ma)
+        {
+            Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
+            decimal tongtien = 0;
+            if (pH != null)
+            {
+                // Thêm số lượng món ăn trong bill
+                AddListDSMA(ma);
+                AddRowPanel(ma);
+                
                 
             }
+            else
+            {
+                PaintHeadHD();
+                PaintBodyHD();
+                lbMHD.Text = busHD.TaoMaHD();
+                lstDSMA.Clear();
+                AddListDSMA(ma);
+                AddRowPanel(ma);
+            }
+
+            for(int i = 0; i < lstDSMA.Count;i++)
+            {
+                tongtien += lstDSMA[i].Thanhtien;
+
+            }
+            lbTongTien.Text = tongtien.ToString();
+
+            
         }
 
 
@@ -124,19 +179,19 @@ namespace Bophanbanhangtaichinhanh
 
             pnHeadHD.Controls.Add(lbTenNV);
             pnHeadHD.Controls.Add(lbDate);
-
+            lbMHD.Text = busHD.TaoMaHD();
+            lstDSMA.Clear();
         }
 
-        private void PaintBodyHD(string ma)
+        private void PaintBodyHD()
         {
             Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
             Panel pnBodyHD = null;
-            Label lb_Soluong = null;
+           
 
             pnBodyHD = new Panel();
-            pnBodyHD.BorderStyle = BorderStyle.FixedSingle;            
+            pnBodyHD.BorderStyle = BorderStyle.FixedSingle;
             pnBodyHD.Location = new Point(pH.Location.X, pH.Location.Y + pH.Height + 5);
-            //pnBodyHD.Location = new Point(0, 0);
             pnBodyHD.Name = "pnBodyHD";
             pnBodyHD.Size = new Size(pH.Width, pnHD.Height - pH.Height - 5);
             
@@ -163,11 +218,21 @@ namespace Bophanbanhangtaichinhanh
                     lb_Ten = new Label();
                     lb_Gia = new Label();
                     lb_ThanhTien = new Label();
-                    
-                    pnRowHD.Location = new Point(0, 0);
+
+                    int index = 0;
+
+                    for(int i = 0; i < lstDSMA.Count; i++)
+                    {
+                        if (lstDSMA[i].Ma == ma)
+                        {
+                            index = i;
+                        }
+                    }
+
+                    pnRowHD.Location = new Point(0, index * 35);
                     pnRowHD.Name = "pnRowHD_" + ma;
                     pnRowHD.Size = new Size(pH.Width, 35);
-                    pnRowHD.BorderStyle = BorderStyle.FixedSingle;
+                   // pnRowHD.BorderStyle = BorderStyle.FixedSingle;
 
                     lb_SoLuong = new Label();
                     lb_SoLuong.Location = new Point(0, 0);
@@ -190,32 +255,14 @@ namespace Bophanbanhangtaichinhanh
 
                     pH.Controls.Add(pnRowHD);
 
-                    DTO_ItemBill newbill = new DTO_ItemBill();
-                    newbill.Ma = ma;
-                    newbill.Ten = lb_Ten.Text;
-                    newbill.Soluong = int.Parse(lb_SoLuong.Text);
-                    newbill.Thanhtien = decimal.Parse(lb_ThanhTien.Text);
-                    if(lstDSMA.Contains(newbill))
-                    {
-                        int i = lstDSMA.IndexOf(newbill);
-                        lstDSMA[i].Soluong = int.Parse(lb_SoLuong.Text); 
-                        lstDSMA[i].Thanhtien = decimal.Parse(lb_ThanhTien.Text);
-
-                    }
-                    else
-                    {
-                        lstDSMA.Add(newbill);
-                    }
                     
-                
+
                 }
                 else
                 {
-                    MessageBox.Show("abc");
+                   // MessageBox.Show("abc");
                     Label lb_SoLuong = (Label)pnHD.Controls.Find("lbSoLuong_" + ma, true).FirstOrDefault();
                     lb_SoLuong.Text = (int.Parse(lb_SoLuong.Text) + 1).ToString();
-                   
-
 
                     Label lb_ThanhTien = (Label)pnHD.Controls.Find("lbThanhTien_" + ma, true).FirstOrDefault();
                     lb_ThanhTien.Text = (int.Parse(lb_SoLuong.Text)* int.Parse(bus_monan.LayGiaMonAnTheoMa(ma))).ToString();
@@ -238,6 +285,60 @@ namespace Bophanbanhangtaichinhanh
             foreach(DTO_ItemBill BILL in lstDSMA)
             {
                 MessageBox.Show(BILL.Ma + BILL.Soluong + BILL.Thanhtien);
+            }
+        }
+
+        private void txtKhachDua_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbTongTien.Text != "___" && txtKhachDua.Text != "")
+            {
+                lbTraLai.Text = (decimal.Parse(txtKhachDua.Text) - decimal.Parse(lbTongTien.Text)).ToString();
+            }
+
+            if(txtKhachDua.Text == "")
+            {
+                lbTraLai.Text = null;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            if (!busHD.KiemTraHD(lbMHD.Text))
+            {
+                DTO_HoaDon hd = new DTO_HoaDon();
+                hd.Loaihd = rdMangVe.Checked ? 1 : 0;
+                hd.Machinhanh = barTenCN.Caption;
+                hd.Mahoadon = lbMHD.Text;
+                hd.Makhachhang = lbMKH.Text;
+                hd.Manhanvien = lbMNV.Text;
+                hd.Ngay = barNgay.Caption;
+
+                if (busHD.LuuHD(hd) && busHD.LuuCTHD(lbMHD.Text))
+                {
+                    MessageBox.Show("Hóa đơn đã được lưu!!", "Thông báo");
+                }
+
+            }
+
+            pnHD.Controls.Clear();
+            lbMHD.Text = "___";
+        }
+
+        private void btn_TaoHD_Click(object sender, EventArgs e)
+        {
+            TaomoiHD();   
+        }
+
+        void TaomoiHD()
+        {
+            pnHD.Controls.Clear();
+            PaintHeadHD();
+            PaintBodyHD();
+            if (lbMHD.Text != "___" && !busHD.KiemTraHD(lbMHD.Text))
+            {
+                lbMHD.Text = busHD.TaoMaHD();
+                lstDSMA.Clear();
             }
         }
     }
