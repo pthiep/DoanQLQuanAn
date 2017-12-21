@@ -19,6 +19,10 @@ namespace Bophanbanhangtaichinhanh
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
         BUS_MonAn bus_monan = new BUS_MonAn();
         BUS_HoaDon busHD = new BUS_HoaDon();
+        BUS_Clock busClock = new BUS_Clock();
+        BUS_DanhMuc busDM = new BUS_DanhMuc();
+
+        bool lamangve = false;
 
         public Frm_ChiNhanh()
         {
@@ -29,8 +33,6 @@ namespace Bophanbanhangtaichinhanh
         {
             CenterToScreen();
             PanelUser();
-
-            
         }
         
 
@@ -52,24 +54,21 @@ namespace Bophanbanhangtaichinhanh
 
         private void PanelUser()
         {
-
-            if (btnVisible.Text == "Bàn")
-            {
+            if (btnVisible.Text == "Thực đơn")
+            {                
                 if (!pnUC.Controls.Contains(UC_MonAn.Instance))
                 {
                     pnUC.Controls.Add(UC_MonAn.Instance);
                     UC_MonAn.Instance.AddItems += Instance_AddItems;
-
+                    UC_MonAn.Instance.macn = barMaCN.Caption;
                     UC_MonAn.Instance.Dock = DockStyle.Fill;
                     UC_MonAn.Instance.BringToFront();
                 }
                 else
                     UC_MonAn.Instance.BringToFront();
-
-                btnVisible.Text = "Thực đơn";
-
+                btnVisible.Text = "Bàn";
             }
-            else if (btnVisible.Text == "Thực đơn")
+            else if (btnVisible.Text == "Bàn")
             {
                 if (!pnUC.Controls.Contains(UC_Ban.Instance))
                 {
@@ -80,10 +79,12 @@ namespace Bophanbanhangtaichinhanh
                 else
                     UC_Ban.Instance.BringToFront();
 
-                btnVisible.Text = "Bàn";
-
+                btnVisible.Text = "Thực đơn";
             }
         }
+
+        
+        
 
         private void AddListDSMA(string ma)
         {
@@ -94,8 +95,7 @@ namespace Bophanbanhangtaichinhanh
 
             bool flag = false;
             int vitri = 0;
-            
-         
+
             for(int i = 0; i < lstDSMA.Count; i++)
             {
                 if(lstDSMA[i].Ma == ma)
@@ -110,14 +110,12 @@ namespace Bophanbanhangtaichinhanh
             {
                 lstDSMA[vitri].Soluong++;
                 lstDSMA[vitri].Thanhtien = decimal.Parse(giaban) * lstDSMA[vitri].Soluong;
-
             }
             else
             {
                 newbill.Soluong = 1;
                 newbill.Thanhtien = decimal.Parse(giaban) * newbill.Soluong;
                 lstDSMA.Add(newbill);
-
             }
 
             
@@ -129,11 +127,8 @@ namespace Bophanbanhangtaichinhanh
             decimal tongtien = 0;
             if (pH != null)
             {
-                // Thêm số lượng món ăn trong bill
                 AddListDSMA(ma);
                 AddRowPanel(ma);
-                
-                
             }
             else
             {
@@ -144,23 +139,18 @@ namespace Bophanbanhangtaichinhanh
                 AddListDSMA(ma);
                 AddRowPanel(ma);
             }
-
             for(int i = 0; i < lstDSMA.Count;i++)
             {
                 tongtien += lstDSMA[i].Thanhtien;
-
             }
             lbTongTien.Text = tongtien.ToString();
-
-            
         }
 
 
 
         private void PaintHeadHD()
         {
-            Panel pnHeadHD = null;
-            pnHeadHD = new Panel();
+            Panel pnHeadHD = new Panel();
 
             pnHeadHD.BorderStyle = BorderStyle.FixedSingle;
             pnHeadHD.Location = new Point(0, 0);
@@ -232,7 +222,7 @@ namespace Bophanbanhangtaichinhanh
                     pnRowHD.Location = new Point(0, index * 35);
                     pnRowHD.Name = "pnRowHD_" + ma;
                     pnRowHD.Size = new Size(pH.Width, 35);
-                   // pnRowHD.BorderStyle = BorderStyle.FixedSingle;
+                    pnRowHD.BorderStyle = BorderStyle.FixedSingle;
 
                     lb_SoLuong = new Label();
                     lb_SoLuong.Location = new Point(0, 0);
@@ -260,32 +250,18 @@ namespace Bophanbanhangtaichinhanh
                 }
                 else
                 {
-                   // MessageBox.Show("abc");
                     Label lb_SoLuong = (Label)pnHD.Controls.Find("lbSoLuong_" + ma, true).FirstOrDefault();
                     lb_SoLuong.Text = (int.Parse(lb_SoLuong.Text) + 1).ToString();
 
                     Label lb_ThanhTien = (Label)pnHD.Controls.Find("lbThanhTien_" + ma, true).FirstOrDefault();
                     lb_ThanhTien.Text = (int.Parse(lb_SoLuong.Text)* int.Parse(bus_monan.LayGiaMonAnTheoMa(ma))).ToString();
-   
-
                 }
-
-
             }
-
         }
 
         private void pnHD_Paint(object sender, PaintEventArgs e)
         {
             
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            foreach(DTO_ItemBill BILL in lstDSMA)
-            {
-                MessageBox.Show(BILL.Ma + BILL.Soluong + BILL.Thanhtien);
-            }
         }
 
         private void txtKhachDua_EditValueChanged(object sender, EventArgs e)
@@ -303,16 +279,15 @@ namespace Bophanbanhangtaichinhanh
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if (!busHD.KiemTraHD(lbMHD.Text))
             {
                 DTO_HoaDon hd = new DTO_HoaDon();
-                hd.Loaihd = rdMangVe.Checked ? 1 : 0;
-                hd.Machinhanh = barTenCN.Caption;
+                //hd.Loaihd = rdMangVe.Checked ? 1 : 0;
+                hd.Machinhanh = barMaCN.Caption;
                 hd.Mahoadon = lbMHD.Text;
                 hd.Makhachhang = lbMKH.Text;
                 hd.Manhanvien = lbMNV.Text;
-                hd.Ngay = barNgay.Caption;
+                hd.Ngay = barTime.Caption;
 
                 if (busHD.LuuHD(hd) && busHD.LuuCTHD(lbMHD.Text))
                 {
@@ -339,6 +314,25 @@ namespace Bophanbanhangtaichinhanh
             {
                 lbMHD.Text = busHD.TaoMaHD();
                 lstDSMA.Clear();
+            }
+        }
+
+        private void timerClock_Tick(object sender, EventArgs e)
+        {
+            barTime.Caption = busClock.TimeServer();
+        }
+
+        private void btnMangve_Click(object sender, EventArgs e)
+        {
+            if (!lamangve)
+            {
+                btnMangve.BackColor = Color.FromArgb(255, 6, 6);
+                lamangve = true;
+            }
+            else
+            {
+                btnMangve.BackColor = Color.FromArgb(240, 240, 240);
+                lamangve = false;
             }
         }
     }

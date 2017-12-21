@@ -14,7 +14,7 @@ namespace Bophanbanhangtaichinhanh
 {
     public partial class UC_Ban : UserControl
     {
-        BUS_MonAn BUSmonan = new BUS_MonAn();
+        BUS_ChiNhanh busCN = new BUS_ChiNhanh();
 
         private static UC_Ban _instance;
         public static UC_Ban Instance
@@ -34,26 +34,40 @@ namespace Bophanbanhangtaichinhanh
 
         private void UC_Ban_Load(object sender, EventArgs e)
         {
-            LoadBan();
+            LoadBan(5);
+            VePNMenu();
         }
 
-        private void LoadBan()
+        void VePNMenu()
         {
-            DataTable dt = new DataTable();
-            dt = BUSmonan.LoadDanhSachBan();
-            int slban = BUSmonan.SoBan();
+            Panel pn = new Panel();
+            Label lb = new Label();
+
+            pn.BorderStyle = BorderStyle.FixedSingle;
+            pn.Size = new Size(pn_Menu.Width, 35);
+            pn.Location = new Point(0, 0);
+            lb.Text = "MENU";
+            lb.TextAlign = ContentAlignment.MiddleCenter;
+
+            lb.Font = new Font(lb.Font, FontStyle.Bold);
+            lb.Size = pn.Size;
+            lb.Location = new Point(0, 0);
+
+            pn.Controls.Add(lb);
+            pn_Menu.Controls.Add(pn);
+        }
+
+        private void LoadBan(int slban)
+        {
             int cc = 4;
             int rc = 0;
 
             rc = slban % cc == 0 ? slban / cc : slban / cc + 1;
 
             Panel pn = null;
-            PictureBox pt = null;
             Point p_pn;
             Point p_lbmaban;
-            Point p_lbtang;
             Label lbmaban = null;
-            Label lbtang = null;
 
             int dem = 0;
 
@@ -64,40 +78,22 @@ namespace Bophanbanhangtaichinhanh
                     if (dem < slban)
                     {
                         pn = new Panel();
-                        pt = new PictureBox();
                         p_pn = new Point();
-                        p_lbmaban = new Point();
-                        p_lbtang = new Point();
-                        lbmaban = new Label();
-                        lbtang = new Label();
-                        pt.Image = Image.FromFile("C:\\DBMA\\ban.png");
-                        pt.SizeMode = PictureBoxSizeMode.AutoSize;
-                        pt.Tag = dt.Rows[dem].ItemArray[0].ToString(); //Sửa
-                        pt.Click += Pt_Click;
-
-                        p_lbmaban.X = 0;
-                        p_lbmaban.Y = pt.Height + 10;
-                        lbmaban.Text = "Mã bàn : " + dt.Rows[dem].ItemArray[0].ToString();
-                        lbmaban.Location = p_lbmaban;
-                        lbmaban.Tag = dt.Rows[dem].ItemArray[0].ToString();
+                        lbmaban = new Label();                    
+                        lbmaban.Text = "Bàn " + (dem + 1).ToString();
+                        lbmaban.TextAlign = ContentAlignment.MiddleCenter;
+                        lbmaban.Font = new Font("Tahoma", 20f, FontStyle.Bold);
+                        lbmaban.Size = new Size(150, 146);
+                        lbmaban.Location = new Point(0, 0);
                         lbmaban.Click += Pt_Click;
 
-                        p_lbtang.X = 0;
-                        p_lbtang.Y = p_lbmaban.Y + 20;
-                        lbtang.Text = "Tầng : " + dt.Rows[dem].ItemArray[2].ToString();
-                        lbtang.Location = p_lbtang;
-                        lbtang.Tag = dt.Rows[dem].ItemArray[0].ToString();
-                        lbtang.Click += Pt_Click;
-
-                        pn.Width = pt.Width;
-                        pn.Height = pt.Height + lbmaban.Height + lbtang.Height;
+                        pn.Width = 150;
+                        pn.Height = 146;
                         pn.BorderStyle = BorderStyle.FixedSingle;
-                        p_pn.X = (pt.Width + 20) * j;
-                        p_pn.Y = (pn.Height + 20) * i;
+                        p_pn.X = 170 * j;
+                        p_pn.Y = 166 * i;
                         pn.Location = p_pn;
-                        pn.Controls.Add(pt);
                         pn.Controls.Add(lbmaban);
-                        pn.Controls.Add(lbtang);
                         pnBan.Controls.Add(pn);
                         dem++;
                     }
@@ -111,6 +107,11 @@ namespace Bophanbanhangtaichinhanh
         private void Pt_Click(object sender, EventArgs e)
         {
             MessageBox.Show((sender as Control).Tag.ToString());
+        }
+
+        private void pnBan_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
