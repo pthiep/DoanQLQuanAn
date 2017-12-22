@@ -9,10 +9,48 @@ namespace DTO
     public class DTO_ChiNhanh
     {
         string macn;
-        string tencn;
-        string diachi;
-        string dienthoai;
+
+        public string Macn
+        {
+            get { return macn; }
+            set { macn = value; }
+        }
+
+
+       
+
+
+string tencn;
+
+public string Tencn
+{
+    get { return tencn; }
+    set { tencn = value; }
+}
+string diachi;
+
+public string Diachi
+{
+    get { return diachi; }
+    set { diachi = value; }
+}
+string dienthoai;
+
+public string Dienthoai
+{
+    get { return dienthoai; }
+    set { dienthoai = value; }
+}
         string tinhthanh;
+
+
+        public string Tinhthanh
+        {
+            get { return tinhthanh; }
+            set { tinhthanh = value; }
+        }
+
+
         int soluongban;
         string manvql;
         public string Tinhthanh { get => tinhthanh; set => tinhthanh = value; }

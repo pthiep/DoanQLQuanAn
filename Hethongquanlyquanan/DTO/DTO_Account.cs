@@ -10,10 +10,22 @@ namespace DTO
     public class DTO_Account
     {
         private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         private string nameUser;
 
-        public int Id { get => id; set => id = value; }
-        public string NameUser { get => nameUser; set => nameUser = value; }
+        public string NameUser
+        {
+            get { return nameUser; }
+            set { nameUser = value; }
+        }
+
+        //public int Id { get => id; set => id = value; }
+        //public string NameUser { get => nameUser; set => nameUser = value; }
 
         public DTO_Account(int id, string name)
         {
