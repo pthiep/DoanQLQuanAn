@@ -36,9 +36,6 @@ namespace BUS
             string sql = "select * from Quanhe_Hoadon_CTHD";
             return "CTHD" + (dalHD.ExecuteQuery(sql).Rows.Count + 1).ToString();
         }
-
-
-
         public bool LuuCTHD(string mahd)
         {
             string sql = "insert into Quanhe_Hoadon_CTHD(mahoadon , macthoadon , trangthai) values( @mahd , @macthd , @tt )";

@@ -86,12 +86,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC_Ban.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Ban.Designer.cs">
-      <DependentUpon>UC_Ban.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_MonAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,9 +112,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC_Ban.resx">
-      <DependentUpon>UC_Ban.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_MonAn.resx">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </EmbeddedResource>
