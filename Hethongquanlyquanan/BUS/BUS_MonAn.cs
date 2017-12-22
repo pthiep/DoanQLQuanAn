@@ -19,20 +19,27 @@ namespace BUS
             return dalMA.ExecuteQuery(query);  
         }
 
-        public DataTable LoadDanhSachBan()
+        public DataTable LoadDanhSachMonAn(string macn, string madm)
         {
-            string query = "select * from Ban";
-            return dalMA.ExecuteQuery(query);
+            string query = "exec LoadMonAnTheoDanhMuc @macn , @madm ";
+            return dalMA.ExecuteQuery(query, new object[] { macn, madm });
         }
 
-        public int SoBan()
+        public int SoBan(string macn)
         {
-            return LoadDanhSachBan().Rows.Count;
+            string sql = "select soluongban from ChiNhanh where machinhanh = @macn and trangthai = 1";
+            return int.Parse(dalMA.ExecuteQuery(sql, new object[] { macn }).Rows[0].ItemArray[0].ToString());
         }
 
         public int Soluongmonan()
         {
             return LoadDanhSachMonAn().Rows.Count;
+        }
+
+        public bool Capnhatmonannhanh(DTO_MonAn ma)
+        {
+            string query = "update MonAn set tenmonan = @tenma , giaban = @giaban where mamonan = @mama";
+            return dalMA.ExecuteNonQuery(query, new object[] { ma.Tenma, ma.Giaban, ma.Mama }) > 0 ? true : false;
         }
 
         public bool Capnhatmonan(DTO_MonAn ma)
@@ -70,7 +77,6 @@ namespace BUS
         {
             string query = "select tenmonan from MonAn where mamonan = N'" + ma + "'";
             return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
-
         }
 
         public string LayGiaMonAnTheoMa(string ma)

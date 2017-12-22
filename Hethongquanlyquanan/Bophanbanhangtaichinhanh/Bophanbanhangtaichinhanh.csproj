@@ -46,12 +46,13 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Windows.Forms.Ribbon35">
-      <HintPath>..\..\..\..\Visual Studio 2017\System.Windows.Forms.Ribbon35.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,12 +84,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC_Ban.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Ban.Designer.cs">
-      <DependentUpon>UC_Ban.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_MonAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,9 +110,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC_Ban.resx">
-      <DependentUpon>UC_Ban.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_MonAn.resx">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </EmbeddedResource>

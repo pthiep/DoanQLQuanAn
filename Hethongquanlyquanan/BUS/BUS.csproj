@@ -35,7 +35,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
-    <Reference Include="DTO">
+    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -54,7 +55,7 @@
     <Compile Include="BUS_ChiPhi.cs" />
     <Compile Include="BUS_Clock.cs" />
     <Compile Include="BUS_DanhMuc.cs" />
-    <Compile Include="BUS_DonHang.cs" />
+    <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_MonAn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

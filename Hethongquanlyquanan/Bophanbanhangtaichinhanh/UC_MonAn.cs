@@ -17,7 +17,10 @@ namespace Bophanbanhangtaichinhanh
         public delegate void AddItem(string abc);
         public event AddItem AddItems;
 
+        public string macn = "";
+
         BUS_MonAn BUSmonan = new BUS_MonAn();
+        BUS_DanhMuc busDM = new BUS_DanhMuc();
 
         private static UC_MonAn _instance;
         public static UC_MonAn Instance
@@ -36,14 +39,15 @@ namespace Bophanbanhangtaichinhanh
 
         private void UC_MonAn_Load(object sender, EventArgs e)
         {
-            LoadThucDon();
+            LoadThucDon(BUSmonan.LoadDanhSachMonAn());
+            VePNMenu();
+            VeClickPNMenu();
         }
 
-        private void LoadThucDon()
+        private void LoadThucDon(DataTable dt)
         {
-            DataTable dt = new DataTable();
-            dt = BUSmonan.LoadDanhSachMonAn();
-            int slma = BUSmonan.Soluongmonan();
+            pnThucDon.Controls.Clear();
+            int slma = dt.Rows.Count;
             int cc = 4;
             int rc = 0;
 
@@ -110,6 +114,97 @@ namespace Bophanbanhangtaichinhanh
                         break;
 
                 }
+            }
+        }
+
+        void VePNMenu()
+        {
+            DataTable dt = new DataTable();
+            dt = busDM.LoadDanhMuc();
+
+            Panel pn = null;
+            Label lb = null;
+            for (int i = 0; i <= busDM.Soluongdanhmuc(); i++)
+            {
+                pn = new Panel();
+                lb = new Label();
+
+                pn.BorderStyle = BorderStyle.FixedSingle;
+                pn.Size = new Size(pn_Menu.Width, 35);
+                pn.Location = new Point(0, 34 * i);
+
+                if (i == 0)
+                {
+                    lb.Text = "MENU";
+                    lb.TextAlign = ContentAlignment.MiddleCenter;
+                    pn.Name = "pnMenu_DM0";
+                    pn.Tag = 1;
+                    lb.Tag = "DM0";
+                }
+                else
+                {
+                    lb.Text = dt.Rows[i - 1].ItemArray[1].ToString();
+                    lb.TextAlign = ContentAlignment.MiddleLeft;
+                    lb.Tag = dt.Rows[i - 1].ItemArray[0].ToString();
+                    pn.Name = "pnMenu_" + dt.Rows[i - 1].ItemArray[0].ToString();
+                    pn.Tag = 0;
+                    lb.Tag = dt.Rows[i - 1].ItemArray[0].ToString();
+                }
+
+                lb.Font = new Font(lb.Font, FontStyle.Bold);
+                lb.Size = pn.Size;
+                lb.Location = new Point(0, 0);
+                lb.Click += Lb_Click;
+
+                pn.Controls.Add(lb);
+                pn_Menu.Controls.Add(pn);
+            }
+        }
+        void VeClickPNMenu()
+        {
+            Panel pn = null;
+            for (int i = 0; i < busDM.Soluongdanhmuc() + 1; i++)
+            {
+                pn = (Panel)pn_Menu.Controls.Find("pnMenu_DM" + i, true).FirstOrDefault();
+                int kt = int.Parse(pn.Tag.ToString());
+                if (kt == 1)
+                {
+                    pn.BackColor = Color.FromArgb(1, 115, 199);
+                }
+                else
+                {
+                    pn.BackColor = Color.FromArgb(240, 240, 240);
+                }
+            }
+        }
+
+        private void Lb_Click(object sender, EventArgs e)
+        {
+            Panel pn = null;
+            int ma = int.Parse((sender as Control).Tag.ToString().Substring(2));
+
+            for (int i = 0; i < busDM.Soluongdanhmuc() + 1; i++)
+            {
+                pn = (Panel)pn_Menu.Controls.Find("pnMenu_DM" + i, true).FirstOrDefault();
+                if (i == ma)
+                {
+                    pn.Tag = "1";
+                }
+                else
+                {
+                    pn.Tag = "0";
+                }
+            }
+            VeClickPNMenu();
+
+            //Tim kiem 
+            if ((sender as Control).Tag.ToString() == "DM0")
+            {
+                LoadThucDon(BUSmonan.LoadDanhSachMonAn());
+            }
+            else
+            {
+                LoadThucDon(BUSmonan.LoadDanhSachMonAn(macn, (sender as Control).Tag.ToString()));
             }
         }
 

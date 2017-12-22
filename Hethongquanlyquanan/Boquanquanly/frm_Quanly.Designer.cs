@@ -56,17 +56,15 @@
             this.tileItem2 = new DevExpress.XtraEditors.TileItem();
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
             this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbSlma = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_DSMA = new System.Windows.Forms.Panel();
             this.btn_Themmonan = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Taochinhanh = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.pnCN = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -185,8 +183,8 @@
             this.backstageViewControl1.Items.Add(this.backstageViewItemSeparator5);
             this.backstageViewControl1.Location = new System.Drawing.Point(0, 32);
             this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem4;
-            this.backstageViewControl1.SelectedTabIndex = 6;
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem2;
+            this.backstageViewControl1.SelectedTabIndex = 2;
             this.backstageViewControl1.Size = new System.Drawing.Size(1261, 611);
             this.backstageViewControl1.TabIndex = 4;
             this.backstageViewControl1.Text = "backstageViewControl1";
@@ -420,12 +418,10 @@
             // 
             // backstageViewClientControl2
             // 
-            this.backstageViewClientControl2.Controls.Add(this.simpleButton3);
-            this.backstageViewClientControl2.Controls.Add(this.label5);
+            this.backstageViewClientControl2.Controls.Add(this.lbSlma);
             this.backstageViewClientControl2.Controls.Add(this.label1);
             this.backstageViewClientControl2.Controls.Add(this.panel_DSMA);
             this.backstageViewClientControl2.Controls.Add(this.btn_Themmonan);
-            this.backstageViewClientControl2.Controls.Add(this.simpleButton1);
             this.backstageViewClientControl2.Controls.Add(this.pictureBox2);
             this.backstageViewClientControl2.Controls.Add(this.textEdit1);
             this.backstageViewClientControl2.Controls.Add(this.label3);
@@ -433,26 +429,19 @@
             this.backstageViewClientControl2.Name = "backstageViewClientControl2";
             this.backstageViewClientControl2.Size = new System.Drawing.Size(982, 611);
             this.backstageViewClientControl2.TabIndex = 2;
+            this.backstageViewClientControl2.Load += new System.EventHandler(this.backstageViewClientControl2_Load);
             // 
-            // simpleButton3
+            // lbSlma
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(390, 20);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 18;
-            this.simpleButton3.Text = "simpleButton3";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(147, 565);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "0";
+            this.lbSlma.AutoSize = true;
+            this.lbSlma.BackColor = System.Drawing.Color.White;
+            this.lbSlma.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lbSlma.ForeColor = System.Drawing.Color.Red;
+            this.lbSlma.Location = new System.Drawing.Point(147, 565);
+            this.lbSlma.Name = "lbSlma";
+            this.lbSlma.Size = new System.Drawing.Size(16, 17);
+            this.lbSlma.TabIndex = 17;
+            this.lbSlma.Text = "0";
             // 
             // label1
             // 
@@ -474,21 +463,12 @@
             // btn_Themmonan
             // 
             this.btn_Themmonan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Themmonan.ImageOptions.Image")));
-            this.btn_Themmonan.Location = new System.Drawing.Point(752, 12);
+            this.btn_Themmonan.Location = new System.Drawing.Point(862, 49);
             this.btn_Themmonan.Name = "btn_Themmonan";
-            this.btn_Themmonan.Size = new System.Drawing.Size(108, 31);
+            this.btn_Themmonan.Size = new System.Drawing.Size(108, 22);
             this.btn_Themmonan.TabIndex = 14;
             this.btn_Themmonan.Text = "Thêm món ăn";
             this.btn_Themmonan.Click += new System.EventHandler(this.btn_Themmonan_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(866, 13);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 31);
-            this.simpleButton1.TabIndex = 13;
-            this.simpleButton1.Text = "Xuất Excel";
             // 
             // pictureBox2
             // 
@@ -503,12 +483,12 @@
             // textEdit1
             // 
             this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(10, 46);
+            this.textEdit1.Location = new System.Drawing.Point(10, 49);
             this.textEdit1.MenuManager = this.ribbonControl1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.NullValuePrompt = "Nhập tên hoặc mã món ăn để tìm";
             this.textEdit1.Properties.NullValuePromptShowForEmptyValue = true;
-            this.textEdit1.Size = new System.Drawing.Size(302, 20);
+            this.textEdit1.Size = new System.Drawing.Size(846, 20);
             this.textEdit1.TabIndex = 2;
             // 
             // label3
@@ -523,7 +503,7 @@
             // 
             // backstageViewClientControl3
             // 
-            this.backstageViewClientControl3.Controls.Add(this.simpleButton2);
+            this.backstageViewClientControl3.Controls.Add(this.btn_Taochinhanh);
             this.backstageViewClientControl3.Controls.Add(this.textEdit2);
             this.backstageViewClientControl3.Controls.Add(this.pnCN);
             this.backstageViewClientControl3.Controls.Add(this.pictureBox3);
@@ -532,22 +512,22 @@
             this.backstageViewClientControl3.Name = "backstageViewClientControl3";
             this.backstageViewClientControl3.Size = new System.Drawing.Size(982, 611);
             this.backstageViewClientControl3.TabIndex = 3;
-            this.backstageViewClientControl3.Load += new System.EventHandler(this.backstageViewClientControl3_Load);
             // 
-            // simpleButton2
+            // btn_Taochinhanh
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(756, 53);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 17;
-            this.simpleButton2.Text = "simpleButton2";
+            this.btn_Taochinhanh.Location = new System.Drawing.Point(838, 59);
+            this.btn_Taochinhanh.Name = "btn_Taochinhanh";
+            this.btn_Taochinhanh.Size = new System.Drawing.Size(132, 23);
+            this.btn_Taochinhanh.TabIndex = 17;
+            this.btn_Taochinhanh.Text = "Tạo chi nhánh";
+            this.btn_Taochinhanh.Click += new System.EventHandler(this.btn_Taochinhanh_Click);
             // 
             // textEdit2
             // 
             this.textEdit2.Location = new System.Drawing.Point(4, 62);
             this.textEdit2.MenuManager = this.ribbonControl1;
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(650, 20);
+            this.textEdit2.Size = new System.Drawing.Size(828, 20);
             this.textEdit2.TabIndex = 16;
             // 
             // pnCN
@@ -738,7 +718,7 @@
             this.backstageViewTabItem2.ContentControl = this.backstageViewClientControl2;
             this.backstageViewTabItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem2.Glyph")));
             this.backstageViewTabItem2.Name = "backstageViewTabItem2";
-            this.backstageViewTabItem2.SelectedChanged += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.backstageViewTabItem2_SelectedChanged);
+            this.backstageViewTabItem2.Selected = true;
             // 
             // backstageViewItemSeparator2
             // 
@@ -779,7 +759,6 @@
             this.backstageViewTabItem4.ContentControl = this.backstageViewClientControl4;
             this.backstageViewTabItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem4.Glyph")));
             this.backstageViewTabItem4.Name = "backstageViewTabItem4";
-            this.backstageViewTabItem4.Selected = true;
             this.backstageViewTabItem4.SelectedChanged += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.backstageViewTabItem4_SelectedChanged);
             // 
             // backstageViewItemSeparator4
@@ -899,7 +878,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.SimpleButton btn_Themmonan;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer_Clock;
@@ -911,9 +889,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private System.Windows.Forms.Panel panel_DSMA;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbSlma;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btn_Taochinhanh;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.Panel pnCN;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;

@@ -6,50 +6,20 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTO_HoaDon
+    public class DTO_HoaDon
     {
-        private int maHoaDon;
-        private DateTime ngay;
-        private string maKH;
-       // private DonHang donHang;
+        private string mahoadon;
+        private string ngay;
+        private string makhachhang, manhanvien, machinhanh;
+        private int loaihd;
+       
+        public string Ngay { get => ngay; set => ngay = value; }
+        public int Loaihd { get => loaihd; set => loaihd = value; }
+        public string Makhachhang { get => makhachhang; set => makhachhang = value; }
+        public string Machinhanh { get => machinhanh; set => machinhanh = value; }
+        public string Manhanvien { get => manhanvien; set => manhanvien = value; }
+        public string Mahoadon { get => mahoadon; set => mahoadon = value; }
 
-        public int MaHoaDon
-        {
-            get
-            {
-                return maHoaDon;
-            }
-
-            set
-            {
-                maHoaDon = value;
-            }
-        }
-
-        public DateTime Ngay
-        {
-            get
-            {
-                return ngay;
-            }
-            set
-            {
-                ngay = value;
-            }
-        }
-
-        public string MaKH
-        {
-            get
-            {
-                return maKH;
-            }
-            set
-            {
-                maKH = value;
-            }
-        }
-
-        
+        // private DonHang donHang;
     }
 }
