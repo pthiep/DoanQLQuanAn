@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -66,11 +71,11 @@
     <Compile Include="frm_KhachHang.Designer.cs">
       <DependentUpon>frm_KhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_QuanLy.cs">
+    <Compile Include="Frm_Quanly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_QuanLy.Designer.cs">
-      <DependentUpon>frm_QuanLy.cs</DependentUpon>
+    <Compile Include="Frm_Quanly.Designer.cs">
+      <DependentUpon>Frm_Quanly.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,9 +88,10 @@
     <EmbeddedResource Include="frm_KhachHang.resx">
       <DependentUpon>frm_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_QuanLy.resx">
-      <DependentUpon>frm_QuanLy.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Quanly.resx">
+      <DependentUpon>Frm_Quanly.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -137,9 +143,5 @@
     <None Include="Resources\images.png" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="DAO\TextFile1.txt" />
-    <Content Include="DTO\TextFile1.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 
 namespace HoatDongDatHangTaiTongDai
 {
-    public partial class frm_HeThong : Form
+    public partial class Frm_Quanly : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frm_HeThong()
+        public Frm_Quanly()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
