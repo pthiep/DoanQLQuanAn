@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barMaCN = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -58,8 +57,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lbTraLai = new System.Windows.Forms.Label();
             this.txtKhachDua = new DevExpress.XtraEditors.TextEdit();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.timerClock = new System.Windows.Forms.Timer();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnMangve = new System.Windows.Forms.Button();
             this.btnBaoBep = new DevExpress.XtraEditors.SimpleButton();
