@@ -42,6 +42,16 @@ namespace BUS
             return dalCN.ExecuteQuery(query);
         }
 
+        public DataTable TongTien(DateTime Ngaybatdau, DateTime Ngaykethuc) {
+            string query = "exec TongDoanhThu '"+Ngaybatdau+"','"+Ngaykethuc+"'";
+            return dalCN.ExecuteQuery(query);
+        }
+
+        public DataTable TongDonHang(DateTime Ngaybatdau, DateTime Ngaykethuc) {
+            string query = "exec TongSoLuongDH'" + Ngaybatdau + "','" + Ngaykethuc + "'";
+            return dalCN.ExecuteQuery(query);
+        }
+
         public DataTable TinhSLDHcuaCN(string macn)
         {
             string query = " ";
