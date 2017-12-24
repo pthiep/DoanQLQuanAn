@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnLS = new System.Windows.Forms.Panel();
+            this.lbMaKH = new System.Windows.Forms.Label();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,27 +52,54 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(442, 54);
-            this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.Size = new System.Drawing.Size(864, 32);
+            this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
-            // ribbonStatusBar
+            // label1
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 428);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(442, 21);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mã khách hàng:";
+            // 
+            // pnLS
+            // 
+            this.pnLS.AutoScroll = true;
+            this.pnLS.Location = new System.Drawing.Point(12, 90);
+            this.pnLS.Name = "pnLS";
+            this.pnLS.Size = new System.Drawing.Size(840, 198);
+            this.pnLS.TabIndex = 3;
+            // 
+            // lbMaKH
+            // 
+            this.lbMaKH.AutoSize = true;
+            this.lbMaKH.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lbMaKH.Location = new System.Drawing.Point(150, 51);
+            this.lbMaKH.Name = "lbMaKH";
+            this.lbMaKH.Size = new System.Drawing.Size(35, 18);
+            this.lbMaKH.TabIndex = 4;
+            this.lbMaKH.Text = "KH1";
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
             // 
             // Frm_LichSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 449);
-            this.Controls.Add(this.ribbonStatusBar);
+            this.ClientSize = new System.Drawing.Size(864, 302);
+            this.Controls.Add(this.lbMaKH);
+            this.Controls.Add(this.pnLS);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_LichSu";
             this.Ribbon = this.ribbon;
-            this.StatusBar = this.ribbonStatusBar;
             this.Text = "Frm_LichSu";
+            this.Load += new System.EventHandler(this.Frm_LichSu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -78,6 +109,9 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnLS;
+        private System.Windows.Forms.Label lbMaKH;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

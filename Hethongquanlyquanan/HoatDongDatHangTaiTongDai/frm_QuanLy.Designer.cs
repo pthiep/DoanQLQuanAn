@@ -33,6 +33,8 @@
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barMaNV = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barDatetime = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.pnHD = new System.Windows.Forms.Panel();
@@ -62,8 +64,6 @@
             this.tb_TimkiemKH = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_TaoHD = new DevExpress.XtraEditors.SimpleButton();
-            this.barDatetime = new DevExpress.XtraBars.BarHeaderItem();
-            this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_CN.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,6 +104,18 @@
             this.barHeaderItem1.Caption = "Mã nhân viên:";
             this.barHeaderItem1.Id = 2;
             this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barDatetime
+            // 
+            this.barDatetime.Caption = "24/12/2017";
+            this.barDatetime.Id = 3;
+            this.barDatetime.Name = "barDatetime";
+            // 
+            // barHeaderItem2
+            // 
+            this.barHeaderItem2.Caption = "Thời gian:";
+            this.barHeaderItem2.Id = 4;
+            this.barHeaderItem2.Name = "barHeaderItem2";
             // 
             // ribbonStatusBar
             // 
@@ -402,18 +414,6 @@
             this.btn_TaoHD.TabIndex = 119;
             this.btn_TaoHD.Text = "Tạo hóa đơn mới";
             this.btn_TaoHD.Click += new System.EventHandler(this.btn_TaoHD_Click);
-            // 
-            // barDatetime
-            // 
-            this.barDatetime.Caption = "24/12/2017";
-            this.barDatetime.Id = 3;
-            this.barDatetime.Name = "barDatetime";
-            // 
-            // barHeaderItem2
-            // 
-            this.barHeaderItem2.Caption = "Thời gian:";
-            this.barHeaderItem2.Id = 4;
-            this.barHeaderItem2.Name = "barHeaderItem2";
             // 
             // Frm_Quanly
             // 

@@ -53,5 +53,11 @@ namespace BUS
             string query = "insert into ChiNhanh (machinhanh, tenchinhanh, sodienthoai, diachi, tinhthanh, soluongban, manhanvienquanly , trangthai) values ( @macn , @tencn , @sdt , @dc , @tt , @slban , @manv , @tthai )";
             return dalCN.ExecuteNonQuery(query, new object[] { cn.Macn, cn.Tencn, cn.Dienthoai, cn.Diachi, cn.Tinhthanh, cn.Soluongban, cn.Manvql, 1 }) > 0 ? true : false;
         }
+
+        public string LayTenCNTuMa(string ma)
+        {
+            string sql = "select tenchinhanh from ChiNhanh where machinhanh = @ma ";
+            return dalCN.ExecuteQuery(sql, new object[] { ma }).Rows[0].ItemArray[0].ToString();
+        }
     }
 }

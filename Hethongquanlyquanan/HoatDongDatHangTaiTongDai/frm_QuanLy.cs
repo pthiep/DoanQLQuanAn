@@ -612,7 +612,9 @@ namespace HoatDongDatHangTaiTongDai
 
         private void btn_Lichsu_Click(object sender, EventArgs e)
         {
-
+            Frm_LichSu frmLS = new Frm_LichSu();
+            frmLS.makh = lb_MaKH.Text;
+            frmLS.ShowDialog();
         }
     }
 }

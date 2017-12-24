@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAL;
+using System.Data;
 
 namespace BUS
 {
@@ -23,6 +24,18 @@ namespace BUS
         {
             string sql = "select count(*) from HoaDon where mahoadon = N'" + ma +"'";
             return int.Parse(dalHD.ExecuteQuery(sql).Rows[0].ItemArray[0].ToString()) > 0 ? true : false;
+        }
+
+        public int SoluongHDTheoKH(string ma)
+        {
+            string sql = "select count(*) from HoaDon where makhachhang = '" + ma + "'";
+            return int.Parse(dalHD.ExecuteQuery(sql).Rows[0].ItemArray[0].ToString());
+        }
+
+        public DataTable DanhSachHDTheoKH(string ma)
+        {
+            string sql = "select * from HoaDon where makhachhang = N'" + ma + "'";
+            return dalHD.ExecuteQuery(sql);
         }
 
         public string TaoMaHD()
