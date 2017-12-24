@@ -14,7 +14,7 @@ namespace HoatDongDatHangTaiTongDai
 {
     public partial class UC_MonAn : UserControl
     {
-        public delegate void AddItem(string abc);
+        public delegate void AddItem(string ma, bool tt);
         public event AddItem AddItems;
 
         public string macn = "";
@@ -267,7 +267,7 @@ namespace HoatDongDatHangTaiTongDai
             
             if (AddItems != null)
             {
-                AddItems((sender as Control).Tag.ToString());
+                AddItems((sender as Control).Tag.ToString(), true);
             }
 
         }

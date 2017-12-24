@@ -20,6 +20,7 @@ namespace HoatDongDatHangTaiTongDai
         BUS_HoaDon busHD = new BUS_HoaDon();
         BUS_Clock busClock = new BUS_Clock();
         BUS_DanhMuc busDM = new BUS_DanhMuc();
+        BUS_ChiNhanh busCN = new BUS_ChiNhanh();
 
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
 
@@ -31,6 +32,7 @@ namespace HoatDongDatHangTaiTongDai
         private void Frm_Quanly_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+            LoadCBCN();
             PanelUser();
         }
 
@@ -38,7 +40,7 @@ namespace HoatDongDatHangTaiTongDai
         {
             AutoCompleteStringCollection combData = new AutoCompleteStringCollection();
 
-            foreach(DataRow dt in busKH.DanhSachKhachHang().Rows)
+            foreach (DataRow dt in busKH.DanhSachKhachHang().Rows)
             {
                 combData.Add(dt.ItemArray[0].ToString());
             }
@@ -46,6 +48,16 @@ namespace HoatDongDatHangTaiTongDai
             tb_TimkiemKH.AutoCompleteMode = AutoCompleteMode.Suggest;
             tb_TimkiemKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
             tb_TimkiemKH.AutoCompleteCustomSource = combData;
+        }
+
+        void LoadCBCN()
+        {
+            cb_CN.Properties.Items.Add("---Chọn chi nhánh---");
+            foreach (DataRow dr in busCN.LoadDanhSachChiNhanh().Rows)
+            {
+                cb_CN.Properties.Items.Add(dr.ItemArray[1].ToString());
+            }
+            cb_CN.SelectedIndex = 0;
         }
 
         private void PanelUser()
@@ -62,14 +74,14 @@ namespace HoatDongDatHangTaiTongDai
                 UC_MonAn.Instance.BringToFront();
         }
 
-        private void Instance_AddItems(string ma)
+        private void Instance_AddItems(string ma, bool tt)
         {
             Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
             decimal tongtien = 0;
             if (pH != null)
             {
-                AddListDSMA(ma);
-                AddRowPanel(ma);
+                AddListDSMA(ma, tt);
+                AddRowPanel(ma, tt);
             }
             else
             {
@@ -77,8 +89,8 @@ namespace HoatDongDatHangTaiTongDai
                 PaintBodyHD();
                 lbMHD.Text = busHD.TaoMaHD();
                 lstDSMA.Clear();
-                AddListDSMA(ma);
-                AddRowPanel(ma);
+                AddListDSMA(ma, tt);
+                AddRowPanel(ma, tt);
             }
             for (int i = 0; i < lstDSMA.Count; i++)
             {
@@ -86,8 +98,9 @@ namespace HoatDongDatHangTaiTongDai
             }
             lbTongTien.Text = ChuyenDecimalToVND(tongtien);
         }
+    
 
-        private void AddListDSMA(string ma)
+        private void AddListDSMA(string ma, bool tt)
         {
             DTO_ItemBill newbill = new DTO_ItemBill();
             string giaban = bus_monan.LayGiaMonAnTheoMa(ma);
@@ -110,7 +123,17 @@ namespace HoatDongDatHangTaiTongDai
 
             if (flag)
             {
-                lstDSMA[vitri].Soluong++;
+                if (tt == false)
+                {
+                    if (lstDSMA[vitri].Soluong > 1)
+                    {
+                        lstDSMA[vitri].Soluong--;
+                    }
+                }
+                else
+                {
+                    lstDSMA[vitri].Soluong++;
+                }
                 lstDSMA[vitri].Thanhtien = decimal.Parse(giaban) * lstDSMA[vitri].Soluong;
             }
             else
@@ -160,7 +183,7 @@ namespace HoatDongDatHangTaiTongDai
             pnHD.Controls.Add(pnBodyHD);
         }
 
-        private void AddRowPanel(string ma)
+        private void AddRowPanel(string ma, bool tt)
         {
             Panel pH = (Panel)pnHD.Controls.Find("pnBodyHD", true).FirstOrDefault();
             Panel pnRow = (Panel)pnHD.Controls.Find("pnRowHD_" + ma, true).FirstOrDefault();
@@ -234,16 +257,22 @@ namespace HoatDongDatHangTaiTongDai
                     btn_Xoa.Image = Image.FromFile("C:\\DBMA\\xoama.png");
                     btn_Xoa.Size = new Size(23, 23);
                     btn_Xoa.Location = new Point(pnRowHD.Width - 30, pnRowHD.Height / 2 - 10);
+                    btn_Xoa.Click += Btn_Xoa_Click;
+                    btn_Xoa.Tag = ma;
                     pnRowHD.Controls.Add(btn_Xoa);
 
                     btn_ThemSL.Image = Image.FromFile("C:\\DBMA\\themsl.png");
                     btn_ThemSL.Size = new Size(23, 23);
                     btn_ThemSL.Location = new Point(47, 45 / 2 - 23 / 2);
+                    btn_ThemSL.Click += Btn_ThemSL_Click;
+                    btn_ThemSL.Tag = ma;
                     pnRowHD.Controls.Add(btn_ThemSL);
 
                     btn_XoaSL.Image = Image.FromFile("C:\\DBMA\\xoasl.png");
                     btn_XoaSL.Size = new Size(23, 23);
                     btn_XoaSL.Location = new Point(70, 45 / 2 - 23 / 2);
+                    btn_XoaSL.Click += Btn_XoaSL_Click;
+                    btn_XoaSL.Tag = ma;
                     pnRowHD.Controls.Add(btn_XoaSL);
 
                     pH.Controls.Add(pnRowHD);
@@ -251,12 +280,150 @@ namespace HoatDongDatHangTaiTongDai
                 else
                 {
                     Label lb_SoLuong = (Label)pnHD.Controls.Find("lbSoLuong_" + ma, true).FirstOrDefault();
-                    lb_SoLuong.Text = (int.Parse(lb_SoLuong.Text) + 1).ToString();
+                    if (tt == true)
+                    {
+                        lb_SoLuong.Text = (int.Parse(lb_SoLuong.Text) + 1).ToString();
+                    }
+                    else
+                    {
+                        if (int.Parse(lb_SoLuong.Text) > 1)
+                        {
+                            lb_SoLuong.Text = (int.Parse(lb_SoLuong.Text) - 1).ToString();
+                        }
+                    }
 
                     Label lb_ThanhTien = (Label)pnHD.Controls.Find("lbThanhTien_" + ma, true).FirstOrDefault();
                     lb_ThanhTien.Text = ChuyenDecimalToVND((int.Parse(lb_SoLuong.Text) * int.Parse(bus_monan.LayGiaMonAnTheoMa(ma))));
                 }
             }
+        }
+
+        private void AddRowPanelAfterDel(string ma)
+        {
+            Panel pH = (Panel)pnHD.Controls.Find("pnBodyHD", true).FirstOrDefault();
+            Panel pnRow = (Panel)pnHD.Controls.Find("pnRowHD_" + ma, true).FirstOrDefault();
+
+            if (pH != null)
+            {
+                if (pnRow == null)
+                {
+                    Panel pnRowHD = null;
+                    Label lb_SoLuong = null;
+                    Label lb_Ten = null;
+                    Label lb_Gia = null;
+                    Label lb_ThanhTien = null;
+                    Button btn_ThemSL = null;
+                    Button btn_XoaSL = null;
+                    Button btn_Xoa = null;
+
+                    pnRowHD = new Panel();
+                    lb_SoLuong = new Label();
+                    lb_Ten = new Label();
+                    lb_Gia = new Label();
+                    lb_ThanhTien = new Label();
+                    btn_ThemSL = new Button();
+                    btn_XoaSL = new Button();
+                    btn_Xoa = new Button();
+
+                    int index = 0;
+
+                    for (int i = 0; i < lstDSMA.Count; i++)
+                    {
+                        if (lstDSMA[i].Ma == ma)
+                        {
+                            index = i;
+                        }
+                    }
+
+                    pnRowHD.Location = new Point(0, index * 45);
+
+
+                    pnRowHD.Name = "pnRowHD_" + ma;
+                    pnRowHD.Size = new Size(pH.Width, 45);
+                    pnRowHD.BackColor = Color.FromArgb(252, 234, 164);
+
+                    lb_SoLuong = new Label();
+                    lb_SoLuong.Location = new Point(0, 0);
+                    lb_SoLuong.Size = new Size(45, 45);
+                    lb_SoLuong.TextAlign = ContentAlignment.MiddleCenter;
+                    lb_SoLuong.Name = "lbSoLuong_" + ma;
+                    lb_SoLuong.Text = lstDSMA[index].Soluong.ToString();
+                    lb_SoLuong.Font = new Font("tahoma", 15f, FontStyle.Bold);
+                    pnRowHD.Controls.Add(lb_SoLuong);
+
+                    lb_Ten.Location = new Point(100, 5);
+                    lb_Ten.Text = bus_monan.LayTenTuMaMonAn(ma);
+                    lb_Ten.Font = new Font("tahoma", 11f, FontStyle.Bold);
+                    pnRowHD.Controls.Add(lb_Ten);
+
+                    lb_Gia.Location = new Point(100, 30);
+                    lb_Gia.Text = "Giá : " + bus_monan.LayGiaMonAnTheoMa(ma);
+                    pnRowHD.Controls.Add(lb_Gia);
+
+                    lb_ThanhTien.Location = new Point(pnRowHD.Width - lb_ThanhTien.Width - 50, 45 / 2 - 15 / 2);
+                    lb_ThanhTien.Name = "lbThanhTien_" + ma;
+                    lb_ThanhTien.Size = new Size(115, 16);
+                    lb_ThanhTien.Text = ChuyenDecimalToVND(decimal.Parse(bus_monan.LayGiaMonAnTheoMa(ma)) * decimal.Parse(lb_SoLuong.Text));
+                    lb_ThanhTien.Font = new Font("tahoma", 11f, FontStyle.Bold);
+                    lb_ThanhTien.TextAlign = ContentAlignment.MiddleRight;
+                    pnRowHD.Controls.Add(lb_ThanhTien);
+
+                    btn_Xoa.Image = Image.FromFile("C:\\DBMA\\xoama.png");
+                    btn_Xoa.Size = new Size(23, 23);
+                    btn_Xoa.Location = new Point(pnRowHD.Width - 30, pnRowHD.Height / 2 - 10);
+                    btn_Xoa.Click += Btn_Xoa_Click;
+                    btn_Xoa.Tag = ma;
+                    pnRowHD.Controls.Add(btn_Xoa);
+
+                    btn_ThemSL.Image = Image.FromFile("C:\\DBMA\\themsl.png");
+                    btn_ThemSL.Size = new Size(23, 23);
+                    btn_ThemSL.Location = new Point(47, 45 / 2 - 23 / 2);
+                    btn_ThemSL.Click += Btn_ThemSL_Click;
+                    btn_ThemSL.Tag = ma;
+                    pnRowHD.Controls.Add(btn_ThemSL);
+
+                    btn_XoaSL.Image = Image.FromFile("C:\\DBMA\\xoasl.png");
+                    btn_XoaSL.Size = new Size(23, 23);
+                    btn_XoaSL.Location = new Point(70, 45 / 2 - 23 / 2);
+                    btn_XoaSL.Click += Btn_XoaSL_Click;
+                    btn_XoaSL.Tag = ma;
+                    pnRowHD.Controls.Add(btn_XoaSL);
+
+                    pH.Controls.Add(pnRowHD);
+                }               
+            }
+        }
+
+        private void Btn_Xoa_Click(object sender, EventArgs e)
+        {
+            Panel pH = (Panel)pnHD.Controls.Find("pnBodyHD", true).FirstOrDefault();
+            pH.Controls.Clear();
+            decimal tongtien = 0;
+            string ma = (sender as Control).Tag.ToString();
+            for (int i = 0; i < lstDSMA.Count; i++)
+            {
+                if (lstDSMA[i].Ma == ma)
+                {
+                    lstDSMA.RemoveAt(i);
+                }
+            }
+
+            for (int i = 0; i < lstDSMA.Count; i++)
+            {
+                AddRowPanelAfterDel(lstDSMA[i].Ma);
+                tongtien += lstDSMA[i].Thanhtien;
+            }
+            lbTongTien.Text = ChuyenDecimalToVND(tongtien);
+        }
+
+        private void Btn_XoaSL_Click(object sender, EventArgs e)
+        {
+            Instance_AddItems((sender as Control).Tag.ToString(), false);
+        }
+
+        private void Btn_ThemSL_Click(object sender, EventArgs e)
+        {
+            Instance_AddItems((sender as Control).Tag.ToString(), true);
         }
 
         string ChuyenDecimalToVND(decimal tien)
