@@ -24,6 +24,8 @@ namespace HoatDongDatHangTaiTongDai
 
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
 
+        bool DuyetHD = true;
+
         public Frm_Quanly()
         {
             InitializeComponent();
@@ -32,11 +34,12 @@ namespace HoatDongDatHangTaiTongDai
         private void Frm_Quanly_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+            TaoAutoCompleteKH();
             LoadCBCN();
             PanelUser();
         }
 
-        void Test()
+        void TaoAutoCompleteKH()
         {
             AutoCompleteStringCollection combData = new AutoCompleteStringCollection();
 
@@ -76,27 +79,30 @@ namespace HoatDongDatHangTaiTongDai
 
         private void Instance_AddItems(string ma, bool tt)
         {
-            Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
-            decimal tongtien = 0;
-            if (pH != null)
+            if (DuyetHD)
             {
-                AddListDSMA(ma, tt);
-                AddRowPanel(ma, tt);
+                Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
+                decimal tongtien = 0;
+                if (pH != null)
+                {
+                    AddListDSMA(ma, tt);
+                    AddRowPanel(ma, tt);
+                }
+                else
+                {
+                    lbMHD.Text = busHD.TaoMaHD();
+                    PaintHeadHD(lbMHD.Text);
+                    PaintBodyHD();
+                    lstDSMA.Clear();
+                    AddListDSMA(ma, tt);
+                    AddRowPanel(ma, tt);
+                }
+                for (int i = 0; i < lstDSMA.Count; i++)
+                {
+                    tongtien += lstDSMA[i].Thanhtien;
+                }
+                lbTongTien.Text = ChuyenDecimalToVND(tongtien);
             }
-            else
-            {
-                PaintHeadHD();
-                PaintBodyHD();
-                lbMHD.Text = busHD.TaoMaHD();
-                lstDSMA.Clear();
-                AddListDSMA(ma, tt);
-                AddRowPanel(ma, tt);
-            }
-            for (int i = 0; i < lstDSMA.Count; i++)
-            {
-                tongtien += lstDSMA[i].Thanhtien;
-            }
-            lbTongTien.Text = ChuyenDecimalToVND(tongtien);
         }
     
 
@@ -145,7 +151,7 @@ namespace HoatDongDatHangTaiTongDai
         }
 
 
-        private void PaintHeadHD()
+        private void PaintHeadHD(string ma)
         {
             Panel pnHeadHD = new Panel();
 
@@ -162,12 +168,14 @@ namespace HoatDongDatHangTaiTongDai
 
 
             Label lbDate = new Label();
-            lbDate.Text = "Giờ đến:  10:00:00";
+            lbDate.Text = "Giờ đến: 10:00:00";
+            lbDate.Name = "lbDate_" + ma;
             lbDate.Location = new Point(pnHeadHD.Width - lbDate.Width, 0);
 
             pnHeadHD.Controls.Add(lbTenNV);
             pnHeadHD.Controls.Add(lbDate);
             lbMHD.Text = busHD.TaoMaHD();
+            btn_XacnhanHD.Enabled = true;
             lstDSMA.Clear();
         }
 
@@ -514,6 +522,97 @@ namespace HoatDongDatHangTaiTongDai
                 tb_TimkiemKH.Text = "Nhập tên, sđt hoặc mã khách hàng để tìm !!!";
                 tb_TimkiemKH.ForeColor = SystemColors.GrayText;
             }
+        }
+
+        private void btn_XacnhanHD_Click(object sender, EventArgs e)
+        {            
+            if(!busHD.KiemTraHD(lbMHD.Text))
+            {
+                if (lb_MaKH.Text != "___")
+                {
+                    if (cb_CN.SelectedIndex != 0)
+                    {
+                        Label time = (Label)pnHD.Controls.Find("lbDate_" + lbMHD.Text, true).FirstOrDefault();
+
+                        DTO_HoaDon hd = new DTO_HoaDon();
+                        hd.Mahoadon = lbMHD.Text;
+                        hd.Makhachhang = lb_MaKH.Text;
+                        hd.Manhanvien = barMaNV.Caption;
+                        hd.Ngay = time.Text;
+                        hd.Machinhanh = "CN" + cb_CN.SelectedIndex;
+                        hd.Loaihd = 0;
+                        hd.Trangthai = 1;
+                        busHD.LuuHD(hd);
+                        MessageBox.Show("Đã tạo đơn hàng mã " + hd.Mahoadon + " thành công !!!", "Thông báo");
+                        btn_XacnhanHD.Enabled = false;
+                        pnHD.Enabled = false;
+                        tb_TimkiemKH.Enabled = false;
+                        cb_CN.Enabled = false;
+                        DuyetHD = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chưa chọn chi nhánh !!!", "Thông báo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập thông tin khách hàng !!!", "Thông báo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã hóa đơn chưa được tạo", "Thông báo");
+            }
+        }
+
+        private void btn_TaoHD_Click(object sender, EventArgs e)
+        {
+            lstDSMA.Clear();
+            pnHD.Controls.Clear();
+
+            tb_TimkiemKH.Text = "Nhập tên, sđt hoặc mã khách hàng để tìm !!!";
+            tb_TimkiemKH.ForeColor = SystemColors.GrayText;
+
+            lb_MaKH.Text = "___";
+            lb_TenKH.Text = "___";
+            lb_SDT.Text = "___";
+            lbTongTien.Text = "___";
+            cb_CN.SelectedIndex = 0;
+
+            btn_XacnhanHD.Enabled = true;
+            pnHD.Enabled = true;
+            tb_TimkiemKH.Enabled = true;
+            cb_CN.Enabled = true;
+            DuyetHD = true;
+
+            lbMHD.Text = busHD.TaoMaHD();
+            PaintHeadHD(lbMHD.Text);
+            PaintBodyHD();
+        }
+
+        private void lb_MaKH_TextChanged(object sender, EventArgs e)
+        {
+            if (lb_MaKH.Text != "___")
+            {
+                btn_Lichsu.Enabled = true;
+            }
+            else
+            {
+                btn_Lichsu.Enabled = false;
+            }
+        }
+
+        private void btn_TaoKH_Click(object sender, EventArgs e)
+        {
+            Frm_TaoKH frmKH = new Frm_TaoKH();
+            frmKH.ngaytao = barDatetime.Caption;
+            frmKH.ShowDialog();
+        }
+
+        private void btn_Lichsu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

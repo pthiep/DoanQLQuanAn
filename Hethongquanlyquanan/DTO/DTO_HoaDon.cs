@@ -12,6 +12,7 @@ namespace DTO
         private string ngay;
         private string makhachhang, manhanvien, machinhanh;
         private int loaihd;
+        int trangthai;
        
         public string Ngay { get => ngay; set => ngay = value; }
         public int Loaihd { get => loaihd; set => loaihd = value; }
@@ -19,6 +20,7 @@ namespace DTO
         public string Machinhanh { get => machinhanh; set => machinhanh = value; }
         public string Manhanvien { get => manhanvien; set => manhanvien = value; }
         public string Mahoadon { get => mahoadon; set => mahoadon = value; }
+        public int Trangthai { get => trangthai; set => trangthai = value; }
 
         // private DonHang donHang;
     }

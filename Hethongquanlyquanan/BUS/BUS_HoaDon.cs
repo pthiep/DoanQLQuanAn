@@ -15,8 +15,8 @@ namespace BUS
 
         public bool LuuHD(DTO_HoaDon hd)
         {
-            string sql = "insert into HoaDon(mahoadon,makhachhang,ngaylap,manhanvien,machinhanh,loaihoadon) values( @mahd , @makh , @ngay , @manv , @macn , @loaihd )";
-            return dalHD.ExecuteNonQuery(sql, new object[] { hd.Mahoadon, hd.Makhachhang, hd.Ngay, hd.Manhanvien, hd.Machinhanh, hd.Loaihd }) > 0 ? true : false;
+            string sql = "insert into HoaDon(mahoadon,makhachhang,ngaylap,manhanvien,machinhanh,loaihoadon,trangthai) values( @mahd , @makh , @ngay , @manv , @macn , @loaihd , @tt )";
+            return dalHD.ExecuteNonQuery(sql, new object[] { hd.Mahoadon, hd.Makhachhang, hd.Ngay, hd.Manhanvien, hd.Machinhanh, hd.Loaihd , hd.Trangthai}) > 0 ? true : false;
         }
 
         public bool KiemTraHD(string ma)
