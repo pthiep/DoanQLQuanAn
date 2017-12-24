@@ -88,6 +88,7 @@ namespace Bophanbanhangtaichinhanh
         {
             Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
             decimal tongtien = 0;
+            
             if (pH != null)
             {
                 AddListDSMA(ma);

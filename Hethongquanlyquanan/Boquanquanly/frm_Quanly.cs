@@ -1285,7 +1285,6 @@ namespace Boquanquanly
             }
         }
 
-
         private void Lb_BTenmonan_Click(object sender, EventArgs e)
         {
             DTO_MonAn ma = new DTO_MonAn();
@@ -1437,83 +1436,6 @@ namespace Boquanquanly
         private void backstageViewClientControl2_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void backstageViewTabItem3_SelectedChanged(object sender, BackstageViewItemEventArgs e)
-        {
-
-        }
-
-        private void backstageViewTabItem1_SelectedChanged(object sender, BackstageViewItemEventArgs e)
-        {
-
-        }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void pBaoCao_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void rbDoanhThu_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_doanhthu.Instance))
-            {
-                pBaoCao.Controls.Add(uc_doanhthu.Instance);
-                //uc_doanhthu.Instance.Dock = DockStyle.Fill;
-                uc_doanhthu.Instance.BringToFront();
-            }
-            else { uc_doanhthu.Instance.BringToFront(); }
-        }
-
-        private void rbChiPhi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_chiphi.Instance))
-            {
-                pBaoCao.Controls.Add(uc_chiphi.Instance);
-                uc_chiphi.Instance.Dock = DockStyle.Fill;
-                uc_chiphi.Instance.BringToFront();
-            }
-            else { uc_chiphi.Instance.BringToFront(); }
-        }
-
-        private void rbSoLuongMonBan_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_thongkesoluongmon.Instance))
-            {
-                pBaoCao.Controls.Add(uc_thongkesoluongmon.Instance);
-                uc_thongkesoluongmon.Instance.Dock = DockStyle.Fill;
-                uc_thongkesoluongmon.Instance.BringToFront();
-            }
-            else { uc_thongkesoluongmon.Instance.BringToFront(); }
-        }
-
-        private void rbSoLuongHD_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_soluongdonhang.Instance))
-            {
-                pBaoCao.Controls.Add(uc_soluongdonhang.Instance);
-                uc_soluongdonhang.Instance.Dock = DockStyle.Fill;
-                uc_soluongdonhang.Instance.BringToFront();
-            }
-            else { uc_soluongdonhang.Instance.BringToFront(); }
-        }
-
-        private void rbHDKhachHang_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_thongkesoluongdonhangcuakhach.Instance))
-            {
-                pBaoCao.Controls.Add(uc_thongkesoluongdonhangcuakhach.Instance);
-                uc_thongkesoluongdonhangcuakhach.Instance.Dock = DockStyle.Fill;
-                uc_thongkesoluongdonhangcuakhach.Instance.BringToFront();
-            }
-            else { uc_thongkesoluongdonhangcuakhach.Instance.BringToFront(); }
         }
     }
 }
