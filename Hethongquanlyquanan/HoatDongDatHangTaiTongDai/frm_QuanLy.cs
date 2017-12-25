@@ -621,5 +621,15 @@ namespace HoatDongDatHangTaiTongDai
         {
 
         }
+
+        private void lb_SLChoduyet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void lb_SLXuly_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

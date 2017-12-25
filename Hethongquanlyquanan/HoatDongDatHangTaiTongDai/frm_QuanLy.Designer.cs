@@ -54,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cb_CN = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnKT = new DevExpress.XtraEditors.SimpleButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lb_TenKH = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,8 +63,9 @@
             this.tb_TimkiemKH = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_TaoHD = new DevExpress.XtraEditors.SimpleButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lb_SLChoduyet = new System.Windows.Forms.LinkLabel();
+            this.lb_SLXuly = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_CN.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -307,16 +307,6 @@
             this.btnKT.Text = "Kiểm tra đơn hàng";
             this.btnKT.Click += new System.EventHandler(this.btnKT_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label6.Location = new System.Drawing.Point(661, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(16, 18);
-            this.label6.TabIndex = 91;
-            this.label6.Text = "0";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -428,16 +418,6 @@
             this.btn_TaoHD.Text = "Tạo hóa đơn mới";
             this.btn_TaoHD.Click += new System.EventHandler(this.btn_TaoHD_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label5.Location = new System.Drawing.Point(956, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 18);
-            this.label5.TabIndex = 122;
-            this.label5.Text = "0";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -448,14 +428,40 @@
             this.label8.TabIndex = 123;
             this.label8.Text = "Số đơn hàng đang chờ duyệt:";
             // 
+            // lb_SLChoduyet
+            // 
+            this.lb_SLChoduyet.AutoSize = true;
+            this.lb_SLChoduyet.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lb_SLChoduyet.Location = new System.Drawing.Point(956, 41);
+            this.lb_SLChoduyet.Name = "lb_SLChoduyet";
+            this.lb_SLChoduyet.Size = new System.Drawing.Size(16, 18);
+            this.lb_SLChoduyet.TabIndex = 126;
+            this.lb_SLChoduyet.TabStop = true;
+            this.lb_SLChoduyet.Text = "0";
+            this.lb_SLChoduyet.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.lb_SLChoduyet.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lb_SLChoduyet_LinkClicked);
+            // 
+            // lb_SLXuly
+            // 
+            this.lb_SLXuly.AutoSize = true;
+            this.lb_SLXuly.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lb_SLXuly.Location = new System.Drawing.Point(661, 42);
+            this.lb_SLXuly.Name = "lb_SLXuly";
+            this.lb_SLXuly.Size = new System.Drawing.Size(16, 18);
+            this.lb_SLXuly.TabIndex = 127;
+            this.lb_SLXuly.TabStop = true;
+            this.lb_SLXuly.Text = "0";
+            this.lb_SLXuly.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.lb_SLXuly.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lb_SLXuly_LinkClicked);
+            // 
             // Frm_Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 710);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lb_SLXuly);
+            this.Controls.Add(this.lb_SLChoduyet);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_TaoHD);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tb_TimkiemKH);
@@ -507,7 +513,6 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.ComboBoxEdit cb_CN;
         private DevExpress.XtraEditors.SimpleButton btnKT;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lb_TenKH;
         private System.Windows.Forms.Label label9;
@@ -519,7 +524,8 @@
         private DevExpress.XtraEditors.SimpleButton btn_TaoHD;
         private DevExpress.XtraBars.BarHeaderItem barDatetime;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.LinkLabel lb_SLChoduyet;
+        private System.Windows.Forms.LinkLabel lb_SLXuly;
     }
 }
