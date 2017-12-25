@@ -25,9 +25,21 @@ namespace BUS
             return dalKH.ExecuteQuery(sql, new object[] { ma }).Rows.Count > 0 ? true : false;
         }
 
+        public bool KiemTraSDT(string ma)
+        {
+            string sql = "select * from KhachHang where trangthai = 1 and sodienthoai = @ma";
+            return dalKH.ExecuteQuery(sql, new object[] { ma }).Rows.Count > 0 ? true : false;
+        }
+
         public DataTable LayThongTinKhachHang(string ma)
         {
             string sql = "select * from KhachHang where trangthai = 1 and makh = @ma";
+            return dalKH.ExecuteQuery(sql, new object[] { ma });
+        }
+
+        public DataTable LayThongTinKhachHangSDT(string ma)
+        {
+            string sql = "select * from KhachHang where trangthai = 1 and sodienthoai = @ma";
             return dalKH.ExecuteQuery(sql, new object[] { ma });
         }
 

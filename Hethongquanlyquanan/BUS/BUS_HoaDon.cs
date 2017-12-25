@@ -16,8 +16,8 @@ namespace BUS
 
         public bool LuuHD(DTO_HoaDon hd)
         {
-            string sql = "insert into HoaDon(mahoadon,makhachhang,ngaylap,manhanvien,machinhanh,loaihoadon,trangthai) values( @mahd , @makh , @ngay , @manv , @macn , @loaihd , @tt )";
-            return dalHD.ExecuteNonQuery(sql, new object[] { hd.Mahoadon, hd.Makhachhang, hd.Ngay, hd.Manhanvien, hd.Machinhanh, hd.Loaihd , hd.Trangthai}) > 0 ? true : false;
+            string sql = "insert into HoaDon(mahoadon,makhachhang,tongtien,ngaytao,manhanvien,machinhanh,loaihoadon,trangthai) values( @mahd , @makh , @ttien , @ngay , @manv , @macn , @loaihd , @tt )";
+            return dalHD.ExecuteNonQuery(sql, new object[] { hd.Mahoadon, hd.Makhachhang,hd.Tongtien, hd.Ngay, hd.Manhanvien, hd.Machinhanh, hd.Loaihd , hd.Trangthai}) > 0 ? true : false;
         }
 
         public bool KiemTraHD(string ma)
@@ -61,10 +61,18 @@ namespace BUS
             string sql = "select * from Quanhe_Hoadon_CTHD";
             return "CTHD" + (dalHD.ExecuteQuery(sql).Rows.Count + 1).ToString();
         }
-        public bool LuuCTHD(string mahd)
+        public bool LuuQHHDCTHD(string mahd, ref string macthd)
         {
+            string ma = TaoMaCTHD();
+            macthd = ma;
             string sql = "insert into Quanhe_Hoadon_CTHD(mahoadon , macthoadon , trangthai) values( @mahd , @macthd , @tt )";
-            return dalHD.ExecuteNonQuery(sql, new object[] { mahd, TaoMaCTHD() , 1 }) > 0 ? true : false;
+            return dalHD.ExecuteNonQuery(sql, new object[] { mahd, ma , 1 }) > 0 ? true : false;            
+        }
+
+        public bool LuuCTHD(string macthd, DTO_ItemBill it)
+        {
+            string sql = "insert into Chitiethoadon(machitiethoadon , mamonan , soluong, thanhtien) values( @macthd , @ma , @sl , @tt )";
+            return dalHD.ExecuteNonQuery(sql, new object[] { macthd, it.Ma, it.Soluong, it.Thanhtien }) > 0 ? true : false;
         }
     }
 }

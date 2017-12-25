@@ -59,5 +59,18 @@ namespace BUS
             string sql = "select tenchinhanh from ChiNhanh where machinhanh = @ma ";
             return dalCN.ExecuteQuery(sql, new object[] { ma }).Rows[0].ItemArray[0].ToString();
         }
+
+        public string LayMaTuTenCN(string ten)
+        {
+            if (ten != "")
+            {
+                string sql = "select machinhanh from ChiNhanh where tenchinhanh = N'" + ten + "'";
+                return dalCN.ExecuteQuery(sql).Rows[0].ItemArray[0].ToString();
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }

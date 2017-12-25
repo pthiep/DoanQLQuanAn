@@ -13,6 +13,7 @@ namespace DTO
         private string makhachhang, manhanvien, machinhanh;
         private int loaihd;
         int trangthai;
+        decimal tongtien;
        
         public string Ngay { get => ngay; set => ngay = value; }
         public int Loaihd { get => loaihd; set => loaihd = value; }
@@ -21,6 +22,7 @@ namespace DTO
         public string Manhanvien { get => manhanvien; set => manhanvien = value; }
         public string Mahoadon { get => mahoadon; set => mahoadon = value; }
         public int Trangthai { get => trangthai; set => trangthai = value; }
+        public decimal Tongtien { get => tongtien; set => tongtien = value; }
 
         // private DonHang donHang;
     }

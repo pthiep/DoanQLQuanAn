@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_LichSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LichSu.Designer.cs">
+      <DependentUpon>Frm_LichSu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_QA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="UC_MonAn.Designer.cs">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_LichSu.resx">
+      <DependentUpon>Frm_LichSu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_QA.resx">
       <DependentUpon>Frm_QA.cs</DependentUpon>
     </EmbeddedResource>

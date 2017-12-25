@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DTO;
 using BUS;
+using System.Threading;
 
 namespace Gioithieuvadathang
 {
@@ -18,8 +19,14 @@ namespace Gioithieuvadathang
         BUS_HoaDon busHD = new BUS_HoaDon();
         BUS_MonAn bus_monan = new BUS_MonAn();
         BUS_SLTruycap busSLTC = new BUS_SLTruycap();
+        BUS_ChiNhanh busCN = new BUS_ChiNhanh();
+        BUS_KhachHang busKH = new BUS_KhachHang();
+        BUS_Clock busCl = new BUS_Clock();
 
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
+
+        bool LoadCB = false;
+        string Machinhanh = "";
 
         public Frm_QA()
         {
@@ -30,16 +37,46 @@ namespace Gioithieuvadathang
         {
             CenterToScreen();
             busSLTC.TangSLTC();
+            TaoAutoCompleteKHSDT();            
+            LoadCBCN();
+            ActiveControl = cb_CN;
+            Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
             barSLTruycap.Caption = busSLTC.SoluongTruycap().ToString();
-            PanelUser();
+            if (LoadCB)
+                PanelUser();
         }
+
+        void TaoAutoCompleteKHSDT()
+        {
+            AutoCompleteStringCollection combData = new AutoCompleteStringCollection();
+
+            foreach (DataRow dt in busKH.DanhSachKhachHang().Rows)
+            {
+                combData.Add(dt.ItemArray[2].ToString());
+            }
+
+            tb_SDT.AutoCompleteMode = AutoCompleteMode.Append;
+            tb_SDT.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            tb_SDT.AutoCompleteCustomSource = combData;
+        }        
+
+        void LoadCBCN()
+        {
+            foreach (DataRow dr in busCN.LoadDanhSachChiNhanh().Rows)
+            {
+                cb_CN.Properties.Items.Add(dr.ItemArray[1].ToString());
+            }
+            cb_CN.SelectedIndex = 0;
+            LoadCB = true;
+        }
+
         private void PanelUser()
         {
             if (!pnUC.Controls.Contains(UC_MonAn.Instance))
             {
+                UC_MonAn.Instance.macn = Machinhanh;
                 pnUC.Controls.Add(UC_MonAn.Instance);
                 UC_MonAn.Instance.AddItems += Instance_AddItems;
-                UC_MonAn.Instance.macn = barMaCN.Caption;
                 UC_MonAn.Instance.Dock = DockStyle.Fill;
                 UC_MonAn.Instance.BringToFront();
             }
@@ -129,18 +166,27 @@ namespace Gioithieuvadathang
             pnHD.Controls.Add(pnHeadHD);
 
             Label lbTenNV = new Label();
-            lbTenNV.Text = "Nguyễn Văn A";
+            lbTenNV.Text = "Thông tin đơn hàng";
+            lbTenNV.Font = new Font("Tahoma", 11f, FontStyle.Bold);
+            lbTenNV.Size = new Size(150, 35);
+            lbTenNV.TextAlign = ContentAlignment.MiddleCenter;
             lbTenNV.Location = new Point(0, 0);
 
 
             Label lbDate = new Label();
-            lbDate.Text = "Giờ đến: 10:00:00";
+            lbDate.Text = "Thời gian đặt: " + barTime.Caption;
             lbDate.Name = "lbDate_" + ma;
+            lbDate.Font = new Font("Tahoma", 8f, FontStyle.Bold);
+            lbDate.Size = new Size(250, 35);
+            lbDate.TextAlign = ContentAlignment.MiddleCenter;
             lbDate.Location = new Point(pnHeadHD.Width - lbDate.Width, 0);
 
             pnHeadHD.Controls.Add(lbTenNV);
             pnHeadHD.Controls.Add(lbDate);
             lbMHD.Text = busHD.TaoMaHD();
+
+            btnSave.Enabled = true;
+
             lstDSMA.Clear();
         }
 
@@ -455,6 +501,168 @@ namespace Gioithieuvadathang
         private void barBtn_TheodoiFB_ItemClick(object sender, ItemClickEventArgs e)
         {
             MessageBox.Show("Cảm ơn bạn đã theo dõi Trang Facebook cá nhân của cửa hàng chúng tôi !!!", "Thông báo");
+        }
+
+        private void btn_Lichsu_Click(object sender, EventArgs e)
+        {
+            if (lbMKH.Text != "___")
+            {
+                Frm_LichSu frmLS = new Frm_LichSu();
+                frmLS.makh = lbMKH.Text;
+                frmLS.ShowDialog();
+            }
+        }
+
+        private void tb_SDT_TextChanged(object sender, EventArgs e)
+        {
+            lb_SDT.Text = tb_SDT.Text;
+            if (busKH.KiemTraSDT(lb_SDT.Text))
+            {
+                DataTable dt = busKH.LayThongTinKhachHangSDT(lb_SDT.Text);
+                lbMKH.Text = dt.Rows[0].ItemArray[0].ToString();
+                lbTenKH.Text = dt.Rows[0].ItemArray[1].ToString();
+                lb_SDT.Text = dt.Rows[0].ItemArray[2].ToString();
+            }
+            else
+            {
+                lbMKH.Text = "___";
+                lbTenKH.Text = "___";
+                lb_SDT.Text = "___";
+            }
+        }
+
+        private void tb_SDT_Leave(object sender, EventArgs e)
+        {
+            if (tb_SDT.Text.Length == 0)
+            {
+                tb_SDT.Text = "Nhập số điện thoại để xác nhận đặt hàng !!!";
+                tb_SDT.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void tb_SDT_Enter(object sender, EventArgs e)
+        {
+            if (tb_SDT.Text == "Nhập số điện thoại để xác nhận đặt hàng !!!")
+            {
+                tb_SDT.Text = "";
+                tb_SDT.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void lbMKH_TextChanged(object sender, EventArgs e)
+        {
+            btn_Lichsu.Enabled = true;
+        }
+
+        private void btn_TaoHD_Click(object sender, EventArgs e)
+        {
+            lstDSMA.Clear();
+            pnHD.Controls.Clear();
+
+            tb_SDT.Text = "Nhập số điện thoại để xác nhận đặt hàng !!!";
+            tb_SDT.ForeColor = SystemColors.GrayText;
+
+            lbMHD.Text = "___";
+            lbMKH.Text = "___";
+            lb_SDT.Text = "___";
+            lbTongTien.Text = "___";
+            cb_CN.SelectedIndex = 0;
+
+            
+            pnHD.Enabled = true;            
+            cb_CN.Enabled = true;
+            
+
+            lbMHD.Text = busHD.TaoMaHD();
+            PaintHeadHD(lbMHD.Text);
+            PaintBodyHD();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!busHD.KiemTraHD(lbMHD.Text))
+            {
+                DTO_HoaDon hd = new DTO_HoaDon();
+                hd.Loaihd = 1;
+                hd.Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                hd.Mahoadon = lbMHD.Text;
+                hd.Makhachhang = lbMKH.Text == "___" ? tb_SDT.Text : lbMKH.Text;
+                hd.Manhanvien = "___";
+                hd.Ngay = barTime.Caption;
+                hd.Tongtien = ChuyenVNDToDecimal(lbTongTien.Text);
+                hd.Trangthai = 3;
+
+                if (tb_SDT.Text != "" && tb_SDT.Text != "Nhập số điện thoại để xác nhận đặt hàng !!!")
+                {
+                    string macthd = "";
+                    if (busHD.LuuHD(hd) && busHD.LuuQHHDCTHD(lbMHD.Text,ref macthd))
+                    {
+                        foreach (DTO_ItemBill it in lstDSMA)
+                        {
+                            busHD.LuuCTHD(macthd, it);
+                        }
+                        MessageBox.Show("Hóa đơn đã được lưu và in !!", "Thông báo");
+                    }
+
+                    pnHD.Controls.Clear();
+                    lbMHD.Text = "___";
+
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập số điện thoại để xác nhận hóa đơn !!", "Thông báo");
+                }
+            }
+
+            
+        }
+
+        private void cb_CN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (LoadCB)
+            {
+                Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                UC_MonAn.Instance.macn = Machinhanh;
+                UC_MonAn.Instance.VeAgain();
+            }
+        }
+
+        private void timerDate_Tick(object sender, EventArgs e)
+        {
+            barTime.Caption = busCl.TimeServer();
+        }
+
+        private void tb_TimkiemMA_Leave(object sender, EventArgs e)
+        {
+            if (tb_TimkiemMA.Text.Length == 0)
+            {
+                tb_TimkiemMA.Text = "Nhập vào tên món ăn để tìm kiếm !!!";
+                tb_TimkiemMA.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void tb_TimkiemMA_Enter(object sender, EventArgs e)
+        {
+            if (tb_TimkiemMA.Text == "Nhập vào tên món ăn để tìm kiếm !!!")
+            {
+                tb_TimkiemMA.Text = "";
+                tb_TimkiemMA.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void tb_TimkiemMA_TextChanged(object sender, EventArgs e)
+        {
+            if (LoadCB)
+            {               
+                Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                UC_MonAn.Instance.macn = Machinhanh;
+                UC_MonAn.Instance.Timkiemmonan(tb_TimkiemMA.Text);
+                if (tb_TimkiemMA.Text == "Nhập vào tên món ăn để tìm kiếm !!!")
+                {
+                    UC_MonAn.Instance.VeAgain();
+                }
+            }
         }
     }
 }

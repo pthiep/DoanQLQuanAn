@@ -117,21 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="barBtn_TheodoiFB.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
-        nQAABJ0BfDRroQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADLSURBVDhPYxg8
-        wD5wa6F94JbPQPo/frzls13A1nyoNgSwD9r6BbsGrPgTVBsCYFEExxNnX/1/5OSL/3OX3YSLQbUhALIG
-        ZJxRdvQ/CDx6+uX/1PnX4OJQbQiArAkZ13WdBRvQ0HMORRyqDQGQJWG4vvscWDMMbNj+EC4H1YYAyBph
-        OCBxz/+Fq26DNYPoiIz9cDmoNgRA1oiMYa4A0cjiUG0IgCyJjOloAI6ElFl+9P/+o8/ANJI41oQETMpb
-        fyIpwoV/Yk3KAwQYGAAtTWLG3z4xPgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="timerDate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 17</value>
   </metadata>
 </root>

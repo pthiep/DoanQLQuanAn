@@ -39,12 +39,43 @@ namespace Gioithieuvadathang
 
         private void UC_MonAn_Load(object sender, EventArgs e)
         {
-            LoadThucDon(BUSmonan.LoadDanhSachMonAn());
+            LoadThucDon(BUSmonan.LoadDanhSachMonAnCN(macn));
             VePNMenu();
             VeClickPNMenu();
         }
 
-        private void LoadThucDon(DataTable dt)
+        public void VeAgain()
+        {
+            pnThucDon.Controls.Clear();
+            pn_Menu.Controls.Clear();
+            LoadThucDon(BUSmonan.LoadDanhSachMonAnCN(macn));
+            VePNMenu();
+            VeClickPNMenu();
+        }
+
+        public void Timkiemmonan(string ten)
+        {
+            pnThucDon.Controls.Clear();
+            if (ten != "")
+            {
+                if (BUSmonan.Timkiemmonan(ten, macn).Rows.Count > 0)
+                {
+                    LoadThucDon(BUSmonan.Timkiemmonan(ten, macn));
+                }
+                else
+                {
+                    Label lb = new Label();
+                    lb.Text = "Không tìm thấy món ăn !!!";
+                    pnThucDon.Controls.Add(lb);
+                }
+            }
+            else
+            {
+                VeAgain();
+            }
+        }
+
+        public void LoadThucDon(DataTable dt)
         {
             pnThucDon.Controls.Clear();
             int slma = dt.Rows.Count;
@@ -81,11 +112,14 @@ namespace Gioithieuvadathang
                         pt.Tag = dt.Rows[dem].ItemArray[0].ToString();
                         pt.Click += Pt_Click;
 
+                        pn.Width = pt.Width;
+
                         p_lbma.X = 2;
                         p_lbma.Y = pt.Height + 10;
                         lbmonan.Text = dt.Rows[dem].ItemArray[1].ToString();
                         lbmonan.Location = p_lbma;
                         lbmonan.Font = new Font("Tahoma", 9f, FontStyle.Bold);
+                        lbmonan.Size = new Size(pn.Width, 20);
                         lbmonan.Tag = dt.Rows[dem].ItemArray[0].ToString();
                         lbmonan.Click += Pt_Click;
 
@@ -95,11 +129,12 @@ namespace Gioithieuvadathang
                         lbgia.Text = "Giá : " + ChuyenDecimalToVND(ChuyenVNDToDecimal(dt.Rows[dem].ItemArray[3].ToString()));
                         lbgia.Font = new Font("Tahoma", 9f, FontStyle.Bold);
                         lbgia.Location = p_lbgia;
+                        lbgia.Size = new Size(pn.Width, 20);
                         lbgia.Tag = dt.Rows[dem].ItemArray[0].ToString();
                         lbgia.Click += Pt_Click;
 
-                        pn.Width = pt.Width;
-                        pn.Height = pt.Height + lbmonan.Height + lbgia.Height + 2;
+                        
+                        pn.Height = pt.Height + lbmonan.Height + lbgia.Height + 10;
                         pn.BorderStyle = BorderStyle.FixedSingle;
                         p_pn.X = (pt.Width + 20) * j;
                         p_pn.Y = (pn.Height + 20) * i;
@@ -255,6 +290,7 @@ namespace Gioithieuvadathang
         private void Lb_Click(object sender, EventArgs e)
         {
             Panel pn = null;
+
             int ma = 0;
             if ((sender as Control).Tag.ToString() == "DMBanchay")
             {
@@ -284,11 +320,12 @@ namespace Gioithieuvadathang
                     pn.Tag = "0";
                 }
             }
+
             VeClickPNMenu();
             
             if ((sender as Control).Tag.ToString() == "DM0")
             {
-                LoadThucDon(BUSmonan.LoadDanhSachMonAn());
+                LoadThucDon(BUSmonan.LoadDanhSachMonAnCN(macn));
             }
             else if ((sender as Control).Tag.ToString() == "DMBanchay")
             {

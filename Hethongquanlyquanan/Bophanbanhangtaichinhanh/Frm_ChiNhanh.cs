@@ -340,10 +340,10 @@ namespace Bophanbanhangtaichinhanh
                 hd.Manhanvien = lbMNV.Text;
                 hd.Ngay = barTime.Caption;
 
-                if (busHD.LuuHD(hd) && busHD.LuuCTHD(lbMHD.Text))
-                {
-                    MessageBox.Show("Hóa đơn đã được lưu và in !!", "Thông báo");
-                }
+                //if (busHD.LuuHD(hd) && busHD.LuuCTHD(lbMHD.Text))
+                //{
+                //    MessageBox.Show("Hóa đơn đã được lưu và in !!", "Thông báo");
+                //}
             }
 
             pnHD.Controls.Clear();

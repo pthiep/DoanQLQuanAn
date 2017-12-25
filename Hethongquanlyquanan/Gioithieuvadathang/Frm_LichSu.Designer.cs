@@ -1,4 +1,4 @@
-﻿namespace HoatDongDatHangTaiTongDai
+﻿namespace Gioithieuvadathang
 {
     partial class Frm_LichSu
     {
@@ -98,7 +98,7 @@
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_LichSu";
             this.Ribbon = this.ribbon;
-            this.Text = "Frm_LichSu";
+            this.Text = "Lịch sử giao dịch";
             this.Load += new System.EventHandler(this.Frm_LichSu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
