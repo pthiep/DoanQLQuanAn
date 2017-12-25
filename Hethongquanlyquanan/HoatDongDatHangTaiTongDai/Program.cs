@@ -16,7 +16,7 @@ namespace HoatDongDatHangTaiTongDai
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_DonHang());
+            Application.Run(new Frm_KTDH());
         }
     }
 }

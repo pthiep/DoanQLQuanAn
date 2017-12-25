@@ -19,10 +19,28 @@ namespace BUS
             return dalMA.ExecuteQuery(query);  
         }
 
+        public DataTable LoadDanhSachMonAnCN(string macn)
+        {
+            string query = "exec LoadMonAnTheoChiNhanh @macn";
+            return dalMA.ExecuteQuery(query, new object[] { macn});
+        }
+
         public DataTable LoadDanhSachMonAn(string macn, string madm)
         {
             string query = "exec LoadMonAnTheoDanhMuc @macn , @madm ";
             return dalMA.ExecuteQuery(query, new object[] { macn, madm });
+        }
+
+        public DataTable LoadDanhSachBanChay(string macn)
+        {
+            string query = "exec LoadMonAnBanChay @macn ";
+            return dalMA.ExecuteQuery(query, new object[] { macn });
+        }
+
+        public DataTable Timkiemmonan(string ten, string macn)
+        {
+            string query = "exec Timkiemmonan N'" + ten + "' , '" + macn + "' ";
+            return dalMA.ExecuteQuery(query);
         }
 
         public int SoBan(string macn)

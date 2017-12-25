@@ -8,68 +8,75 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
-using BUS;
 using DTO;
+using BUS;
+using System.Threading;
 
-namespace HoatDongDatHangTaiTongDai
+namespace Gioithieuvadathang
 {
-    public partial class Frm_Quanly : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Frm_QA : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        BUS_KhachHang busKH = new BUS_KhachHang();
-        BUS_MonAn bus_monan = new BUS_MonAn();
         BUS_HoaDon busHD = new BUS_HoaDon();
-        BUS_Clock busClock = new BUS_Clock();
-        BUS_DanhMuc busDM = new BUS_DanhMuc();
+        BUS_MonAn bus_monan = new BUS_MonAn();
+        BUS_SLTruycap busSLTC = new BUS_SLTruycap();
         BUS_ChiNhanh busCN = new BUS_ChiNhanh();
+        BUS_KhachHang busKH = new BUS_KhachHang();
+        BUS_Clock busCl = new BUS_Clock();
 
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
 
-        bool DuyetHD = true;
+        bool LoadCB = false;
+        string Machinhanh = "";
 
-        public Frm_Quanly()
+        public Frm_QA()
         {
             InitializeComponent();
         }
 
-        private void Frm_Quanly_Load(object sender, EventArgs e)
+        private void Frm_QA_Load(object sender, EventArgs e)
         {
             CenterToScreen();
-            TaoAutoCompleteKH();
+            busSLTC.TangSLTC();
+            TaoAutoCompleteKHSDT();            
             LoadCBCN();
-            PanelUser();
+            ActiveControl = cb_CN;
+            Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+            barSLTruycap.Caption = busSLTC.SoluongTruycap().ToString();
+            if (LoadCB)
+                PanelUser();
         }
 
-        void TaoAutoCompleteKH()
+        void TaoAutoCompleteKHSDT()
         {
             AutoCompleteStringCollection combData = new AutoCompleteStringCollection();
 
             foreach (DataRow dt in busKH.DanhSachKhachHang().Rows)
             {
-                combData.Add(dt.ItemArray[0].ToString());
+                combData.Add(dt.ItemArray[2].ToString());
             }
 
-            tb_TimkiemKH.AutoCompleteMode = AutoCompleteMode.Suggest;
-            tb_TimkiemKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            tb_TimkiemKH.AutoCompleteCustomSource = combData;
-        }
+            tb_SDT.AutoCompleteMode = AutoCompleteMode.Append;
+            tb_SDT.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            tb_SDT.AutoCompleteCustomSource = combData;
+        }        
 
         void LoadCBCN()
         {
-            cb_CN.Properties.Items.Add("---Chọn chi nhánh---");
             foreach (DataRow dr in busCN.LoadDanhSachChiNhanh().Rows)
             {
                 cb_CN.Properties.Items.Add(dr.ItemArray[1].ToString());
             }
             cb_CN.SelectedIndex = 0;
+            LoadCB = true;
         }
 
         private void PanelUser()
         {
             if (!pnUC.Controls.Contains(UC_MonAn.Instance))
             {
+                UC_MonAn.Instance.macn = Machinhanh;
                 pnUC.Controls.Add(UC_MonAn.Instance);
                 UC_MonAn.Instance.AddItems += Instance_AddItems;
-                UC_MonAn.Instance.macn = barMaCN.Caption;
                 UC_MonAn.Instance.Dock = DockStyle.Fill;
                 UC_MonAn.Instance.BringToFront();
             }
@@ -79,32 +86,30 @@ namespace HoatDongDatHangTaiTongDai
 
         private void Instance_AddItems(string ma, bool tt)
         {
-            if (DuyetHD)
+            Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
+            decimal tongtien = 0;
+            if (pH != null)
             {
-                Panel pH = (Panel)pnHD.Controls.Find("pnHeadHD", true).FirstOrDefault();
-                decimal tongtien = 0;
-                if (pH != null)
-                {
-                    AddListDSMA(ma, tt);
-                    AddRowPanel(ma, tt);
-                }
-                else
-                {
-                    lbMHD.Text = busHD.TaoMaHD();
-                    PaintHeadHD(lbMHD.Text);
-                    PaintBodyHD();
-                    lstDSMA.Clear();
-                    AddListDSMA(ma, tt);
-                    AddRowPanel(ma, tt);
-                }
-                for (int i = 0; i < lstDSMA.Count; i++)
-                {
-                    tongtien += lstDSMA[i].Thanhtien;
-                }
-                lbTongTien.Text = ChuyenDecimalToVND(tongtien);
+                AddListDSMA(ma, tt);
+                AddRowPanel(ma, tt);
             }
+            else
+            {
+                lbMHD.Text = busHD.TaoMaHD();
+                PaintHeadHD(lbMHD.Text);
+                PaintBodyHD();
+                lstDSMA.Clear();
+                AddListDSMA(ma, tt);
+                AddRowPanel(ma, tt);
+            }
+            for (int i = 0; i < lstDSMA.Count; i++)
+            {
+                tongtien += lstDSMA[i].Thanhtien;
+            }
+            lbTongTien.Text = ChuyenDecimalToVND(tongtien);
+
         }
-    
+
         private void AddListDSMA(string ma, bool tt)
         {
             DTO_ItemBill newbill = new DTO_ItemBill();
@@ -161,19 +166,27 @@ namespace HoatDongDatHangTaiTongDai
             pnHD.Controls.Add(pnHeadHD);
 
             Label lbTenNV = new Label();
-            lbTenNV.Text = "Nguyễn Văn A";
+            lbTenNV.Text = "Thông tin đơn hàng";
+            lbTenNV.Font = new Font("Tahoma", 11f, FontStyle.Bold);
+            lbTenNV.Size = new Size(150, 35);
+            lbTenNV.TextAlign = ContentAlignment.MiddleCenter;
             lbTenNV.Location = new Point(0, 0);
 
 
             Label lbDate = new Label();
-            lbDate.Text = "Giờ đến: 10:00:00";
+            lbDate.Text = "Thời gian đặt: " + barTime.Caption;
             lbDate.Name = "lbDate_" + ma;
+            lbDate.Font = new Font("Tahoma", 8f, FontStyle.Bold);
+            lbDate.Size = new Size(250, 35);
+            lbDate.TextAlign = ContentAlignment.MiddleCenter;
             lbDate.Location = new Point(pnHeadHD.Width - lbDate.Width, 0);
 
             pnHeadHD.Controls.Add(lbTenNV);
             pnHeadHD.Controls.Add(lbDate);
             lbMHD.Text = busHD.TaoMaHD();
-            btn_XacnhanHD.Enabled = true;
+
+            btnSave.Enabled = true;
+
             lstDSMA.Clear();
         }
 
@@ -396,7 +409,7 @@ namespace HoatDongDatHangTaiTongDai
                     pnRowHD.Controls.Add(btn_XoaSL);
 
                     pH.Controls.Add(pnRowHD);
-                }               
+                }
             }
         }
 
@@ -485,83 +498,60 @@ namespace HoatDongDatHangTaiTongDai
             return kq;
         }
 
-        private void tb_TimkiemKH_TextChanged(object sender, EventArgs e)
+        private void barBtn_TheodoiFB_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string ma = tb_TimkiemKH.Text;
+            MessageBox.Show("Cảm ơn bạn đã theo dõi Trang Facebook cá nhân của cửa hàng chúng tôi !!!", "Thông báo");
+        }
 
-            if (busKH.KiemTraMaKH(ma))
+        private void btn_Lichsu_Click(object sender, EventArgs e)
+        {
+            if (lbMKH.Text != "___")
             {
-                DataTable dt = busKH.LayThongTinKhachHang(ma);                
-                lb_MaKH.Text = dt.Rows[0].ItemArray[0].ToString();
-                lb_TenKH.Text = dt.Rows[0].ItemArray[1].ToString();
+                Frm_LichSu frmLS = new Frm_LichSu();
+                frmLS.makh = lbMKH.Text;
+                frmLS.ShowDialog();
+            }
+        }
+
+        private void tb_SDT_TextChanged(object sender, EventArgs e)
+        {
+            lb_SDT.Text = tb_SDT.Text;
+            if (busKH.KiemTraSDT(lb_SDT.Text))
+            {
+                DataTable dt = busKH.LayThongTinKhachHangSDT(lb_SDT.Text);
+                lbMKH.Text = dt.Rows[0].ItemArray[0].ToString();
+                lbTenKH.Text = dt.Rows[0].ItemArray[1].ToString();
                 lb_SDT.Text = dt.Rows[0].ItemArray[2].ToString();
             }
             else
             {
-                lb_MaKH.Text = "___";
-                lb_TenKH.Text = "___";
+                lbMKH.Text = "___";
+                lbTenKH.Text = "___";
                 lb_SDT.Text = "___";
             }
         }
 
-        private void tb_TimkiemKH_Enter(object sender, EventArgs e)
+        private void tb_SDT_Leave(object sender, EventArgs e)
         {
-            if (tb_TimkiemKH.Text == "Nhập tên, sđt hoặc mã khách hàng để tìm !!!")
+            if (tb_SDT.Text.Length == 0)
             {
-                tb_TimkiemKH.Text = "";
-                tb_TimkiemKH.ForeColor = SystemColors.WindowText;
+                tb_SDT.Text = "Nhập số điện thoại để xác nhận đặt hàng !!!";
+                tb_SDT.ForeColor = SystemColors.GrayText;
             }
         }
 
-        private void tb_TimkiemKH_Leave(object sender, EventArgs e)
+        private void tb_SDT_Enter(object sender, EventArgs e)
         {
-            if (tb_TimkiemKH.Text.Length == 0)
+            if (tb_SDT.Text == "Nhập số điện thoại để xác nhận đặt hàng !!!")
             {
-                tb_TimkiemKH.Text = "Nhập tên, sđt hoặc mã khách hàng để tìm !!!";
-                tb_TimkiemKH.ForeColor = SystemColors.GrayText;
+                tb_SDT.Text = "";
+                tb_SDT.ForeColor = SystemColors.WindowText;
             }
         }
 
-        private void btn_XacnhanHD_Click(object sender, EventArgs e)
-        {            
-            if(!busHD.KiemTraHD(lbMHD.Text))
-            {
-                if (lb_MaKH.Text != "___")
-                {
-                    if (cb_CN.SelectedIndex != 0)
-                    {
-                        Label time = (Label)pnHD.Controls.Find("lbDate_" + lbMHD.Text, true).FirstOrDefault();
-
-                        DTO_HoaDon hd = new DTO_HoaDon();
-                        hd.Mahoadon = lbMHD.Text;
-                        hd.Makhachhang = lb_MaKH.Text;
-                        hd.Manhanvien = barMaNV.Caption;
-                        hd.Ngay = time.Text;
-                        hd.Machinhanh = "CN" + cb_CN.SelectedIndex;
-                        hd.Loaihd = 0;
-                        hd.Trangthai = 1;
-                        busHD.LuuHD(hd);
-                        MessageBox.Show("Đã tạo đơn hàng mã " + hd.Mahoadon + " thành công !!!", "Thông báo");
-                        btn_XacnhanHD.Enabled = false;
-                        pnHD.Enabled = false;
-                        tb_TimkiemKH.Enabled = false;
-                        cb_CN.Enabled = false;
-                        DuyetHD = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Chưa chọn chi nhánh !!!", "Thông báo");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Chưa nhập thông tin khách hàng !!!", "Thông báo");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Mã hóa đơn chưa được tạo", "Thông báo");
-            }
+        private void lbMKH_TextChanged(object sender, EventArgs e)
+        {
+            btn_Lichsu.Enabled = true;
         }
 
         private void btn_TaoHD_Click(object sender, EventArgs e)
@@ -569,65 +559,110 @@ namespace HoatDongDatHangTaiTongDai
             lstDSMA.Clear();
             pnHD.Controls.Clear();
 
-            tb_TimkiemKH.Text = "Nhập tên, sđt hoặc mã khách hàng để tìm !!!";
-            tb_TimkiemKH.ForeColor = SystemColors.GrayText;
+            tb_SDT.Text = "Nhập số điện thoại để xác nhận đặt hàng !!!";
+            tb_SDT.ForeColor = SystemColors.GrayText;
 
-            lb_MaKH.Text = "___";
-            lb_TenKH.Text = "___";
+            lbMHD.Text = "___";
+            lbMKH.Text = "___";
             lb_SDT.Text = "___";
             lbTongTien.Text = "___";
             cb_CN.SelectedIndex = 0;
 
-            btn_XacnhanHD.Enabled = true;
-            pnHD.Enabled = true;
-            tb_TimkiemKH.Enabled = true;
+            
+            pnHD.Enabled = true;            
             cb_CN.Enabled = true;
-            DuyetHD = true;
+            
 
             lbMHD.Text = busHD.TaoMaHD();
             PaintHeadHD(lbMHD.Text);
             PaintBodyHD();
         }
 
-        private void lb_MaKH_TextChanged(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lb_MaKH.Text != "___")
+            if (!busHD.KiemTraHD(lbMHD.Text))
             {
-                btn_Lichsu.Enabled = true;
+                DTO_HoaDon hd = new DTO_HoaDon();
+                hd.Loaihd = 1;
+                hd.Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                hd.Mahoadon = lbMHD.Text;
+                hd.Makhachhang = lbMKH.Text == "___" ? tb_SDT.Text : lbMKH.Text;
+                hd.Manhanvien = "___";
+                hd.Ngay = barTime.Caption;
+                hd.Tongtien = ChuyenVNDToDecimal(lbTongTien.Text);
+                hd.Trangthai = 3;
+
+                if (tb_SDT.Text != "" && tb_SDT.Text != "Nhập số điện thoại để xác nhận đặt hàng !!!")
+                {
+                    string macthd = "";
+                    if (busHD.LuuHD(hd) && busHD.LuuQHHDCTHD(lbMHD.Text,ref macthd))
+                    {
+                        foreach (DTO_ItemBill it in lstDSMA)
+                        {
+                            busHD.LuuCTHD(macthd, it);
+                        }
+                        MessageBox.Show("Hóa đơn đã được lưu và in !!", "Thông báo");
+                    }
+
+                    pnHD.Controls.Clear();
+                    lbMHD.Text = "___";
+
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập số điện thoại để xác nhận hóa đơn !!", "Thông báo");
+                }
             }
-            else
+
+            
+        }
+
+        private void cb_CN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (LoadCB)
             {
-                btn_Lichsu.Enabled = false;
+                Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                UC_MonAn.Instance.macn = Machinhanh;
+                UC_MonAn.Instance.VeAgain();
             }
         }
 
-        private void btn_TaoKH_Click(object sender, EventArgs e)
+        private void timerDate_Tick(object sender, EventArgs e)
         {
-            Frm_TaoKH frmKH = new Frm_TaoKH();
-            frmKH.ngaytao = barDatetime.Caption;
-            frmKH.ShowDialog();
+            barTime.Caption = busCl.TimeServer();
         }
 
-        private void btn_Lichsu_Click(object sender, EventArgs e)
+        private void tb_TimkiemMA_Leave(object sender, EventArgs e)
         {
-            Frm_LichSu frmLS = new Frm_LichSu();
-            frmLS.makh = lb_MaKH.Text;
-            frmLS.ShowDialog();
+            if (tb_TimkiemMA.Text.Length == 0)
+            {
+                tb_TimkiemMA.Text = "Nhập vào tên món ăn để tìm kiếm !!!";
+                tb_TimkiemMA.ForeColor = SystemColors.GrayText;
+            }
         }
 
-        private void btnKT_Click(object sender, EventArgs e)
+        private void tb_TimkiemMA_Enter(object sender, EventArgs e)
         {
-
+            if (tb_TimkiemMA.Text == "Nhập vào tên món ăn để tìm kiếm !!!")
+            {
+                tb_TimkiemMA.Text = "";
+                tb_TimkiemMA.ForeColor = SystemColors.WindowText;
+            }
         }
 
-        private void lb_SLChoduyet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void tb_TimkiemMA_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void lb_SLXuly_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
+            if (LoadCB)
+            {               
+                Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                UC_MonAn.Instance.macn = Machinhanh;
+                UC_MonAn.Instance.Timkiemmonan(tb_TimkiemMA.Text);
+                if (tb_TimkiemMA.Text == "Nhập vào tên món ăn để tìm kiếm !!!")
+                {
+                    UC_MonAn.Instance.VeAgain();
+                }
+            }
         }
     }
 }

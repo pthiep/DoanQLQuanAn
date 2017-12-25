@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_Account.cs" />
+    <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_Menu.cs" />
     <Compile Include="BUS_ChiNhanh.cs" />
     <Compile Include="BUS_ChiPhi.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="BUS_DanhMuc.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_MonAn.cs" />
+    <Compile Include="BUS_SLTruycap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
