@@ -25,6 +25,8 @@ namespace HoatDongDatHangTaiTongDai
         List<DTO_ItemBill> lstDSMA = new List<DTO_ItemBill>();
 
         bool DuyetHD = true;
+        bool LoadCB = false;
+        string Machinhanh = "";
 
         public Frm_Quanly()
         {
@@ -35,6 +37,7 @@ namespace HoatDongDatHangTaiTongDai
         {
             CenterToScreen();
             TaoAutoCompleteKH();
+            Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
             LoadCBCN();
             PanelUser();
         }
@@ -42,25 +45,27 @@ namespace HoatDongDatHangTaiTongDai
         void TaoAutoCompleteKH()
         {
             AutoCompleteStringCollection combData = new AutoCompleteStringCollection();
-
+            combData.Clear();
             foreach (DataRow dt in busKH.DanhSachKhachHang().Rows)
             {
                 combData.Add(dt.ItemArray[0].ToString());
+                combData.Add(dt.ItemArray[1].ToString());
+                combData.Add(dt.ItemArray[2].ToString());
             }
 
-            tb_TimkiemKH.AutoCompleteMode = AutoCompleteMode.Suggest;
+            tb_TimkiemKH.AutoCompleteMode = AutoCompleteMode.Append;
             tb_TimkiemKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
             tb_TimkiemKH.AutoCompleteCustomSource = combData;
         }
 
         void LoadCBCN()
         {
-            cb_CN.Properties.Items.Add("---Chọn chi nhánh---");
             foreach (DataRow dr in busCN.LoadDanhSachChiNhanh().Rows)
             {
                 cb_CN.Properties.Items.Add(dr.ItemArray[1].ToString());
             }
             cb_CN.SelectedIndex = 0;
+            LoadCB = true;
         }
 
         private void PanelUser()
@@ -69,7 +74,7 @@ namespace HoatDongDatHangTaiTongDai
             {
                 pnUC.Controls.Add(UC_MonAn.Instance);
                 UC_MonAn.Instance.AddItems += Instance_AddItems;
-                UC_MonAn.Instance.macn = barMaCN.Caption;
+                UC_MonAn.Instance.macn = Machinhanh;
                 UC_MonAn.Instance.Dock = DockStyle.Fill;
                 UC_MonAn.Instance.BringToFront();
             }
@@ -161,13 +166,19 @@ namespace HoatDongDatHangTaiTongDai
             pnHD.Controls.Add(pnHeadHD);
 
             Label lbTenNV = new Label();
-            lbTenNV.Text = "Nguyễn Văn A";
+            lbTenNV.Text = "Mã nhân viên: " + barMaNV.Caption;
+            lbTenNV.Font = new Font("Tahoma", 11f, FontStyle.Bold);
+            lbTenNV.Size = new Size(150, 35);
+            lbTenNV.TextAlign = ContentAlignment.MiddleCenter;
             lbTenNV.Location = new Point(0, 0);
 
 
             Label lbDate = new Label();
-            lbDate.Text = "Giờ đến: 10:00:00";
+            lbDate.Text = "Thời gian đặt: " + barDatetime.Caption;
             lbDate.Name = "lbDate_" + ma;
+            lbDate.Font = new Font("Tahoma", 8f, FontStyle.Bold);
+            lbDate.Size = new Size(250, 35);
+            lbDate.TextAlign = ContentAlignment.MiddleCenter;
             lbDate.Location = new Point(pnHeadHD.Width - lbDate.Width, 0);
 
             pnHeadHD.Controls.Add(lbTenNV);
@@ -489,7 +500,7 @@ namespace HoatDongDatHangTaiTongDai
         {
             string ma = tb_TimkiemKH.Text;
 
-            if (busKH.KiemTraMaKH(ma))
+            if (tb_TimkiemKH.Text != "" && tb_TimkiemKH.Text != "Nhập tên, sđt hoặc mã khách hàng để tìm !!!")
             {
                 DataTable dt = busKH.LayThongTinKhachHang(ma);                
                 lb_MaKH.Text = dt.Rows[0].ItemArray[0].ToString();
@@ -528,30 +539,33 @@ namespace HoatDongDatHangTaiTongDai
             {
                 if (lb_MaKH.Text != "___")
                 {
-                    if (cb_CN.SelectedIndex != 0)
-                    {
-                        Label time = (Label)pnHD.Controls.Find("lbDate_" + lbMHD.Text, true).FirstOrDefault();
+                    Label time = (Label)pnHD.Controls.Find("lbDate_" + lbMHD.Text, true).FirstOrDefault();
 
-                        DTO_HoaDon hd = new DTO_HoaDon();
-                        hd.Mahoadon = lbMHD.Text;
-                        hd.Makhachhang = lb_MaKH.Text;
-                        hd.Manhanvien = barMaNV.Caption;
-                        hd.Ngay = time.Text;
-                        hd.Machinhanh = "CN" + cb_CN.SelectedIndex;
-                        hd.Loaihd = 0;
-                        hd.Trangthai = 1;
-                        busHD.LuuHD(hd);
-                        MessageBox.Show("Đã tạo đơn hàng mã " + hd.Mahoadon + " thành công !!!", "Thông báo");
-                        btn_XacnhanHD.Enabled = false;
-                        pnHD.Enabled = false;
-                        tb_TimkiemKH.Enabled = false;
-                        cb_CN.Enabled = false;
-                        DuyetHD = false;
-                    }
-                    else
+                    DTO_HoaDon hd = new DTO_HoaDon();                    
+                    hd.Loaihd = 1;
+                    hd.Mahoadon = lbMHD.Text;
+                    hd.Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                    hd.Makhachhang = lb_MaKH.Text;
+                    hd.Manhanvien = barMaNV.Caption;
+                    hd.Ngay = time.Text.Substring(15);
+                    hd.Tongtien = ChuyenVNDToDecimal(lbTongTien.Text);
+                    hd.Trangthai = 1;
+
+                    string macthd = "";
+                    if (busHD.LuuHD(hd) && busHD.LuuQHHDCTHD(lbMHD.Text, ref macthd))
                     {
-                        MessageBox.Show("Chưa chọn chi nhánh !!!", "Thông báo");
-                    }
+                        foreach (DTO_ItemBill it in lstDSMA)
+                        {
+                            busHD.LuuCTHD(macthd, it);
+                        }
+                        MessageBox.Show("Đã tạo đơn hàng mã " + hd.Mahoadon + " thành công !!!", "Thông báo");
+                    }                    
+
+                    btn_XacnhanHD.Enabled = false;
+                    pnHD.Enabled = false;
+                    tb_TimkiemKH.Enabled = false;
+                    cb_CN.Enabled = false;
+                    DuyetHD = false;
                 }
                 else
                 {
@@ -606,6 +620,7 @@ namespace HoatDongDatHangTaiTongDai
             Frm_TaoKH frmKH = new Frm_TaoKH();
             frmKH.ngaytao = barDatetime.Caption;
             frmKH.ShowDialog();
+            TaoAutoCompleteKH();
         }
 
         private void btn_Lichsu_Click(object sender, EventArgs e)
@@ -617,17 +632,55 @@ namespace HoatDongDatHangTaiTongDai
 
         private void btnKT_Click(object sender, EventArgs e)
         {
-
+            Frm_KTDH frmKT = new Frm_KTDH();
+            frmKT.ShowDialog();
         }
 
-        private void lb_SLChoduyet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void cb_CN_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (LoadCB)
+            {
+                Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                UC_MonAn.Instance.macn = Machinhanh;
+                UC_MonAn.Instance.VeAgain();
+            }
         }
 
-        private void lb_SLXuly_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void tb_TimkiemMA_TextChanged(object sender, EventArgs e)
         {
+            if (LoadCB)
+            {
+                Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                UC_MonAn.Instance.macn = Machinhanh;
+                UC_MonAn.Instance.Timkiemmonan(tb_TimkiemMA.Text);
+                if (tb_TimkiemMA.Text == "Nhập vào tên món ăn để tìm kiếm !!!")
+                {
+                    UC_MonAn.Instance.VeAgain();
+                }
+            }
+        }
 
+        private void tb_TimkiemMA_Leave(object sender, EventArgs e)
+        {
+            if (tb_TimkiemMA.Text.Length == 0)
+            {
+                tb_TimkiemMA.Text = "Nhập vào tên món ăn để tìm kiếm !!!";
+                tb_TimkiemMA.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void tb_TimkiemMA_Enter(object sender, EventArgs e)
+        {
+            if (tb_TimkiemMA.Text == "Nhập vào tên món ăn để tìm kiếm !!!")
+            {
+                tb_TimkiemMA.Text = "";
+                tb_TimkiemMA.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void timerDate_Tick(object sender, EventArgs e)
+        {
+            barDatetime.Caption = busClock.TimeServer();
         }
     }
 }
