@@ -25,6 +25,12 @@ namespace BUS
             return dalMA.ExecuteQuery(query, new object[] { macn, madm });
         }
 
+        public DataTable LoadDanhSachBanChay(string macn)
+        {
+            string query = "exec LoadMonAnBanChay @macn ";
+            return dalMA.ExecuteQuery(query, new object[] { macn });
+        }
+
         public int SoBan(string macn)
         {
             string sql = "select soluongban from ChiNhanh where machinhanh = @macn and trangthai = 1";

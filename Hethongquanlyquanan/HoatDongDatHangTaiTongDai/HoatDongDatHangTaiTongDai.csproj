@@ -92,7 +92,7 @@
     <Compile Include="UC_MonAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_MonAn.Designer.cs">
+    <Compile Include="UC_MonAn.designer.cs">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_KTDH.resx">

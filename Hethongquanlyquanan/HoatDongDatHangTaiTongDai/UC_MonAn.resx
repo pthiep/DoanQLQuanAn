@@ -117,18 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="barButtonItem1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAABJ0AAASdAXw0a6EAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAAAy0lEQVQ4T2MYPMA+cGuhfeCWz0D6P3685bNdwNZ8qDYEsA/a+gW7Bqz4E1QbAmBRBMcTZ1/9f+Tk
-        i/9zl92Ei0G1IQCyBmScUXb0Pwg8evrl/9T51+DiUG0IgKwJGdd1nQUb0NBzDkUcqg0BkCVhuL77HFgz
-        DGzY/hAuB9WGAMgaYTggcc//hatugzWD6IiM/XA5qDYEQNaIjGGuANHI4lBtCIAsiYzpaACOhJRZfvT/
-        /qPPwDSSONaEBEzKW38iKcKFf2JNygMEGBgALU1ixt8+MT4AAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

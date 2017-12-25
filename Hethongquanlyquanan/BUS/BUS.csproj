@@ -58,6 +58,7 @@
     <Compile Include="BUS_DanhMuc.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_MonAn.cs" />
+    <Compile Include="BUS_SLTruycap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -105,7 +105,6 @@ namespace HoatDongDatHangTaiTongDai
             }
         }
     
-
         private void AddListDSMA(string ma, bool tt)
         {
             DTO_ItemBill newbill = new DTO_ItemBill();
@@ -149,7 +148,6 @@ namespace HoatDongDatHangTaiTongDai
                 lstDSMA.Add(newbill);
             }
         }
-
 
         private void PaintHeadHD(string ma)
         {
