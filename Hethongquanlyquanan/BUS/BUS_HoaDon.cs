@@ -32,10 +32,22 @@ namespace BUS
             return int.Parse(dalHD.ExecuteQuery(sql).Rows[0].ItemArray[0].ToString());
         }
 
+        public DataTable DanhSachHD()
+        {
+            string sql = "select * from HoaDon";
+            return dalHD.ExecuteQuery(sql);
+        }
+
         public DataTable DanhSachHDTheoKH(string ma)
         {
             string sql = "select * from HoaDon where makhachhang = N'" + ma + "'";
             return dalHD.ExecuteQuery(sql);
+        }
+
+        public DataTable LayHD(string ma)
+        {
+            string sql = "select * from HoaDon where mahoadon = N'" + ma + "'";
+            return ma == "" ? DanhSachHD() : dalHD.ExecuteQuery(sql);
         }
 
         public string TaoMaHD()

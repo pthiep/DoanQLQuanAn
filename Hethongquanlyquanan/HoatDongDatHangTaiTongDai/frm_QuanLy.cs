@@ -616,5 +616,10 @@ namespace HoatDongDatHangTaiTongDai
             frmLS.makh = lb_MaKH.Text;
             frmLS.ShowDialog();
         }
+
+        private void btnKT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

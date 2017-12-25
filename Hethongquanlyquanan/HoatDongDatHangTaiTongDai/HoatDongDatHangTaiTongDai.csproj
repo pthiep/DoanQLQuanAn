@@ -63,17 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Donhang.cs" />
-    <Compile Include="frm_DonHang.cs">
+    <Compile Include="Frm_KTDH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_DonHang.Designer.cs">
-      <DependentUpon>frm_DonHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_DuyetDonHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_DuyetDonHang.Designer.cs">
-      <DependentUpon>frm_DuyetDonHang.cs</DependentUpon>
+    <Compile Include="Frm_KTDH.Designer.cs">
+      <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_LichSu.cs">
       <SubType>Form</SubType>
@@ -101,11 +95,8 @@
     <Compile Include="UC_MonAn.Designer.cs">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frm_DonHang.resx">
-      <DependentUpon>frm_DonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_DuyetDonHang.resx">
-      <DependentUpon>frm_DuyetDonHang.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_KTDH.resx">
+      <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_LichSu.resx">
       <DependentUpon>Frm_LichSu.cs</DependentUpon>

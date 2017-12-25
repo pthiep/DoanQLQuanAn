@@ -53,7 +53,7 @@
             this.btn_XacnhanHD = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_CN = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKT = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lb_TenKH = new System.Windows.Forms.Label();
@@ -64,6 +64,8 @@
             this.tb_TimkiemKH = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_TaoHD = new DevExpress.XtraEditors.SimpleButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_CN.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -288,31 +290,42 @@
             this.cb_CN.Size = new System.Drawing.Size(142, 20);
             this.cb_CN.TabIndex = 89;
             // 
-            // simpleButton4
+            // btnKT
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(1082, 38);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(167, 23);
-            this.simpleButton4.TabIndex = 90;
-            this.simpleButton4.Text = "Quản lý danh sách đơn hàng";
+            this.btnKT.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnKT.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btnKT.Appearance.Options.UseBackColor = true;
+            this.btnKT.Appearance.Options.UseFont = true;
+            this.btnKT.Appearance.Options.UseTextOptions = true;
+            this.btnKT.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnKT.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnKT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btnKT.Location = new System.Drawing.Point(1100, 36);
+            this.btnKT.Name = "btnKT";
+            this.btnKT.Size = new System.Drawing.Size(202, 27);
+            this.btnKT.TabIndex = 90;
+            this.btnKT.Text = "Kiểm tra đơn hàng";
+            this.btnKT.Click += new System.EventHandler(this.btnKT_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(718, 44);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label6.Location = new System.Drawing.Point(661, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 13);
+            this.label6.Size = new System.Drawing.Size(16, 18);
             this.label6.TabIndex = 91;
-            this.label6.Text = "Đơn hàng đang chờ duyệt : 0";
+            this.label6.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(905, 43);
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(471, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 13);
+            this.label7.Size = new System.Drawing.Size(184, 18);
             this.label7.TabIndex = 92;
-            this.label7.Text = "Đơn hàng đang chờ duyệt : 0";
+            this.label7.Text = "Số đơn hàng đang xử lý:";
             // 
             // lb_TenKH
             // 
@@ -415,18 +428,40 @@
             this.btn_TaoHD.Text = "Tạo hóa đơn mới";
             this.btn_TaoHD.Click += new System.EventHandler(this.btn_TaoHD_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label5.Location = new System.Drawing.Point(956, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 18);
+            this.label5.TabIndex = 122;
+            this.label5.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(731, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(219, 18);
+            this.label8.TabIndex = 123;
+            this.label8.Text = "Số đơn hàng đang chờ duyệt:";
+            // 
             // Frm_Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 710);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_TaoHD);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tb_TimkiemKH);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.btnKT);
             this.Controls.Add(this.btn_TaoKH);
             this.Controls.Add(this.pnHD);
             this.Controls.Add(this.pnUC);
@@ -471,7 +506,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_XacnhanHD;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.ComboBoxEdit cb_CN;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnKT;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lb_TenKH;
@@ -484,5 +519,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_TaoHD;
         private DevExpress.XtraBars.BarHeaderItem barDatetime;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
     }
 }
