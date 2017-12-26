@@ -71,7 +71,7 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(533, 32);
+            this.ribbon.Size = new System.Drawing.Size(525, 32);
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
             // labelControl5
@@ -246,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 431);
+            this.ClientSize = new System.Drawing.Size(525, 427);
             this.Controls.Add(this.bt_Trove);
             this.Controls.Add(this.bt_Luu);
             this.Controls.Add(this.btn_Menu);
