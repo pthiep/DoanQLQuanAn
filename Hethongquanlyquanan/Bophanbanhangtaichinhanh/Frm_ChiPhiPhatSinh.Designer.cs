@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.tb_Chiphi = new System.Windows.Forms.TextBox();
             this.tb_TenCP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +46,12 @@
             this.lb_Ngay = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lb_MaNV = new System.Windows.Forms.Label();
+=======
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.txtTenCP = new System.Windows.Forms.TextBox();
+            this.txtCP = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -231,6 +238,7 @@
             // 
             // lb_MaNV
             // 
+<<<<<<< HEAD
             this.lb_MaNV.AutoSize = true;
             this.lb_MaNV.Font = new System.Drawing.Font("Tahoma", 11F);
             this.lb_MaNV.Location = new System.Drawing.Point(354, 66);
@@ -238,13 +246,42 @@
             this.lb_MaNV.Size = new System.Drawing.Size(32, 18);
             this.lb_MaNV.TabIndex = 23;
             this.lb_MaNV.Text = "___";
+=======
+            this.txtCP.Location = new System.Drawing.Point(111, 103);
+            this.txtCP.Name = "txtCP";
+            this.txtCP.Size = new System.Drawing.Size(140, 21);
+            this.txtCP.TabIndex = 10;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(324, 121);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
             // 
             // Frm_ChiPhiPhatSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(524, 346);
             this.Controls.Add(this.groupBox1);
+=======
+            this.ClientSize = new System.Drawing.Size(442, 449);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtCP);
+            this.Controls.Add(this.txtTenCP);
+            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.ribbonStatusBar);
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_ChiPhiPhatSinh";
             this.Ribbon = this.ribbon;
@@ -264,6 +301,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox tb_Chiphi;
         private System.Windows.Forms.TextBox tb_TenCP;
         private System.Windows.Forms.Label label4;
@@ -277,5 +315,11 @@
         private System.Windows.Forms.Label lb_Ngay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lb_MaNV;
+=======
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private System.Windows.Forms.TextBox txtTenCP;
+        private System.Windows.Forms.TextBox txtCP;
+        private System.Windows.Forms.Button btnSave;
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
     }
 }

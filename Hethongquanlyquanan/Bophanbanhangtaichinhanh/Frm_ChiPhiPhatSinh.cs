@@ -8,19 +8,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+<<<<<<< HEAD
 using BUS;
 using DTO;
+=======
+using DTO;
+using BUS;
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
 
 namespace Bophanbanhangtaichinhanh
 {
     public partial class Frm_ChiPhiPhatSinh : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         BUS_ChiPhi busCP = new BUS_ChiPhi();
+<<<<<<< HEAD
 
         public string macn = "";
         public string ngay = "";
         public string manv = "";
 
+=======
+        public bool flag = false;
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
         public Frm_ChiPhiPhatSinh()
         {
             InitializeComponent();
@@ -87,6 +96,7 @@ namespace Bophanbanhangtaichinhanh
             }
         }
 
+<<<<<<< HEAD
         string ChuyenDecimalToVND(decimal tien)
         {
             string kq = "";
@@ -144,6 +154,37 @@ namespace Bophanbanhangtaichinhanh
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
+=======
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DTO_ChiPhi cp = new DTO_ChiPhi();
+            if (txtTenCP.Text != "" || txtCP.Text != "")
+            {
+                cp.TenCP = txtTenCP.Text;
+                cp.ChiPhi = float.Parse(txtCP.Text);
+                if (!flag)
+                {
+                    if (busCP.Capnhatchiphi(cp))
+                    {
+                        MessageBox.Show("cập nhật chi phsi thành công!!!", "Thông báo");
+
+                    }
+                }
+                else
+                {
+                    if (busCP.ThemCP(cp))
+                    {
+                        MessageBox.Show("thêm chi phí thành công!!!", "Thông báo");
+                    }
+                }
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("chưa cập nhật thông itn đầy đủ", "Thông báo");
+            }                
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
         }
     }
 }
+
