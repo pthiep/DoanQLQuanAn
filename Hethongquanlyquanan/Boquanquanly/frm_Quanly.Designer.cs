@@ -59,15 +59,22 @@
             this.backstageViewItemSeparator1 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
             this.backstageViewTabItem4 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewItemSeparator4 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
-            this.backstageViewButtonItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.backstageViewItemSeparator5 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
-            this.backstageViewButtonItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.timer_Clock = new System.Windows.Forms.Timer(this.components);
             this.backstageViewControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewItemSeparator6 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
             this.backstageViewButtonItem3 = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbHDKhachHang = new System.Windows.Forms.RadioButton();
+            this.rbSoLuongHD = new System.Windows.Forms.RadioButton();
+            this.rbSoLuongMonBan = new System.Windows.Forms.RadioButton();
+            this.rbChiPhi = new System.Windows.Forms.RadioButton();
+            this.rbDoanhThu = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pBaoCao = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -77,8 +84,10 @@
             this.backstageViewClientControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.backstageViewClientControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -146,16 +155,15 @@
             this.backstageViewControl1.Items.Add(this.backstageViewItemSeparator1);
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem4);
             this.backstageViewControl1.Items.Add(this.backstageViewItemSeparator4);
-            this.backstageViewControl1.Items.Add(this.backstageViewButtonItem1);
             this.backstageViewControl1.Items.Add(this.backstageViewItemSeparator5);
-            this.backstageViewControl1.Items.Add(this.backstageViewButtonItem2);
             this.backstageViewControl1.Location = new System.Drawing.Point(0, 32);
             this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem4;
-            this.backstageViewControl1.SelectedTabIndex = 5;
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem3;
+            this.backstageViewControl1.SelectedTabIndex = 3;
             this.backstageViewControl1.Size = new System.Drawing.Size(1261, 611);
             this.backstageViewControl1.TabIndex = 4;
             this.backstageViewControl1.Text = "backstageViewControl1";
+            this.backstageViewControl1.Click += new System.EventHandler(this.backstageViewControl1_Click);
             // 
             // backstageViewClientControl2
             // 
@@ -196,6 +204,7 @@
             // 
             // panel_DSMA
             // 
+            this.panel_DSMA.AutoScroll = true;
             this.panel_DSMA.Location = new System.Drawing.Point(10, 84);
             this.panel_DSMA.Name = "panel_DSMA";
             this.panel_DSMA.Size = new System.Drawing.Size(960, 474);
@@ -203,10 +212,12 @@
             // 
             // btn_Themmonan
             // 
+            this.btn_Themmonan.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btn_Themmonan.Appearance.Options.UseFont = true;
             this.btn_Themmonan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Themmonan.ImageOptions.Image")));
-            this.btn_Themmonan.Location = new System.Drawing.Point(862, 49);
+            this.btn_Themmonan.Location = new System.Drawing.Point(837, 49);
             this.btn_Themmonan.Name = "btn_Themmonan";
-            this.btn_Themmonan.Size = new System.Drawing.Size(108, 22);
+            this.btn_Themmonan.Size = new System.Drawing.Size(133, 22);
             this.btn_Themmonan.TabIndex = 14;
             this.btn_Themmonan.Text = "Thêm món ăn";
             this.btn_Themmonan.Click += new System.EventHandler(this.btn_Themmonan_Click);
@@ -227,9 +238,11 @@
             this.textEdit1.Location = new System.Drawing.Point(10, 49);
             this.textEdit1.MenuManager = this.ribbonControl1;
             this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
             this.textEdit1.Properties.NullValuePrompt = "Nhập tên hoặc mã món ăn để tìm";
             this.textEdit1.Properties.NullValuePromptShowForEmptyValue = true;
-            this.textEdit1.Size = new System.Drawing.Size(846, 20);
+            this.textEdit1.Size = new System.Drawing.Size(821, 24);
             this.textEdit1.TabIndex = 2;
             // 
             // label3
@@ -300,6 +313,9 @@
             // 
             // backstageViewClientControl4
             // 
+            this.backstageViewClientControl4.Controls.Add(this.panel2);
+            this.backstageViewClientControl4.Controls.Add(this.label6);
+            this.backstageViewClientControl4.Controls.Add(this.pBaoCao);
             this.backstageViewClientControl4.Location = new System.Drawing.Point(279, 0);
             this.backstageViewClientControl4.Name = "backstageViewClientControl4";
             this.backstageViewClientControl4.Size = new System.Drawing.Size(982, 611);
@@ -342,6 +358,7 @@
             this.backstageViewTabItem3.ContentControl = this.backstageViewClientControl3;
             this.backstageViewTabItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem3.Glyph")));
             this.backstageViewTabItem3.Name = "backstageViewTabItem3";
+            this.backstageViewTabItem3.Selected = true;
             // 
             // backstageViewItemSeparator1
             // 
@@ -362,26 +379,15 @@
             this.backstageViewTabItem4.ContentControl = this.backstageViewClientControl4;
             this.backstageViewTabItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem4.Glyph")));
             this.backstageViewTabItem4.Name = "backstageViewTabItem4";
-            this.backstageViewTabItem4.Selected = true;
             this.backstageViewTabItem4.SelectedChanged += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.backstageViewTabItem4_SelectedChanged);
             // 
             // backstageViewItemSeparator4
             // 
             this.backstageViewItemSeparator4.Name = "backstageViewItemSeparator4";
             // 
-            // backstageViewButtonItem1
-            // 
-            this.backstageViewButtonItem1.Caption = "Báo cáo Doanh thu";
-            this.backstageViewButtonItem1.Name = "backstageViewButtonItem1";
-            // 
             // backstageViewItemSeparator5
             // 
             this.backstageViewItemSeparator5.Name = "backstageViewItemSeparator5";
-            // 
-            // backstageViewButtonItem2
-            // 
-            this.backstageViewButtonItem2.Caption = "Báo cáo Thu chu";
-            this.backstageViewButtonItem2.Name = "backstageViewButtonItem2";
             // 
             // barButtonItem1
             // 
@@ -420,6 +426,112 @@
             this.backstageViewButtonItem3.Caption = "backstageViewButtonItem3";
             this.backstageViewButtonItem3.Name = "backstageViewButtonItem3";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.rbHDKhachHang);
+            this.panel2.Controls.Add(this.rbSoLuongHD);
+            this.panel2.Controls.Add(this.rbSoLuongMonBan);
+            this.panel2.Controls.Add(this.rbChiPhi);
+            this.panel2.Controls.Add(this.rbDoanhThu);
+            this.panel2.Location = new System.Drawing.Point(0, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(982, 40);
+            this.panel2.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(39, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 27);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Tiêu chí";
+            // 
+            // rbHDKhachHang
+            // 
+            this.rbHDKhachHang.AutoSize = true;
+            this.rbHDKhachHang.Location = new System.Drawing.Point(746, 13);
+            this.rbHDKhachHang.Name = "rbHDKhachHang";
+            this.rbHDKhachHang.Size = new System.Drawing.Size(133, 17);
+            this.rbHDKhachHang.TabIndex = 17;
+            this.rbHDKhachHang.TabStop = true;
+            this.rbHDKhachHang.Text = "Hoạt động khách hàng";
+            this.rbHDKhachHang.UseVisualStyleBackColor = true;
+            this.rbHDKhachHang.CheckedChanged += new System.EventHandler(this.rbHDKhachHang_CheckedChanged);
+            // 
+            // rbSoLuongHD
+            // 
+            this.rbSoLuongHD.AutoSize = true;
+            this.rbSoLuongHD.Location = new System.Drawing.Point(585, 13);
+            this.rbSoLuongHD.Name = "rbSoLuongHD";
+            this.rbSoLuongHD.Size = new System.Drawing.Size(109, 17);
+            this.rbSoLuongHD.TabIndex = 16;
+            this.rbSoLuongHD.TabStop = true;
+            this.rbSoLuongHD.Text = "Số lượng hóa đơn";
+            this.rbSoLuongHD.UseVisualStyleBackColor = true;
+            this.rbSoLuongHD.CheckedChanged += new System.EventHandler(this.rbSoLuongHD_CheckedChanged);
+            // 
+            // rbSoLuongMonBan
+            // 
+            this.rbSoLuongMonBan.AutoSize = true;
+            this.rbSoLuongMonBan.Location = new System.Drawing.Point(422, 13);
+            this.rbSoLuongMonBan.Name = "rbSoLuongMonBan";
+            this.rbSoLuongMonBan.Size = new System.Drawing.Size(126, 17);
+            this.rbSoLuongMonBan.TabIndex = 15;
+            this.rbSoLuongMonBan.TabStop = true;
+            this.rbSoLuongMonBan.Text = "Số lượng món đã bán";
+            this.rbSoLuongMonBan.UseVisualStyleBackColor = true;
+            this.rbSoLuongMonBan.CheckedChanged += new System.EventHandler(this.rbSoLuongMonBan_CheckedChanged);
+            // 
+            // rbChiPhi
+            // 
+            this.rbChiPhi.AutoSize = true;
+            this.rbChiPhi.Location = new System.Drawing.Point(310, 13);
+            this.rbChiPhi.Name = "rbChiPhi";
+            this.rbChiPhi.Size = new System.Drawing.Size(57, 17);
+            this.rbChiPhi.TabIndex = 14;
+            this.rbChiPhi.TabStop = true;
+            this.rbChiPhi.Text = "Chi phí";
+            this.rbChiPhi.UseVisualStyleBackColor = true;
+            this.rbChiPhi.CheckedChanged += new System.EventHandler(this.rbChiPhi_CheckedChanged);
+            // 
+            // rbDoanhThu
+            // 
+            this.rbDoanhThu.AutoSize = true;
+            this.rbDoanhThu.Location = new System.Drawing.Point(188, 13);
+            this.rbDoanhThu.Name = "rbDoanhThu";
+            this.rbDoanhThu.Size = new System.Drawing.Size(75, 17);
+            this.rbDoanhThu.TabIndex = 13;
+            this.rbDoanhThu.TabStop = true;
+            this.rbDoanhThu.Text = "Doanh thu";
+            this.rbDoanhThu.UseVisualStyleBackColor = true;
+            this.rbDoanhThu.CheckedChanged += new System.EventHandler(this.rbDoanhThu_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(359, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(271, 35);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Báo cáo - thống kê";
+            // 
+            // pBaoCao
+            // 
+            this.pBaoCao.Location = new System.Drawing.Point(0, 98);
+            this.pBaoCao.Name = "pBaoCao";
+            this.pBaoCao.Size = new System.Drawing.Size(982, 490);
+            this.pBaoCao.TabIndex = 8;
+            // 
             // Frm_Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,8 +558,12 @@
             this.backstageViewClientControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.backstageViewClientControl4.ResumeLayout(false);
+            this.backstageViewClientControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,9 +594,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer_Clock;
-        private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem backstageViewButtonItem1;
         private DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator backstageViewItemSeparator5;
-        private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem backstageViewButtonItem2;
         private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl2;
         private DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator backstageViewItemSeparator6;
         private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem backstageViewButtonItem3;
@@ -493,5 +607,14 @@
         private DevExpress.XtraEditors.SimpleButton btn_Taochinhanh;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.Panel pnCN;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton rbHDKhachHang;
+        private System.Windows.Forms.RadioButton rbSoLuongHD;
+        private System.Windows.Forms.RadioButton rbSoLuongMonBan;
+        private System.Windows.Forms.RadioButton rbChiPhi;
+        private System.Windows.Forms.RadioButton rbDoanhThu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pBaoCao;
     }
 }

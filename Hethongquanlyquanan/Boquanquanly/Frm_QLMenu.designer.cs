@@ -192,7 +192,7 @@
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_QLMenu";
             this.Ribbon = this.ribbon;
-            this.Text = "Frm_QLBan";
+            this.Text = "Quản lý menu";
             this.Load += new System.EventHandler(this.Frm_QLBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_DM.Properties)).EndInit();

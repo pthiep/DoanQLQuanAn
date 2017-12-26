@@ -222,23 +222,23 @@ namespace Boquanquanly
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            DataTable dtkh = busKh.hoatdongkhachhang(txtMaKh.Text, dtpThoiGian.Value);
+            //DataTable dtkh = busKh.hoatdongkhachhang(txtMaKh.Text, dtpThoiGian.Value);
 
-            if (dtkh.Rows != null)
-            {
-                lbTongdh.Text = dtkh.Rows[0].ItemArray[2].ToString();
-                lbTongtien.Text = dtkh.Rows[0].ItemArray[3].ToString();
-            }
+            //if (dtkh.Rows != null)
+            //{
+            //    lbTongdh.Text = dtkh.Rows[0].ItemArray[2].ToString();
+            //    lbTongtien.Text = dtkh.Rows[0].ItemArray[3].ToString();
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dtkh = busKh.bangthongkekhach();
+            //DataTable dtkh = busKh.bangthongkekhach();
 
-            if (dtkh.Rows != null)
-            {
-                vebangkhachhang(dtkh);
-            }
+            //if (dtkh.Rows != null)
+            //{
+            //    vebangkhachhang(dtkh);
+            //}
         }
     }
 }

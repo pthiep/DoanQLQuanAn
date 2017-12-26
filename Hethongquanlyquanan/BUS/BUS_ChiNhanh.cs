@@ -47,8 +47,7 @@ namespace BUS
             int ma = LoadDanhSachChiNhanh().Rows.Count + 1;
             return "CN" + ma.ToString();
         }
-
-<<<<<<< HEAD
+        
         public DataTable TongTien(DateTime Ngaybatdau, DateTime Ngaykethuc) {
             string query = "exec TongDoanhThu '"+Ngaybatdau+"','"+Ngaykethuc+"'";
             return dalCN.ExecuteQuery(query);
@@ -59,10 +58,10 @@ namespace BUS
             return dalCN.ExecuteQuery(query);
         }
 
-        public DataTable TinhSLDHcuaCN(string macn)
-=======
+        //public DataTable TinhSLDHcuaCN(string macn)
+
         public bool ThemCN(DTO_ChiNhanh cn)
->>>>>>> master
+
         {
             string query = "insert into ChiNhanh (machinhanh, tenchinhanh, sodienthoai, diachi, tinhthanh, soluongban, manhanvienquanly , trangthai) values ( @macn , @tencn , @sdt , @dc , @tt , @slban , @manv , @tthai )";
             return dalCN.ExecuteNonQuery(query, new object[] { cn.Macn, cn.Tencn, cn.Dienthoai, cn.Diachi, cn.Tinhthanh, cn.Soluongban, cn.Manvql, 1 }) > 0 ? true : false;

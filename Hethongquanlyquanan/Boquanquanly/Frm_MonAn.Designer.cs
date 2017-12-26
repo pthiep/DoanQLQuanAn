@@ -269,7 +269,7 @@
             this.Name = "Frm_MonAn";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Frm_MonAn";
+            this.Text = "Món ăn";
             this.Load += new System.EventHandler(this.Frm_MonAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_Mamonan.Properties)).EndInit();

@@ -3,43 +3,77 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DevExpress.XtraBars;
+using DTO;
 using BUS;
 
 namespace Boquanquanly
 {
-    public partial class frm_Dangnhap : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Frm_DangNhap : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-       
-       BUS_Account busAcc = new BUS_Account();
+        BUS_TaiKhoan busTK = new BUS_TaiKhoan();
+        string manv = "";
+        string machinhanh = "";
+        bool dangnhap = false;
+        List<Tuple<string, int>> lstQuyenTC;
 
-        public frm_Dangnhap()
+        public Frm_DangNhap()
         {
             InitializeComponent();
         }
 
         private void btn_Dangnhap_Click(object sender, EventArgs e)
         {
-            dangNhap();
+            Dangnhap();
         }
 
-        void dangNhap()
+        private void Frm_DangNhap_Load(object sender, EventArgs e)
         {
-            if (busAcc.Login(textB_Tendangnhap.Text, textB_Matkhau.Text))
+            CenterToScreen();
+        }
+
+        public void ThongTinDangNhap(ref bool dn,ref string ma , ref string macn)
+        {
+            dn = dangnhap;
+            ma = manv;
+            macn = machinhanh;
+        }
+
+        void Dangnhap()
+        {
+            if (tb_TenDN.Text != "" && tb_MK.Text != "")
             {
-                Frm_Quanly frmQl = new Frm_Quanly();
-               
-                frmQl.Show();
-                
-                
+                if (busTK.DangNhap(tb_TenDN.Text, tb_MK.Text, ref manv))
+                {
+                    machinhanh = busTK.LayMaCN(manv);
+                    if (busTK.QuyenTruyCap(manv, ref lstQuyenTC))
+                    {
+                        foreach (Tuple<string, int> q in lstQuyenTC)
+                        {
+                            if (q.Item1 == "Q1" && q.Item2 == 1)
+                            {
+                                dangnhap = true;
+                                this.Close();
+                            }
+                        }
+                        if (dangnhap == false)
+                        {
+                            MessageBox.Show("Bạn không có quyền truy cập !!!", "Thông báo");
+                        }
+                    }                                     
+                }
+                else
+                {
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu !!!", "Thông báo");
+                }
             }
             else
             {
-                MessageBox.Show("Tài khoản và mật khẩu không đúng !");
+                MessageBox.Show("Nhập tên đăng nhập và mật khẩu !!!", "Thông báo");
             }
         }
     }

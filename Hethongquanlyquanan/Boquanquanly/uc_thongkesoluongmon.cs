@@ -13,7 +13,7 @@ namespace Boquanquanly
 {
     public partial class uc_thongkesoluongmon : UserControl
     {
-        BUS_DonHang busDH = new BUS_DonHang();
+        BUS_HoaDon busDH = new BUS_HoaDon();
         private static uc_thongkesoluongmon _instance;
 
         public static uc_thongkesoluongmon Instance
@@ -38,19 +38,19 @@ namespace Boquanquanly
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            XulyNgayThang();
-            DataTable dtcnma = busDH.ThongkeMonBanCuaChiNhanh(dtpBD.Value, dtpKT.Value);
-            DataTable dtma = busDH.ThongkeMonBan(dtpBD.Value, dtpKT.Value);
-            DataTable dttong = busDH.TongSldon(dtpBD.Value, dtpKT.Value);
+            //XulyNgayThang();
+            //DataTable dtcnma = busDH.ThongkeMonBanCuaChiNhanh(dtpBD.Value, dtpKT.Value);
+            //DataTable dtma = busDH.ThongkeMonBan(dtpBD.Value, dtpKT.Value);
+            //DataTable dttong = busDH.TongSldon(dtpBD.Value, dtpKT.Value);
 
-            if(dtma.Rows != null){
-                lbSoLuongMon.Text = dttong.Rows[0].ItemArray[0].ToString();
-            }
+            //if(dtma.Rows != null){
+            //    lbSoLuongMon.Text = dttong.Rows[0].ItemArray[0].ToString();
+            //}
 
-            if(dtma.Rows != null){
-                VeBanSoLuongMon(dtcnma);
-                vebangChiTietSLM(dtma);
-            }
+            //if(dtma.Rows != null){
+            //    VeBanSoLuongMon(dtcnma);
+            //    vebangChiTietSLM(dtma);
+            //}
         }
 
         void VeBangSoLuongMon()

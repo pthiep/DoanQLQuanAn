@@ -169,7 +169,7 @@
             this.MaximizeBox = false;
             this.Name = "Frm_DanhMuc";
             this.Ribbon = this.ribbon;
-            this.Text = "Frm_DanhMuc";
+            this.Text = "Quản lý danh mục";
             this.Load += new System.EventHandler(this.Frm_DanhMuc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -98,5 +98,30 @@ namespace BUS
             string sql = "update HoaDon set trangthai = " + tt + " where mahoadon = '" + mahd + "'";
             return dalHD.ExecuteNonQuery(sql) > 0 ? true : false;
         }
+
+        public DataTable ThongkeMonBan(DateTime ngaybd, DateTime ngaykt)
+        {
+            string query = "exec ThongKeSoLuongMonBan '" + ngaybd + "','" + ngaykt + "'";
+            return dalHD.ExecuteQuery(query);
+        }
+
+        public DataTable ThongkeMonBanCuaChiNhanh(DateTime ngaybd, DateTime ngaykt)
+        {
+            string query = "exec thongkehdtheochinhanh '" + ngaybd + "','" + ngaykt + "'";
+            return dalHD.ExecuteQuery(query);
+        }
+
+
+        public DataTable TongSldon(DateTime ngaybd, DateTime ngaykt)
+        {
+            string query = "exec TongSoLuongDH '" + ngaybd + "','" + ngaykt + "'";
+            return dalHD.ExecuteQuery(query);
+        }
+
+        public DataTable DonHangTheoNam()
+        {
+            string query = "exec SoLuongdonhangtheonam";
+            return dalHD.ExecuteQuery(query);
+        }
     }
 }

@@ -268,7 +268,7 @@
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_ChiNhanh";
             this.Ribbon = this.ribbon;
-            this.Text = "Frm_ChiNhanh";
+            this.Text = "Chi nhánh";
             this.Load += new System.EventHandler(this.Frm_ChiNhanh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_Tencn.Properties)).EndInit();

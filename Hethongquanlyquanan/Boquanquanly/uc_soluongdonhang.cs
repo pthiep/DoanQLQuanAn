@@ -14,7 +14,7 @@ namespace Boquanquanly
 {
     public partial class uc_soluongdonhang : UserControl
     {
-        BUS_DonHang busDH = new BUS_DonHang();
+        BUS_HoaDon busDH = new BUS_HoaDon();
         private static uc_soluongdonhang _instance;
 
         public static uc_soluongdonhang Instance
@@ -60,7 +60,7 @@ namespace Boquanquanly
         {
             DataTable data = new DataTable();
             if(cbbthongke.SelectedItem == "Năm"){
-                data = busDH.DonHangTheoNam();
+               // data = busDH.DonHangTheoNam();
             }
 
         }
@@ -97,6 +97,11 @@ namespace Boquanquanly
                 cbbNam.Enabled = true;
                 cbbThang.Enabled = true;
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

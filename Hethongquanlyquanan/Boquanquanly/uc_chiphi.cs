@@ -670,14 +670,14 @@ namespace Boquanquanly
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            DataTable dt = busCP.TinhChiPhi(dtpBD.Value, dtpKT.Value);
-            DataTable dttong = busCP.TongChiPhi(dtpBD.Value, dtpKT.Value);
-            XulyNgayThang();
+            //DataTable dt = busCP.TinhChiPhi(dtpBD.Value, dtpKT.Value);
+            //DataTable dttong = busCP.TongChiPhi(dtpBD.Value, dtpKT.Value);
+            //XulyNgayThang();
 
-            if(dt.Rows != null && dttong.Rows != null){
-                lbChiPhi.Text = dttong.Rows[0].ItemArray[0].ToString();
-                vebangchiphi(dt);
-            }
+            //if(dt.Rows != null && dttong.Rows != null){
+            //    lbChiPhi.Text = dttong.Rows[0].ItemArray[0].ToString();
+            //    vebangchiphi(dt);
+            //}
         }
 
         private void cbbChonLich_SelectedIndexChanged(object sender, EventArgs e)

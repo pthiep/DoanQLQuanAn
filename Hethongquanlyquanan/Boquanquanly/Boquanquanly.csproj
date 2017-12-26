@@ -99,11 +99,11 @@
     <Compile Include="Frm_ChiNhanh.Designer.cs">
       <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Dangnhap.cs">
+    <Compile Include="Frm_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Dangnhap.Designer.cs">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    <Compile Include="Frm_DangNhap.Designer.cs">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_DanhMuc.cs">
       <SubType>Form</SubType>
@@ -131,11 +131,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uc_chiphi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_chiphi.Designer.cs">
+      <DependentUpon>uc_chiphi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_doanhthu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_doanhthu.Designer.cs">
+      <DependentUpon>uc_doanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_soluongdonhang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_soluongdonhang.Designer.cs">
+      <DependentUpon>uc_soluongdonhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_thongkesoluongdonhangcuakhach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_thongkesoluongdonhangcuakhach.Designer.cs">
+      <DependentUpon>uc_thongkesoluongdonhangcuakhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_thongkesoluongmon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_thongkesoluongmon.Designer.cs">
+      <DependentUpon>uc_thongkesoluongmon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Frm_ChiNhanh.resx">
       <DependentUpon>Frm_ChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Dangnhap.resx">
-      <DependentUpon>frm_Dangnhap.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_DangNhap.resx">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_DanhMuc.resx">
       <DependentUpon>Frm_DanhMuc.cs</DependentUpon>
@@ -160,6 +190,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="uc_chiphi.resx">
+      <DependentUpon>uc_chiphi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_doanhthu.resx">
+      <DependentUpon>uc_doanhthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_soluongdonhang.resx">
+      <DependentUpon>uc_soluongdonhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_thongkesoluongdonhangcuakhach.resx">
+      <DependentUpon>uc_thongkesoluongdonhangcuakhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_thongkesoluongmon.resx">
+      <DependentUpon>uc_thongkesoluongmon.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
