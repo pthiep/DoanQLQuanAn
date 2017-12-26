@@ -32,6 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
             this.tb_Chiphi = new System.Windows.Forms.TextBox();
             this.tb_TenCP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +49,15 @@
             this.lb_Ngay = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lb_MaNV = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+=======
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.txtTenCP = new System.Windows.Forms.TextBox();
+            this.txtCP = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +147,7 @@
             this.lb_MaCP.Size = new System.Drawing.Size(32, 18);
             this.lb_MaCP.TabIndex = 15;
             this.lb_MaCP.Text = "___";
+<<<<<<< HEAD
             // 
             // btnThemNgay
             // 
@@ -231,6 +245,106 @@
             // 
             // lb_MaNV
             // 
+=======
+            // 
+            // btnThemNgay
+            // 
+            this.btnThemNgay.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btnThemNgay.Location = new System.Drawing.Point(281, 223);
+            this.btnThemNgay.Name = "btnThemNgay";
+            this.btnThemNgay.Size = new System.Drawing.Size(148, 36);
+            this.btnThemNgay.TabIndex = 16;
+            this.btnThemNgay.Text = "Thêm chi phí";
+            this.btnThemNgay.UseVisualStyleBackColor = true;
+            this.btnThemNgay.Click += new System.EventHandler(this.btnThemNgay_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lb_MaNV);
+            this.groupBox1.Controls.Add(this.lb_Ngay);
+            this.groupBox1.Controls.Add(this.cb_Loai);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lb_MaCN);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnThemNgay);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tb_Chiphi);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lb_MaCP);
+            this.groupBox1.Controls.Add(this.tb_TenCP);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.groupBox1.Location = new System.Drawing.Point(12, 38);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(500, 292);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Nhập chi phí phát sinh";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(242, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 18);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Mã chi nhánh:";
+            // 
+            // lb_MaCN
+            // 
+            this.lb_MaCN.AutoSize = true;
+            this.lb_MaCN.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lb_MaCN.Location = new System.Drawing.Point(354, 32);
+            this.lb_MaCN.Name = "lb_MaCN";
+            this.lb_MaCN.Size = new System.Drawing.Size(32, 18);
+            this.lb_MaCN.TabIndex = 18;
+            this.lb_MaCN.Text = "___";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(31, 198);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Loại chi phí:";
+            // 
+            // cb_Loai
+            // 
+            this.cb_Loai.FormattingEnabled = true;
+            this.cb_Loai.Location = new System.Drawing.Point(57, 229);
+            this.cb_Loai.Name = "cb_Loai";
+            this.cb_Loai.Size = new System.Drawing.Size(121, 26);
+            this.cb_Loai.TabIndex = 20;
+            // 
+            // lb_Ngay
+            // 
+            this.lb_Ngay.AutoSize = true;
+            this.lb_Ngay.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lb_Ngay.Location = new System.Drawing.Point(278, 160);
+            this.lb_Ngay.Name = "lb_Ngay";
+            this.lb_Ngay.Size = new System.Drawing.Size(32, 18);
+            this.lb_Ngay.TabIndex = 21;
+            this.lb_Ngay.Text = "___";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(242, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 18);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Mã nhân viên:";
+            // 
+            // lb_MaNV
+            // 
+<<<<<<< HEAD
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
             this.lb_MaNV.AutoSize = true;
             this.lb_MaNV.Font = new System.Drawing.Font("Tahoma", 11F);
             this.lb_MaNV.Location = new System.Drawing.Point(354, 66);
@@ -238,13 +352,50 @@
             this.lb_MaNV.Size = new System.Drawing.Size(32, 18);
             this.lb_MaNV.TabIndex = 23;
             this.lb_MaNV.Text = "___";
+<<<<<<< HEAD
+=======
+=======
+            this.txtCP.Location = new System.Drawing.Point(111, 103);
+            this.txtCP.Name = "txtCP";
+            this.txtCP.Size = new System.Drawing.Size(140, 21);
+            this.txtCP.TabIndex = 10;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(324, 121);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
             // 
             // Frm_ChiPhiPhatSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(524, 346);
             this.Controls.Add(this.groupBox1);
+=======
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(524, 346);
+            this.Controls.Add(this.groupBox1);
+=======
+            this.ClientSize = new System.Drawing.Size(442, 449);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtCP);
+            this.Controls.Add(this.txtTenCP);
+            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.ribbonStatusBar);
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_ChiPhiPhatSinh";
             this.Ribbon = this.ribbon;
@@ -264,6 +415,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
         private System.Windows.Forms.TextBox tb_Chiphi;
         private System.Windows.Forms.TextBox tb_TenCP;
         private System.Windows.Forms.Label label4;
@@ -277,5 +432,14 @@
         private System.Windows.Forms.Label lb_Ngay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lb_MaNV;
+<<<<<<< HEAD
+=======
+=======
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private System.Windows.Forms.TextBox txtTenCP;
+        private System.Windows.Forms.TextBox txtCP;
+        private System.Windows.Forms.Button btnSave;
+>>>>>>> 808c8447e350a6f3785fc3951d494528cb32c8e7
+>>>>>>> 58c9c3d7cf77b34321a6b8c5d2232a6e272241b4
     }
 }
