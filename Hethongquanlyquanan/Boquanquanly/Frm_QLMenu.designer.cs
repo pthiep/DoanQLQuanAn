@@ -33,19 +33,19 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.pnBan = new System.Windows.Forms.Panel();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.lb_Tencn = new System.Windows.Forms.Label();
             this.lb_Macn = new System.Windows.Forms.Label();
-            this.btn_Themtang = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btn_Themmonan = new DevExpress.XtraEditors.SimpleButton();
+            this.cb_DM = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbMA = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_DM.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMA.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -90,13 +90,13 @@
             this.labelControl2.TabIndex = 11;
             this.labelControl2.Text = "Mã chi nhánh";
             // 
-            // pnBan
+            // pnMenu
             // 
-            this.pnBan.AutoScroll = true;
-            this.pnBan.Location = new System.Drawing.Point(12, 141);
-            this.pnBan.Name = "pnBan";
-            this.pnBan.Size = new System.Drawing.Size(620, 396);
-            this.pnBan.TabIndex = 12;
+            this.pnMenu.AutoScroll = true;
+            this.pnMenu.Location = new System.Drawing.Point(12, 141);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(620, 396);
+            this.pnMenu.TabIndex = 12;
             // 
             // lb_Tencn
             // 
@@ -116,24 +116,25 @@
             this.lb_Macn.TabIndex = 14;
             this.lb_Macn.Text = "___";
             // 
-            // btn_Themtang
+            // btn_Themmonan
             // 
-            this.btn_Themtang.Location = new System.Drawing.Point(262, 29);
-            this.btn_Themtang.Name = "btn_Themtang";
-            this.btn_Themtang.Size = new System.Drawing.Size(43, 40);
-            this.btn_Themtang.TabIndex = 16;
-            this.btn_Themtang.Text = "Thêm";
-            this.btn_Themtang.Click += new System.EventHandler(this.btn_Themtang_Click);
+            this.btn_Themmonan.Location = new System.Drawing.Point(262, 29);
+            this.btn_Themmonan.Name = "btn_Themmonan";
+            this.btn_Themmonan.Size = new System.Drawing.Size(43, 40);
+            this.btn_Themmonan.TabIndex = 16;
+            this.btn_Themmonan.Text = "Thêm";
+            this.btn_Themmonan.Click += new System.EventHandler(this.btn_Themmonan_Click);
             // 
-            // comboBoxEdit1
+            // cb_DM
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(106, 26);
-            this.comboBoxEdit1.MenuManager = this.ribbon;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cb_DM.Location = new System.Drawing.Point(106, 26);
+            this.cb_DM.MenuManager = this.ribbon;
+            this.cb_DM.Name = "cb_DM";
+            this.cb_DM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(126, 20);
-            this.comboBoxEdit1.TabIndex = 18;
+            this.cb_DM.Size = new System.Drawing.Size(126, 20);
+            this.cb_DM.TabIndex = 18;
+            this.cb_DM.SelectedIndexChanged += new System.EventHandler(this.cb_DM_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -146,10 +147,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxEdit2);
-            this.groupBox1.Controls.Add(this.btn_Themtang);
+            this.groupBox1.Controls.Add(this.cbMA);
+            this.groupBox1.Controls.Add(this.btn_Themmonan);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBoxEdit1);
+            this.groupBox1.Controls.Add(this.cb_DM);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(314, 50);
             this.groupBox1.Name = "groupBox1";
@@ -158,15 +159,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm món ăn";
             // 
-            // comboBoxEdit2
+            // cbMA
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(106, 53);
-            this.comboBoxEdit2.MenuManager = this.ribbon;
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbMA.Location = new System.Drawing.Point(106, 53);
+            this.cbMA.MenuManager = this.ribbon;
+            this.cbMA.Name = "cbMA";
+            this.cbMA.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(126, 20);
-            this.comboBoxEdit2.TabIndex = 20;
+            this.cbMA.Size = new System.Drawing.Size(126, 20);
+            this.cbMA.TabIndex = 20;
             // 
             // label2
             // 
@@ -185,7 +186,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lb_Macn);
             this.Controls.Add(this.lb_Tencn);
-            this.Controls.Add(this.pnBan);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ribbon);
@@ -194,10 +195,10 @@
             this.Text = "Frm_QLBan";
             this.Load += new System.EventHandler(this.Frm_QLBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_DM.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMA.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,14 +210,14 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private System.Windows.Forms.Panel pnBan;
+        private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Label lb_Tencn;
         private System.Windows.Forms.Label lb_Macn;
-        private DevExpress.XtraEditors.SimpleButton btn_Themtang;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.SimpleButton btn_Themmonan;
+        private DevExpress.XtraEditors.ComboBoxEdit cb_DM;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.ComboBoxEdit cbMA;
         private System.Windows.Forms.Label label2;
     }
 }

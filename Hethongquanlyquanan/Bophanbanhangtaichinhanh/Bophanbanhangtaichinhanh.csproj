@@ -33,9 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BUS\bin\Debug\DAL.dll</HintPath>
+    <Reference Include="BUS">
+      <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL">
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -46,12 +48,13 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Windows.Forms.Ribbon35">
-      <HintPath>..\..\..\..\Visual Studio 2017\System.Windows.Forms.Ribbon35.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,20 +78,26 @@
     <Compile Include="Frm_ChiPhiPhatSinh.Designer.cs">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_QuanLyDHTuTongDai.cs">
+    <Compile Include="Frm_CTHD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_QuanLyDHTuTongDai.Designer.cs">
-      <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
+    <Compile Include="Frm_CTHD.Designer.cs">
+      <DependentUpon>Frm_CTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DangNhap.Designer.cs">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KTDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KTDH.Designer.cs">
+      <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC_Ban.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Ban.Designer.cs">
-      <DependentUpon>UC_Ban.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_MonAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,8 +110,14 @@
     <EmbeddedResource Include="Frm_ChiPhiPhatSinh.resx">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_QuanLyDHTuTongDai.resx">
-      <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_CTHD.resx">
+      <DependentUpon>Frm_CTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DangNhap.resx">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KTDH.resx">
+      <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,9 +130,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC_Ban.resx">
-      <DependentUpon>UC_Ban.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_MonAn.resx">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </EmbeddedResource>

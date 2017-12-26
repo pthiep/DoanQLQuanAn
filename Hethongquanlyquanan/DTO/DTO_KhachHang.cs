@@ -6,62 +6,19 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTO_KhachHang
+    public class DTO_KhachHang
     {
-        private string maKhachHang;
-        private string tenKhachHang;
-        private string sdt;
-        private string diaChi;
-        public string MaKhachHang
-        {
-            get
-            {
-                return maKhachHang;
-            }
+        string makh, tenkh, sdt, diachi;
+        string ngaysinh;
+        string gioitinh;
+        string ngaytao;
 
-            set
-            {
-                maKhachHang = value;
-            }
-        }
-
-        public string TenKhachHang1
-        {
-            get
-            {
-                return tenKhachHang;
-            }
-
-            set
-            {
-                tenKhachHang = value;
-            }
-        }
-
-        public string Sdt
-        {
-            get
-            {
-                return sdt;
-            }
-
-            set
-            {
-                sdt = value;
-            }
-        }
-
-        public string DiaChi
-        {
-            get
-            {
-                return diaChi;
-            }
-
-            set
-            {
-                diaChi = value;
-            }
-        }
+        public string Makh { get => makh; set => makh = value; }
+        public string Tenkh { get => tenkh; set => tenkh = value; }
+        public string Sdt { get => sdt; set => sdt = value; }
+        public string Diachi { get => diachi; set => diachi = value; }
+        public string Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
+        public string Gioitinh { get => gioitinh; set => gioitinh = value; }
+        public string Ngaytao { get => ngaytao; set => ngaytao = value; }
     }
 }

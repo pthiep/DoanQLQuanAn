@@ -54,42 +54,34 @@ namespace Boquanquanly
             Panel pn_HChon = new Panel();
             Panel pn_HTenmonan = new Panel();
             Panel pn_HMamonan = new Panel();
-            Panel pn_HSoluong = new Panel();
             Panel pn_HGiaban = new Panel();
             Panel pn_HDachmuc = new Panel();
-            Panel pn_HKho = new Panel();
             Panel pn_HHinh = new Panel();
             Panel pn_HChucnang = new Panel();
 
             CheckBox cb_All = new CheckBox();
             Label lb_HTenmonan = new Label();
             Label lb_HMamonan = new Label();
-            Label lb_HSoluong = new Label();
             Label lb_HGiaban = new Label();
             Label lb_HDanhmuc = new Label();
-            Label lb_HKho = new Label();
             Label lb_HHinh = new Label();
             Label lb_HChucnang = new Label();
 
             int scaleHChon = 5;
-            int scaleHTenmonan = 30;
+            int scaleHTenmonan = 35;
             int scaleHMamonan = 10;
-            int scaleHSoluong = 5;
             int scaleHGiaban = 10;
             int scaleHDanhmuc = 15;
-            int scaleHKho = 5;
             int scaleHHinh = 5;
-            int scaleHChucnang = 15;
+            int scaleHChucnang = 20;
 
             int cc = 35;
             int crpn = panel_DSMA.Width;
             int crpnHChon = (crpn * scaleHChon) / 100;
             int crpnHTemonan = (crpn * scaleHTenmonan) / 100;
             int crpnHMamonan = (crpn * scaleHMamonan) / 100;
-            int crpnHSoluong = (crpn * scaleHSoluong) / 100;
             int crpnHGiaban = (crpn * scaleHGiaban) / 100;
             int crpnHDanhmuc = (crpn * scaleHDanhmuc) / 100;
-            int crpnHKho = (crpn * scaleHKho) / 100;
             int crpnHHinh = (crpn * scaleHHinh) / 100;
             int crpnHChucnang = (crpn * scaleHChucnang) / 100;
 
@@ -124,20 +116,9 @@ namespace Boquanquanly
             lb_HMamonan.Location = new Point(0, 0);
             pn_HMamonan.Controls.Add(lb_HMamonan);
 
-            pn_HSoluong.BorderStyle = BorderStyle.FixedSingle;
-            pn_HSoluong.Size = new Size(crpnHSoluong, cc);
-            pn_HSoluong.Location = new Point(pn_HMamonan.Location.X + pn_HMamonan.Width - 1, 0);
-
-            lb_HSoluong.Width = pn_HSoluong.Width;
-            lb_HSoluong.Height = pn_HSoluong.Height;
-            lb_HSoluong.Text = "SL";
-            lb_HSoluong.TextAlign = ContentAlignment.MiddleCenter;
-            lb_HSoluong.Location = new Point(0, 0);
-            pn_HSoluong.Controls.Add(lb_HSoluong);
-
             pn_HGiaban.BorderStyle = BorderStyle.FixedSingle;
             pn_HGiaban.Size = new Size(crpnHGiaban, cc);
-            pn_HGiaban.Location = new Point(pn_HSoluong.Location.X + pn_HSoluong.Width - 1, 0);
+            pn_HGiaban.Location = new Point(pn_HMamonan.Location.X + pn_HMamonan.Width - 1, 0);
 
             lb_HGiaban.Width = pn_HGiaban.Width;
             lb_HGiaban.Height = pn_HGiaban.Height;
@@ -157,20 +138,9 @@ namespace Boquanquanly
             lb_HDanhmuc.Location = new Point(0, 0);
             pn_HDachmuc.Controls.Add(lb_HDanhmuc);
 
-            pn_HKho.BorderStyle = BorderStyle.FixedSingle;
-            pn_HKho.Size = new Size(crpnHKho, cc);
-            pn_HKho.Location = new Point(pn_HDachmuc.Location.X + pn_HDachmuc.Width - 1, 0);
-
-            lb_HKho.Width = pn_HKho.Width;
-            lb_HKho.Height = pn_HKho.Height;
-            lb_HKho.Text = "Kho";
-            lb_HKho.TextAlign = ContentAlignment.MiddleCenter;
-            lb_HKho.Location = new Point(0, 0);
-            pn_HKho.Controls.Add(lb_HKho);
-
             pn_HHinh.BorderStyle = BorderStyle.FixedSingle;
             pn_HHinh.Size = new Size(crpnHHinh, cc);
-            pn_HHinh.Location = new Point(pn_HKho.Location.X + pn_HKho.Width - 1, 0);
+            pn_HHinh.Location = new Point(pn_HDachmuc.Location.X + pn_HDachmuc.Width - 1, 0);
 
             lb_HHinh.Width = pn_HHinh.Width;
             lb_HHinh.Height = pn_HHinh.Height;
@@ -193,10 +163,8 @@ namespace Boquanquanly
             panel_DSMA.Controls.Add(pn_HChon);
             panel_DSMA.Controls.Add(pn_HTenmonan);
             panel_DSMA.Controls.Add(pn_HMamonan);
-            panel_DSMA.Controls.Add(pn_HSoluong);
             panel_DSMA.Controls.Add(pn_HGiaban);
             panel_DSMA.Controls.Add(pn_HDachmuc);
-            panel_DSMA.Controls.Add(pn_HKho);
             panel_DSMA.Controls.Add(pn_HHinh);
             panel_DSMA.Controls.Add(pn_HChucnang);
         }
@@ -207,33 +175,27 @@ namespace Boquanquanly
             Panel pn_BChon = null;
             Panel pn_BTenmonan = null;
             Panel pn_BMamonan = null;
-            Panel pn_BSoluong = null;
             Panel pn_BGiaban = null;
             Panel pn_BDachmuc = null;
-            Panel pn_BKho = null;
             Panel pn_BHinh = null;
             Panel pn_BChucnang = null;
 
             CheckBox cb_Row = null;
             LinkLabel lb_BTenmonan = null;
             Label lb_BMamonan = null;
-            Label lb_BSoluong = null;
             Label lb_BGiaban = null;
             Label lb_BDanhmuc = null;
-            Label lb_BKho = null;
             PictureBox pb_BHinh = null;
             Button btn_BSua = null;
             Button btn_BXoa = null;
 
             int scaleBChon = 5;
-            int scaleBTenmonan = 30;
+            int scaleBTenmonan = 35;
             int scaleBMamonan = 10;
-            int scaleBSoluong = 5;
             int scaleBGiaban = 10;
             int scaleBDanhmuc = 15;
-            int scaleBKho = 5;
             int scaleBHinh = 5;
-            int scaleBChucnang = 15;
+            int scaleBChucnang = 20;
 
             int cc = 35;
             int crpn = panel_DSMA.Width;
@@ -241,14 +203,13 @@ namespace Boquanquanly
             int crpnBChon = (crpn * scaleBChon) / 100;
             int crpnBTemonan = (crpn * scaleBTenmonan) / 100;
             int crpnBMamonan = (crpn * scaleBMamonan) / 100;
-            int crpnBSoluong = (crpn * scaleBSoluong) / 100;
             int crpnBGiaban = (crpn * scaleBGiaban) / 100;
             int crpnBDanhmuc = (crpn * scaleBDanhmuc) / 100;
-            int crpnBKho = (crpn * scaleBKho) / 100;
             int crpnBHinh = (crpn * scaleBHinh) / 100;
             int crpnBChucnang = (crpn * scaleBChucnang) / 100;
 
             int slma = busMA.Soluongmonan();
+            lbSlma.Text = slma.ToString();
 
             for (int i = 0; i < slma; i++)
             {
@@ -257,20 +218,16 @@ namespace Boquanquanly
                 pn_BChon = new Panel();
                 pn_BTenmonan = new Panel();
                 pn_BMamonan = new Panel();
-                pn_BSoluong = new Panel();
                 pn_BGiaban = new Panel();
                 pn_BDachmuc = new Panel();
-                pn_BKho = new Panel();
                 pn_BHinh = new Panel();
                 pn_BChucnang = new Panel();
 
                 cb_Row = new CheckBox();
                 lb_BTenmonan = new LinkLabel();
                 lb_BMamonan = new Label();
-                lb_BSoluong = new Label();
                 lb_BGiaban = new Label();
                 lb_BDanhmuc = new Label();
-                lb_BKho = new Label();
                 pb_BHinh = new PictureBox();
                 btn_BSua = new Button();
                 btn_BXoa = new Button();
@@ -308,18 +265,8 @@ namespace Boquanquanly
                 lb_BMamonan.Location = new Point(0, 0);
                 pn_BMamonan.Controls.Add(lb_BMamonan);
 
-                pn_BSoluong.Size = new Size(crpnBSoluong, cc);
-                pn_BSoluong.Location = new Point(pn_BMamonan.Location.X + pn_BMamonan.Width - 1, 0);
-
-                lb_BSoluong.Width = pn_BSoluong.Width;
-                lb_BSoluong.Height = pn_BSoluong.Height;
-                lb_BSoluong.Text = "SL";
-                lb_BSoluong.TextAlign = ContentAlignment.MiddleCenter;
-                lb_BSoluong.Location = new Point(0, 0);
-                pn_BSoluong.Controls.Add(lb_BSoluong);
-
                 pn_BGiaban.Size = new Size(crpnBGiaban, cc);
-                pn_BGiaban.Location = new Point(pn_BSoluong.Location.X + pn_BSoluong.Width - 1, -1);
+                pn_BGiaban.Location = new Point(pn_BMamonan.Location.X + pn_BMamonan.Width - 1, -1);
 
                 lb_BGiaban.Width = pn_BGiaban.Width;
                 lb_BGiaban.Height = pn_BGiaban.Height;
@@ -338,18 +285,8 @@ namespace Boquanquanly
                 lb_BDanhmuc.Location = new Point(0, 0);
                 pn_BDachmuc.Controls.Add(lb_BDanhmuc);
 
-                pn_BKho.Size = new Size(crpnBKho, cc);
-                pn_BKho.Location = new Point(pn_BDachmuc.Location.X + pn_BDachmuc.Width - 1, 0);
-
-                lb_BKho.Width = pn_BKho.Width;
-                lb_BKho.Height = pn_BKho.Height;
-                lb_BKho.Text = "Kho";
-                lb_BKho.TextAlign = ContentAlignment.MiddleCenter;
-                lb_BKho.Location = new Point(0, 0);
-                pn_BKho.Controls.Add(lb_BKho);
-
                 pn_BHinh.Size = new Size(crpnBHinh, cc);
-                pn_BHinh.Location = new Point(pn_BKho.Location.X + pn_BKho.Width - 1, -1);
+                pn_BHinh.Location = new Point(pn_BDachmuc.Location.X + pn_BDachmuc.Width - 1, -1);
 
                 string linkimg = dt.Rows[i].ItemArray[2].ToString();
                 Image img = Resize(Image.FromFile(linkimg), 0.25f);
@@ -389,10 +326,8 @@ namespace Boquanquanly
                 pn_Row.Controls.Add(pn_BChon);
                 pn_Row.Controls.Add(pn_BTenmonan);
                 pn_Row.Controls.Add(pn_BMamonan);
-                //pn_Row.Controls.Add(pn_BSoluong);
                 pn_Row.Controls.Add(pn_BGiaban);
                 pn_Row.Controls.Add(pn_BDachmuc);
-                //pn_Row.Controls.Add(pn_BKho);
                 pn_Row.Controls.Add(pn_BHinh);
                 pn_Row.Controls.Add(pn_BChucnang);
 
@@ -406,10 +341,8 @@ namespace Boquanquanly
             Panel pn_BChon = null;
             Panel pn_BTenmonan = null;
             Panel pn_BMamonan = null;
-            Panel pn_BSoluong = null;
             Panel pn_BGiaban = null;
             Panel pn_BDachmuc = null;
-            Panel pn_BKho = null;
             Panel pn_BHinh = null;
             Panel pn_BChucnang = null;
 
@@ -418,10 +351,8 @@ namespace Boquanquanly
             TextBox tb_BGiaban = null;
             Label lb_BTenmonan = null;
             Label lb_BMamonan = null;
-            Label lb_BSoluong = null;
             Label lb_BGiaban = null;
             Label lb_BDanhmuc = null;
-            Label lb_BKho = null;
             PictureBox pb_BHinh = null;
             Button btn_BSua = null;
             Button btn_BXoa = null;
@@ -429,14 +360,12 @@ namespace Boquanquanly
             Button btn_BHuy = null;
 
             int scaleBChon = 5;
-            int scaleBTenmonan = 30;
+            int scaleBTenmonan = 35;
             int scaleBMamonan = 10;
-            int scaleBSoluong = 5;
             int scaleBGiaban = 10;
             int scaleBDanhmuc = 15;
-            int scaleBKho = 5;
             int scaleBHinh = 5;
-            int scaleBChucnang = 15;
+            int scaleBChucnang = 20;
 
             int cc = 35;
             int crpn = panel_DSMA.Width;
@@ -444,10 +373,8 @@ namespace Boquanquanly
             int crpnBChon = (crpn * scaleBChon) / 100;
             int crpnBTemonan = (crpn * scaleBTenmonan) / 100;
             int crpnBMamonan = (crpn * scaleBMamonan) / 100;
-            int crpnBSoluong = (crpn * scaleBSoluong) / 100;
             int crpnBGiaban = (crpn * scaleBGiaban) / 100;
             int crpnBDanhmuc = (crpn * scaleBDanhmuc) / 100;
-            int crpnBKho = (crpn * scaleBKho) / 100;
             int crpnBHinh = (crpn * scaleBHinh) / 100;
             int crpnBChucnang = (crpn * scaleBChucnang) / 100;
 
@@ -460,10 +387,8 @@ namespace Boquanquanly
                 pn_BChon = new Panel();
                 pn_BTenmonan = new Panel();
                 pn_BMamonan = new Panel();
-                pn_BSoluong = new Panel();
                 pn_BGiaban = new Panel();
                 pn_BDachmuc = new Panel();
-                pn_BKho = new Panel();
                 pn_BHinh = new Panel();
                 pn_BChucnang = new Panel();
 
@@ -472,10 +397,8 @@ namespace Boquanquanly
                 tb_BGiaban = new TextBox();
                 lb_BTenmonan = new Label();
                 lb_BMamonan = new Label();
-                lb_BSoluong = new Label();
                 lb_BGiaban = new Label();
                 lb_BDanhmuc = new Label();
-                lb_BKho = new Label();
                 pb_BHinh = new PictureBox();
                 btn_BSua = new Button();
                 btn_BXoa = new Button();
@@ -518,18 +441,8 @@ namespace Boquanquanly
                     lb_BMamonan.Location = new Point(0, 0);
                     pn_BMamonan.Controls.Add(lb_BMamonan);
 
-                    pn_BSoluong.Size = new Size(crpnBSoluong, cc);
-                    pn_BSoluong.Location = new Point(pn_BMamonan.Location.X + pn_BMamonan.Width - 1, 0);
-
-                    lb_BSoluong.Width = pn_BSoluong.Width;
-                    lb_BSoluong.Height = pn_BSoluong.Height;
-                    lb_BSoluong.Text = "SL";
-                    lb_BSoluong.TextAlign = ContentAlignment.MiddleCenter;
-                    lb_BSoluong.Location = new Point(0, 0);
-                    pn_BSoluong.Controls.Add(lb_BSoluong);
-
                     pn_BGiaban.Size = new Size(crpnBGiaban, cc);
-                    pn_BGiaban.Location = new Point(pn_BSoluong.Location.X + pn_BSoluong.Width - 1, -1);
+                    pn_BGiaban.Location = new Point(pn_BMamonan.Location.X + pn_BMamonan.Width - 1, -1);
 
                     tb_BGiaban.Width = pn_BGiaban.Width - 5;
                     tb_BGiaban.Height = pn_BGiaban.Height - 5;
@@ -548,18 +461,8 @@ namespace Boquanquanly
                     lb_BDanhmuc.Location = new Point(0, 0);
                     pn_BDachmuc.Controls.Add(lb_BDanhmuc);
 
-                    pn_BKho.Size = new Size(crpnBKho, cc);
-                    pn_BKho.Location = new Point(pn_BDachmuc.Location.X + pn_BDachmuc.Width - 1, 0);
-
-                    lb_BKho.Width = pn_BKho.Width;
-                    lb_BKho.Height = pn_BKho.Height;
-                    lb_BKho.Text = "Kho";
-                    lb_BKho.TextAlign = ContentAlignment.MiddleCenter;
-                    lb_BKho.Location = new Point(0, 0);
-                    pn_BKho.Controls.Add(lb_BKho);
-
                     pn_BHinh.Size = new Size(crpnBHinh, cc);
-                    pn_BHinh.Location = new Point(pn_BKho.Location.X + pn_BKho.Width - 1, -1);
+                    pn_BHinh.Location = new Point(pn_BDachmuc.Location.X + pn_BDachmuc.Width - 1, -1);
 
                     string linkimg = dt.Rows[i].ItemArray[2].ToString();
                     Image img = Resize(Image.FromFile(linkimg), 0.25f);
@@ -589,10 +492,8 @@ namespace Boquanquanly
                     pn_Row.Controls.Add(pn_BChon);
                     pn_Row.Controls.Add(pn_BTenmonan);
                     pn_Row.Controls.Add(pn_BMamonan);
-                    //pn_Row.Controls.Add(pn_BSoluong);
                     pn_Row.Controls.Add(pn_BGiaban);
                     pn_Row.Controls.Add(pn_BDachmuc);
-                    //pn_Row.Controls.Add(pn_BKho);
                     pn_Row.Controls.Add(pn_BHinh);
                     pn_Row.Controls.Add(pn_BChucnang);
                 }
@@ -626,18 +527,8 @@ namespace Boquanquanly
                     lb_BMamonan.Location = new Point(0, 0);
                     pn_BMamonan.Controls.Add(lb_BMamonan);
 
-                    pn_BSoluong.Size = new Size(crpnBSoluong, cc);
-                    pn_BSoluong.Location = new Point(pn_BMamonan.Location.X + pn_BMamonan.Width - 1, 0);
-
-                    lb_BSoluong.Width = pn_BSoluong.Width;
-                    lb_BSoluong.Height = pn_BSoluong.Height;
-                    lb_BSoluong.Text = "SL";
-                    lb_BSoluong.TextAlign = ContentAlignment.MiddleCenter;
-                    lb_BSoluong.Location = new Point(0, 0);
-                    pn_BSoluong.Controls.Add(lb_BSoluong);
-
                     pn_BGiaban.Size = new Size(crpnBGiaban, cc);
-                    pn_BGiaban.Location = new Point(pn_BSoluong.Location.X + pn_BSoluong.Width - 1, -1);
+                    pn_BGiaban.Location = new Point(pn_BMamonan.Location.X + pn_BMamonan.Width - 1, -1);
 
                     lb_BGiaban.Width = pn_BGiaban.Width;
                     lb_BGiaban.Height = pn_BGiaban.Height;
@@ -656,18 +547,8 @@ namespace Boquanquanly
                     lb_BDanhmuc.Location = new Point(0, 0);
                     pn_BDachmuc.Controls.Add(lb_BDanhmuc);
 
-                    pn_BKho.Size = new Size(crpnBKho, cc);
-                    pn_BKho.Location = new Point(pn_BDachmuc.Location.X + pn_BDachmuc.Width - 1, 0);
-
-                    lb_BKho.Width = pn_BKho.Width;
-                    lb_BKho.Height = pn_BKho.Height;
-                    lb_BKho.Text = "Kho";
-                    lb_BKho.TextAlign = ContentAlignment.MiddleCenter;
-                    lb_BKho.Location = new Point(0, 0);
-                    pn_BKho.Controls.Add(lb_BKho);
-
                     pn_BHinh.Size = new Size(crpnBHinh, cc);
-                    pn_BHinh.Location = new Point(pn_BKho.Location.X + pn_BKho.Width - 1, -1);
+                    pn_BHinh.Location = new Point(pn_BDachmuc.Location.X + pn_BDachmuc.Width - 1, -1);
 
                     string linkimg = dt.Rows[i].ItemArray[2].ToString();
                     Image img = Resize(Image.FromFile(linkimg), 0.25f);
@@ -957,7 +838,7 @@ namespace Boquanquanly
                 lb_BTenchinhanh.TextAlign = ContentAlignment.MiddleLeft;
                 lb_BTenchinhanh.Location = new Point(0, 0);
                 pn_BTenchinhanh.Controls.Add(lb_BTenchinhanh);
-                //lb_BTenchinhanh.Click += Lb_BTenchinhanh_Click;
+                lb_BTenchinhanh.Click += Lb_BTenchinhanh_Click;
 
                 pn_BMachinhanh.Size = new Size(crpnBMachinhanh, cc);
                 pn_BMachinhanh.Location = new Point(pn_BTenchinhanh.Location.X + pn_BTenchinhanh.Width - 1, -1);
@@ -1046,6 +927,15 @@ namespace Boquanquanly
                 pn_BChucnang.Controls.Add(btn_BXoa);
 
 
+                DTO_ChiNhanh cn = new DTO_ChiNhanh();
+                cn.Macn = lb_BMachinhanh.Text;
+                cn.Tencn = lb_BTenchinhanh.Text;
+                cn.Diachi = lb_BDiachi.Text;
+                cn.Dienthoai = lb_BDienthoai.Text;
+                cn.Tinhthanh = lb_BTinhthanh.Text;
+                cn.Soluongban = int.Parse(lb_BBan.Text);
+                lb_BTenchinhanh.Tag = cn;
+
                 pn_Row.Controls.Add(pn_BChon);
                 pn_Row.Controls.Add(pn_BTenchinhanh);
                 pn_Row.Controls.Add(pn_BMachinhanh);
@@ -1058,6 +948,17 @@ namespace Boquanquanly
 
                 pnCN.Controls.Add(pn_Row);
             }
+        }
+
+        private void Lb_BTenchinhanh_Click(object sender, EventArgs e)
+        {
+            DTO_ChiNhanh cn = new DTO_ChiNhanh();
+            cn = (sender as Control).Tag as DTO_ChiNhanh;
+            Frm_ChiNhanh frmCN = new Frm_ChiNhanh();
+            frmCN.GuiThongTin(cn);
+            frmCN.ShowDialog();
+            VeHeadBangDanhSachChiNhanh();
+            VeBodyBangDanhSachChiNhanh(busCN.LoadDanhSachChiNhanh());
         }
 
         private void Btn_BMenu_Click(object sender, EventArgs e)
@@ -1239,7 +1140,7 @@ namespace Boquanquanly
                     btn_BMenu.Location = new Point(pn_BBan.Width / 2 - btn_BMenu.Size.Width / 2, pn_BBan.Height / 2 - btn_BMenu.Size.Height / 2);
                     pn_BMenu.Location = new Point(pn_BBan.Location.X + pn_BBan.Width - 1, -1);
                     pn_BMenu.Controls.Add(btn_BMenu);
-
+                    pn_BMenu.Enabled = false;
 
                     pn_BChucnang.Size = new Size(crpnBChucnang, cc);
                     pn_BChucnang.Location = new Point(pn_BMenu.Location.X + pn_BMenu.Width - 1, -1);
@@ -1284,7 +1185,7 @@ namespace Boquanquanly
                     lb_BTenchinhanh.TextAlign = ContentAlignment.MiddleLeft;
                     lb_BTenchinhanh.Location = new Point(0, 0);
                     pn_BTenchinhanh.Controls.Add(lb_BTenchinhanh);
-                    //lb_BTenchinhanh.Click += Lb_BTenchinhanh_Click;
+                    lb_BTenchinhanh.Enabled = false;
 
                     pn_BMachinhanh.Size = new Size(crpnBMachinhanh, cc);
                     pn_BMachinhanh.Location = new Point(pn_BTenchinhanh.Location.X + pn_BTenchinhanh.Width - 1, -1);
@@ -1384,7 +1285,6 @@ namespace Boquanquanly
             }
         }
 
-
         private void Lb_BTenmonan_Click(object sender, EventArgs e)
         {
             DTO_MonAn ma = new DTO_MonAn();
@@ -1460,10 +1360,12 @@ namespace Boquanquanly
             TextBox tbTenchinhanh = (TextBox)pnCN.Controls.Find("tb_BTenchinhanh_" + (sender as Control).Tag.ToString(), true).FirstOrDefault();
             TextBox tbDiachi = (TextBox)pnCN.Controls.Find("tb_BDiachi_" + (sender as Control).Tag.ToString(), true).FirstOrDefault();
             TextBox tbDienthoai = (TextBox)pnCN.Controls.Find("tb_BSodienthoai_" + (sender as Control).Tag.ToString(), true).FirstOrDefault();
+            TextBox tbSoluongban = (TextBox)pnCN.Controls.Find("tb_BBan_" + (sender as Control).Tag.ToString(), true).FirstOrDefault();
             cn.Macn = (sender as Control).Tag.ToString();
             cn.Tencn = tbTenchinhanh.Text;
             cn.Diachi = tbDiachi.Text;
             cn.Dienthoai = tbDienthoai.Text;
+            cn.Soluongban = int.Parse(tbSoluongban.Text);
             if (busCN.Capnhatchinhanhnhanh(cn))
             {
                 MessageBox.Show("Cập nhật chi nhánh thành công !!!", "Thông báo");
@@ -1481,7 +1383,8 @@ namespace Boquanquanly
             ma.Mama = (sender as Control).Tag.ToString();
             ma.Tenma = tbTenmonan.Text;
             ma.Giaban = decimal.Parse(tbGiaban.Text);
-            if (busMA.Capnhatmonan(ma))
+
+            if (busMA.Capnhatmonannhanh(ma))
             {
                 MessageBox.Show("Cập nhật món ăn thành công !!!", "Thông báo");
                 VeHeadBangDanhSachMonAn();
@@ -1490,7 +1393,7 @@ namespace Boquanquanly
             }
         }
 
-        public Image Resize(Image img, float percentage)
+        public new Image Resize(Image img, float percentage)
         {
             int originalW = img.Width;
             int originalH = img.Height;
@@ -1516,96 +1419,23 @@ namespace Boquanquanly
             VeBodyBangDanhSachMonAn(busMA.LoadDanhSachMonAn());
         }
 
-        private void backstageViewClientControl3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void backstageViewTabItem2_SelectedChanged(object sender, BackstageViewItemEventArgs e)
-        {
-
-        }
-
         private void backstageViewTabItem4_SelectedChanged(object sender, BackstageViewItemEventArgs e)
         {
 
         }
 
-        private void backstageViewTabItem3_SelectedChanged(object sender, BackstageViewItemEventArgs e)
+        private void btn_Taochinhanh_Click(object sender, EventArgs e)
         {
-
+            Frm_ChiNhanh frmCN = new Frm_ChiNhanh();
+            frmCN.flag = true;
+            frmCN.ShowDialog();
+            VeHeadBangDanhSachChiNhanh();
+            VeBodyBangDanhSachChiNhanh(busCN.LoadDanhSachChiNhanh());
         }
 
-        private void backstageViewTabItem1_SelectedChanged(object sender, BackstageViewItemEventArgs e)
+        private void backstageViewClientControl2_Load(object sender, EventArgs e)
         {
 
-        }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void pBaoCao_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void rbDoanhThu_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_doanhthu.Instance))
-            {
-                pBaoCao.Controls.Add(uc_doanhthu.Instance);
-                //uc_doanhthu.Instance.Dock = DockStyle.Fill;
-                uc_doanhthu.Instance.BringToFront();
-            }
-            else { uc_doanhthu.Instance.BringToFront(); }
-        }
-
-        private void rbChiPhi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_chiphi.Instance))
-            {
-                pBaoCao.Controls.Add(uc_chiphi.Instance);
-                uc_chiphi.Instance.Dock = DockStyle.Fill;
-                uc_chiphi.Instance.BringToFront();
-            }
-            else { uc_chiphi.Instance.BringToFront(); }
-        }
-
-        private void rbSoLuongMonBan_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_thongkesoluongmon.Instance))
-            {
-                pBaoCao.Controls.Add(uc_thongkesoluongmon.Instance);
-                uc_thongkesoluongmon.Instance.Dock = DockStyle.Fill;
-                uc_thongkesoluongmon.Instance.BringToFront();
-            }
-            else { uc_thongkesoluongmon.Instance.BringToFront(); }
-        }
-
-        private void rbSoLuongHD_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_soluongdonhang.Instance))
-            {
-                pBaoCao.Controls.Add(uc_soluongdonhang.Instance);
-                uc_soluongdonhang.Instance.Dock = DockStyle.Fill;
-                uc_soluongdonhang.Instance.BringToFront();
-            }
-            else { uc_soluongdonhang.Instance.BringToFront(); }
-        }
-
-        private void rbHDKhachHang_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!pBaoCao.Controls.Contains(uc_thongkesoluongdonhangcuakhach.Instance))
-            {
-                pBaoCao.Controls.Add(uc_thongkesoluongdonhangcuakhach.Instance);
-                uc_thongkesoluongdonhangcuakhach.Instance.Dock = DockStyle.Fill;
-                uc_thongkesoluongdonhangcuakhach.Instance.BringToFront();
-            }
-            else { uc_thongkesoluongdonhangcuakhach.Instance.BringToFront(); }
         }
     }
 }
