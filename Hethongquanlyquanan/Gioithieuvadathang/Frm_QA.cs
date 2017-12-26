@@ -590,7 +590,7 @@ namespace Gioithieuvadathang
                 hd.Manhanvien = "___";
                 hd.Ngay = barTime.Caption;
                 hd.Tongtien = ChuyenVNDToDecimal(lbTongTien.Text);
-                hd.Trangthai = 3;
+                hd.Trangthai = 2;
 
                 if (tb_SDT.Text != "" && tb_SDT.Text != "Nhập số điện thoại để xác nhận đặt hàng !!!")
                 {

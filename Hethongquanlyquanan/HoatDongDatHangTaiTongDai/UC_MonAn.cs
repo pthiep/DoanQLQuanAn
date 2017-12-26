@@ -37,6 +37,15 @@ namespace HoatDongDatHangTaiTongDai
             InitializeComponent();
         }
 
+        public void VeAgain()
+        {
+            pnThucDon.Controls.Clear();
+            pn_Menu.Controls.Clear();
+            LoadThucDon(BUSmonan.LoadDanhSachMonAnCN(macn));
+            VePNMenu();
+            VeClickPNMenu();
+        }
+
         private void UC_MonAn_Load(object sender, EventArgs e)
         {
             LoadThucDon(BUSmonan.LoadDanhSachMonAn());
@@ -229,6 +238,28 @@ namespace HoatDongDatHangTaiTongDai
                 {
                     pn.BackColor = Color.FromArgb(240, 240, 240);
                 }
+            }
+        }
+
+        public void Timkiemmonan(string ten)
+        {
+            pnThucDon.Controls.Clear();
+            if (ten != "")
+            {
+                if (BUSmonan.Timkiemmonan(ten, macn).Rows.Count > 0)
+                {
+                    LoadThucDon(BUSmonan.Timkiemmonan(ten, macn));
+                }
+                else
+                {
+                    Label lb = new Label();
+                    lb.Text = "Không tìm thấy món ăn !!!";
+                    pnThucDon.Controls.Add(lb);
+                }
+            }
+            else
+            {
+                VeAgain();
             }
         }
 

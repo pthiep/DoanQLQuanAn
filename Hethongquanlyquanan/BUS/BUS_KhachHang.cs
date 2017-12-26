@@ -33,7 +33,7 @@ namespace BUS
 
         public DataTable LayThongTinKhachHang(string ma)
         {
-            string sql = "select * from KhachHang where trangthai = 1 and makh = @ma";
+            string sql = "exec LayThongTinKH @ma";
             return dalKH.ExecuteQuery(sql, new object[] { ma });
         }
 
