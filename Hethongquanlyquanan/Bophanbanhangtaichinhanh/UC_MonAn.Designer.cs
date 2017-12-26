@@ -34,17 +34,18 @@
             // 
             // pnThucDon
             // 
+            this.pnThucDon.AutoScroll = true;
             this.pnThucDon.Location = new System.Drawing.Point(0, 0);
             this.pnThucDon.Name = "pnThucDon";
-            this.pnThucDon.Size = new System.Drawing.Size(660, 521);
+            this.pnThucDon.Size = new System.Drawing.Size(689, 556);
             this.pnThucDon.TabIndex = 0;
             this.pnThucDon.Paint += new System.Windows.Forms.PaintEventHandler(this.pnThucDon_Paint);
             // 
             // pn_Menu
             // 
-            this.pn_Menu.Location = new System.Drawing.Point(665, 0);
+            this.pn_Menu.Location = new System.Drawing.Point(695, 0);
             this.pn_Menu.Name = "pn_Menu";
-            this.pn_Menu.Size = new System.Drawing.Size(130, 521);
+            this.pn_Menu.Size = new System.Drawing.Size(130, 556);
             this.pn_Menu.TabIndex = 56;
             // 
             // UC_MonAn
@@ -54,7 +55,7 @@
             this.Controls.Add(this.pn_Menu);
             this.Controls.Add(this.pnThucDon);
             this.Name = "UC_MonAn";
-            this.Size = new System.Drawing.Size(795, 521);
+            this.Size = new System.Drawing.Size(828, 559);
             this.Load += new System.EventHandler(this.UC_MonAn_Load);
             this.ResumeLayout(false);
 

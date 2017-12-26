@@ -46,5 +46,11 @@ namespace BUS
                 return false;
             }
         }
+
+        public string LayMaCN(string ma)
+        {
+            string sql = "select thuocchinhanh from NhanVien where trangthai = 1 and manhanvien = '" + ma + "'";
+            return dalTK.ExecuteQuery(sql).Rows[0].ItemArray[0].ToString();
+        }
     }
 }

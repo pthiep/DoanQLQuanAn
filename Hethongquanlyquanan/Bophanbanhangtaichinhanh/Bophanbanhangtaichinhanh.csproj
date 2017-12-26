@@ -78,11 +78,23 @@
     <Compile Include="Frm_ChiPhiPhatSinh.Designer.cs">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_QuanLyDHTuTongDai.cs">
+    <Compile Include="Frm_CTHD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_QuanLyDHTuTongDai.Designer.cs">
-      <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
+    <Compile Include="Frm_CTHD.Designer.cs">
+      <DependentUpon>Frm_CTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DangNhap.Designer.cs">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KTDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KTDH.Designer.cs">
+      <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +110,14 @@
     <EmbeddedResource Include="Frm_ChiPhiPhatSinh.resx">
       <DependentUpon>Frm_ChiPhiPhatSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_QuanLyDHTuTongDai.resx">
-      <DependentUpon>Frm_QuanLyDHTuTongDai.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_CTHD.resx">
+      <DependentUpon>Frm_CTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DangNhap.resx">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KTDH.resx">
+      <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
