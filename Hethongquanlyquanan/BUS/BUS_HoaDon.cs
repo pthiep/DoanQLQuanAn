@@ -50,6 +50,18 @@ namespace BUS
             return ma == "" ? DanhSachHD() : dalHD.ExecuteQuery(sql);
         }
 
+        public DataTable LayCTHD(string ma)
+        {
+            string sql = "select * from ChiTietHoaDon where machitiethoadon = '" + ma + "'";
+            return dalHD.ExecuteQuery(sql);
+        }
+
+        public string LayMaCTHD(string mahd)
+        {
+            string sql = "select macthoadon from Quanhe_Hoadon_CTHD where trangthai = 1 and mahoadon = '" + mahd + "'";
+            return dalHD.ExecuteQuery(sql).Rows[0].ItemArray[0].ToString(); ;
+        }
+
         public string TaoMaHD()
         {
             string sql = "select * from HoaDon";
@@ -73,6 +85,12 @@ namespace BUS
         {
             string sql = "insert into Chitiethoadon(machitiethoadon , mamonan , soluong, thanhtien) values( @macthd , @ma , @sl , @tt )";
             return dalHD.ExecuteNonQuery(sql, new object[] { macthd, it.Ma, it.Soluong, it.Thanhtien }) > 0 ? true : false;
+        }
+
+        public bool CapnhattrangthaiHD(string mahd, int tt)
+        {
+            string sql = "update HoaDon set trangthai = " + tt + " where mahoadon = '" + mahd + "'";
+            return dalHD.ExecuteNonQuery(sql) > 0 ? true : false;
         }
     }
 }

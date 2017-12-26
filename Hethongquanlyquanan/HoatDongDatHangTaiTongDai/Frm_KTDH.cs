@@ -41,6 +41,8 @@ namespace HoatDongDatHangTaiTongDai
             Panel pn_HManhanvien = new Panel();
             Panel pn_HTenchinhanh = new Panel();
             Panel pn_HTrangthai = new Panel();
+            Panel pn_HChucnang = new Panel();
+
 
             Label lb_HMaHD = new Label();
             Label lb_HTongtien = new Label();
@@ -72,6 +74,7 @@ namespace HoatDongDatHangTaiTongDai
             lb_HMaHD.Width = pn_HMaHD.Width;
             lb_HMaHD.Height = pn_HMaHD.Height;
             lb_HMaHD.Text = "Mã hóa đơn";
+            lb_HMaHD.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HMaHD.TextAlign = ContentAlignment.MiddleCenter;
             lb_HMaHD.Location = new Point(0, 0);
             pn_HMaHD.Controls.Add(lb_HMaHD);
@@ -83,6 +86,7 @@ namespace HoatDongDatHangTaiTongDai
             lb_HTongtien.Width = pn_HTongtien.Width;
             lb_HTongtien.Height = pn_HTongtien.Height;
             lb_HTongtien.Text = "Tổng tiền";
+            lb_HTongtien.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HTongtien.TextAlign = ContentAlignment.MiddleCenter;
             lb_HTongtien.Location = new Point(0, 0);
             pn_HTongtien.Controls.Add(lb_HTongtien);
@@ -94,6 +98,7 @@ namespace HoatDongDatHangTaiTongDai
             lb_HNgaytao.Width = pn_HNgaytao.Width;
             lb_HNgaytao.Height = pn_HNgaytao.Height;
             lb_HNgaytao.Text = "Ngày tạo";
+            lb_HNgaytao.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HNgaytao.TextAlign = ContentAlignment.MiddleCenter;
             lb_HNgaytao.Location = new Point(0, 0);
             pn_HNgaytao.Controls.Add(lb_HNgaytao);
@@ -105,6 +110,7 @@ namespace HoatDongDatHangTaiTongDai
             lb_HManhanvien.Width = pn_HManhanvien.Width;
             lb_HManhanvien.Height = pn_HManhanvien.Height;
             lb_HManhanvien.Text = "Mã nhân viên";
+            lb_HManhanvien.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HManhanvien.TextAlign = ContentAlignment.MiddleCenter;
             lb_HManhanvien.Location = new Point(0, 0);
             pn_HManhanvien.Controls.Add(lb_HManhanvien);
@@ -116,6 +122,7 @@ namespace HoatDongDatHangTaiTongDai
             lb_HTenchinhanh.Width = pn_HTenchinhanh.Width;
             lb_HTenchinhanh.Height = pn_HTenchinhanh.Height;
             lb_HTenchinhanh.Text = "Tên chi nhánh";
+            lb_HTenchinhanh.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HTenchinhanh.TextAlign = ContentAlignment.MiddleCenter;
             lb_HTenchinhanh.Location = new Point(0, 0);
             pn_HTenchinhanh.Controls.Add(lb_HTenchinhanh);
@@ -127,6 +134,7 @@ namespace HoatDongDatHangTaiTongDai
             lb_HTrangthai.Width = pn_HTrangthai.Width;
             lb_HTrangthai.Height = pn_HTrangthai.Height;
             lb_HTrangthai.Text = "Trạng thái";
+            lb_HTrangthai.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HTrangthai.TextAlign = ContentAlignment.MiddleCenter;
             lb_HTrangthai.Location = new Point(0, 0);
             pn_HTrangthai.Controls.Add(lb_HTrangthai);
@@ -149,7 +157,7 @@ namespace HoatDongDatHangTaiTongDai
             Panel pn_BTenchinhanh = null;
             Panel pn_BTrangthai = null;
 
-            Label lb_BMaHD = null;
+            LinkLabel lb_BMaHD = null;
             Label lb_BTongtien = null;
             Label lb_BNgaytao = null;
             Label lb_BManhanvien = null;
@@ -184,7 +192,7 @@ namespace HoatDongDatHangTaiTongDai
                 pn_BTenchinhanh = new Panel();
                 pn_BTrangthai = new Panel();
 
-                lb_BMaHD = new Label();
+                lb_BMaHD = new LinkLabel();
                 lb_BTongtien = new Label();
                 lb_BNgaytao = new Label();
                 lb_BManhanvien = new Label();
@@ -204,6 +212,8 @@ namespace HoatDongDatHangTaiTongDai
                 lb_BMaHD.TextAlign = ContentAlignment.MiddleCenter;
                 lb_BMaHD.Location = new Point(0, 0);
                 pn_BMaHD.Controls.Add(lb_BMaHD);
+                lb_BMaHD.Click += Lb_BMaHD_Click;
+                
 
                 pn_BTongtien.Size = new Size(crpnBTongtien, cc);
                 pn_BTongtien.Location = new Point(pn_BMaHD.Location.X + pn_BMaHD.Width, -1);
@@ -213,7 +223,7 @@ namespace HoatDongDatHangTaiTongDai
                 lb_BTongtien.Text = ChuyenDecimalToVND(ChuyenVNDToDecimal(dt.Rows[i].ItemArray[2].ToString()));
                 lb_BTongtien.TextAlign = ContentAlignment.MiddleCenter;
                 lb_BTongtien.Location = new Point(0, 0);
-                pn_BTongtien.Controls.Add(lb_BTongtien);
+                pn_BTongtien.Controls.Add(lb_BTongtien);                
 
                 pn_BNgaytao.Size = new Size(crpnBNgaytao, cc);
                 pn_BNgaytao.Location = new Point(pn_BTongtien.Location.X + pn_BTongtien.Width - 1, -1);
@@ -250,10 +260,32 @@ namespace HoatDongDatHangTaiTongDai
 
                 lb_BTrangthai.Width = pn_BTrangthai.Width;
                 lb_BTrangthai.Height = pn_BTrangthai.Height;
-                lb_BTrangthai.Text = int.Parse(dt.Rows[i].ItemArray[7].ToString()) == 0 ? "Đã xử lý" : int.Parse(dt.Rows[i].ItemArray[7].ToString()) == 1 ? "Đang xử lý" : "Mới tạo đơn";
+
+                int trangthai = 0;
+                trangthai = int.Parse(dt.Rows[i].ItemArray[7].ToString());
+                if (trangthai == 0)
+                {
+                    lb_BTrangthai.Text = "Đã xử lý";
+                }
+                else if (trangthai == 1)
+                {
+                    lb_BTrangthai.Text = "Đang xử lý";
+                }
+                else if (trangthai == 2)
+                {
+                    lb_BTrangthai.Text = "Mới tạo đơn";
+                }
+                else if (trangthai == 3)
+                {
+                    lb_BTrangthai.Text = "Đã hủy";
+                }
+                
+
                 lb_BTrangthai.TextAlign = ContentAlignment.MiddleCenter;
                 lb_BTrangthai.Location = new Point(0, 0);
                 pn_BTrangthai.Controls.Add(lb_BTrangthai);
+
+                lb_BMaHD.Tag = lb_BMaHD.Text + "|" + lb_BTongtien.Text + "|" + trangthai;
 
                 pn_Row.Controls.Add(pn_BMaHD);
                 pn_Row.Controls.Add(pn_BTongtien);
@@ -263,6 +295,22 @@ namespace HoatDongDatHangTaiTongDai
                 pn_Row.Controls.Add(pn_BTrangthai);
                 pnDH.Controls.Add(pn_Row);
             }
+        }
+
+        private void Lb_BMaHD_Click(object sender, EventArgs e)
+        {
+            Frm_CTHD frmCT = new Frm_CTHD();
+            frmCT.mahd = (sender as Control).Tag.ToString().Split('|')[0];
+            frmCT.tongtien = (sender as Control).Tag.ToString().Split('|')[1];
+            frmCT.trangthai = (sender as Control).Tag.ToString().Split('|')[2];
+            frmCT.ShowDialog();
+            VeAgain();
+        }
+        void VeAgain()
+        {
+            pnDH.Controls.Clear();
+            VeHeadBangDH();
+            VeBodyBangDH(busHD.DanhSachHD());
         }
 
         void TaoAutoCompleteMaDH()

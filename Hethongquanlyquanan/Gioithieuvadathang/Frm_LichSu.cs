@@ -71,6 +71,7 @@ namespace Gioithieuvadathang
             lb_HMaHD.Width = pn_HMaHD.Width;
             lb_HMaHD.Height = pn_HMaHD.Height;
             lb_HMaHD.Text = "Mã hóa đơn";
+            lb_HMaHD.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HMaHD.TextAlign = ContentAlignment.MiddleCenter;
             lb_HMaHD.Location = new Point(0, 0);
             pn_HMaHD.Controls.Add(lb_HMaHD);
@@ -78,7 +79,7 @@ namespace Gioithieuvadathang
             pn_HTongtien.BorderStyle = BorderStyle.FixedSingle;
             pn_HTongtien.Size = new Size(crpnHTongtien, cc);
             pn_HTongtien.Location = new Point(pn_HMaHD.Location.X + pn_HMaHD.Width - 1, 0);
-
+            lb_HTongtien.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HTongtien.Width = pn_HTongtien.Width;
             lb_HTongtien.Height = pn_HTongtien.Height;
             lb_HTongtien.Text = "Tổng tiền";
@@ -89,7 +90,7 @@ namespace Gioithieuvadathang
             pn_HNgaytao.BorderStyle = BorderStyle.FixedSingle;
             pn_HNgaytao.Size = new Size(crpnHNgaytao, cc);
             pn_HNgaytao.Location = new Point(pn_HTongtien.Location.X + pn_HTongtien.Width - 1, 0);
-
+            lb_HNgaytao.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HNgaytao.Width = pn_HNgaytao.Width;
             lb_HNgaytao.Height = pn_HNgaytao.Height;
             lb_HNgaytao.Text = "Ngày tạo";
@@ -100,7 +101,7 @@ namespace Gioithieuvadathang
             pn_HManhanvien.BorderStyle = BorderStyle.FixedSingle;
             pn_HManhanvien.Size = new Size(crpnHManhanvien, cc);
             pn_HManhanvien.Location = new Point(pn_HNgaytao.Location.X + pn_HNgaytao.Width - 1, 0);
-
+            lb_HManhanvien.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HManhanvien.Width = pn_HManhanvien.Width;
             lb_HManhanvien.Height = pn_HManhanvien.Height;
             lb_HManhanvien.Text = "Mã nhân viên";
@@ -111,7 +112,7 @@ namespace Gioithieuvadathang
             pn_HTenchinhanh.BorderStyle = BorderStyle.FixedSingle;
             pn_HTenchinhanh.Size = new Size(crpnHTenchinhanh, cc);
             pn_HTenchinhanh.Location = new Point(pn_HManhanvien.Location.X + pn_HManhanvien.Width - 1, 0);
-
+            lb_HTenchinhanh.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HTenchinhanh.Width = pn_HTenchinhanh.Width;
             lb_HTenchinhanh.Height = pn_HTenchinhanh.Height;
             lb_HTenchinhanh.Text = "Tên chi nhánh";
@@ -122,7 +123,7 @@ namespace Gioithieuvadathang
             pn_HTrangthai.BorderStyle = BorderStyle.FixedSingle;
             pn_HTrangthai.Size = new Size(crpnHTrangthai, cc);
             pn_HTrangthai.Location = new Point(pn_HTenchinhanh.Location.X + pn_HTenchinhanh.Width - 1, 0);
-
+            lb_HTrangthai.Font = new Font("Tahoma", 9f, FontStyle.Bold);
             lb_HTrangthai.Width = pn_HTrangthai.Width;
             lb_HTrangthai.Height = pn_HTrangthai.Height;
             lb_HTrangthai.Text = "Trạng thái";
