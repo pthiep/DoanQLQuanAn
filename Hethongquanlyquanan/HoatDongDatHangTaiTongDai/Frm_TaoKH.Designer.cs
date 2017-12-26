@@ -235,7 +235,7 @@
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_TaoKH";
             this.Ribbon = this.ribbon;
-            this.Text = "Frm_TaoKH";
+            this.Text = "Tạo khách hàng";
             this.Load += new System.EventHandler(this.Frm_TaoKH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDiaChi.Properties)).EndInit();

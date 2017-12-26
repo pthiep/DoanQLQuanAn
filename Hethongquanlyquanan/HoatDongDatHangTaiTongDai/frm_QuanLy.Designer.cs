@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Quanly));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barDatetime = new DevExpress.XtraBars.BarStaticItem();
+            this.barMaNV = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barDNAgain = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.pnHD = new System.Windows.Forms.Panel();
@@ -38,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.btn_TaoKH = new DevExpress.XtraEditors.SimpleButton();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.btn_Lichsu = new DevExpress.XtraEditors.SimpleButton();
@@ -55,9 +61,7 @@
             this.cb_CN = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_TimkiemMA = new System.Windows.Forms.TextBox();
-            this.timerDate = new System.Windows.Forms.Timer();
-            this.barDatetime = new DevExpress.XtraBars.BarStaticItem();
-            this.barMaNV = new DevExpress.XtraBars.BarStaticItem();
+            this.timerDate = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,9 +74,12 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.barDatetime,
-            this.barMaNV});
+            this.barMaNV,
+            this.barStaticItem1,
+            this.barStaticItem2,
+            this.barDNAgain});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 12;
+            this.ribbon.MaxItemId = 15;
             this.ribbon.Name = "ribbon";
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowCategoryInCaption = false;
@@ -85,10 +92,51 @@
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
+            // barDatetime
+            // 
+            this.barDatetime.Caption = "___";
+            this.barDatetime.Id = 10;
+            this.barDatetime.Name = "barDatetime";
+            // 
+            // barMaNV
+            // 
+            this.barMaNV.Caption = "___";
+            this.barMaNV.Id = 11;
+            this.barMaNV.Name = "barMaNV";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "Thời gian:";
+            this.barStaticItem1.Id = 12;
+            this.barStaticItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barStaticItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "Mã nhân viên:";
+            this.barStaticItem2.Id = 13;
+            this.barStaticItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barStaticItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // barDNAgain
+            // 
+            this.barDNAgain.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barDNAgain.Caption = "Đổi tài khoản";
+            this.barDNAgain.Id = 14;
+            this.barDNAgain.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barDNAgain.ItemAppearance.Normal.Options.UseFont = true;
+            this.barDNAgain.Name = "barDNAgain";
+            this.barDNAgain.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barDNAgain_ItemClick);
+            // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.barDatetime);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar.ItemLinks.Add(this.barMaNV);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar.ItemLinks.Add(this.barDatetime);
+            this.ribbonStatusBar.ItemLinks.Add(this.barDNAgain);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 689);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -379,18 +427,6 @@
             this.timerDate.Enabled = true;
             this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick);
             // 
-            // barDatetime
-            // 
-            this.barDatetime.Caption = "___";
-            this.barDatetime.Id = 10;
-            this.barDatetime.Name = "barDatetime";
-            // 
-            // barMaNV
-            // 
-            this.barMaNV.Caption = "___";
-            this.barMaNV.Id = 11;
-            this.barMaNV.Name = "barMaNV";
-            // 
             // Frm_Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,7 +448,7 @@
             this.Name = "Frm_Quanly";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Frm_Quanly";
+            this.Text = "Quản lý đặt hàng tại tổng đài";
             this.Load += new System.EventHandler(this.Frm_Quanly_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -456,5 +492,8 @@
         private System.Windows.Forms.Timer timerDate;
         private DevExpress.XtraBars.BarStaticItem barDatetime;
         private DevExpress.XtraBars.BarStaticItem barMaNV;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarButtonItem barDNAgain;
     }
 }

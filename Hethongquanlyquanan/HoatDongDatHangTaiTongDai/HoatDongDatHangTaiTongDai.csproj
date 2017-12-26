@@ -63,6 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Donhang.cs" />
+    <Compile Include="Frm_CTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CTHD.Designer.cs">
+      <DependentUpon>Frm_CTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DangNhap.Designer.cs">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_KTDH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     <Compile Include="UC_MonAn.designer.cs">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_CTHD.resx">
+      <DependentUpon>Frm_CTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DangNhap.resx">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_KTDH.resx">
       <DependentUpon>Frm_KTDH.cs</DependentUpon>
     </EmbeddedResource>

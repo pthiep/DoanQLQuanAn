@@ -1,6 +1,6 @@
 ﻿namespace HoatDongDatHangTaiTongDai
 {
-    partial class Frm_LichSu
+    partial class Frm_DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnLS = new System.Windows.Forms.Panel();
-            this.lbMaKH = new System.Windows.Forms.Label();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_TenDN = new System.Windows.Forms.TextBox();
+            this.tb_MK = new System.Windows.Forms.TextBox();
+            this.btn_Dangnhap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,54 +52,72 @@
             this.ribbon.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(864, 32);
+            this.ribbon.Size = new System.Drawing.Size(365, 32);
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Location = new System.Drawing.Point(12, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 18);
+            this.label1.Size = new System.Drawing.Size(120, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Mã khách hàng:";
+            this.label1.Text = "Tên đăng nhập:";
             // 
-            // pnLS
+            // label2
             // 
-            this.pnLS.AutoScroll = true;
-            this.pnLS.Location = new System.Drawing.Point(12, 90);
-            this.pnLS.Name = "pnLS";
-            this.pnLS.Size = new System.Drawing.Size(840, 198);
-            this.pnLS.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(12, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Mật khẩu:";
             // 
-            // lbMaKH
+            // tb_TenDN
             // 
-            this.lbMaKH.AutoSize = true;
-            this.lbMaKH.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.lbMaKH.Location = new System.Drawing.Point(150, 51);
-            this.lbMaKH.Name = "lbMaKH";
-            this.lbMaKH.Size = new System.Drawing.Size(32, 18);
-            this.lbMaKH.TabIndex = 4;
-            this.lbMaKH.Text = "___";
+            this.tb_TenDN.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tb_TenDN.Location = new System.Drawing.Point(143, 56);
+            this.tb_TenDN.Name = "tb_TenDN";
+            this.tb_TenDN.Size = new System.Drawing.Size(200, 25);
+            this.tb_TenDN.TabIndex = 4;
             // 
-            // defaultLookAndFeel1
+            // tb_MK
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
+            this.tb_MK.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tb_MK.Location = new System.Drawing.Point(143, 94);
+            this.tb_MK.Name = "tb_MK";
+            this.tb_MK.PasswordChar = '*';
+            this.tb_MK.Size = new System.Drawing.Size(200, 25);
+            this.tb_MK.TabIndex = 5;
             // 
-            // Frm_LichSu
+            // btn_Dangnhap
+            // 
+            this.btn_Dangnhap.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_Dangnhap.Location = new System.Drawing.Point(176, 149);
+            this.btn_Dangnhap.Name = "btn_Dangnhap";
+            this.btn_Dangnhap.Size = new System.Drawing.Size(127, 33);
+            this.btn_Dangnhap.TabIndex = 6;
+            this.btn_Dangnhap.Text = "Đăng nhập";
+            this.btn_Dangnhap.UseVisualStyleBackColor = true;
+            this.btn_Dangnhap.Click += new System.EventHandler(this.btn_Dangnhap_Click);
+            // 
+            // Frm_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 302);
-            this.Controls.Add(this.lbMaKH);
-            this.Controls.Add(this.pnLS);
+            this.ClientSize = new System.Drawing.Size(365, 194);
+            this.Controls.Add(this.btn_Dangnhap);
+            this.Controls.Add(this.tb_MK);
+            this.Controls.Add(this.tb_TenDN);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ribbon);
-            this.Name = "Frm_LichSu";
+            this.Name = "Frm_DangNhap";
             this.Ribbon = this.ribbon;
-            this.Text = "Lịch sử giao dịch";
-            this.Load += new System.EventHandler(this.Frm_LichSu_Load);
+            this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.Frm_DangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,8 +128,9 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnLS;
-        private System.Windows.Forms.Label lbMaKH;
-        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tb_TenDN;
+        private System.Windows.Forms.TextBox tb_MK;
+        private System.Windows.Forms.Button btn_Dangnhap;
     }
 }

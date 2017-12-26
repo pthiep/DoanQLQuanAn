@@ -27,6 +27,9 @@ namespace HoatDongDatHangTaiTongDai
         bool DuyetHD = true;
         bool LoadCB = false;
         string Machinhanh = "";
+        string Manhanvien = "";
+
+        bool dangnhap = false;
 
         public Frm_Quanly()
         {
@@ -35,11 +38,25 @@ namespace HoatDongDatHangTaiTongDai
 
         private void Frm_Quanly_Load(object sender, EventArgs e)
         {
-            CenterToScreen();
-            TaoAutoCompleteKH();
-            Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
-            LoadCBCN();
-            PanelUser();
+            Frm_DangNhap frmDN = new Frm_DangNhap();
+            frmDN.ShowDialog();
+            if (frmDN.CloseBox)
+            {
+                frmDN.ThongTinDangNhap(ref dangnhap, ref Manhanvien);
+                if (dangnhap == false)
+                {
+                    Close();
+                }
+                else
+                {
+                    CenterToScreen();
+                    TaoAutoCompleteKH();
+                    Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
+                    barMaNV.Caption = Manhanvien;
+                    LoadCBCN();
+                    PanelUser();
+                }
+            }
         }
 
         void TaoAutoCompleteKH()
@@ -681,6 +698,12 @@ namespace HoatDongDatHangTaiTongDai
         private void timerDate_Tick(object sender, EventArgs e)
         {
             barDatetime.Caption = busClock.TimeServer();
+        }
+
+        private void barDNAgain_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
         }
     }
 }
