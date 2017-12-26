@@ -102,5 +102,7 @@ namespace BUS
             string query = "select giaban from MonAn where mamonan = N'" + ma + "'";
             return dalMA.ExecuteQuery(query).Rows[0].ItemArray[0].ToString();
         }
+
+
     }
 }

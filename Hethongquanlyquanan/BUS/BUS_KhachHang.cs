@@ -1,9 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+=======
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+>>>>>>> master
 using DAL;
 using DTO;
 
@@ -11,6 +18,27 @@ namespace BUS
 {
     public class BUS_KhachHang
     {
+<<<<<<< HEAD
+        DBManager dalDB = new DBManager();
+
+        public DataTable bangthongkekhach()
+        {
+            string query = "exec bangthongkekhachhang";
+            return dalDB.ExecuteQuery(query);
+        }
+
+
+        public DataTable hoatdongkhachhang(string ma, DateTime ngaykt)
+        {
+            string query = "exec thongtinhoatdongcuakhach '"+ma+"','"+ngaykt+"'";
+            return dalDB.ExecuteQuery(query);
+        }
+
+        public DataTable tongtienkhachhang(DateTime ngaykt, string ma)
+        {
+            string query = "exec tongtienkhachhang '" + ngaykt + "','" + ma + "'";
+            return dalDB.ExecuteQuery(query);
+=======
         DBManager dalKH = new DBManager();
 
         public DataTable DanhSachKhachHang()
@@ -66,6 +94,7 @@ namespace BUS
         {
             string sql = "insert into KhachHang(makh, tenkh, sodienthoai , ngaytao, ngaysinh, gioitinh, diachi, trangthai) values( @makh , @hoten , @sdt , @nt , @ns , @gt , @dc , @tt )";
             return dalKH.ExecuteNonQuery(sql, new object[] { kh.Makh, kh.Tenkh, kh.Sdt, kh.Ngaytao, kh.Ngaysinh, kh.Gioitinh, kh.Diachi, 1 }) > 0 ? true : false;
+>>>>>>> master
         }
     }
 }

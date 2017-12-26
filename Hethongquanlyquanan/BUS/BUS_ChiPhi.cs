@@ -27,5 +27,19 @@ namespace BUS
             string sma = "CPPS" + (ma + 1);
             return sma;
         }
+
+        public DataTable TinhChiPhi(DateTime NgayBD, DateTime NgayKT)
+        {
+            string query = "exec TinhChiPhi '"+NgayBD+"','"+NgayKT+"'";
+            DataTable result = cp.ExecuteQuery(query);
+            return result;
+        }
+
+        public DataTable TongChiPhi(DateTime NgayBD, DateTime NgayKT)
+        {
+            string query = "exec TongChiPhi '" + NgayBD + "','" + NgayKT + "'";
+            DataTable result = cp.ExecuteQuery(query);
+            return result;
+        }
     }
 }

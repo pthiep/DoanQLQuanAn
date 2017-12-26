@@ -29,6 +29,8 @@ namespace BUS
             string sql = "exec BanDanhMucChiNhanh @macn";
             return dalMenu.ExecuteQuery(sql, new object[] { macn });
         }
+<<<<<<< HEAD
+=======
 
         public DataTable DanhSachMonAnTheoDanhMuc(string macn, string danhmuc)
         {
@@ -95,5 +97,6 @@ namespace BUS
             string sql = "exec ThemMoiQuanHeChiNhanhDM @macn , @mama";
             return dalMenu.ExecuteNonQuery(sql, new object[] { macn, mama }) > 0 ? true : false;
         }
+>>>>>>> master
     }
 }
