@@ -29,8 +29,5 @@ namespace BUS
             string sql = "exec BanDanhMucChiNhanh @macn";
             return dalBan.ExecuteQuery(sql, new object[] { macn });
         }
-
-
-
     }
 }

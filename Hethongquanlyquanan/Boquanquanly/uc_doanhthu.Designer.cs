@@ -35,6 +35,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbNam = new System.Windows.Forms.Label();
             this.cbbNam = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbbQuy = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbbThang = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbbTuan = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbbNgay = new System.Windows.Forms.ComboBox();
             this.cbbChonLich = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtSLdonhang = new System.Windows.Forms.TextBox();
@@ -47,14 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpKT = new System.Windows.Forms.DateTimePicker();
             this.dtpBD = new System.Windows.Forms.DateTimePicker();
-            this.cbbNgay = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbTuan = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbbThang = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbbQuy = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,6 +89,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(960, 435);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btXem
             // 
@@ -146,6 +147,82 @@
             this.cbbNam.Name = "cbbNam";
             this.cbbNam.Size = new System.Drawing.Size(61, 21);
             this.cbbNam.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(369, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Quý";
+            // 
+            // cbbQuy
+            // 
+            this.cbbQuy.Enabled = false;
+            this.cbbQuy.FormattingEnabled = true;
+            this.cbbQuy.Location = new System.Drawing.Point(404, 69);
+            this.cbbQuy.Name = "cbbQuy";
+            this.cbbQuy.Size = new System.Drawing.Size(39, 21);
+            this.cbbQuy.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(275, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Tháng";
+            // 
+            // cbbThang
+            // 
+            this.cbbThang.Enabled = false;
+            this.cbbThang.FormattingEnabled = true;
+            this.cbbThang.Location = new System.Drawing.Point(324, 69);
+            this.cbbThang.Name = "cbbThang";
+            this.cbbThang.Size = new System.Drawing.Size(39, 21);
+            this.cbbThang.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(188, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Tuần";
+            // 
+            // cbbTuan
+            // 
+            this.cbbTuan.Enabled = false;
+            this.cbbTuan.FormattingEnabled = true;
+            this.cbbTuan.Location = new System.Drawing.Point(230, 70);
+            this.cbbTuan.Name = "cbbTuan";
+            this.cbbTuan.Size = new System.Drawing.Size(39, 21);
+            this.cbbTuan.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(103, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Ngày";
+            // 
+            // cbbNgay
+            // 
+            this.cbbNgay.Enabled = false;
+            this.cbbNgay.FormattingEnabled = true;
+            this.cbbNgay.Location = new System.Drawing.Point(143, 69);
+            this.cbbNgay.Name = "cbbNgay";
+            this.cbbNgay.Size = new System.Drawing.Size(39, 21);
+            this.cbbNgay.TabIndex = 16;
             // 
             // cbbChonLich
             // 
@@ -265,82 +342,6 @@
             this.dtpBD.Size = new System.Drawing.Size(99, 20);
             this.dtpBD.TabIndex = 0;
             this.dtpBD.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // cbbNgay
-            // 
-            this.cbbNgay.Enabled = false;
-            this.cbbNgay.FormattingEnabled = true;
-            this.cbbNgay.Location = new System.Drawing.Point(143, 69);
-            this.cbbNgay.Name = "cbbNgay";
-            this.cbbNgay.Size = new System.Drawing.Size(39, 21);
-            this.cbbNgay.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(103, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Ngày";
-            // 
-            // cbbTuan
-            // 
-            this.cbbTuan.Enabled = false;
-            this.cbbTuan.FormattingEnabled = true;
-            this.cbbTuan.Location = new System.Drawing.Point(230, 70);
-            this.cbbTuan.Name = "cbbTuan";
-            this.cbbTuan.Size = new System.Drawing.Size(39, 21);
-            this.cbbTuan.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(188, 73);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Tuần";
-            // 
-            // cbbThang
-            // 
-            this.cbbThang.Enabled = false;
-            this.cbbThang.FormattingEnabled = true;
-            this.cbbThang.Location = new System.Drawing.Point(324, 69);
-            this.cbbThang.Name = "cbbThang";
-            this.cbbThang.Size = new System.Drawing.Size(39, 21);
-            this.cbbThang.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(275, 73);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Tháng";
-            // 
-            // cbbQuy
-            // 
-            this.cbbQuy.Enabled = false;
-            this.cbbQuy.FormattingEnabled = true;
-            this.cbbQuy.Location = new System.Drawing.Point(404, 69);
-            this.cbbQuy.Name = "cbbQuy";
-            this.cbbQuy.Size = new System.Drawing.Size(39, 21);
-            this.cbbQuy.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(369, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Quý";
             // 
             // uc_doanhthu
             // 

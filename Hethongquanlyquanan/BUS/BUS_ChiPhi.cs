@@ -25,5 +25,19 @@ namespace BUS
            
 
         }
+
+        public DataTable TinhChiPhi(DateTime NgayBD, DateTime NgayKT)
+        {
+            string query = "exec TinhChiPhi '"+NgayBD+"','"+NgayKT+"'";
+            DataTable result = cp.ExecuteQuery(query);
+            return result;
+        }
+
+        public DataTable TongChiPhi(DateTime NgayBD, DateTime NgayKT)
+        {
+            string query = "exec TongChiPhi '" + NgayBD + "','" + NgayKT + "'";
+            DataTable result = cp.ExecuteQuery(query);
+            return result;
+        }
     }
 }
