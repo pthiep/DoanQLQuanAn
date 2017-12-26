@@ -35,6 +35,7 @@
             this.barMaNV = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barDNAgain = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.pnHD = new System.Windows.Forms.Panel();
@@ -61,7 +62,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tb_TimkiemMA = new System.Windows.Forms.TextBox();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
-            this.barDNAgain = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,6 +119,16 @@
             this.barStaticItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.barStaticItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // barDNAgain
+            // 
+            this.barDNAgain.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barDNAgain.Caption = "Đổi tài khoản";
+            this.barDNAgain.Id = 14;
+            this.barDNAgain.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barDNAgain.ItemAppearance.Normal.Options.UseFont = true;
+            this.barDNAgain.Name = "barDNAgain";
+            this.barDNAgain.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barDNAgain_ItemClick);
             // 
             // ribbonStatusBar
             // 
@@ -417,16 +427,6 @@
             this.timerDate.Enabled = true;
             this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick);
             // 
-            // barDNAgain
-            // 
-            this.barDNAgain.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barDNAgain.Caption = "Đổi tài khoản";
-            this.barDNAgain.Id = 14;
-            this.barDNAgain.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barDNAgain.ItemAppearance.Normal.Options.UseFont = true;
-            this.barDNAgain.Name = "barDNAgain";
-            this.barDNAgain.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barDNAgain_ItemClick);
-            // 
             // Frm_Quanly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,7 +448,7 @@
             this.Name = "Frm_Quanly";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Frm_Quanly";
+            this.Text = "Quản lý đặt hàng tại tổng đài";
             this.Load += new System.EventHandler(this.Frm_Quanly_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox1.ResumeLayout(false);

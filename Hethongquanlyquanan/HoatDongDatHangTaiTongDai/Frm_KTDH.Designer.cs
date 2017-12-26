@@ -89,7 +89,7 @@
             this.Controls.Add(this.ribbon);
             this.Name = "Frm_KTDH";
             this.Ribbon = this.ribbon;
-            this.Text = "Frm_KTDH";
+            this.Text = "Đơn hàng";
             this.Load += new System.EventHandler(this.Frm_KTDH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
