@@ -38,6 +38,12 @@ namespace BUS
             return dalHD.ExecuteQuery(sql);
         }
 
+        public DataTable DanhSachHDDuyet(string macn)
+        {
+            string sql = "select * from HoaDon where trangthai = 1 and machinhanh = '" + macn + "'";
+            return dalHD.ExecuteQuery(sql);
+        }
+
         public DataTable DanhSachHDTheoKH(string ma)
         {
             string sql = "select * from HoaDon where makhachhang = N'" + ma + "'";

@@ -51,9 +51,11 @@ namespace HoatDongDatHangTaiTongDai
                 {
                     CenterToScreen();
                     TaoAutoCompleteKH();
+                    LoadCBCN();
+                    ActiveControl = cb_CN;
                     Machinhanh = busCN.LayMaTuTenCN(cb_CN.Text);
                     barMaNV.Caption = Manhanvien;
-                    LoadCBCN();
+                    
                     PanelUser();
                 }
             }
@@ -89,9 +91,11 @@ namespace HoatDongDatHangTaiTongDai
         {
             if (!pnUC.Controls.Contains(UC_MonAn.Instance))
             {
-                pnUC.Controls.Add(UC_MonAn.Instance);
-                UC_MonAn.Instance.AddItems += Instance_AddItems;
                 UC_MonAn.Instance.macn = Machinhanh;
+                pnUC.Controls.Add(UC_MonAn.Instance);
+
+                UC_MonAn.Instance.AddItems += Instance_AddItems;
+                
                 UC_MonAn.Instance.Dock = DockStyle.Fill;
                 UC_MonAn.Instance.BringToFront();
             }

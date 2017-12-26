@@ -285,7 +285,7 @@ namespace HoatDongDatHangTaiTongDai
             //Tim kiem 
             if ((sender as Control).Tag.ToString() == "DM0")
             {
-                LoadThucDon(BUSmonan.LoadDanhSachMonAn());
+                LoadThucDon(BUSmonan.LoadDanhSachMonAnCN(macn));
             }
             else
             {
